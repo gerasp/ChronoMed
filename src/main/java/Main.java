@@ -3,7 +3,6 @@ import org.apache.catalina.Context;
 import org.apache.catalina.startup.Tomcat;
 
 import java.io.File;
-import java.net.URL;
 
 
 public final class Main {
@@ -12,12 +11,12 @@ public final class Main {
 
         final Tomcat tomcat = new Tomcat();
 
-        tomcat.setPort(Integer.valueOf(System.getenv("PORT")));
-//        tomcat.setPort(8000);
+//        tomcat.setPort(Integer.valueOf(System.getenv("PORT")));
+        tomcat.setPort(8000);
         tomcat.enableNaming();
 
         Context ctx = tomcat.addWebapp("/", new File("web/").getAbsolutePath());
-        ctx.setConfigFile( new URL("file:./../META_INF/context.xml"));
+        ctx.setConfigFile(new File("./META-INF/context.xml").toURI().toURL());
 
         tomcat.start();
         tomcat.getServer().await();
