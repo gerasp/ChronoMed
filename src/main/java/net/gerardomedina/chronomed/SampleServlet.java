@@ -9,7 +9,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public License along with Java EE Sample. If not, see <http://www.gnu.org/licenses/>.
  */
-package br.eti.fernandoribeiro.sample.javaee;
+package net.gerardomedina.chronomed;
 
 import java.io.IOException;
 
