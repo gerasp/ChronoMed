@@ -19,21 +19,13 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class HealthcardFacade extends AbstractFacade<Healthcard> {
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
-
     public HealthcardFacade() {
         super(Healthcard.class);
     }
 
     public Healthcard findByPatientAndNumber(Patient patient, String healthcardNumber) {
         try {
-            return em.createQuery("SELECT x FROM Healthcard x WHERE x.patientID = :patientID AND x.number = :number", Healthcard.class)
+            return getEntityManager().createQuery("SELECT x FROM Healthcard x WHERE x.patientID = :patientID AND x.number = :number", Healthcard.class)
                     .setParameter("number", healthcardNumber)
                     .setParameter("patientID", patient)
                     .getSingleResult();
@@ -44,7 +36,7 @@ public class HealthcardFacade extends AbstractFacade<Healthcard> {
     
     public List<Healthcard> findByPatient(Patient patient) {
         try {
-            return em.createQuery("SELECT x FROM Healthcard x WHERE x.patientID = :patientID", Healthcard.class)
+            return getEntityManager().createQuery("SELECT x FROM Healthcard x WHERE x.patientID = :patientID", Healthcard.class)
                     .setParameter("patientID", patient)
                     .getResultList();
         } catch (Exception e) {
@@ -54,7 +46,7 @@ public class HealthcardFacade extends AbstractFacade<Healthcard> {
     
     public List<Healthcard> findHealthCardByHealthCardNumber(String number){
         try {
-            return em.createQuery("SELECT x FROM Healthcard x WHERE x.number = :number", Healthcard.class)
+            return getEntityManager().createQuery("SELECT x FROM Healthcard x WHERE x.number = :number", Healthcard.class)
                     .setParameter("number", number)
                     .getResultList();
         } catch (Exception e) {

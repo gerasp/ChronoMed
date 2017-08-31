@@ -1,4 +1,13 @@
 <Context>
+    <Resource name="jdbc/chronomed"
+              auth="Container"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://mealtera.com:3306/chronomed"
+              driverClassName="com.mysql.jdbc.Driver"
+              username="chronomed"
+              password="chronomed"
+              maxActive="15"
+              maxIdle="3"/>
     <Resource name="ServerLifetimeBean" auth="Container"
               type="business.beans.ServerLifetimeBean"
               factory="org.apache.naming.factory.BeanFactory"/>
@@ -11,13 +20,33 @@
               type="data.facades.UseraccountFacade"
               factory="org.apache.naming.factory.BeanFactory"/>
 
-    <Resource name="jdbc/chronomed"
-              auth="Container"
-              type="javax.sql.DataSource"
-              url="jdbc:mysql://mealtera.com:3306/chronomed"
-              driverClassName="com.mysql.jdbc.Driver"
-              username="chronomed"
-              password="chronomed"
-              maxActive="15"
-              maxIdle="3"/>
+    <Resource name="AdministrativeFacade" auth="Container"
+              type="data.facades.AdministrativeFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="DoctorFacade" auth="Container"
+              type="data.facades.DoctorFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="DoctorPatientFacade" auth="Container"
+              type="data.facades.DoctorPatientFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="HealthcardFacade" auth="Container"
+              type="data.facades.HealthcardFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="MedicalconsultationFacade" auth="Container"
+              type="data.facades.MedicalconsultationFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="MedicalhistoryFacade" auth="Container"
+              type="data.facades.MedicalhistoryFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="PatientFacade" auth="Container"
+              type="data.facades.PatientFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+
 </Context>

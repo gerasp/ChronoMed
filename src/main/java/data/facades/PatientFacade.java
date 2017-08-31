@@ -23,21 +23,13 @@ import javax.persistence.criteria.CriteriaQuery;
 @Stateless
 public class PatientFacade extends AbstractFacade<Patient> {
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
-
     public PatientFacade() {
         super(Patient.class);
     }
 
     public Patient findByAccount(Useraccount user) {
         try {
-            return (Patient) em.createQuery("SELECT x FROM Patient x WHERE x.userAccountID = :userID", Patient.class)
+            return getEntityManager().createQuery("SELECT x FROM Patient x WHERE x.userAccountID = :userID", Patient.class)
                     .setParameter("userID", user)
                     .getSingleResult();
         } catch (Exception e) {
@@ -47,7 +39,7 @@ public class PatientFacade extends AbstractFacade<Patient> {
 
     public List<Patient> findByNif(String nif) {
         try {
-            return em.createQuery("SELECT x FROM Patient x WHERE x.nif = :nif", Patient.class)
+            return getEntityManager().createQuery("SELECT x FROM Patient x WHERE x.nif = :nif", Patient.class)
                     .setParameter("nif", nif)
                     .getResultList();
         } catch (Exception e) {
@@ -57,7 +49,7 @@ public class PatientFacade extends AbstractFacade<Patient> {
 
     public List<Patient> findByDoctor(Doctor doctor) {
         try {
-            return em.createQuery("SELECT p FROM Patient p JOIN p.doctorPatientCollection dp WHERE dp.doctorID = :doctor", Patient.class)
+            return getEntityManager().createQuery("SELECT p FROM Patient p JOIN p.doctorPatientCollection dp WHERE dp.doctorID = :doctor", Patient.class)
                     .setParameter("doctor", doctor)
                     .getResultList();
         } catch (Exception e) {

@@ -39,6 +39,15 @@
 
     <resource-env-ref>
         <resource-env-ref-name>
+            AbstractFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.AbstractFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
             UseraccountFacade
         </resource-env-ref-name>
         <resource-env-ref-type>
@@ -48,10 +57,65 @@
 
     <resource-env-ref>
         <resource-env-ref-name>
-            AbstractFacade
+            AdministrativeFacade
         </resource-env-ref-name>
         <resource-env-ref-type>
-            data.facades.AbstractFacade
+            data.facades.AdministrativeFacade
         </resource-env-ref-type>
     </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            DoctorFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.DoctorFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            DoctorPatientFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.DoctorPatientFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            HealthcardFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.HealthcardFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            MedicalconsultationFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.MedicalconsultationFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            MedicalhistoryFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.MedicalhistoryFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+
+    <resource-env-ref>
+        <resource-env-ref-name>
+            PatientFacade
+        </resource-env-ref-name>
+        <resource-env-ref-type>
+            data.facades.PatientFacade
+        </resource-env-ref-type>
+    </resource-env-ref>
+    
 </web-app>

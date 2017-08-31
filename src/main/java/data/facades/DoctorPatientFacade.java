@@ -20,21 +20,13 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class DoctorPatientFacade extends AbstractFacade<DoctorPatient> {
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
-
     public DoctorPatientFacade() {
         super(DoctorPatient.class);
     }
 
     public DoctorPatient findByPatientAndDoctor(Patient patient, Doctor doctor) {
         try {
-            return em.createQuery("SELECT x FROM DoctorPatient x WHERE x.patientID = :patientID AND x.doctorID = :doctorID", DoctorPatient.class)
+            return getEntityManager().createQuery("SELECT x FROM DoctorPatient x WHERE x.patientID = :patientID AND x.doctorID = :doctorID", DoctorPatient.class)
                     .setParameter("patientID", patient)
                     .setParameter("doctorID", doctor)
                     .getSingleResult();
@@ -45,7 +37,7 @@ public class DoctorPatientFacade extends AbstractFacade<DoctorPatient> {
     
     public List<DoctorPatient> findByPatient(Patient patient) {
         try {
-            return em.createQuery("SELECT x FROM DoctorPatient x WHERE x.patientID = :patientID", DoctorPatient.class)
+            return getEntityManager().createQuery("SELECT x FROM DoctorPatient x WHERE x.patientID = :patientID", DoctorPatient.class)
                     .setParameter("patientID", patient)
                     .getResultList();
         } catch (Exception e) {

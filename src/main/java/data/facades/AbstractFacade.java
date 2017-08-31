@@ -35,13 +35,11 @@ public abstract class AbstractFacade<T> {
     }
 
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
+
+    private EntityManager em = Persistence.createEntityManagerFactory("ChronoMedPU").createEntityManager();
 
     protected EntityManager getEntityManager() {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ChronoMedPU");
-        return emf.createEntityManager();
-//        return em;
+        return em;
     }
 
     public void create(T entity) {

@@ -18,13 +18,6 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class AdministrativeFacade extends AbstractFacade<Administrative> {
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
 
     public AdministrativeFacade() {
         super(Administrative.class);
@@ -33,7 +26,7 @@ public class AdministrativeFacade extends AbstractFacade<Administrative> {
     
     public Administrative findByAccount(Useraccount user){
         try {
-            return em.createQuery("SELECT x FROM Administrative x WHERE x.userAccountID = ?1", Administrative.class)
+            return getEntityManager().createQuery("SELECT x FROM Administrative x WHERE x.userAccountID = ?1", Administrative.class)
                     .setParameter(1, user)
                     .getSingleResult();
         } catch (Exception e) {

@@ -18,13 +18,7 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class UseraccountFacade extends AbstractFacade<Useraccount> {
 
-//    @PersistenceContext(unitName = "ChronoMedPU")
-//    private EntityManager em;
-//
-//    @Override
-//    protected EntityManager getEntityManager() {
-//        return em;
-//    }
+
 
     public UseraccountFacade() {
         super(Useraccount.class);

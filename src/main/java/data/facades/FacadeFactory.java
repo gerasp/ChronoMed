@@ -5,21 +5,15 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
 public class FacadeFactory {
-
-    public static <T extends AbstractFacade> T getFacade(String entityName) {
-
+    public static <T extends AbstractFacade> T getFacade(String facade) {
+        Context initCtx = null;
         try {
-            Context initCtx = new InitialContext();
+            initCtx = new InitialContext();
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
-            AbstractFacade abstractFacade = (AbstractFacade) envCtx.lookup(entityName);
-
-            Class clase = Class.forName("data.facades."+entityName);
-            return (T) clase.cast(abstractFacade);
-        } catch (NamingException ex) {
-            return null;
-        } catch (ClassNotFoundException e) {
+            return (T) envCtx.lookup(facade);
+        } catch (NamingException e) {
             e.printStackTrace();
-            return null;
         }
+        return null;
     }
 }
