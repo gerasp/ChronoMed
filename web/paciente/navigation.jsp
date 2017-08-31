@@ -4,7 +4,7 @@
     <div class="container logo-header">
         <div class="row">
             <div class="col-md-3">
-                <img src="${pageContext.request.contextPath}/images/ChronoMed.png" class="img-responsive">
+                <img src="../images/ChronoMed.png" class="img-responsive">
             </div>
             <div class="col-md-9">
                 <div class="text-right">
@@ -20,16 +20,16 @@
 </div>
 <div class="col-md-3" id="print1">
     <div class="list-group">
-        <a href="${pageContext.request.contextPath}/paciente/historial.jsp" class="list-group-item
+        <a href="historial.jsp" class="list-group-item
            <% if (request.getRequestURI().contains("historial")) { %> active<% }%>">
             Mi historial médico</a>
-        <a href="${pageContext.request.contextPath}/paciente/citas.jsp" class="list-group-item
+        <a href="citas.jsp" class="list-group-item
            <% if (request.getRequestURI().contains("citas")) { %> active<% }%>">
             Mi historial de citas</a>
-        <a href="${pageContext.request.contextPath}/paciente/medicos.jsp" class="list-group-item
+        <a href="medicos.jsp" class="list-group-item
            <% if (request.getRequestURI().contains("medicos")) { %> active<% }%>">
             Mis médicos</a>
-        <a href="${pageContext.request.contextPath}/paciente/datos.jsp" class="list-group-item
+        <a href="datos.jsp" class="list-group-item
            <% if (request.getRequestURI().contains("datos")) { %> active<% }%>">
             Mis datos</a>
     </div>
