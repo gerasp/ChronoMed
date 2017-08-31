@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.datasource">java:comp/env/jdbc/chronomed</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <mapping class="data.entities.Administrative"/>
+        <mapping class="data.entities.DoctorPatient"/>
+        <mapping class="data.entities.Doctor"/>
+        <mapping class="data.entities.Healthcard"/>
+        <mapping class="data.entities.Medicalconsultation"/>
+        <mapping class="data.entities.Patient"/>
+        <mapping class="data.entities.Useraccount"/>
+    </session-factory>
+</hibernate-configuration>

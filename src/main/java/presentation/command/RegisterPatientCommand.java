@@ -5,11 +5,8 @@ import data.entities.Healthcard;
 import data.entities.Medicalhistory;
 import data.entities.Patient;
 import data.entities.Useraccount;
-import data.facades.AbstractFacade;
-import data.facades.HealthcardFacade;
-import data.facades.MedicalhistoryFacade;
-import data.facades.PatientFacade;
-import data.facades.UseraccountFacade;
+import data.facades.*;
+
 import java.util.Date;
 import business.utils.Security;
 
@@ -17,12 +14,12 @@ public class RegisterPatientCommand extends FrontCommand {
 
     @Override
     public void process() {
-        UseraccountFacade uaFacade = AbstractFacade.getFacade("UseraccountFacade");
+        UseraccountFacade uaFacade = FacadeFactory.getFacade("UseraccountFacade");
         Useraccount userAccount = getUserAccount();
         if (uaFacade != null) {
             uaFacade.create(userAccount);
         }
-        PatientFacade pFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
         Patient patient = getPatient(userAccount);
         if (pFacade != null) {
             pFacade.create(patient);
@@ -84,7 +81,7 @@ public class RegisterPatientCommand extends FrontCommand {
     }
 
     private void addHealthCards(Patient patient) {
-        HealthcardFacade healthcardFacade = AbstractFacade.getFacade("HealthcardFacade");
+        HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
         final String[] parameterValues = request.getParameterValues("healthCardsList");
         if(parameterValues == null) return;
         for (String healthCard : parameterValues) {
@@ -100,7 +97,7 @@ public class RegisterPatientCommand extends FrontCommand {
     }
 
     private void createMedicalHistory(Patient patient) {
-        MedicalhistoryFacade medicalhistoryFacade = AbstractFacade.getFacade("MedicalhistoryFacade");
+        MedicalhistoryFacade medicalhistoryFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
         Medicalhistory medicalhistory = new Medicalhistory();
         medicalhistory.setBloodType("-");
         medicalhistory.setFamilyHistory("-");

@@ -10,6 +10,7 @@ import data.entities.Doctor;
 import data.entities.Medicalhistory;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.MedicalhistoryFacade;
 import data.facades.PatientFacade;
 
@@ -21,8 +22,8 @@ public class EditMedicalHistoryCommand extends FrontCommand {
 
     @Override
     public void process() {
-        MedicalhistoryFacade medicalhistoryFacade = AbstractFacade.getFacade("MedicalhistoryFacade");
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
+        MedicalhistoryFacade medicalhistoryFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
         Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
 

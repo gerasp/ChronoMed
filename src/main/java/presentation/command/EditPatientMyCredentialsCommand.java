@@ -2,6 +2,7 @@ package presentation.command;
 
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 import data.facades.UseraccountFacade;
 
@@ -9,8 +10,8 @@ public class EditPatientMyCredentialsCommand extends FrontCommand {
 
     @Override
     public void process() {
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
-        UseraccountFacade useraccountFacade = AbstractFacade.getFacade("UseraccountFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
+        UseraccountFacade useraccountFacade = FacadeFactory.getFacade("UseraccountFacade");
         Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
 
         if (!request.getParameter("oldPassword").equals(patient.getUserAccountID().getPassword())) {

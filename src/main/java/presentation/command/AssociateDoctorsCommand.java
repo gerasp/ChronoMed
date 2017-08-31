@@ -3,10 +3,8 @@ package presentation.command;
 import data.entities.Doctor;
 import data.entities.DoctorPatient;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
-import data.facades.DoctorFacade;
-import data.facades.DoctorPatientFacade;
-import data.facades.PatientFacade;
+import data.facades.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,7 +24,7 @@ public class AssociateDoctorsCommand extends FrontCommand {
 
     private Patient getPatient() {
         Integer patientId = Integer.parseInt(request.getParameter("id"));
-        PatientFacade pFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
         return pFacade.find(patientId);
     }
 
@@ -36,7 +34,7 @@ public class AssociateDoctorsCommand extends FrontCommand {
         if (boardNumbers == null) {
             return doctors;
         }
-        DoctorFacade dFacade = AbstractFacade.getFacade("DoctorFacade");
+        DoctorFacade dFacade = FacadeFactory.getFacade("DoctorFacade");
 
         for (String boardNumber : boardNumbers) {
             boardNumber = boardNumber.substring(boardNumber.indexOf("(") + 1, boardNumber.length() - 1);
@@ -53,7 +51,7 @@ public class AssociateDoctorsCommand extends FrontCommand {
             doctorPatient.setDoctorID(doctor);
             return doctorPatient;
         } else {
-            DoctorPatientFacade dpFacade = AbstractFacade.getFacade("DoctorPatientFacade");
+            DoctorPatientFacade dpFacade = FacadeFactory.getFacade("DoctorPatientFacade");
             final DoctorPatient doctorPatient = dpFacade.findByPatientAndDoctor(patient, doctor);
             return doctorPatient;
         }
@@ -66,7 +64,7 @@ public class AssociateDoctorsCommand extends FrontCommand {
     }
 
     private void persistOrDeleteAssociation(boolean added, DoctorPatient doctorPatient) {
-        DoctorPatientFacade dpFacade = AbstractFacade.getFacade("DoctorPatientFacade");
+        DoctorPatientFacade dpFacade = FacadeFactory.getFacade("DoctorPatientFacade");
         if (added) {
             dpFacade.create(doctorPatient);
         } else {

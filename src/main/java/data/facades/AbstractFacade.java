@@ -5,10 +5,19 @@
  */
 package data.facades;
 
+
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
+import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.sql.DataSource;
 
 /**
  *
@@ -22,14 +31,17 @@ public abstract class AbstractFacade<T> {
         this.entityClass = entityClass;
     }
 
-    protected abstract EntityManager getEntityManager();
+    protected AbstractFacade()  {
+    }
 
-    public static <T extends AbstractFacade> T getFacade(String entityName) {
-        try {
-            return InitialContext.doLookup("java:global/ChronoMed/" + entityName);
-        } catch (NamingException ex) {
-            return null;
-        }
+
+    @PersistenceContext(unitName = "ChronoMedPU")
+    private EntityManager em;
+
+    protected EntityManager getEntityManager() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("ChronoMedPU");
+        return emf.createEntityManager();
+//        return em;
     }
 
     public void create(T entity) {
@@ -49,9 +61,12 @@ public abstract class AbstractFacade<T> {
     }
 
     public List<T> findAll() {
-        javax.persistence.criteria.CriteriaQuery cq = getEntityManager().getCriteriaBuilder().createQuery();
+        EntityManager entityManager = getEntityManager();
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        javax.persistence.criteria.CriteriaQuery cq = criteriaBuilder.createQuery();
         cq.select(cq.from(entityClass));
         return getEntityManager().createQuery(cq).getResultList();
+
     }
 
     public List<T> findRange(int[] range) {

@@ -8,6 +8,7 @@ package data.facades;
 import data.entities.Useraccount;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PersistenceContext;
 
 /**
@@ -17,13 +18,13 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class UseraccountFacade extends AbstractFacade<Useraccount> {
 
-    @PersistenceContext(unitName = "ChronoMedPU")
-    private EntityManager em;
-
-    @Override
-    protected EntityManager getEntityManager() {
-        return em;
-    }
+//    @PersistenceContext(unitName = "ChronoMedPU")
+//    private EntityManager em;
+//
+//    @Override
+//    protected EntityManager getEntityManager() {
+//        return em;
+//    }
 
     public UseraccountFacade() {
         super(Useraccount.class);
@@ -31,7 +32,7 @@ public class UseraccountFacade extends AbstractFacade<Useraccount> {
     
     public Useraccount checkLogin(String email, String password){
         try {
-            return (Useraccount) em.createQuery("SELECT x FROM Useraccount x WHERE x.email = :email AND x.password = :password")
+            return (Useraccount) getEntityManager().createQuery("SELECT x FROM Useraccount x WHERE x.email = :email AND x.password = :password")
                     .setParameter("email", email)
                     .setParameter("password", password)
                     .getSingleResult();

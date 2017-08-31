@@ -3,6 +3,7 @@ package presentation.command;
 import data.entities.Healthcard;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.HealthcardFacade;
 import data.facades.PatientFacade;
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class AssociateHealthcardsCommand extends FrontCommand {
 
     private Patient getPatient() throws NumberFormatException {
         Integer patientId = Integer.parseInt(request.getParameter("id"));
-        PatientFacade pFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
         return pFacade.find(patientId);
     }
 
@@ -45,7 +46,7 @@ public class AssociateHealthcardsCommand extends FrontCommand {
         healthcard.setNumber(healthcardNumber);
         return healthcard;
         }else{
-            HealthcardFacade hcFacade = AbstractFacade.getFacade("HealthcardFacade");
+            HealthcardFacade hcFacade = FacadeFactory.getFacade("HealthcardFacade");
             return hcFacade.findByPatientAndNumber(patient, healthcardNumber);
         }
     }
@@ -57,7 +58,7 @@ public class AssociateHealthcardsCommand extends FrontCommand {
     }
 
     private void persistOrDeleteAssociation(boolean added, Healthcard healthcard) {
-        HealthcardFacade hcFacade = AbstractFacade.getFacade("HealthcardFacade");
+        HealthcardFacade hcFacade = FacadeFactory.getFacade("HealthcardFacade");
         if (added) {
             hcFacade.create(healthcard);
         } else {

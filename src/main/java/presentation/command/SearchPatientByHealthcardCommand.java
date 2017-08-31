@@ -8,6 +8,7 @@ package presentation.command;
 import data.entities.Healthcard;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.HealthcardFacade;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class SearchPatientByHealthcardCommand extends FrontCommand {
     @Override
     public void process() {
 
-        HealthcardFacade healthcardFacade = AbstractFacade.getFacade("HealthcardFacade");
+        HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
         List<Healthcard> healthcards = healthcardFacade.findHealthCardByHealthCardNumber(request.getParameter("searchHealthCardNumber"));
         List<Patient> patients = new ArrayList<>();
         if (healthcards == null) {

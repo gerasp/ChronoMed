@@ -14,8 +14,10 @@ import javax.ejb.Singleton;
  */
 @Singleton
 public class ServerLifetimeBean {
-    
-    long time = 0;
+    public ServerLifetimeBean() {
+    }
+
+    private long time = 0;
     
     @Schedule(hour = "*", minute = "*", persistent = false)
     

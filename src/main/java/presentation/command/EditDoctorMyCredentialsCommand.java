@@ -3,14 +3,15 @@ package presentation.command;
 import data.entities.Doctor;
 import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
+import data.facades.FacadeFactory;
 import data.facades.UseraccountFacade;
 
 public class EditDoctorMyCredentialsCommand extends FrontCommand {
 
     @Override
     public void process() {
-        DoctorFacade doctorFacade = AbstractFacade.getFacade("DoctorFacade");
-        UseraccountFacade useraccountFacade = AbstractFacade.getFacade("UseraccountFacade");
+        DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
+        UseraccountFacade useraccountFacade = FacadeFactory.getFacade("UseraccountFacade");
         Doctor doctor = doctorFacade.find(Integer.parseInt(request.getParameter("id")));
 
         if (!request.getParameter("oldPassword").equals(doctor.getUserAccountID().getPassword())) {

@@ -1,0 +1,25 @@
+<Context>
+    <Resource name="ServerLifetimeBean" auth="Container"
+              type="business.beans.ServerLifetimeBean"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="AbstractFacade" auth="Container"
+              type="data.facades.AbstractFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="UseraccountFacade" auth="Container"
+              type="data.facades.UseraccountFacade"
+              factory="org.apache.naming.factory.BeanFactory"/>
+
+    <Resource name="jdbc/chronomed"
+
+              auth="Container"
+              type="javax.sql.DataSource"
+              url="jdbc:mysql://mealtera.com:3306/chronomed"
+              driverClassName="com.mysql.jdbc.Driver"
+              username="chronomed"
+
+              password="chronomed"
+              maxActive="15"
+              maxIdle="3"/>
+</Context>

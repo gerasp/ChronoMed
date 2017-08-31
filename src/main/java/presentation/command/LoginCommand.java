@@ -9,11 +9,8 @@ import data.entities.Administrative;
 import data.entities.Doctor;
 import data.entities.Patient;
 import data.entities.Useraccount;
-import data.facades.AbstractFacade;
-import data.facades.AdministrativeFacade;
-import data.facades.DoctorFacade;
-import data.facades.PatientFacade;
-import data.facades.UseraccountFacade;
+import data.facades.*;
+
 import javax.servlet.http.HttpSession;
 
 /**
@@ -25,7 +22,7 @@ public class LoginCommand extends FrontCommand{
     @Override
     public void process() {
         request.getSession().invalidate();
-        UseraccountFacade useraccountFacade = AbstractFacade.getFacade("UseraccountFacade");
+        UseraccountFacade useraccountFacade = FacadeFactory.getFacade("UseraccountFacade");
         if (useraccountFacade == null) return;
         if (!checkLogin(useraccountFacade))return;
         userRedirect();
@@ -61,19 +58,19 @@ public class LoginCommand extends FrontCommand{
     }
     
     private Object getUserByAccount(Useraccount account) {
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         if (patientFacade != null) {
             Patient patient = patientFacade.findByAccount(account);
             if (patient!= null) return patient;
         }
         
-        AdministrativeFacade administrativeFacade = AbstractFacade.getFacade("AdministrativeFacade");
+        AdministrativeFacade administrativeFacade = FacadeFactory.getFacade("AdministrativeFacade");
         if (administrativeFacade != null) {
             Administrative administrative  = administrativeFacade.findByAccount(account);
             if (administrative!= null) return administrative;
         }
         
-        DoctorFacade doctorFacade = AbstractFacade.getFacade("DoctorFacade");
+        DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
         if (doctorFacade != null) {
             Doctor doctor  = doctorFacade.findByAccount(account);
             if (doctor!= null) return doctor;

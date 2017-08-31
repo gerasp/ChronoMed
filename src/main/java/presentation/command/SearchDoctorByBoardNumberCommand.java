@@ -8,6 +8,8 @@ package presentation.command;
 import data.entities.Doctor;
 import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
+import data.facades.FacadeFactory;
+
 import java.util.List;
 
 /**
@@ -18,7 +20,7 @@ public class SearchDoctorByBoardNumberCommand extends FrontCommand {
     
     @Override
     public void process() {
-        DoctorFacade doctorFacade = AbstractFacade.getFacade("DoctorFacade");
+        DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
         
         try{
             List<Doctor> doctorList = doctorFacade.findByBoardNumber(request.getParameter("search"));        

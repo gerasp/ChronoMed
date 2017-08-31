@@ -10,6 +10,7 @@ import data.entities.DoctorPatient;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
 import data.facades.DoctorPatientFacade;
+import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,13 +23,13 @@ public class SearchMyPatientsByNifCommand extends FrontCommand{
     
     @Override
     public void process() {
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         List<Patient> patients = patientFacade.findByNif(request.getParameter("searchNif"));
         
         Doctor doctor = (Doctor) request.getSession().getAttribute("user");
         List<Patient> filteredPatients = new ArrayList<>();
         for (Patient patient : patients) {
-            DoctorPatientFacade doctorPatientFacade = AbstractFacade.getFacade("DoctorPatientFacade");
+            DoctorPatientFacade doctorPatientFacade = FacadeFactory.getFacade("DoctorPatientFacade");
             DoctorPatient doctorPatient = doctorPatientFacade.findByPatientAndDoctor(patient, doctor);
             if (doctorPatient != null) {
                 filteredPatients.add(patient);

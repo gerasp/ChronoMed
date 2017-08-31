@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <application xmlns="http://java.sun.com/xml/ns/javaee"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/application_6.xsd"
              version="6">
 
+    <module id="untitled1-Web">
+        <web>
+            <web-uri>web.war</web-uri>
+            <context-root>untitled1Web</context-root>
+        </web>
+    </module>
+    <module id="untitled1-EJB">
+        <ejb>ejb.jar</ejb>
+    </module>
+    <resource-ref>
+        <description>DB ChronoMedDS</description>
+        <res-ref-name>jdbc/ChronoMedDS</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </application>

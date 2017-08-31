@@ -11,6 +11,7 @@ import data.entities.Healthcard;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
 import data.facades.DoctorPatientFacade;
+import data.facades.FacadeFactory;
 import data.facades.HealthcardFacade;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +24,7 @@ public class SearchMyPatientsByHealthcardCommand extends FrontCommand {
 
     @Override
     public void process() {
-        HealthcardFacade healthcardFacade = AbstractFacade.getFacade("HealthcardFacade");
+        HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
         List<Healthcard> healthcards = healthcardFacade.findHealthCardByHealthCardNumber(request.getParameter("searchHealthCardNumber"));
         List<Patient> patients = new ArrayList<>();
         if (healthcards == null) {
@@ -36,7 +37,7 @@ public class SearchMyPatientsByHealthcardCommand extends FrontCommand {
         Doctor doctor = (Doctor) request.getSession().getAttribute("user");
         List<Patient> filteredPatients = new ArrayList<>();
         for (Patient patient : patients) {
-            DoctorPatientFacade doctorPatientFacade = AbstractFacade.getFacade("DoctorPatientFacade");
+            DoctorPatientFacade doctorPatientFacade = FacadeFactory.getFacade("DoctorPatientFacade");
             DoctorPatient doctorPatient = doctorPatientFacade.findByPatientAndDoctor(patient, doctor);
             if (doctorPatient != null) {
                 filteredPatients.add(patient);

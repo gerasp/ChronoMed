@@ -5,6 +5,7 @@ import data.entities.Doctor;
 import data.entities.Useraccount;
 import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
+import data.facades.FacadeFactory;
 import data.facades.UseraccountFacade;
 import business.utils.Security;
 
@@ -12,12 +13,12 @@ public class RegisterDoctorCommand extends FrontCommand {
 
     @Override
     public void process() {
-        UseraccountFacade uaFacade = AbstractFacade.getFacade("UseraccountFacade");
+        UseraccountFacade uaFacade = FacadeFactory.getFacade("UseraccountFacade");
         Useraccount userAccount = getUserAccount();
         if (uaFacade != null) {
             uaFacade.create(userAccount);
         }
-        DoctorFacade dFacade = AbstractFacade.getFacade("DoctorFacade");
+        DoctorFacade dFacade = FacadeFactory.getFacade("DoctorFacade");
         Doctor doctor = getDoctor(userAccount);
         if (dFacade != null) {
             dFacade.create(doctor);

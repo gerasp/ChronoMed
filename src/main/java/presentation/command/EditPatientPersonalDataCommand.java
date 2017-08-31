@@ -4,6 +4,7 @@ import business.utils.Email;
 import data.entities.Administrative;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 import java.util.Date;
 
@@ -11,7 +12,7 @@ public class EditPatientPersonalDataCommand extends FrontCommand {
 
     @Override
     public void process() {
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
         patient.setName(request.getParameter("name"));
         patient.setSurname(request.getParameter("surname"));

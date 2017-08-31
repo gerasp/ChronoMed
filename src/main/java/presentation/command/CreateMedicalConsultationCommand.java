@@ -9,6 +9,7 @@ import data.entities.Doctor;
 import data.entities.Medicalconsultation;
 import data.entities.Patient;
 import data.facades.AbstractFacade;
+import data.facades.FacadeFactory;
 import data.facades.MedicalconsultationFacade;
 import data.facades.PatientFacade;
 import java.util.Date;
@@ -21,8 +22,8 @@ public class CreateMedicalConsultationCommand extends FrontCommand{
 
     @Override
     public void process() {
-        MedicalconsultationFacade medicalconsultationFacade = AbstractFacade.getFacade("MedicalconsultationFacade");
-        PatientFacade patientFacade = AbstractFacade.getFacade("PatientFacade");
+        MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
+        PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
         Doctor doctor = (Doctor) request.getSession().getAttribute("user");
 
