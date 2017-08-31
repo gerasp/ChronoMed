@@ -17,7 +17,7 @@
 <%@page import="data.facades.AdministrativeFacade"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
-<%-- 
+<%--
     Document   : db
     Created on : 28-mar-2017, 14:02:32
     Author     : Adrian

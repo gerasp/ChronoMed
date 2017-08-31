@@ -11,7 +11,7 @@ public final class Main {
 //        tomcat.setPort(Integer.valueOf(System.getenv("PORT")));
         tomcat.setPort(8000);
 
-        tomcat.addWebapp("/", new File("src/main/webapp/").getAbsolutePath());
+        tomcat.addWebapp("/", new File("web/").getAbsolutePath());
 
         tomcat.start();
 
