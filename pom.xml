@@ -114,7 +114,7 @@
 					<assembleDirectory>target</assembleDirectory>
 					<programs>
 						<program>
-							<mainClass>net.gerardomedina.chronomed.Main</mainClass>
+							<mainClass>Main</mainClass>
 							<name>webapp</name>
 						</program>
 					</programs>
