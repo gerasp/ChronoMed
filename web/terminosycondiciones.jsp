@@ -1,5 +1,4 @@
-<html>
-<%@include file="head.jsp" %>
+<%@include file="header.jsp" %>
 <body class="body-background">
 
 <div class="container">

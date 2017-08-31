@@ -5,8 +5,7 @@
 <%@page import="data.facades.PatientFacade"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page import="java.util.List" %>
-<html>
-    <%@include file="../head.jsp" %>        
+    <%@include file="/header.jsp" %>
     <style>
         textarea {
             border: #a9a9a9 1px solid;
@@ -162,7 +161,7 @@
                 $("#myModal2").modal("show")
             });
         </script>
-        <%@include file="../footer.jsp" %>
+        <%@include file="/footer.jsp" %>
 
     </body>
 </html>

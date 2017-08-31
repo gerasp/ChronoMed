@@ -1,8 +1,7 @@
 <%@page import="data.entities.Medicalhistory"%>
 <%@page import="data.facades.FacadeFactory"%>
 <%@page import="data.facades.MedicalhistoryFacade"%>
-<html>
-    <%@include file="../head.jsp" %>        
+    <%@include file="/header.jsp" %>
     <body class="body-background">
 
         <div class="container">
@@ -52,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <%@include file="/footer.jsp" %>
 
     </body>
 </html>

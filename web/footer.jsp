@@ -1,6 +1,7 @@
-<div class="section"></div>
 <%@include file="message.jsp" %>
 
+<% if (request.getSession().getAttribute("user") != null) { %>
+<div class="section"></div>
 <div class="bottom-navbar navbar navbar-default navbar-fixed-bottom navbar-inverse">
     <div class="container">
         <div class="navbar-header">
@@ -27,3 +28,4 @@
         </div>
     </div>
 </div>
+<% } %>

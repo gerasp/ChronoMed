@@ -1,7 +1,6 @@
 <%@page import="data.entities.Patient" %>
 <%@page import="java.util.List" %>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
 <body class="body-background">
 
 <%@include file="navigation.jsp" %>
@@ -55,7 +54,7 @@
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
                     %>
-                    <a href="/ChronoMed/administrativo/editarpaciente.jsp?id=<%= patient.getId()%>"
+                    <a href="/administrativo/editarpaciente.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -94,6 +93,6 @@
         </div>
     </div>
 </div>
-<%@include file="../footer.jsp" %>
+<%@include file="/footer.jsp" %>
 </body>
 </html>

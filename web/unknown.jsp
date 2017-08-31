@@ -1,5 +1,5 @@
 <html>
-    <%@include file="head.jsp" %>        
+    <%@include file="header.jsp" %>
     <body class="body-background">
 
         <div class="container">
@@ -10,4 +10,3 @@
         </div>
     <%@include file="footer.jsp" %>
 </body>
-</html>

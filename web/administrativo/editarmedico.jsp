@@ -1,8 +1,7 @@
 <%@page import="data.entities.Doctor" %>
 <%@page import="data.facades.DoctorFacade" %>
 <%@page import="data.facades.FacadeFactory" %>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
 <body class="body-background">
 
 <%@include file="navigation.jsp" %>
@@ -171,6 +170,6 @@
         </div>
     </div>
 </div>
-<%@include file="../footer.jsp" %>
+<%@include file="/footer.jsp" %>
 </body>
 </html>

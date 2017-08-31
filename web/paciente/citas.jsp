@@ -3,8 +3,7 @@
 <%@page import="data.facades.MedicalconsultationFacade"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
-<html>
-    <%@include file="../head.jsp" %>
+    <%@include file="/header.jsp" %>
     <script src="/js/utils.js"></script>
     <body class="body-background">
         <div class="container">
@@ -64,7 +63,7 @@
                 </div>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <%@include file="/footer.jsp" %>
 
     </body>
 </html>

@@ -2,8 +2,7 @@
 <%@page import="data.facades.DoctorFacade"%>
 <%@page import="data.facades.FacadeFactory"%>
 <%@page import="java.util.List"%>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
     <body class="body-background">
         <div class="container">
             <div class="row">
@@ -38,7 +37,7 @@
                 </div>
             </div>
         </div>
-        <%@include file="../footer.jsp" %>
+        <%@include file="/footer.jsp" %>
 
     </body>
 </html>

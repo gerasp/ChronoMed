@@ -1,7 +1,6 @@
 <%@page import="java.util.List" %>
 <%@page import="data.entities.Patient" %>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
 <body class="body-background">
 
 <div class="container">
@@ -82,7 +81,7 @@
         </div>
     </div>
 </div>
-<%@include file="../footer.jsp" %>
+<%@include file="/footer.jsp" %>
 
 </body>
 </html>

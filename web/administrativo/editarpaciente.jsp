@@ -5,8 +5,7 @@
 <%@page import="data.facades.*" %>
 <%@page import="java.text.SimpleDateFormat" %>
 <%@page import="java.util.List" %>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
 <body class="body-background">
 <%@include file="navigation.jsp" %>
 <%
@@ -427,7 +426,7 @@
     }
 
 </script>
-<%@include file="../footer.jsp" %>
+<%@include file="/footer.jsp" %>
 
 </body>
 </html>

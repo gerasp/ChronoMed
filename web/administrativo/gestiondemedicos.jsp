@@ -1,7 +1,6 @@
 <%@page import="java.util.List" %>
 <%@page import="data.entities.Doctor" %>
-<html>
-<%@include file="../head.jsp" %>
+<%@include file="/header.jsp" %>
 <body class="body-background">
 <%@include file="navigation.jsp" %>
 <%
@@ -41,7 +40,7 @@
                         for (Doctor doctor : doctorList) {
 
                     %>
-                    <a href="/ChronoMed/administrativo/editarmedico.jsp?id=<%= doctor.getId()%>"
+                    <a href="/administrativo/editarmedico.jsp?id=<%= doctor.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -62,7 +61,7 @@
     </div>
 </div>
 
-<%@include file="../footer.jsp" %>
+<%@include file="/footer.jsp" %>
 
 </body>
 </html>
