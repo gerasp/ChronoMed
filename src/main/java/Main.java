@@ -17,7 +17,7 @@ public final class Main {
         tomcat.enableNaming();
 
         Context ctx = tomcat.addWebapp("/", new File("web/").getAbsolutePath());
-        ctx.setConfigFile(new URL("file:///home/gerardo/Schreibtisch/javaeesample-heroku/META-INF/context.xml"));
+        ctx.setConfigFile( new URL("file:./../META_INF/context.xml"));
 
         tomcat.start();
         tomcat.getServer().await();
