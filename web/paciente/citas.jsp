@@ -4,16 +4,12 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <html>
-    <%@include file="../head.jsp" %>        
+    <%@include file="../head.jsp" %>
     <script src="${pageContext.request.contextPath}/js/utils.js"></script>
     <body class="body-background">
-
-
-
         <div class="container">
             <div class="row">
                 <%@include file="navigation.jsp" %>
-
                 <%
                     MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
                     List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
@@ -55,12 +51,10 @@
                                             <b>Pruebas</b>: <%=medicalconsultation.getExaminations()%><br>
                                             <b>Tratamiento</b>: <%=medicalconsultation.getTreatment()%><br>
                                             <b>Recomendaciones</b>: <%=medicalconsultation.getRecomendations()%><br>
-
                                         </p>
                                     </div>
                                 </div>
                             </li>
-
                             <%
                                     }
                                 }%>

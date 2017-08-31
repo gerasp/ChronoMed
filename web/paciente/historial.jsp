@@ -13,15 +13,13 @@
                     Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
                 %>
 
-
                 <div class="col-md-9">
                     <div class="signin-form-container">
                         <h1 class="text-primary text-center"><small>Historial de</small><br>Sr<% if (patient.getGender().equals("Femenino")) {
                                 out.print("a");
                             }%>. <%=patient.getName() + " " + patient.getSurname()%></h1>
-
                         <blockquote>
-                            <footer>Grupo sangu�neo</footer>
+                            <footer>Grupo sanguíneo</footer>
                             <p><%=medicalhistory.getBloodType()%></p>
                         </blockquote>
                         <blockquote>
@@ -32,7 +30,6 @@
                             <footer>Operaciones</footer>
                             <p><%=medicalhistory.getSurgeries()%></p>
                         </blockquote>
-
                         <blockquote>
                             <footer>Alergias</footer>
                             <p><%=medicalhistory.getAllergies()%></p>

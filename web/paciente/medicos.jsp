@@ -3,7 +3,7 @@
 <%@page import="data.facades.FacadeFactory"%>
 <%@page import="java.util.List"%>
 <html>
-<%@include file="/head.jsp" %>
+<%@include file="../head.jsp" %>
     <body class="body-background">
         <div class="container">
             <div class="row">
@@ -21,7 +21,7 @@
                             <a class="list-group-item">
                                 <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%></h4>
                                 <p class="list-group-item-text">
-                                    N� colegiado: <%= doctor.getBoardNumber()%> | Especialidad: <%= doctor.getSpeciality() %> | N� tel�fono: <%= doctor.getPhoneNumber()%>
+                                    N� colegiado: <%= doctor.getBoardNumber()%> | Especialidad: <%= doctor.getSpeciality() %> | Nº teléfono: <%= doctor.getPhoneNumber()%>
                                 </p>
                             </a>
 
@@ -29,7 +29,7 @@
                                 }
                             } else {
                             %>
-                            <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-exclamation-circle"></i> No tiene ning�n m�dico asignado</span></h2>
+                            <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-exclamation-circle"></i> No tiene ningún médico asignado</span></h2>
                             <%
                                 }
                             %>
