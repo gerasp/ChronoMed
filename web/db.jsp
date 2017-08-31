@@ -38,10 +38,11 @@
 
             Context initCtx = new InitialContext();
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
+
             DataSource ds = (DataSource)
                     envCtx.lookup("jdbc/chronomed");
-
-            Connection conn = ds.getConnection();
+//
+//            Connection conn = ds.getConnection();
 
             ServerLifetimeBean serverLifetimeBean = (ServerLifetimeBean) envCtx.lookup("ServerLifetimeBean");
             out.print(serverLifetimeBean.getTime());

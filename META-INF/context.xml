@@ -12,13 +12,11 @@
               factory="org.apache.naming.factory.BeanFactory"/>
 
     <Resource name="jdbc/chronomed"
-
               auth="Container"
               type="javax.sql.DataSource"
               url="jdbc:mysql://mealtera.com:3306/chronomed"
               driverClassName="com.mysql.jdbc.Driver"
               username="chronomed"
-
               password="chronomed"
               maxActive="15"
               maxIdle="3"/>

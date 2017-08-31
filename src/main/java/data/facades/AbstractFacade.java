@@ -31,7 +31,7 @@ public abstract class AbstractFacade<T> {
         this.entityClass = entityClass;
     }
 
-    protected AbstractFacade()  {
+    public AbstractFacade()  {
     }
 
 

@@ -5,6 +5,9 @@
  */
 package data.entities;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
@@ -107,11 +110,15 @@ public class Patient implements Serializable {
     private String phoneNumber;
     @Size(max = 255)
     private String alternativePhoneNumber;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID", fetch = FetchType.EAGER)
+
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID")
     private Collection<Healthcard> healthcardCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID", fetch = FetchType.EAGER)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID")
+    @LazyCollection(LazyCollectionOption.FALSE)
     private Collection<DoctorPatient> doctorPatientCollection;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID", fetch = FetchType.EAGER)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "patientID")
     private Collection<Medicalconsultation> medicalconsultationCollection;
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "patientID", fetch = FetchType.EAGER)
     private Medicalhistory medicalhistory;

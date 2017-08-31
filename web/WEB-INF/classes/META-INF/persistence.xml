@@ -15,8 +15,10 @@
         <properties>
             <property name="hibernate.connection.url" value="jdbc:mysql://mealtera.com:3306/chronomed"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.username" value="chronomed"/>
-            <property name="hibernate.connection.password" value="chronomed"/>
+            <!--<property name="hibernate.connection.username" value="chronomed"/>-->
+            <!--<property name="hibernate.connection.password" value="chronomed"/>-->
+            <property name="hibernate.connection.datasource" value="java:comp/env/jdbc/chronomed"/>
+
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.archive.autodetection" value="class"/>
             <property name="hibernate.show_sql" value="true"/>

@@ -9,12 +9,5 @@
         <property name="hibernate.connection.datasource">java:comp/env/jdbc/chronomed</property>
         <property name="hibernate.current_session_context_class">thread</property>
 
-        <mapping class="data.entities.Administrative"/>
-        <mapping class="data.entities.DoctorPatient"/>
-        <mapping class="data.entities.Doctor"/>
-        <mapping class="data.entities.Healthcard"/>
-        <mapping class="data.entities.Medicalconsultation"/>
-        <mapping class="data.entities.Patient"/>
-        <mapping class="data.entities.Useraccount"/>
     </session-factory>
 </hibernate-configuration>
