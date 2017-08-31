@@ -1,5 +1,5 @@
-<%@page import="java.util.List"%>
 <%@page import="data.entities.Medicalhistory"%>
+<%@page import="data.facades.FacadeFactory"%>
 <%@page import="data.facades.MedicalhistoryFacade"%>
 <html>
     <%@include file="../head.jsp" %>        
@@ -9,7 +9,7 @@
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <%
-                    MedicalhistoryFacade medicalhistoryFacade = InitialContext.doLookup("java:global/ChronoMed/MedicalhistoryFacade");
+                    MedicalhistoryFacade medicalhistoryFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
                     Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
                 %>
 
@@ -21,7 +21,7 @@
                             }%>. <%=patient.getName() + " " + patient.getSurname()%></h1>
 
                         <blockquote>
-                            <footer>Grupo sanguíneo</footer>
+                            <footer>Grupo sanguï¿½neo</footer>
                             <p><%=medicalhistory.getBloodType()%></p>
                         </blockquote>
                         <blockquote>

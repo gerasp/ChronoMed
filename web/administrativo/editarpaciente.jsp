@@ -14,9 +14,9 @@
     <body class="body-background">
         <%@include file="navigation.jsp" %>
         <%
-            PatientFacade patientFacade = InitialContext.doLookup("java:global/ChronoMed/PatientFacade");
-            DoctorPatientFacade doctorPatientFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorPatientFacade");
-            HealthcardFacade healthcardFacade = InitialContext.doLookup("java:global/ChronoMed/HealthcardFacade");
+            PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
+            DoctorPatientFacade doctorPatientFacade = FacadeFactory.getFacade("DoctorPatientFacade");
+            HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
             Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
             List<DoctorPatient> doctorPatientList = doctorPatientFacade.findByPatient(patient);
             List<Healthcard> healthcardList = healthcardFacade.findByPatient(patient);
@@ -30,7 +30,7 @@
                         <input type="hidden" value="<%= patient.getId()%>" name="id">
                         <div class="row">
                             <div class="col-md-2">
-                                <a href="/ChronoMed/administrativo/gestiondepacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+                                <a href="/ChronoMed/administrativo/gestiondepacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrï¿½s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -44,7 +44,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Médicos vinculados</a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Mï¿½dicos vinculados</a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
@@ -74,7 +74,7 @@
                                                     <input list="doctors"  class="form-control" id="inputDoctor" placeholder="Elige tu doctor...">
                                                     <datalist  id="doctors">
                                                         <%
-                                                            DoctorFacade doctorFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorFacade");
+                                                            DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
                                                             for (Doctor doctor : doctorFacade.findAll()) {
                                                         %>
                                                         <option value="<%= doctor.getName() + " (" + doctor.getBoardNumber() + ")"%>">
@@ -141,7 +141,7 @@
                                                            required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGender" class="control-label">Género</label>
+                                                    <label for="inputGender" class="control-label">Gï¿½nero</label>
                                                     <select class="form-control"  required name="gender" id="inputGender">
                                                         <option <% if (patient.getGender().equals("Masculino")) {
                                                                 out.println(" selected ");
@@ -210,7 +210,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <div class="col-md-3">
-                                                    <button type="button" onclick="addHealthCard()" class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>Añadir tarjeta sanitaria&nbsp;</button>
+                                                    <button type="button" onclick="addHealthCard()" class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>Aï¿½adir tarjeta sanitaria&nbsp;</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -245,7 +245,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputAddress" class="control-label">Dirección*</label>
+                                                    <label for="inputAddress" class="control-label">Direcciï¿½n*</label>
                                                     <input type="text" class="form-control" id="inputAddress" name="address" value="<%= patient.getAddress()%>" required>
                                                 </div>
                                             </div>
@@ -255,7 +255,7 @@
                                                     <input type="text" class="form-control" id="inputLocality" name="locality" value="<%= patient.getLocality()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputZipcode" class="control-label">Código postal*</label>
+                                                    <label for="inputZipcode" class="control-label">Cï¿½digo postal*</label>
                                                     <input type="text" class="form-control" id="inputZipcode" name="zipCode" value="<%= patient.getZipCode()%>" required>
                                                 </div>
                                                 <div class="form-group">
@@ -265,15 +265,15 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputCountry" class="control-label" contenteditable="true">País*</label>
+                                                    <label for="inputCountry" class="control-label" contenteditable="true">Paï¿½s*</label>
                                                     <input type="text" class="form-control" id="inputCountry" name="country" value="<%= patient.getCountry()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPhoneNumber" class="control-label">Teléfono principal*</label>
+                                                    <label for="inputPhoneNumber" class="control-label">Telï¿½fono principal*</label>
                                                     <input type="tel" class="form-control" id="inputPhoneNumber" name="phoneNumber" value="<%= patient.getPhoneNumber()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAlternativePhoneNumber" class="control-label">Teléfono alternativo</label>
+                                                    <label for="inputAlternativePhoneNumber" class="control-label">Telï¿½fono alternativo</label>
                                                     <input type="tel" class="form-control" id="inputAlternativePhoneNumber" name="alternativePhoneNumber" value="<%= patient.getAlternativePhoneNumber()%>">
                                                 </div>
                                             </div>
@@ -310,7 +310,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputEmail" class="control-label">Correo electrónico*</label>
+                                                    <label for="inputEmail" class="control-label">Correo electrï¿½nico*</label>
                                                     <input type="email" class="form-control" id="inputEmail" name="email" value="<%= patient.getUserAccountID().getEmail()%>" required>
                                                 </div>
                                                 <div class="form-group">

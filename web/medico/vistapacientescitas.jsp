@@ -21,7 +21,7 @@
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <%
-                    PatientFacade patientFacade = InitialContext.doLookup("java:global/ChronoMed/PatientFacade");
+                    PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
                     Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
 
 
@@ -31,7 +31,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print1">
-                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrï¿½s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -43,7 +43,7 @@
                         </div>
                         <blockquote>
                             <footer>Ficha</footer>
-                            <p>Paciente de género <%=patient.getGender().toLowerCase()%> y nacionalidad <%= patient.getNationality()%>, <br>nacido el <%=new SimpleDateFormat("dd/MM/yyyy").format(patient.getBirthDate())%></p>
+                            <p>Paciente de gï¿½nero <%=patient.getGender().toLowerCase()%> y nacionalidad <%= patient.getNationality()%>, <br>nacido el <%=new SimpleDateFormat("dd/MM/yyyy").format(patient.getBirthDate())%></p>
                         </blockquote>
                         <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
                             <li>
@@ -55,7 +55,7 @@
                         </ul>
                         <div class="bordered-folder">
                             <%
-                                MedicalconsultationFacade medicalconsultationFacade = InitialContext.doLookup("java:global/ChronoMed/MedicalconsultationFacade");
+                                MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
                                 List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
                             %>
 
@@ -90,7 +90,7 @@
                                         </div>
                                         <div class="timeline-body">
                                             <p>
-                                                <b>Síntomas</b>: <%=medicalconsultation.getSymptoms()%><br>
+                                                <b>Sï¿½ntomas</b>: <%=medicalconsultation.getSymptoms()%><br>
                                                 <b>Recomendaciones</b>: <%=medicalconsultation.getRecomendations()%><br>
                                                 <b>Tratamiento</b>: <%=medicalconsultation.getTreatment()%><br>
                                                 <b>Pruebas</b>: <%=medicalconsultation.getExaminations()%><br>
@@ -110,7 +110,7 @@
                                     </button><br>
                                 </div>
                                 <div class="col-md-6" id="print4">
-                                    <button id="openModal2Button" class="btn btn-primary btn-block">Añadir cita <i class="fa  fa-plus-circle"></i>
+                                    <button id="openModal2Button" class="btn btn-primary btn-block">Aï¿½adir cita <i class="fa  fa-plus-circle"></i>
                                     </button>
                                 </div>
                             </div>
@@ -124,7 +124,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Añadir cita</h4>
+                        <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Aï¿½adir cita</h4>
                     </div>
                     <form class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
                         <input type="hidden" value="CreateMedicalConsultationCommand" name="command">
@@ -132,7 +132,7 @@
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
-                                    <td><strong>Síntomas</strong></td>
+                                    <td><strong>Sï¿½ntomas</strong></td>
                                     <td><textarea rows="4" cols="40" required class="input-in-table" name="symptoms"></textarea></td>
                                 </tr>
                                 <tr>
@@ -151,7 +151,7 @@
                         </table>
                         <div class="row" style="margin:10px;">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary btn-block">Añadir cita <i class="fa  fa-plus-circle"></i>
+                                <button type="submit" class="btn btn-primary btn-block">Aï¿½adir cita <i class="fa  fa-plus-circle"></i>
                                 </button>
                             </div>
                         </div>

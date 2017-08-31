@@ -19,7 +19,7 @@
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <%
-                    PatientFacade patientFacade = InitialContext.doLookup("java:global/ChronoMed/PatientFacade");
+                    PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
                     Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
                     Doctor doctor1 = (Doctor) request.getSession().getAttribute("user");
                     Email.sendNotification(doctor1.getSurname() +", " + doctor1.getName() + " (" + doctor1.getBoardNumber() + ")" , "una visita a su historial", patient.getUserAccountID().getEmail());
@@ -29,7 +29,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print5">
-                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrás</a>
+                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atrï¿½s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -41,7 +41,7 @@
                         </div>
                         <blockquote>
                             <footer>Ficha</footer>
-                            <p>Paciente de género <%=patient.getGender().toLowerCase()%> y nacionalidad <%= patient.getNationality()%>, <br>nacido el <%=new SimpleDateFormat("dd/MM/yyyy").format(patient.getBirthDate())%></p>
+                            <p>Paciente de gï¿½nero <%=patient.getGender().toLowerCase()%> y nacionalidad <%= patient.getNationality()%>, <br>nacido el <%=new SimpleDateFormat("dd/MM/yyyy").format(patient.getBirthDate())%></p>
                         </blockquote>
                         <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
                             <li  class="active">
@@ -56,14 +56,14 @@
                                 <input type="hidden" value="EditMedicalHistoryCommand" name="command">
                                 <input type="hidden" value="<%= patient.getId()%>" name="id">
                                 <%
-                                    MedicalhistoryFacade medicalhistoryFacade = InitialContext.doLookup("java:global/ChronoMed/MedicalhistoryFacade");
+                                    MedicalhistoryFacade medicalhistoryFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
                                     Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
                                 %>
                                 <h5 style="margin-left:10px; margin-bottom: 10px;" class="text-muted text-center" id="print6"><i class="fa fa-question-circle"></i> Puede editar los campos clicando sobre ellos y luego haciendo click en "Guardar cambios"</h5>
                                 <table class="table table-striped">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Grupo sanguíneo</strong></td>
+                                            <td><strong>Grupo sanguï¿½neo</strong></td>
                                             <td><input required class="input-in-table" type="text" name="bloodType" value="<%=medicalhistory.getBloodType()%>"></td>
                                         </tr>
                                         <tr>

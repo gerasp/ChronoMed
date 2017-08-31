@@ -2,7 +2,7 @@
 <%@page import="data.entities.Doctor"%>
 <%@page import="javax.naming.InitialContext"%>
 
-<% DoctorFacade doctorFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorFacade");
+<% DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
     Doctor doctor = (Doctor) request.getSession().getAttribute("user");%>
 <div class="section">
     <div class="container logo-header">

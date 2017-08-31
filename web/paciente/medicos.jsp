@@ -1,10 +1,9 @@
 <%@page import="data.entities.Doctor"%>
 <%@page import="data.facades.DoctorFacade"%>
-<%@page import="data.facades.PatientFacade"%>
+<%@page import="data.facades.FacadeFactory"%>
 <%@page import="java.util.List"%>
-<%@page import="data.entities.Patient"%>
 <html>
-    <%@include file="../head.jsp" %>        
+<%@include file="/head.jsp" %>
     <body class="body-background">
         <div class="container">
             <div class="row">
@@ -13,7 +12,7 @@
                     <div class="signin-form-container">
                         <div class="list-group">
                             <% 
-                                DoctorFacade doctorFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorFacade");
+                                DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
                                 List<Doctor> doctorList = doctorFacade.findByPatient(patient);
                                 
                                 if (doctorList != null && !doctorList.isEmpty()) {
@@ -22,7 +21,7 @@
                             <a class="list-group-item">
                                 <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%></h4>
                                 <p class="list-group-item-text">
-                                    Nº colegiado: <%= doctor.getBoardNumber()%> | Especialidad: <%= doctor.getSpeciality() %> | Nº teléfono: <%= doctor.getPhoneNumber()%>
+                                    Nï¿½ colegiado: <%= doctor.getBoardNumber()%> | Especialidad: <%= doctor.getSpeciality() %> | Nï¿½ telï¿½fono: <%= doctor.getPhoneNumber()%>
                                 </p>
                             </a>
 
@@ -30,7 +29,7 @@
                                 }
                             } else {
                             %>
-                            <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-exclamation-circle"></i> No tiene ningún médico asignado</span></h2>
+                            <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-exclamation-circle"></i> No tiene ningï¿½n mï¿½dico asignado</span></h2>
                             <%
                                 }
                             %>

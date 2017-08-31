@@ -9,7 +9,7 @@
 
         <%@include file="navigation.jsp" %>
         <%
-            DoctorFacade doctorFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorFacade");
+            DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
             Doctor doctor = doctorFacade.find(Integer.parseInt(request.getParameter("id")));
         %>
         <div class="container">
@@ -18,7 +18,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2">
-                                <a href="/ChronoMed/administrativo/gestiondemedicos.jsp" class="btn btn-block btn-lg btn-link "><i class="fa  -circle fa-arrow-circle-left"></i> Atrás</a>
+                                <a href="/ChronoMed/administrativo/gestiondemedicos.jsp" class="btn btn-block btn-lg btn-link "><i class="fa  -circle fa-arrow-circle-left"></i> Atrï¿½s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Dr<% if (doctor.getGender().equals("Femenino")) {
@@ -56,7 +56,7 @@
                                                     <input type="text" required name="nif" class="form-control" id="inputNif" value="<%= doctor.getNif()%>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputGender" class="control-label">Género*</label>
+                                                    <label for="inputGender" class="control-label">Gï¿½nero*</label>
                                                     <select class="form-control"  required name="gender" id="inputGender">
                                                         <option <% if (doctor.getGender().equals("Masculino")) {
                                                                 out.println(" selected ");
@@ -73,15 +73,15 @@
                                                     <input type="text" required name="speciality" class="form-control" id="inputSpeciality" value="<%= doctor.getSpeciality()%>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputBoardNumber" class="control-label">Nº de colegiado*</label>
+                                                    <label for="inputBoardNumber" class="control-label">Nï¿½ de colegiado*</label>
                                                     <input type="number" required name="boardNumber" class="form-control" id="inputBoardNumber" value="<%= doctor.getBoardNumber()%>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPhoneNumber" class="control-label">Teléfono de consulta*</label>
+                                                    <label for="inputPhoneNumber" class="control-label">Telï¿½fono de consulta*</label>
                                                     <input type="text" required name="phoneNumber" class="form-control" id="inputPhoneNumber" value="<%= doctor.getPhoneNumber()%>">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAlternativePhoneNumber" class="control-label">Teléfono personal</label>
+                                                    <label for="inputAlternativePhoneNumber" class="control-label">Telï¿½fono personal</label>
                                                     <input type="text" name="alternativePhoneNumber" class="form-control" id="inputAlternativePhoneNumber" value="<%= doctor.getAlternativePhoneNumber()%>">
                                                 </div>
                                             </div>
@@ -118,7 +118,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputEmail" class="control-label">Correo electrónico*</label>
+                                                    <label for="inputEmail" class="control-label">Correo electrï¿½nico*</label>
                                                     <input type="email" required name="email" class="form-control" id="inputEmail" value="<%= doctor.getUserAccountID().getEmail()%>">
                                                 </div>
                                                 <div class="form-group">

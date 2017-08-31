@@ -1,8 +1,8 @@
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="java.util.Date"%>
-<%@page import="data.facades.MedicalconsultationFacade"%>
-<%@page import="java.util.List"%>
 <%@page import="data.entities.Medicalconsultation"%>
+<%@page import="data.facades.FacadeFactory"%>
+<%@page import="data.facades.MedicalconsultationFacade"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.List"%>
 <html>
     <%@include file="../head.jsp" %>        
     <script src="${pageContext.request.contextPath}/js/utils.js"></script>
@@ -15,7 +15,7 @@
                 <%@include file="navigation.jsp" %>
 
                 <%
-                    MedicalconsultationFacade medicalconsultationFacade = InitialContext.doLookup("java:global/ChronoMed/MedicalconsultationFacade");
+                    MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
                     List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
                 %>
                 <div class="col-md-9">
@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="timeline-body">
                                         <p>
-                                            <b>Síntomas</b>: <%=medicalconsultation.getSymptoms()%><br>
+                                            <b>Sï¿½ntomas</b>: <%=medicalconsultation.getSymptoms()%><br>
                                             <b>Pruebas</b>: <%=medicalconsultation.getExaminations()%><br>
                                             <b>Tratamiento</b>: <%=medicalconsultation.getTreatment()%><br>
                                             <b>Recomendaciones</b>: <%=medicalconsultation.getRecomendations()%><br>

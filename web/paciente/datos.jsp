@@ -1,14 +1,10 @@
-<%@page import="data.facades.HealthcardFacade"%>
-<%@page import="java.util.List"%>
-<%@page import="data.facades.DoctorPatientFacade"%>
-<%@page import="data.entities.Doctor"%>
-<%@page import="data.facades.DoctorFacade"%>
 <%@page import="data.entities.DoctorPatient"%>
 <%@page import="data.entities.Healthcard"%>
+<%@page import="data.facades.DoctorPatientFacade"%>
+<%@page import="data.facades.FacadeFactory"%>
+<%@page import="data.facades.HealthcardFacade"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="data.entities.Patient"%>
-<%@page import="data.facades.PatientFacade"%>
-<%@page import="javax.naming.InitialContext"%>
+<%@page import="java.util.List"%>
 <html>
     <%@include file="../head.jsp" %>        
     <body class="body-background">
@@ -17,8 +13,8 @@
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <%
-                    DoctorPatientFacade doctorPatientFacade = InitialContext.doLookup("java:global/ChronoMed/DoctorPatientFacade");
-                    HealthcardFacade healthcardFacade = InitialContext.doLookup("java:global/ChronoMed/HealthcardFacade");
+                    DoctorPatientFacade doctorPatientFacade = FacadeFactory.getFacade("DoctorPatientFacade");
+                    HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
                     List<DoctorPatient> doctorPatientList = doctorPatientFacade.findByPatient(patient);
                     List<Healthcard> healthcardList = healthcardFacade.findByPatient(patient);
 
@@ -56,7 +52,7 @@
                                                        required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputGender" class="control-label">Género</label>
+                                                <label for="inputGender" class="control-label">Gï¿½nero</label>
                                                 <select class="form-control" disabled  required name="gender" id="inputGender">
                                                     <option <% if (patient.getGender().equals("Masculino")) {
                                                             out.println(" selected ");
@@ -125,7 +121,7 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputAddress" class="control-label">Dirección*</label>
+                                                    <label for="inputAddress" class="control-label">Direcciï¿½n*</label>
                                                     <input type="text" class="form-control" id="inputAddress" name="address" value="<%= patient.getAddress()%>" required>
                                                 </div>
                                             </div>
@@ -135,7 +131,7 @@
                                                     <input type="text" class="form-control" id="inputLocality" name="locality" value="<%= patient.getLocality()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputZipcode" class="control-label">Código postal*</label>
+                                                    <label for="inputZipcode" class="control-label">Cï¿½digo postal*</label>
                                                     <input type="text" class="form-control" id="inputZipcode" name="zipCode" value="<%= patient.getZipCode()%>" required>
                                                 </div>
                                                 <div class="form-group">
@@ -145,15 +141,15 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputCountry" class="control-label" contenteditable="true">País*</label>
+                                                    <label for="inputCountry" class="control-label" contenteditable="true">Paï¿½s*</label>
                                                     <input type="text" class="form-control" id="inputCountry" name="country" value="<%= patient.getCountry()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPhoneNumber" class="control-label">Teléfono principal*</label>
+                                                    <label for="inputPhoneNumber" class="control-label">Telï¿½fono principal*</label>
                                                     <input type="tel" class="form-control" id="inputPhoneNumber" name="phoneNumber" value="<%= patient.getPhoneNumber()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAlternativePhoneNumber" class="control-label">Teléfono alternativo</label>
+                                                    <label for="inputAlternativePhoneNumber" class="control-label">Telï¿½fono alternativo</label>
                                                     <input type="tel" class="form-control" id="inputAlternativePhoneNumber" name="alternativePhoneNumber" value="<%= patient.getAlternativePhoneNumber()%>">
                                                 </div>
                                             </div>
@@ -181,19 +177,19 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputEmail" class="control-label">Correo electrónico</label>
+                                                    <label for="inputEmail" class="control-label">Correo electrï¿½nico</label>
                                                     <input type="email" class="form-control" id="inputEmail" name="email" value="<%= patient.getUserAccountID().getEmail()%>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputOldPassword" class="control-label">Contraseña actual*</label>
+                                                    <label for="inputOldPassword" class="control-label">Contraseï¿½a actual*</label>
                                                     <input type="password" class="form-control" id="inputOldPassword" name="oldPassword" placeholder="******">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputNewPassword" class="control-label">Actualizar contraseña</label>
+                                                    <label for="inputNewPassword" class="control-label">Actualizar contraseï¿½a</label>
                                                     <input type="password" class="form-control" id="inputNewPassword" name="newPassword" placeholder="******">
                                                 </div>
                                             </div>

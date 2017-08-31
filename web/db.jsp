@@ -1,30 +1,16 @@
 
 <%@page import="business.beans.ServerLifetimeBean"%>
-<%@page import="data.entities.Medicalconsultation"%>
-<%@page import="data.entities.Medicalhistory"%>
-<%@page import="data.entities.DoctorPatient"%>
-<%@page import="data.entities.Healthcard"%>
+<%@page import="data.entities.*"%>
+<%@page import="data.facades.*"%>
+<%@page import="javax.naming.Context"%>
+<%@page import="javax.naming.InitialContext"%>
 <%@page import="java.text.SimpleDateFormat"%>
-<%@page import="data.entities.Patient"%>
-<%@page import="data.entities.Doctor"%>
-<%@page import="data.entities.Administrative"%>
+<%@page import="java.util.List"%>
 <%--
     Document   : db
     Created on : 28-mar-2017, 14:02:32
     Author     : Adrian
 --%>
-
-<%@page import="java.util.List"%>
-<%@page import="data.entities.Useraccount"%>
-<%@page import="javax.naming.InitialContext"%>
-<%@ page import="javax.ejb.EJB" %>
-<%@ page import="data.facades.*" %>
-<%@ page import="javax.naming.Context" %>
-<%@ page import="static javax.rmi.PortableRemoteObject.narrow" %>
-<%@ page import="javax.sql.DataSource" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="org.hibernate.SessionFactory" %>
-<%@ page import="org.hibernate.cfg.Configuration" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,12 +24,6 @@
 
             Context initCtx = new InitialContext();
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
-
-            DataSource ds = (DataSource)
-                    envCtx.lookup("jdbc/chronomed");
-//
-//            Connection conn = ds.getConnection();
-
             ServerLifetimeBean serverLifetimeBean = (ServerLifetimeBean) envCtx.lookup("ServerLifetimeBean");
             out.print(serverLifetimeBean.getTime());
         %>
@@ -62,7 +42,7 @@
             </tr>
             <%
 
-                UseraccountFacade uaFacade = (UseraccountFacade) envCtx.lookup("UseraccountFacade");
+                UseraccountFacade uaFacade = FacadeFactory.getFacade("UseraccountFacade");
                 List<Useraccount> userAccounts = uaFacade.findAll();
 
                 for (Useraccount userAccount : userAccounts) {
@@ -88,7 +68,7 @@
                 <th>userAccount</th>
             </tr>
             <%
-                AdministrativeFacade aFacade = (AdministrativeFacade) envCtx.lookup("AdministrativeFacade");
+                AdministrativeFacade aFacade = FacadeFactory.getFacade("AdministrativeFacade");
                 List<Administrative> administratives = aFacade.findAll();
                 for (Administrative administrative : administratives) {
                     out.println(
@@ -119,7 +99,7 @@
                 <th>userAccount</th>
             </tr>
             <%
-                DoctorFacade dFacade = (DoctorFacade) envCtx.lookup("DoctorFacade");
+                DoctorFacade dFacade = FacadeFactory.getFacade("DoctorFacade");
                 List<Doctor> doctors = dFacade.findAll();
                 for (Doctor doctor : doctors) {
                     out.println(
@@ -148,7 +128,7 @@
                 <th>patient</th>
             </tr>
             <%
-                DoctorPatientFacade dpFacade = (DoctorPatientFacade) envCtx.lookup("DoctorPatientFacade");
+                DoctorPatientFacade dpFacade = FacadeFactory.getFacade("DoctorPatientFacade");
                 List<DoctorPatient> doctorPatients = dpFacade.findAll();
                 for (DoctorPatient doctorPatient : doctorPatients) {
                     out.println(
@@ -182,7 +162,7 @@
                 <th>userAccount</th>
             </tr>
             <%
-                PatientFacade pFacade = (PatientFacade) envCtx.lookup("PatientFacade");
+                PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
                 List<Patient> patients = pFacade.findAll();
                 for (Patient patient : patients) {
                     out.println(
@@ -216,7 +196,7 @@
                 <th>patient</th>
             </tr>
             <%
-                HealthcardFacade hcFacade = (HealthcardFacade) envCtx.lookup("HealthcardFacade");
+                HealthcardFacade hcFacade = FacadeFactory.getFacade("HealthcardFacade");
                 List<Healthcard> healthcards = hcFacade.findAll();
                 for (Healthcard healthcard : healthcards) {
                     out.println(
@@ -243,7 +223,7 @@
                 <th>patientID</th>
             </tr>
             <%
-                MedicalhistoryFacade mhFacade = (MedicalhistoryFacade) envCtx.lookup("MedicalhistoryFacade");
+                MedicalhistoryFacade mhFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
                 List<Medicalhistory> medicalhistories = mhFacade.findAll();
                 for (Medicalhistory medicalhistory : medicalhistories) {
                     out.println(
@@ -276,7 +256,7 @@
                 <th>patientID</th>
             </tr>
             <%
-                MedicalconsultationFacade mcFacade = (MedicalconsultationFacade) envCtx.lookup("MedicalconsultationFacade");
+                MedicalconsultationFacade mcFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
                 List<Medicalconsultation> medicalconsultations = mcFacade.findAll();
                 for (Medicalconsultation medicalconsultation : medicalconsultations) {
                     out.println(
