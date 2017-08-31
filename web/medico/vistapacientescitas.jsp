@@ -1,14 +1,12 @@
 <%@page import="data.entities.Medicalconsultation"%>
-<%@page import="data.facades.MedicalconsultationFacade"%>
-<%@page import="java.text.SimpleDateFormat"%>
-<%@page import="data.entities.Medicalhistory"%>
-<%@page import="data.facades.MedicalhistoryFacade"%>
-<%@page import="data.facades.PatientFacade"%>
-<%@page import="java.util.List"%>
 <%@page import="data.entities.Patient"%>
+<%@page import="data.facades.FacadeFactory"%>
+<%@page import="data.facades.MedicalconsultationFacade"%>
+<%@page import="data.facades.PatientFacade"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page import="java.util.List" %>
 <html>
     <%@include file="../head.jsp" %>        
-    <script src="${pageContext.request.contextPath}/js/utils.js"></script>
     <style>
         textarea {
             border: #a9a9a9 1px solid;
@@ -16,22 +14,19 @@
         }
     </style>
     <body class="body-background">
-
         <div class="container">
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <%
                     PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
                     Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
-
-
                 %>
 
                 <div class="col-md-9">
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print1">
-                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                                <a href="/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -47,10 +42,10 @@
                         </blockquote>
                         <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
                             <li>
-                                <a href="/ChronoMed/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
+                                <a href="/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
                             </li>
                             <li  class="active">
-                                <a href="/ChronoMed/medico/vistapacientescitas.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
+                                <a href="/medico/vistapacientescitas.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
                             </li>
                         </ul>
                         <div class="bordered-folder">
@@ -124,9 +119,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title"><i class="fa fa-plus-circle"></i> A�adir cita</h4>
+                        <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Añadir cita</h4>
                     </div>
-                    <form class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
+                    <form class="form-vertical" method="POST" role="form" action="/FrontController">
                         <input type="hidden" value="CreateMedicalConsultationCommand" name="command">
                         <input type="hidden" value="<%= patient.getId()%>" name="id">
                         <table class="table table-striped">

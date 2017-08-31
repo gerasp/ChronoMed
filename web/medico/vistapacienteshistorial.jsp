@@ -1,14 +1,13 @@
 <%@page import="business.utils.Email"%>
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="data.entities.Medicalhistory"%>
+<%@page import="data.entities.Patient"%>
+<%@page import="data.facades.FacadeFactory"%>
 <%@page import="data.facades.MedicalhistoryFacade"%>
 <%@page import="data.facades.PatientFacade"%>
-<%@page import="java.util.List"%>
-<%@page import="data.entities.Patient"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <html>
     <%@include file="../head.jsp" %>        
     <body class="body-background">
-
         <style>
             textarea {
                 resize:none;
@@ -29,7 +28,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print5">
-                                <a href="/ChronoMed/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                                <a href="/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -45,14 +44,14 @@
                         </blockquote>
                         <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
                             <li  class="active">
-                                <a href="/ChronoMed/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
+                                <a href="/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
                             </li>
                             <li>
-                                <a href="/ChronoMed/medico/vistapacientescitas.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
+                                <a href="/medico/vistapacientescitas.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
                             </li>
                         </ul>
                         <div class="bordered-folder">
-                            <form class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
+                            <form class="form-vertical" method="POST" role="form" action="/FrontController">
                                 <input type="hidden" value="EditMedicalHistoryCommand" name="command">
                                 <input type="hidden" value="<%= patient.getId()%>" name="id">
                                 <%
@@ -107,6 +106,5 @@
             </div>
         </div>
         <%@include file="../footer.jsp" %>
-
     </body>
 </html>

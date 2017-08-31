@@ -5,7 +5,7 @@
 <%@page import="java.util.List"%>
 <html>
     <%@include file="../head.jsp" %>
-    <script src="${pageContext.request.contextPath}/js/utils.js"></script>
+    <script src="/js/utils.js"></script>
     <body class="body-background">
         <div class="container">
             <div class="row">

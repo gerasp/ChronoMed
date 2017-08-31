@@ -1,15 +1,10 @@
 package business.utils;
 
-import java.io.UnsupportedEncodingException;
-import java.util.Properties;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
+import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
+import java.io.UnsupportedEncodingException;
+import java.util.Properties;
 
 public class Email {
 
@@ -84,9 +79,9 @@ public class Email {
 
     private static String getEmailTemplateUserAccounts() {
         return "<html><body style=\"width: 1450px;max-height: 680px;margin: 0;font-family: arial;\">\n"
-                + "		<div><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-sup.png\"></div>\n"
+                + "		<div><img src=\"http://mealtera.com:8080/images/email/bg-sup.png\"></div>\n"
                 + "		<div style=\"margin-top:-3px\">\n"
-                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-izq.png\"></div>\n"
+                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/images/email/bg-izq.png\"></div>\n"
                 + "			<div style=\"width: 626px;height: 278px;display: inline-block;float: left;\">\n"
                 + "				<h2 style=\"margin-top: 7px;\">¡Bienvenido Sr./Sra. %s!</h2>\n"
                 + "				<p>Sus credenciales para acceder son: </p>\n"
@@ -100,17 +95,17 @@ public class Email {
                 + "						Si tiene algún problema o desea consultar algo, contacte con nuestro servicio técnico 24h</a>\n"
                 + "				</div>\n"
                 + "			</div>\n"
-                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-der.png\" style=\"\"></div>\n"
+                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/images/email/bg-der.png\" style=\"\"></div>\n"
                 + "		</div>\n"
-                + "		<div style=\"margin-top:-3px\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-inf.png\"></div>\n"
+                + "		<div style=\"margin-top:-3px\"><img src=\"http://mealtera.com:8080/images/email/bg-inf.png\"></div>\n"
                 + "</body></html>";
     }
     
     private static String getEmailTemplateNotifications() {
         return "<html><body style=\"width: 1450px;max-height: 680px;margin: 0;font-family: arial;\">\n"
-                + "		<div><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-sup.png\"></div>\n"
+                + "		<div><img src=\"http://mealtera.com:8080/images/email/bg-sup.png\"></div>\n"
                 + "		<div style=\"margin-top:-3px\">\n"
-                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-izq.png\"></div>\n"
+                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/images/email/bg-izq.png\"></div>\n"
                 + "			<div style=\"width: 626px;height: 278px;display: inline-block;float: left;\">\n"
                 + "				<h2 style=\"margin-top: 7px;\">Notificación</h2>\n"
                 + "				<div style=\"margin: 25px;\">\n"
@@ -122,9 +117,9 @@ public class Email {
                 + "						Si tiene algún problema o desea consultar algo, contacte con nuestro servicio técnico 24h</a>\n"
                 + "				</div>\n"
                 + "			</div>\n"
-                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-der.png\" style=\"\"></div>\n"
+                + "			<div style=\"display: inline-block;float: left;\"><img src=\"http://mealtera.com:8080/images/email/bg-der.png\" style=\"\"></div>\n"
                 + "		</div>\n"
-                + "		<div style=\"margin-top:-3px\"><img src=\"http://mealtera.com:8080/ChronoMed/images/email/bg-inf.png\"></div>\n"
+                + "		<div style=\"margin-top:-3px\"><img src=\"http://mealtera.com:8080/images/email/bg-inf.png\"></div>\n"
                 + "</body></html>";
     }
 }

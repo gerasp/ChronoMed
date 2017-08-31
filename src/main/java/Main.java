@@ -11,8 +11,8 @@ public final class Main {
 
         final Tomcat tomcat = new Tomcat();
 
-        tomcat.setPort(Integer.valueOf(System.getenv("PORT")));
-//        tomcat.setPort(8000);
+//        tomcat.setPort(Integer.valueOf(System.getenv("PORT")));
+        tomcat.setPort(8000);
         tomcat.enableNaming();
 
         Context ctx = tomcat.addWebapp("/", new File("web/").getAbsolutePath());
