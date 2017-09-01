@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a class="btn btn-lg btn-primary register-button"
-                           href="/administrativo/registrarpaciente.jsp"><i class="fa  fa-plus-circle"></i>Registrar
+                           href="/administrative/registrarpaciente.jsp"><i class="fa  fa-plus-circle"></i>Registrar
                             paciente</a>
                     </div>
                     <div class="col-md-4">
@@ -35,7 +35,7 @@
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
                             <input type="hidden" value="SearchPatientByNifCommand" name="command">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Buscar por DNI..."
+                                <input type="text" class="form-control" placeholder="Buscar por <fmt:message key="form.idcard" />..."
                                        name="searchNif">
                                 <span class="input-group-addon" id="basic-addon3">
                                             <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
@@ -47,14 +47,14 @@
 
                 <div class="list-group">
                     <% if (nifPatientList == null && healthCardPatientList == null) {%>
-                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i> Para editar un paciente, introduzca primero su DNI o n�mero de tarjeta sanitaria</span>
+                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i> Para editar un paciente, introduzca primero su <fmt:message key="form.idcard" /> o n�mero de tarjeta sanitaria</span>
                     </h2>
 
                     <%
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
                     %>
-                    <a href="/administrativo/editarpaciente.jsp?id=<%= patient.getId()%>"
+                    <a href="/administrative/editarpaciente.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -68,7 +68,7 @@
                         for (Patient patient : healthCardPatientList) {
 
                     %>
-                    <a href="/ChronoMed/administrativo/editarpaciente.jsp?id=<%= patient.getId()%>"
+                    <a href="/ChronoMed/administrative/editarpaciente.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>

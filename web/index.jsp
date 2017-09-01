@@ -11,7 +11,7 @@
             <div class="col-md-7 signin-form">
                 <ul class="nav nav-justified nav-tabs">
                     <li class="active">
-                        <a href="#"><i class="fa  fa-lg fa-user"></i>Inicio de sesi�n<br></a>
+                        <a href="#"><i class="fa  fa-lg fa-user"></i>Inicio de sesión<br></a>
                     </li>
                     <li>
                     </li>

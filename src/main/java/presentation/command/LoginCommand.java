@@ -30,13 +30,16 @@ public class LoginCommand extends FrontCommand{
 
     private void userRedirect() throws NumberFormatException {
         Object user = request.getSession().getAttribute("user");
-
+        if (user == null) {
+            forward("/");
+            return;
+        }
         if(user.getClass().equals(Patient.class))
             forward("/paciente/historial.jsp");
         else if(user.getClass().equals(Doctor.class))
             forward("/medico/pacientes.jsp");
         else if(user.getClass().equals(Administrative.class))
-            forward("/administrativo/gestiondepacientes.jsp");
+            forward("/administrative/patientmanagement.jsp");
         else
             forward("/");
     }

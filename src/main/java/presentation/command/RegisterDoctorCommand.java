@@ -1,13 +1,12 @@
 package presentation.command;
 
 import business.utils.Email;
+import business.utils.Security;
 import data.entities.Doctor;
 import data.entities.Useraccount;
-import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
 import data.facades.FacadeFactory;
 import data.facades.UseraccountFacade;
-import business.utils.Security;
 
 public class RegisterDoctorCommand extends FrontCommand {
 
@@ -24,7 +23,7 @@ public class RegisterDoctorCommand extends FrontCommand {
             dFacade.create(doctor);
         }
         Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), doctor.getName(), doctor.getSurname());
-        forward("/administrativo/gestiondemedicos.jsp");
+        forward("/administrative/doctormanagement.jsp");
 
     }
 

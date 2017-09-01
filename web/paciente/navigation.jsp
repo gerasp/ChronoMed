@@ -8,7 +8,7 @@
             </div>
             <div class="col-md-9">
                 <div class="text-right">
-                    <h1>Saludos,
+                    <h1><fmt:message key="navigation.greetings" />,
                         Sr<% if (patient.getGender().equals("Femenino")) {
                             out.print("a");
                         }%>. <span class="label label-primary"><%= patient.getSurname()%></span>

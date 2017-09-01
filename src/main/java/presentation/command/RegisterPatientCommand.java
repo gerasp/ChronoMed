@@ -30,7 +30,7 @@ public class RegisterPatientCommand extends FrontCommand {
         
         Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), patient.getName(), patient.getSurname());
         
-        forward("/administrativo/gestiondepacientes.jsp");
+        forward("/administrative/patientmanagement.jsp");
     }
 
     private Patient getPatient(Useraccount useraccount) throws NumberFormatException {

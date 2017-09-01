@@ -30,7 +30,7 @@
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
                             <input type="hidden" value="SearchMyPatientsByNifCommand" name="command">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Buscar por DNI..."
+                                <input type="text" class="form-control" placeholder="Buscar por <fmt:message key="form.idcard" />..."
                                        name="searchNif">
                                 <span class="input-group-addon" id="basic-addon3">
                                             <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
@@ -42,7 +42,7 @@
 
                 <div class="list-group">
                     <% if (nifPatientList == null && healthCardPatientList == null) {%>
-                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i> Introduzca su DNI o tarjeta sanitaria</span>
+                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i> Introduzca su <fmt:message key="form.idcard" /> o tarjeta sanitaria</span>
                     </h2>
                     <%
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {

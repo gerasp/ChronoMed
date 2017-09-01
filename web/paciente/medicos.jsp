@@ -20,7 +20,7 @@
                             <a class="list-group-item">
                                 <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%></h4>
                                 <p class="list-group-item-text">
-                                    N� colegiado: <%= doctor.getBoardNumber()%> | Especialidad: <%= doctor.getSpeciality() %> | Nº teléfono: <%= doctor.getPhoneNumber()%>
+                                    N� colegiado: <%= doctor.getBoardNumber()%> | <fmt:message key="form.speciality" />: <%= doctor.getSpeciality() %> | Nº teléfono: <%= doctor.getPhoneNumber()%>
                                 </p>
                             </a>
 

@@ -9,7 +9,7 @@
                     <input type="hidden" value="RegisterPatientCommand" name="command">
                     <div class="row">
                         <div class="col-md-2">
-                            <a href="/administrativo/gestiondepacientes.jsp"
+                            <a href="/administrative/patientmanagement.jsp"
                                class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
                         </div>
                         <div class="col-md-8">
@@ -22,24 +22,24 @@
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left">Datos personales</h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.personalData" /></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputName" class="control-label">Nombre</label>
+                                        <label for="inputName" class="control-label"><fmt:message key="form.name" /></label>
                                         <input type="text" class="form-control" name="name" id="inputName"
                                                placeholder="Fulano" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputSurname" class="control-label">Apellidos</label>
+                                        <label for="inputSurname" class="control-label"><fmt:message key="form.surname" /></label>
                                         <input type="text" class="form-control" name="surname" id="inputSurname"
                                                required placeholder="De Tal De Cual">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputDNI" class="control-label">DNI</label>
-                                        <input type="text" class="form-control" name="nif" id="inputDNI" required
+                                        <label for="inputIdcard" class="control-label"><fmt:message key="form.idcard" /></label>
+                                        <input type="text" class="form-control" name="nif" id="inputIdcard" required
                                                placeholder="65764330F">
                                     </div>
                                 </div>
@@ -50,10 +50,10 @@
                                                id="inputBirthDate" placeholder="1 de enero de 1970">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputGender" class="control-label">G�nero</label>
+                                        <label for="inputGender" class="control-label"><fmt:message key="form.gender" /></label>
                                         <select class="form-control" name="gender" id="inputGender">
-                                            <option>Masculino</option>
-                                            <option>Femenino</option>
+                                            <option><fmt:message key="form.gender.male" /></option>
+                                            <option><fmt:message key="form.gender.female" /></option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -64,7 +64,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">Todos los campos son obligatorios</div>
+                        <div class="panel-footer"><fmt:message key="form.mandatoryFields.all" /></div>
                     </div>
 
                     <div class="panel panel-primary">
@@ -147,24 +147,24 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">*Campos obligatorios</div>
+                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields" /></div>
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left">Datos de acceso</h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.accessData" /></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputEmail" class="control-label">Correo electr�nico*</label>
+                                        <label for="inputEmail" class="control-label"><fmt:message key="form.email" />*</label>
                                         <input type="email" name="email" class="form-control" id="inputEmail"
                                                placeholder="ejemplo@ejemplo.com">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">*Campos obligatorios</div>
+                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields" /></div>
                     </div>
                 </form>
             </div>

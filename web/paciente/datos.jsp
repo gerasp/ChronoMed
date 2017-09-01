@@ -23,7 +23,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1">Datos personales</a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><fmt:message key="form.personalData" /></a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
@@ -31,16 +31,16 @@
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputName" class="control-label">Nombre</label>
+                                                <label for="inputName" class="control-label"><fmt:message key="form.name" /></label>
                                                 <input type="text" class="form-control" disabled id="inputName" name="name" value="<%= patient.getName()%>" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputSurname" class="control-label">Apellidos</label>
+                                                <label for="inputSurname" class="control-label"><fmt:message key="form.surname" /></label>
                                                 <input type="text" class="form-control" disabled id="inputSurname" name="surname" value="<%= patient.getSurname()%>" required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputDNI" class="control-label">DNI</label>
-                                                <input type="text" class="form-control" disabled id="inputDNI" name="nif" value="<%= patient.getNif()%>" required>
+                                                <label for="inputIdcard" class="control-label"><fmt:message key="form.idcard" /></label>
+                                                <input type="text" class="form-control" disabled id="inputIdcard" name="nif" value="<%= patient.getNif()%>" required>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
@@ -51,14 +51,14 @@
                                                        required>
                                             </div>
                                             <div class="form-group">
-                                                <label for="inputGender" class="control-label">G�nero</label>
+                                                <label for="inputGender" class="control-label"><fmt:message key="form.gender" /></label>
                                                 <select class="form-control" disabled  required name="gender" id="inputGender">
                                                     <option <% if (patient.getGender().equals("Masculino")) {
                                                             out.println(" selected ");
-                                                        } %> >Masculino</option>
+                                                        } %> ><fmt:message key="form.gender.male" /></option>
                                                     <option <% if (patient.getGender().equals("Femenino")) {
                                                             out.println(" selected ");
-                                                        }%> >Femenino</option>
+                                                        }%> ><fmt:message key="form.gender.female" /></option>
                                                 </select>
                                             </div>
                                             <div class="form-group">
@@ -154,8 +154,8 @@
                                             </div>
                                         </div>
                                     </div>
-                                     <div class="panel-footer">*Campos obligatorios
-                                        <button type="submit" class="btn btn-primary btn-xs pull-right">Guardar cambios
+                                     <div class="panel-footer">*<fmt:message key="form.mandatoryFields" />
+                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>
@@ -165,7 +165,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4">Datos de acceso</a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4"><fmt:message key="form.accessData" /></a>
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
@@ -176,26 +176,26 @@
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <label for="inputEmail" class="control-label">Correo electr�nico</label>
+                                                    <label for="inputEmail" class="control-label"><fmt:message key="form.email" /></label>
                                                     <input type="email" class="form-control" id="inputEmail" name="email" value="<%= patient.getUserAccountID().getEmail()%>">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputOldPassword" class="control-label">Contrase�a actual*</label>
+                                                    <label for="inputOldPassword" class="control-label"><fmt:message key="form.password.old" />*</label>
                                                     <input type="password" class="form-control" id="inputOldPassword" name="oldPassword" placeholder="******">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputNewPassword" class="control-label">Actualizar contrase�a</label>
+                                                    <label for="inputNewPassword" class="control-label"><fmt:message key="form.password.new" /></label>
                                                     <input type="password" class="form-control" id="inputNewPassword" name="newPassword" placeholder="******">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel-footer">*Campos obligatorios
-                                        <button type="submit" class="btn btn-primary btn-xs pull-right">Guardar cambios
+                                    <div class="panel-footer">*<fmt:message key="form.mandatoryFields" />
+                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>

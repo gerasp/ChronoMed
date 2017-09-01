@@ -12,7 +12,7 @@
             <div class="signin-form-container">
                 <div class="row">
                     <div class="col-md-7">
-                        <a class="btn btn-primary btn-lg register-button" href="/administrativo/registrarmedico.jsp"><i
+                        <a class="btn btn-primary btn-lg register-button" href="/administrative/registrarmedico.jsp"><i
                                 class="fa  fa-plus-circle"></i>Registrar m�dico</a>
                     </div>
                     <div class="col-md-5">
@@ -21,7 +21,7 @@
                             <input type="hidden" value="SearchDoctorByBoardNumberCommand" name="command">
 
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Buscar por N� de colegiado..."
+                                <input type="text" class="form-control" placeholder="Buscar por <fmt:message key="form.boardNumber" />..."
                                        name="search">
                                 <span class="input-group-addon" id="basic-addon2">
                                             <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
@@ -40,7 +40,7 @@
                         for (Doctor doctor : doctorList) {
 
                     %>
-                    <a href="/administrativo/editarmedico.jsp?id=<%= doctor.getId()%>"
+                    <a href="/administrative/editarmedico.jsp?id=<%= doctor.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>

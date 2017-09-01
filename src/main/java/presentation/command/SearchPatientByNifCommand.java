@@ -23,7 +23,7 @@ public class SearchPatientByNifCommand extends FrontCommand{
         PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         List<Patient> patients = patientFacade.findByNif(request.getParameter("searchNif"));
         request.setAttribute("patients", patients);
-        forward("/administrativo/gestiondepacientes.jsp");
+        forward("/administrative/patientmanagement.jsp");
     }   
     
 }

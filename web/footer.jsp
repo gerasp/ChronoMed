@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/FrontController?command=LogOutCommand"><i class="fa  fa-sign-out"></i>Cerrar sesión</a>
+            <a class="navbar-brand" href="/FrontController?command=LogOutCommand"><i class="fa  fa-sign-out"></i><fmt:message key="footer.logout" /></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav">
@@ -19,10 +19,10 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/terminosycondiciones.jsp">Términos y condiciones</a>
+                    <a href="/terminosycondiciones.jsp"><fmt:message key="footer.termsAndConditions" /></a>
                 </li>
                 <li>
-                    <a href="mailto:ayuda@chronomed.com">Ayuda</a>
+                    <a href="mailto:ayuda@chronomed.com"><fmt:message key="footer.help" /></a>
                 </li>
             </ul>
         </div>
@@ -48,16 +48,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#intro-section">Inicio</a>
+                    <a href="#intro-section"><fmt:message key="footer.home" /></a>
                 </li>
                 <li class="">
-                    <a href="#services-section">Servicios<br></a>
+                    <a href="#services-section"><fmt:message key="footer.services" /><br></a>
                 </li>
                 <li class="">
-                    <a href="#team-section">Equipo<br></a>
+                    <a href="#team-section"><fmt:message key="footer.team" /><br></a>
                 </li>
                 <li>
-                    <a href="#contact-section">Contacto<br></a>
+                    <a href="#contact-section"><fmt:message key="footer.contact" /><br></a>
                 </li>
             </ul>
         </div>
