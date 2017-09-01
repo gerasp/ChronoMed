@@ -19,7 +19,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="signin-form-container">
+            <div class="white-container">
                 <input type="hidden" value="EditPatientCommand" name="command">
                 <input type="hidden" value="<%= patient.getId()%>" name="id">
                 <div class="row">

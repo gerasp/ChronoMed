@@ -23,7 +23,7 @@ public class RegisterDoctorCommand extends FrontCommand {
             dFacade.create(doctor);
         }
         Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), doctor.getName(), doctor.getSurname());
-        forward("/administrative/doctormanagement.jsp");
+        forward("/manager/doctormanagement.jsp");
 
     }
 

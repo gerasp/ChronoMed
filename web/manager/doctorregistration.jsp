@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <form class="form-vertical" role="form" action="/FrontController" method="POST">
                 <input type="hidden" value="RegisterDoctorCommand" name="command">
-                <div class="signin-form-container">
+                <div class="white-container">
                     <div class="row">
                         <div class="col-md-2">
                             <a href="/manager/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i

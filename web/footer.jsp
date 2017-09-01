@@ -29,9 +29,9 @@
                     </a></li>
                 </ul>
                 <ul class='nav navbar-nav' id="language-menu" style="display: none;">
-                    <li><a href='?language=en'><img src='/images/flags/en.png'>&nbsp;English</a></li>
-                    <li><a href='?language=de'><img src='/images/flags/de.png'>&nbsp;Deutsch</a></li>
-                    <li><a href='?language=es'><img src='/images/flags/es.png'>&nbsp;Español</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=en'><img src='/images/flags/en.png'>&nbsp;English</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=de'><img src='/images/flags/de.png'>&nbsp;Deutsch</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=es'><img src='/images/flags/es.png'>&nbsp;Español</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <% if (request.getSession().getAttribute("user") != null) { %>

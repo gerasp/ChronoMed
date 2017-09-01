@@ -11,7 +11,7 @@
             List<Patient> healthCardPatientList = (List<Patient>) request.getAttribute("healthcardPatients");
         %>
         <div class="col-md-9">
-            <div class="signin-form-container">
+            <div class="white-container">
                 <div class="row">
                     <div class="col-md-6">
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
@@ -42,8 +42,8 @@
 
                 <div class="list-group">
                     <% if (nifPatientList == null && healthCardPatientList == null) {%>
-                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.patient.info2" /></span>
-                    </h2>
+                    <h3 class="text-center"><span class="label label-default"><i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.patient.info2" /></span>
+                    </h3>
                     <%
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
@@ -71,8 +71,8 @@
                         }
                     } else {
                     %>
-                    <h2 style="text-align: center;"><span class="label label-default"><i
-                            class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound" /></span></h2>
+                    <h3 class="text-center"><span class="label label-default"><i
+                            class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound" /></span></h3>
                     <%}%>
 
                 </div>

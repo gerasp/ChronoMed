@@ -19,7 +19,7 @@
 
                 %>
                 <div class="col-md-9">
-                    <div class="signin-form-container">
+                    <div class="white-container">
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
@@ -78,7 +78,7 @@
                                 </h4>
                             </div>
                             <div id="collapse2" class="panel-collapse collapse">
-                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
+                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/FrontController">
                                     <input type="hidden" value="AssociateHealthcardsCommand" name="command">
                                     <input type="hidden" value="<%= patient.getId()%>" name="id">
                                     <div class="panel-body">
@@ -111,7 +111,7 @@
                                 </h4>
                             </div>
                             <div id="collapse3" class="panel-collapse collapse">
-                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
+                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/FrontController">
                                     <input type="hidden" value="EditPatientMyContactDataCommand" name="command">
                                     <input type="hidden" value="<%= patient.getId()%>" name="id">
                                     <div class="panel-body">
@@ -167,7 +167,7 @@
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
-                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/ChronoMed/FrontController">
+                                <form style="margin:0px;" class="form-vertical" method="POST" role="form" action="/FrontController">
                                     <input type="hidden" value="EditPatientMyCredentialsCommand" name="command">
                                     <input type="hidden" value="<%= patient.getId()%>" name="id">
                                     <div class="panel-body">

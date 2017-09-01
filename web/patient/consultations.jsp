@@ -13,7 +13,7 @@
                     List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
                 %>
                 <div class="col-md-9">
-                    <div class="signin-form-container">
+                    <div class="white-container">
                         <div class="form-inline text-center" >
                             <h3 id="print1"><fmt:message key="action.filter.title" /></h3>
                             <div class="form-group">

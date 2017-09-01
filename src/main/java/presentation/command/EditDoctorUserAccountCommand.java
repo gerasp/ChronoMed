@@ -21,7 +21,7 @@ public class EditDoctorUserAccountCommand extends FrontCommand {
             doctor.getUserAccountID().setActive(true);
         }
         useraccountFacade.edit(doctor.getUserAccountID());
-        forward("/administrative/doctoredit.jsp");
+        forward("/manager/doctoredit.jsp");
     }
 
 }

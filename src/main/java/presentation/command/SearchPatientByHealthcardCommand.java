@@ -32,7 +32,7 @@ public class SearchPatientByHealthcardCommand extends FrontCommand {
             patients.add(healthcard.getPatientID());
         }
         request.setAttribute("healthcardPatients", patients);
-        forward("/administrative/patientmanagement.jsp");
+        forward("/manager/patientmanagement.jsp");
     }
 
 }

@@ -1,6 +1,17 @@
+<%@ page import="data.entities.Administrative" %>
+<%@ page import="data.entities.Doctor" %>
+<%@ page import="data.entities.Patient" %>
+
+<% if (request.getSession().getAttribute("user") instanceof Doctor) { %>
+<jsp:forward page = "/doctor/patients.jsp" />
+<% } else if (request.getSession().getAttribute("user") instanceof Patient) { %>
+<jsp:forward page = "/patient/history.jsp" />
+<% } else if (request.getSession().getAttribute("user") instanceof Administrative) { %>
+<jsp:forward page = "/manager/patientmanagement.jsp" />
+<% } else { %>
+
 <%@include file="/header.jsp" %>
 <body>
-
 <div class="cover" id="intro">
     <div class="background-image-fixed cover-image" style="background-image : url('images/cover.jpeg')"></div>
     <div class="container">
@@ -15,7 +26,7 @@
                     </li>
                     <li></li>
                 </ul>
-                <form action="FrontController" method="POST" class="form-horizontal text-right signin-form-container"
+                <form action="/FrontController" method="POST" class="form-horizontal text-right signin-container"
                       role="form">
                     <input type="hidden" value="LoginCommand" name="command">
                     <div class="container">
@@ -25,9 +36,13 @@
                                     int error = (Integer) request.getAttribute("error");
                             %>
                             <div class="col-md-12 alert alert-danger" style="text-align: center">
-                                <% if (error != 0) { %>
-                                <fmt:message key="form.login.error.<%=error%>"/>
-                                <% }} %>
+                                <% switch (error) {
+                                    case 1:
+                                %><fmt:message key="form.login.error.1"/><% break;
+                                case 2:
+                            %><fmt:message key="form.login.error.2"/><% break;
+                            }
+                            } %>
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
@@ -106,7 +121,7 @@
                 <img src="images/team/al.jpg" class="img-circle img-responsive">
             </div>
             <div class="col-sm-4">
-                <h3 class="text-left">Adri�n Louro</h3>
+                <h3 class="text-left">Adrián Louro</h3>
                 <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
             <div class="col-sm-2">
@@ -129,7 +144,7 @@
                 <img src="images/team/og.jpg" class="img-circle img-responsive">
             </div>
             <div class="col-sm-4 text-center">
-                <h3 class="text-left">�scar Garc�a</h3>
+                <h3 class="text-left">Óscar García</h3>
                 <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
         </div>
@@ -169,18 +184,11 @@
 <div class="contact section">
     <div class="container">
         <div class="row text-center">
-            <div class="col-xs-3 text-center">
-                <a><i class="fa fa-5x fa-instagram"></i></a>
-            </div>
-            <div class="col-xs-3">
-                <a><i class="fa fa-5x fa-twitter"></i></a>
-            </div>
-            <div class="col-xs-3">
-                <a><i class="fa fa-5x fa-facebook"></i></a>
-            </div>
-            <div class="col-xs-3 text-center">
-                <a href="http://github.com/gerasp/ChronoMed"><i class="fa fa-5x fa-github"></i></a>
-            </div>
+            <div class="col-xs-3 text-center"><a><i class="fa fa-5x fa-instagram"></i></a></div>
+            <div class="col-xs-3"><a><i class="fa fa-5x fa-twitter"></i></a></div>
+            <div class="col-xs-3"><a><i class="fa fa-5x fa-facebook"></i></a></div>
+            <div class="col-xs-3 text-center"><a href="http://github.com/gerasp/ChronoMed"><i
+                    class="fa fa-5x fa-github"></i></a></div>
         </div>
     </div>
 </div>
@@ -207,3 +215,4 @@
 </body>
 
 </html>
+<% } %>

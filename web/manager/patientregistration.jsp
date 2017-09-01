@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="signin-form-container">
+            <div class="white-container">
                 <form class="form-vertical" role="form" action="/FrontController" method="POST">
                     <input type="hidden" value="RegisterPatientCommand" name="command">
                     <div class="row">

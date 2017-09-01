@@ -4,7 +4,7 @@
     <div class="row">
         <%@include file="navigation.jsp" %>
         <div class="col-md-9">
-            <div class="signin-form-container">
+            <div class="white-container">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
                         <h4 class="panel-title">

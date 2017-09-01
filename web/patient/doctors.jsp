@@ -8,7 +8,7 @@
             <div class="row">
                 <%@include file="navigation.jsp" %>
                 <div class="col-md-9">
-                    <div class="signin-form-container">
+                    <div class="white-container">
                         <h2 class="text-center"><fmt:message key="navigation.doctors" /></h2>
                         <div class="list-group">
                             <% 
@@ -28,7 +28,7 @@
                                 </p>
                             </a>
                             <% }} else { %>
-                            <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-exclamation-circle"></i> No tiene ningún médico asignado</span></h2>
+                            <h2 class="text-center"><span class="label label-default"><i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound" /></span></h2>
                             <% } %>
                         </div>
                     </div>

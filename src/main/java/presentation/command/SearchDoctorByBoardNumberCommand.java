@@ -6,7 +6,6 @@
 package presentation.command;
 
 import data.entities.Doctor;
-import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
 import data.facades.FacadeFactory;
 
@@ -25,10 +24,10 @@ public class SearchDoctorByBoardNumberCommand extends FrontCommand {
         try{
             List<Doctor> doctorList = doctorFacade.findByBoardNumber(request.getParameter("search"));        
             request.setAttribute("doctorList", doctorList);
-            forward("/administrative/doctormanagement.jsp");
+            forward("/manager/doctormanagement.jsp");
             
         }catch(NumberFormatException e){
-            forward("/administrative/doctormanagement.jsp");
+            forward("/manager/doctormanagement.jsp");
         }
         
     }

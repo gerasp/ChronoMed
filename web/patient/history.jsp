@@ -13,7 +13,7 @@
                 %>
 
                 <div class="col-md-9">
-                    <div class="signin-form-container">
+                    <div class="white-container">
                         <h1 class="text-primary text-center"><small><fmt:message key="history.title" /></small><br>
                             <%=patient.getName() + " " + patient.getSurname()%></h1>
                         <blockquote>

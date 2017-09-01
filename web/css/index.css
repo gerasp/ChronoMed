@@ -6795,12 +6795,20 @@ body {
     padding: 20px;
     background: #D8D8D8;
 }
-.signin-form-container {
+.signin-container {
     background: white;
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
     padding: 30px;
+}
+.white-container {
+    background: white;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 30px;
+    min-height: 50%;
 }
 
 .services {
@@ -7048,4 +7056,9 @@ ul.timeline > li > .timeline-panel:after {
 
 .input-in-table {
     width: 100%;
+}
+
+.well {
+    min-height:40%;
+    margin-bottom: 0;
 }
