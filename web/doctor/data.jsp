@@ -77,7 +77,7 @@
                         </h4>
                     </div>
                     <div id="collapse5" class="panel-collapse collapse">
-                        <form style="margin:0px;" class="form-vertical" method="POST" role="form"
+                        <form class="form-vertical" method="POST" role="form"
                               action="/FrontController">
                             <input type="hidden" value="EditDoctorMyContactDataCommand" name="command">
                             <input type="hidden" value="<%= doctor.getId()%>" name="id">
@@ -119,7 +119,7 @@
                         </h4>
                     </div>
                     <div id="collapse4" class="panel-collapse collapse">
-                        <form style="margin:0px;" class="form-vertical" method="POST" role="form"
+                        <form  class="form-vertical" method="POST" role="form"
                               action="/FrontController">
                             <input type="hidden" value="EditDoctorMyCredentialsCommand" name="command">
                             <input type="hidden" value="<%= doctor.getId()%>" name="id">

@@ -1,8 +1,3 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 function filter() {
     var date = $("#from_date").val();
@@ -16,4 +11,37 @@ function filter() {
         else
             $(this).hide();
     });
+}
+function addHealthCard() {
+    var healthcard = $("#inputHealthCard").val();
+    if (healthcard === "")
+        return;
+    var html = "<li class='health-card-item'> <input value='" + healthcard + "' name='addedHealthCards' style='border:0; background:none;' readonly> <button type='button' onclick='deleteHealthCard(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i> Eliminar</button></li>";
+    $("#healthCards").append(html);
+}
+
+function deleteHealthCard(button) {
+    if (button.previousElementSibling.getAttribute("name") !== "addedHealthCards")
+        button.previousElementSibling.setAttribute("name", "deletedHealthCards");
+    else
+        button.previousElementSibling.setAttribute("name", "trashHealthCardsList");
+    button.previousElementSibling.attributes["2"].nodeValue += "text-decoration: line-through;";
+    button.remove();
+}
+
+function addDoctor() {
+    var healthcard = $("#inputDoctor").val();
+    if (healthcard === "")
+        return;
+    var html = "<li class='health-card-item'> <input value='" + healthcard + "' name='addedBoardNumbers' style='border:0; background:none;' readonly> <button type='button' onclick='deleteDoctor(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i> Eliminar</button></li>";
+    $("#doctorList").append(html);
+}
+
+function deleteDoctor(button) {
+    if (button.previousElementSibling.getAttribute("name") !== "addedBoardNumbers")
+        button.previousElementSibling.setAttribute("name", "deletedBoardNumbers");
+    else
+        button.previousElementSibling.setAttribute("name", "trashDoctor");
+    button.previousElementSibling.attributes["2"].nodeValue += "text-decoration: line-through;";
+    button.remove();
 }

@@ -47,36 +47,32 @@
                         </form>
                     </div>
                 </div>
-                <div class="well well-lg text-center" style="min-height: 40%">
-                    <div class="list-group">
-                        <% if (nifPatientList == null && healthCardPatientList == null) {%>
+                <div class="list-group">
+                    <% if (nifPatientList == null && healthCardPatientList == null) {%>
+                    <div class="well well-lg text-center">
                         <i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.patient.info"/>
-                        <% } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
-                            for (Patient patient : nifPatientList) { %>
-                        <a href="/manager/patientedit.jsp?id=<%= patient.getId()%>"
-                           class="list-group-item">
-                            <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
-                                    class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
-                            <p class="list-group-item-text"><%= patient.getNif()%></p>
-                        </a>
-                        <%} } else if (healthCardPatientList != null && !healthCardPatientList.isEmpty()) {
-                            for (Patient patient : healthCardPatientList) {
-                        %>
-                        <a href="/manager/patientedit.jsp?id=<%= patient.getId()%>"
-                           class="list-group-item">
-                            <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%>
-                                <i class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i>
-                            </h4>
-                            <p class="list-group-item-text"><%= patient.getNif()%></p>
-                        </a>
-                        <% }} else { %>
-                            <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound"/>
-                        <% } %>
                     </div>
+                    <% } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
+                        for (Patient patient : nifPatientList) { %>
+                    <%@include file="/manager/patientedit.jsp" %>
+
+                    <%
+                        }
+                    } else if (healthCardPatientList != null && !healthCardPatientList.isEmpty()) {
+                        for (Patient patient : healthCardPatientList) {
+                    %>
+                    <%@include file="/manager/patientedit.jsp" %>
+                    <% }
+                    } else { %>
+                    <div class="well well-lg text-center">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound"/>
+                    </div>
+                    <% } %>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 <%@include file="/footer.jsp" %>
 </body>

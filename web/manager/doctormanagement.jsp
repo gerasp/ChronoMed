@@ -15,9 +15,7 @@
                     </div>
                     <div class="col-md-5">
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
-
                             <input type="hidden" value="SearchDoctorByBoardNumberCommand" name="command">
-
                             <div class="input-group input-group-lg">
                                 <input type="text" class="form-control"
                                        placeholder="<fmt:message key="form.boardNumber" />"
@@ -31,24 +29,23 @@
                         </form>
                     </div>
                 </div>
-                <div class="well well-lg text-center">
-                    <div class="list-group">
-                        <% if (doctorList == null) {%>
-                        <i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.doctor.info"/>
-                        <%
-                        } else if (!doctorList.isEmpty()) {
-                            for (Doctor doctor : doctorList) {
+                <div class="list-group">
+                    <% if (doctorList == null) {%>
+                    <div class="well well-lg  text-center"><i class="fa fa-info-circle"></i>&nbsp;<fmt:message
+                            key="search.doctor.info"/></div>
+                    <%
+                    } else if (!doctorList.isEmpty()) {
+                        for (Doctor doctor : doctorList) {
 
-                        %>
-
-
-                        <%
-                            }
-                        } else {
-                        %>
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound"/>
-                        <%}%>
-                    </div>
+                    %>
+                    <%@include file="/manager/doctoredit.jsp" %>
+                    <%
+                        }
+                    } else {
+                    %>
+                    <div class="well well-lg  text-center"><i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message
+                            key="search.doctor.notFound"/></div>
+                    <%}%>
                 </div>
             </div>
         </div>
