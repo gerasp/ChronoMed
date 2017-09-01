@@ -35,9 +35,9 @@ public class LoginCommand extends FrontCommand{
             return;
         }
         if(user.getClass().equals(Patient.class))
-            forward("/paciente/historial.jsp");
+            forward("/patient/history.jsp");
         else if(user.getClass().equals(Doctor.class))
-            forward("/medico/pacientes.jsp");
+            forward("/doctor/patients.jsp");
         else if(user.getClass().equals(Administrative.class))
             forward("/administrative/patientmanagement.jsp");
         else
@@ -47,12 +47,12 @@ public class LoginCommand extends FrontCommand{
     private boolean checkLogin(UseraccountFacade useraccountFacade) {
         Useraccount account = useraccountFacade.checkLogin(request.getParameter("email"), request.getParameter("password"));
         if (account == null) {
-            request.setAttribute("error", "Credenciales inválidas");
+            request.setAttribute("error", 1);
             forward("/");
             return false;
         }
         if (!account.getActive()) {
-            request.setAttribute("error", "Su cuenta ha sido desactivada, contacte con su centro");
+            request.setAttribute("error", 2);
             forward("/");
             return false;
         }

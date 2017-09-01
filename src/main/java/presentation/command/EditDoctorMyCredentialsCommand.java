@@ -16,7 +16,7 @@ public class EditDoctorMyCredentialsCommand extends FrontCommand {
 
         if (!request.getParameter("oldPassword").equals(doctor.getUserAccountID().getPassword())) {
             request.setAttribute("message", "Contraseña inválida. No se ha hecho ningún cambio.");
-            forward("/medico/datos.jsp");
+            forward("/doctor/data.jsp");
             return;
         }
         if (request.getParameter("email") != null && !request.getParameter("email").trim().isEmpty()) {
@@ -30,7 +30,7 @@ public class EditDoctorMyCredentialsCommand extends FrontCommand {
         request.getSession().setAttribute("user", doctor);
         request.setAttribute("message", "Datos cambiados correctamente.");
 
-        forward("/medico/datos.jsp");
+        forward("/doctor/data.jsp");
     }
 
 }

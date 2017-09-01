@@ -45,7 +45,7 @@ public class SearchMyPatientsByHealthcardCommand extends FrontCommand {
         }
 
         request.setAttribute("healthcardPatients", filteredPatients);
-        forward("/medico/pacientes.jsp");
+        forward("/doctor/patients.jsp");
     }
 
 }

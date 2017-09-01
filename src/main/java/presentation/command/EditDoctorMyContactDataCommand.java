@@ -1,7 +1,6 @@
 package presentation.command;
 
 import data.entities.Doctor;
-import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
 import data.facades.FacadeFactory;
 
@@ -19,7 +18,7 @@ public class EditDoctorMyContactDataCommand extends FrontCommand {
         request.getSession().setAttribute("user", doctor);
         request.setAttribute("message", "Datos cambiados correctamente.");
 
-        forward("/medico/datos.jsp");
+        forward("/doctor/data.jsp");
     }
 
 }

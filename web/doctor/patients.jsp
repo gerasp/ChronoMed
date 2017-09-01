@@ -48,7 +48,7 @@
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
                     %>
-                    <a href="/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>" class="list-group-item">
+                    <a href="/doctor/vistapacienteshistory.jsp?id=<%= patient.getId()%>" class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
                         <p class="list-group-item-text">
@@ -60,7 +60,7 @@
                     } else if (healthCardPatientList != null && !healthCardPatientList.isEmpty()) {
                         for (Patient patient : healthCardPatientList) {
                     %>
-                    <a href="/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>" class="list-group-item">
+                    <a href="/doctor/vistapacienteshistory.jsp?id=<%= patient.getId()%>" class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
                         <p class="list-group-item-text">

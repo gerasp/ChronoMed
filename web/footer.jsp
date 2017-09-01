@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/FrontController?command=LogOutCommand"><i class="fa  fa-sign-out"></i>&nbsp;<fmt:message key="footer.logout" /></a>
+            <a class="navbar-brand" href="/FrontController?command=LogoutCommand"><i class="fa  fa-sign-out"></i>&nbsp;<fmt:message key="footer.logout" /></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav">
@@ -19,7 +19,7 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="/terminosycondiciones.jsp"><fmt:message key="footer.termsAndConditions" /></a>
+                    <a href="/tac.jsp"><fmt:message key="footer.termsAndConditions" /></a>
                 </li>
                 <li>
                     <a href="mailto:ayuda@chronomed.com"><fmt:message key="footer.help" /></a>
@@ -48,16 +48,16 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="#intro-section"><fmt:message key="footer.home" /></a>
+                    <a href="#intro"><fmt:message key="footer.home" /></a>
                 </li>
                 <li class="">
-                    <a href="#services-section"><fmt:message key="footer.services" /><br></a>
+                    <a href="#services"><fmt:message key="footer.services" /></a>
                 </li>
                 <li class="">
-                    <a href="#team-section"><fmt:message key="footer.team" /><br></a>
+                    <a href="#team"><fmt:message key="footer.team" /></a>
                 </li>
                 <li>
-                    <a href="#contact-section"><fmt:message key="footer.contact" /><br></a>
+                    <a href="#contact"><fmt:message key="footer.contact" /></a>
                 </li>
             </ul>
         </div>

@@ -9,7 +9,6 @@ import business.utils.Email;
 import data.entities.Doctor;
 import data.entities.Medicalhistory;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.MedicalhistoryFacade;
 import data.facades.PatientFacade;
@@ -38,7 +37,7 @@ public class EditMedicalHistoryCommand extends FrontCommand {
         request.setAttribute("message", "Historial cambiado correctamente.");
         Doctor doctor1 = (Doctor) request.getSession().getAttribute("user");
         Email.sendNotification(doctor1.getSurname() +", " + doctor1.getName() + " (" + doctor1.getBoardNumber() + ")" , "una modificación en su historial médico", patient.getUserAccountID().getEmail());
-        forward("/medico/vistapacienteshistorial.jsp?id=" + request.getParameter("id"));
+        forward("/doctor/vistapacienteshistory.jsp?id=" + request.getParameter("id"));
     }
 
 }

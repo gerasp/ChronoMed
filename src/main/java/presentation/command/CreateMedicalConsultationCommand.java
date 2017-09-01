@@ -8,10 +8,10 @@ package presentation.command;
 import data.entities.Doctor;
 import data.entities.Medicalconsultation;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.MedicalconsultationFacade;
 import data.facades.PatientFacade;
+
 import java.util.Date;
 
 /**
@@ -39,7 +39,7 @@ public class CreateMedicalConsultationCommand extends FrontCommand{
         medicalconsultationFacade.create(medicalconsultation);
         request.setAttribute("message", "Consulta añadida cambiado correctamente.");
 
-        forward("/medico/vistapacientescitas.jsp?id=" + request.getParameter("id"));
+        forward("/doctor/vistapacientesconsultations.jsp?id=" + request.getParameter("id"));
     }
     
 }

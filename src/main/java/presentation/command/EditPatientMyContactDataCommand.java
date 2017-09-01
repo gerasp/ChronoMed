@@ -1,7 +1,6 @@
 package presentation.command;
 
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 
@@ -23,6 +22,6 @@ public class EditPatientMyContactDataCommand extends FrontCommand {
         
         request.setAttribute("message", "Datos cambiados correctamente.");
 
-        forward("/paciente/datos.jsp");
+        forward("/patient/data.jsp");
     }
 }

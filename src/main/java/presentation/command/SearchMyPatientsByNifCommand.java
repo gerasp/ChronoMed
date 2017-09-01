@@ -8,10 +8,10 @@ package presentation.command;
 import data.entities.Doctor;
 import data.entities.DoctorPatient;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.DoctorPatientFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +37,7 @@ public class SearchMyPatientsByNifCommand extends FrontCommand{
         }
 
         request.setAttribute("patients", filteredPatients);
-        forward("/medico/pacientes.jsp");
+        forward("/doctor/patients.jsp");
     }   
     
 }

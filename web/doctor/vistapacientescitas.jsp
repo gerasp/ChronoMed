@@ -25,7 +25,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print1">
-                                <a href="/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
+                                <a href="/doctor/patients.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -41,10 +41,10 @@
                         </blockquote>
                         <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
                             <li>
-                                <a href="/medico/vistapacienteshistorial.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
+                                <a href="/doctor/vistapacienteshistory.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-heartbeat"></i> Historial</a>
                             </li>
                             <li  class="active">
-                                <a href="/medico/vistapacientescitas.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
+                                <a href="/doctor/vistapacientesconsultations.jsp?id=<%= patient.getId()%>"><i class="fa fa-lg fa-calendar"></i> Citas</a>
                             </li>
                         </ul>
                         <div class="bordered-folder">

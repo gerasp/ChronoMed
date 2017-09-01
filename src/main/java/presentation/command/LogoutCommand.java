@@ -1,6 +1,6 @@
 package presentation.command;
 
-public class LogOutCommand extends FrontCommand {
+public class LogoutCommand extends FrontCommand {
 
     @Override
     public void process() {
