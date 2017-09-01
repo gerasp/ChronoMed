@@ -20,7 +20,7 @@ public class AssociateHealthcardsCommand extends FrontCommand {
         updateAssociations(addedHealthcards, true);
         updateAssociations(deletedHealthcards, false);
 
-        forward("/administrative/editarpaciente.jsp");
+        forward("/administrative/patientedit.jsp");
     }
 
     private Patient getPatient() throws NumberFormatException {

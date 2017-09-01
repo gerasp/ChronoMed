@@ -7,7 +7,7 @@
             <div class="col-md-9">
                 <div class="text-right">
                     <h1><fmt:message key="navigation.greetings" />,
-                        <span class="label label-primary"><fmt:message key="navigation.administrative" /></span>
+                        <span class="label label-primary"><fmt:message key="navigation.manager" /></span>
                     </h1>
                 </div>
             </div>
@@ -19,10 +19,10 @@
         <div class="col-md-12">
             <ul class="nav nav-justified nav-tabs">
                 <li<%if (request.getRequestURI().contains("patient")) {%> class="active"<% }%>>
-                    <a href="/administrative/patientmanagement.jsp"><i class="fa  fa-lg fa-user"></i>&nbsp;<fmt:message key="navigation.doctor.management" /></a>
+                    <a href="/administrative/patientmanagement.jsp"><i class="fa  fa-lg fa-user"></i>&nbsp;<fmt:message key="navigation.patient.management" /></a>
                 </li>
                 <li<%if (request.getRequestURI().contains("doctor")) {%> class="active"<% }%>>
-                    <a href="/administrative/doctormanagement.jsp"><i class="fa  fa-lg fa-user-md"></i>&nbsp;<fmt:message key="navigation.patient.management" /></a>
+                    <a href="/administrative/doctormanagement.jsp"><i class="fa  fa-lg fa-user-md"></i>&nbsp;<fmt:message key="navigation.doctor.management" /></a>
                 </li>
             </ul>
         </div>

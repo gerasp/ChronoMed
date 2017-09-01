@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/FrontController?command=LogOutCommand"><i class="fa  fa-sign-out"></i><fmt:message key="footer.logout" /></a>
+            <a class="navbar-brand" href="/FrontController?command=LogOutCommand"><i class="fa  fa-sign-out"></i>&nbsp;<fmt:message key="footer.logout" /></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav">

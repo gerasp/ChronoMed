@@ -12,7 +12,7 @@
             <div class="signin-form-container">
                 <div class="row">
                     <div class="col-md-7">
-                        <a class="btn btn-primary btn-lg register-button" href="/administrative/registrarmedico.jsp"><i
+                        <a class="btn btn-primary btn-lg register-button" href="/administrative/doctorregistration.jsp"><i
                                 class="fa  fa-plus-circle"></i>Registrar m�dico</a>
                     </div>
                     <div class="col-md-5">
@@ -21,7 +21,7 @@
                             <input type="hidden" value="SearchDoctorByBoardNumberCommand" name="command">
 
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Buscar por <fmt:message key="form.boardNumber" />..."
+                                <input type="text" class="form-control" placeholder="<fmt:message key="search.boardNumber" />..."
                                        name="search">
                                 <span class="input-group-addon" id="basic-addon2">
                                             <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="list-group">
                     <% if (doctorList == null) {%>
-                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i> Para editar un m�dico, introduzca primero su n�mero de colegiado</span>
+                    <h2 style="text-align: center;"><span class="label label-default"><i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.doctor.info" /></span>
                     </h2>
 
                     <%
@@ -40,7 +40,7 @@
                         for (Doctor doctor : doctorList) {
 
                     %>
-                    <a href="/administrative/editarmedico.jsp?id=<%= doctor.getId()%>"
+                    <a href="/administrative/doctoredit.jsp?id=<%= doctor.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -53,7 +53,7 @@
                     } else {
                     %>
                     <h2 style="text-align: center;"><span class="label label-default"><i
-                            class="fa fa-exclamation-circle"></i> No se ha encontrado ning�n m�dico</span></h2>
+                            class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound" /></span></h2>
                     <%}%>
                 </div>
             </div>

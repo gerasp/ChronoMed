@@ -19,7 +19,7 @@ public class AssociateDoctorsCommand extends FrontCommand {
         updateAssociations(addedDoctors, patient, true);
         updateAssociations(deletedDoctors, patient, false);
 
-        forward("/administrative/editarpaciente.jsp");
+        forward("/administrative/patientedit.jsp");
     }
 
     private Patient getPatient() {

@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a class="btn btn-lg btn-primary register-button"
-                           href="/administrative/registrarpaciente.jsp"><i class="fa  fa-plus-circle"></i>Registrar
+                           href="/administrative/patientregistration.jsp"><i class="fa  fa-plus-circle"></i>Registrar
                             paciente</a>
                     </div>
                     <div class="col-md-4">
@@ -54,7 +54,7 @@
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
                     %>
-                    <a href="/administrative/editarpaciente.jsp?id=<%= patient.getId()%>"
+                    <a href="/administrative/patientedit.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -68,7 +68,7 @@
                         for (Patient patient : healthCardPatientList) {
 
                     %>
-                    <a href="/ChronoMed/administrative/editarpaciente.jsp?id=<%= patient.getId()%>"
+                    <a href="/ChronoMed/administrative/patientedit.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>

@@ -1,7 +1,6 @@
 package presentation.command;
 
 import data.entities.Doctor;
-import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
 import data.facades.FacadeFactory;
 
@@ -20,6 +19,6 @@ public class EditDoctorContactDataCommand extends FrontCommand {
         doctor.setPhoneNumber(request.getParameter("phoneNumber"));
         doctor.setAlternativePhoneNumber(request.getParameter("alternativePhoneNumber"));
         doctorFacade.edit(doctor);
-        forward("/administrative/editarmedico.jsp");
+        forward("/administrative/doctoredit.jsp");
     }
 }
