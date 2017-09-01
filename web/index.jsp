@@ -2,23 +2,18 @@
 <body>
 
 <div class="cover" id="intro">
-    <div class="background-image-fixed cover-image" style="background-image : url('images/medicamentos.jpeg')"></div>
+    <div class="background-image-fixed cover-image" style="background-image : url('images/cover.jpeg')"></div>
     <div class="container">
         <div class="row form">
             <div class="col-md-5 logo">
-                <img src="images/ChronoMed.png" class="center-block img-responsive logo">
+                <img src="/images/ChronoMed.png" class="center-block img-responsive logo">
             </div>
             <div class="col-md-7 signin-form">
                 <ul class="nav nav-justified nav-tabs">
                     <li class="active">
                         <a href="#"><i class="fa  fa-lg fa-user"></i>&nbsp;<fmt:message key="index.login"/><br></a>
                     </li>
-                    <li>
-                    </li>
-                    <li>
-                    </li>
-                    <li>
-                    </li>
+                    <li></li>
                 </ul>
                 <form action="FrontController" method="POST" class="form-horizontal text-right signin-form-container"
                       role="form">
@@ -32,18 +27,17 @@
                             <div class="col-md-12 alert alert-danger" style="text-align: center">
                                 <% if (error != 0) { %>
                                 <fmt:message key="form.login.error.<%=error%>"/>
-                                <% }
-                                } %>
+                                <% }} %>
                             </div>
                             <div class="col-md-8">
-                                <div class="form-group has-feedback">
+                                <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                         <input type="email" class="form-control" name="email" id="inputEmail"
                                                placeholder="<fmt:message key="form.email" />">
                                     </div>
                                 </div>
-                                <div class="form-group has-feedback">
+                                <div class="form-group">
                                     <div class="input-group">
                                         <span class="input-group-addon"><i
                                                 class="fa fa-key"></i></span>
@@ -81,24 +75,20 @@
 <div class="section section-primary services">
     <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center">
-                <img src="images/paciente.jpeg" class="center-block img-responsive">
+            <div class="col-md-4">
+                <img src="images/patient.jpeg" class="center-block img-responsive">
                 <h2 class="text-center"><fmt:message key="index.services.patient.title"/></h2>
-                <p><fmt:message key="index.services.patient.content"/></p>
+                <p class="text-center"><fmt:message key="index.services.patient.content"/></p>
             </div>
             <div class="col-md-4">
-                <img src="images/medico.jpg" class="center-block img-responsive">
+                <img src="images/doctor.jpg" class="center-block img-responsive">
                 <h2 class="text-center"><fmt:message key="index.services.doctor.title"/></h2>
-                <p class="text-center">Un portal �nico para acceder al historial de todos tus pacientes. Podr�s
-                    a�adir o consultar informaci�n como enfermedades actuales, distintas consultas
-                    que el paciente ha tenido, etc. Deja atr�s esas peticiones a pacientes
-                    para que traigan su historial m�dico. �Sigue ejerciendo tu profesi�n de
-                    manera m�s eficaz!</p>
+                <p class="text-center"><fmt:message key="index.services.doctor.content"/></p>
             </div>
-            <div class="col-md-4 text-center">
-                <img src="images/administrativo.jpg" class="center-block img-responsive">
-                <h2 class="text-center"><fmt:message key="index.services.administrative.title"/></h2>
-                <p></p>
+            <div class="col-md-4">
+                <img src="images/manager.jpg" class="center-block img-responsive">
+                <h2 class="text-center"><fmt:message key="index.services.manager.title"/></h2>
+                <p class="text-center"><fmt:message key="index.services.manager.content"/></p>
             </div>
         </div>
     </div>
@@ -194,20 +184,15 @@
         </div>
     </div>
 </div>
-
 <script>
-
     $('#nav').affix({
         offset: {
             top: $('#intro').height() - 50
         }
     });
-
     $('body').scrollspy({target: ".navbar", offset: 50});
-
     $("#nav").find("a").on('click', function (event) {
         if (this.hash !== "") {
-
             event.preventDefault();
             var hash = this.hash;
             $('html, body').animate({
@@ -216,9 +201,7 @@
 
                 window.location.hash = hash;
             });
-
         }
-
     });
 </script>
 </body>

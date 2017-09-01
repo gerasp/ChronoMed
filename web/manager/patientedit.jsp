@@ -24,7 +24,7 @@
                 <input type="hidden" value="<%= patient.getId()%>" name="id">
                 <div class="row">
                     <div class="col-md-2">
-                        <a href="/administrative/patientmanagement.jsp" class="btn btn-block btn-lg btn-link "><i
+                        <a href="/manager/patientmanagement.jsp" class="btn btn-block btn-lg btn-link "><i
                                 class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                     </div>
                     <div class="col-md-8">

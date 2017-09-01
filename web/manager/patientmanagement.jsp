@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a class="btn btn-lg btn-primary register-button"
-                           href="/administrative/patientregistration.jsp"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message key="navigation.patient.registration" /></a>
+                           href="/manager/patientregistration.jsp"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message key="navigation.patient.registration" /></a>
                     </div>
                     <div class="col-md-4">
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
@@ -51,7 +51,7 @@
                     } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
                         for (Patient patient : nifPatientList) {
                     %>
-                    <a href="/administrative/patientedit.jsp?id=<%= patient.getId()%>"
+                    <a href="/manager/patientedit.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>
@@ -65,7 +65,7 @@
                         for (Patient patient : healthCardPatientList) {
 
                     %>
-                    <a href="/ChronoMed/administrative/patientedit.jsp?id=<%= patient.getId()%>"
+                    <a href="/ChronoMed/manager/patientedit.jsp?id=<%= patient.getId()%>"
                        class="list-group-item">
                         <h4 class="list-group-item-heading"><%= patient.getName()%> <%= patient.getSurname()%><i
                                 class="-circle fa fa-2x  pull-right text-primary fa-angle-right"></i></h4>

@@ -8,14 +8,14 @@
             </div>
             <div class="col-md-9">
                 <div class="text-right">
-                    <h1><fmt:message key="navigation.greetings"/>,
+                    <h2><fmt:message key="navigation.greetings"/>,
                         <% if (patient.getGender().equals("Femenino")) { %>
                         <fmt:message key="navigation.patient.female"/>
                         <% } else { %>
                         <fmt:message key="navigation.patient.male" />
                         <% } %>
                         <span class="label label-primary">&nbsp;<%= patient.getSurname()%></span>
-                    </h1>
+                    </h2>
                 </div>
             </div>
         </div>

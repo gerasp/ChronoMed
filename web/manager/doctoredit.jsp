@@ -16,7 +16,7 @@
             <div class="signin-form-container">
                 <div class="row">
                     <div class="col-md-2">
-                        <a href="/administrative/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i
+                        <a href="/manager/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i
                                 class="fa  fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                     </div>
                     <div class="col-md-8">

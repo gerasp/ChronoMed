@@ -7,14 +7,14 @@
                 <img src="/images/ChronoMed.png" class="img-responsive">
             </div>
             <div class="col-md-9 text-right" id="print2">
-                <h1><fmt:message key="navigation.greetings"/>,
+                <h2><fmt:message key="navigation.greetings"/>,
                     <% if (doctor.getGender().equals("Femenino")) { %>
                     <fmt:message key="navigation.doctor.female"/>
                     <% } else { %>
                     <fmt:message key="navigation.doctor.male" />
                     <% } %>
                     <span class="label label-primary">&nbsp;<%= doctor.getSurname()%></span>
-                </h1>
+                </h2>
             </div>
         </div>
     </div>
