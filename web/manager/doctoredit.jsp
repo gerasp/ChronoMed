@@ -105,7 +105,7 @@
                                         </h5>
                                     </div>
                                     <div class="col-md-3">
-                                        <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save" />
+                                        <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save" />&nbsp;
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>
@@ -156,7 +156,7 @@
                                         </h5>
                                     </div>
                                     <div class="col-md-3">
-                                        <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save" />
+                                        <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save" />&nbsp;
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>

@@ -21,7 +21,7 @@
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
                             <input type="hidden" value="SearchPatientByHealthcardCommand" name="command">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="<fmt:message key="form.healthcardNumber" />"
+                                <input type="text" class="form-control" placeholder="<fmt:message key="form.healthcard" />"
                                        name="searchHealthCardNumber">
                                 <span class="input-group-addon" id="basic-addon2">
                                             <button class="btn-link" type="submit"><i class="fa  fa-search"></i></button>
@@ -79,7 +79,7 @@
                     } else {
                     %>
                     <h2 style="text-align: center;"><span class="label label-default"><i
-                            class="fa fa-exclamation-circle"></i> No se ha encontrado ning�n paciente</span></h2>
+                            class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.info2" /></span></h2>
 
                     <%
                         }

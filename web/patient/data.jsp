@@ -153,7 +153,7 @@
                                         </div>
                                     </div>
                                      <div class="panel-footer">*<fmt:message key="form.requiredFields.some" />
-                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
+                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />&nbsp;
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>
@@ -193,7 +193,7 @@
                                         </div>
                                     </div>
                                     <div class="panel-footer">*<fmt:message key="form.requiredFields.some" />
-                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
+                                        <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />&nbsp;
                                             <i class="fa  fa-save"></i>
                                         </button>
                                     </div>
