@@ -107,14 +107,14 @@
             </div>
             <div class="col-sm-4">
                 <h3 class="text-left">Adri�n Louro</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
             <div class="col-sm-2">
                 <img class="img-circle img-responsive" src="images/team/gm.jpeg">
             </div>
             <div class="col-sm-4">
                 <h3 class="text-left font-bold">Gerardo Medina</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
         </div>
         <div class="row team-row">
@@ -123,14 +123,14 @@
             </div>
             <div class="col-sm-4">
                 <h3 class="text-left">Saskia Santana</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
             <div class="col-sm-2">
                 <img src="images/team/og.jpg" class="img-circle img-responsive">
             </div>
             <div class="col-sm-4 text-center">
                 <h3 class="text-left">�scar Garc�a</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
         </div>
         <div class="row team-row">
@@ -139,14 +139,14 @@
             </div>
             <div class="col-sm-4">
                 <h3 class="text-left">Joel Delgado</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
             <div class="col-sm-2">
                 <img src="images/team/gc.jpg" class="img-circle img-responsive">
             </div>
             <div class="col-sm-4 text-center">
                 <h3 class="text-left">Guillermo Cubero</h3>
-                <p class="lead text-left"><fmt:message key="index.developer"/></p>
+                <p class="lead text-left"><fmt:message key="index.team.developer"/></p>
             </div>
         </div>
     </div>

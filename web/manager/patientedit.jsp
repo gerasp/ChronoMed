@@ -289,7 +289,7 @@
                                                    value="<%= patient.getZipCode()%>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputProvince" class="control-label">Provincia*</label>
+                                            <label for="inputProvince" class="control-label"><fmt:message key="form.province" />*</label>
                                             <input type="text" class="form-control" id="inputProvince" name="province"
                                                    value="<%= patient.getProvince()%>" required>
                                         </div>

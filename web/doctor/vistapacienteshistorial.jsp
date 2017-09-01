@@ -61,27 +61,27 @@
                                 <table class="table table-striped">
                                     <tbody>
                                         <tr>
-                                            <td><strong>Grupo sangu�neo</strong></td>
+                                            <td><strong><fmt:message key="history.bloodType" /></strong></td>
                                             <td><input required class="input-in-table" type="text" name="bloodType" value="<%=medicalhistory.getBloodType()%>"></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Enfermedades</strong></td>
+                                            <td><strong><fmt:message key="history.pathologies" /></strong></td>
                                             <td><textarea required rows="4" cols="50" name="pathologies"><%=medicalhistory.getPathologies()%></textarea></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Operaciones</strong></td>
+                                            <td><strong><fmt:message key="history.surgeries" /></strong></td>
                                             <td><textarea required rows="4" cols="50" name="surgeries"><%=medicalhistory.getSurgeries()%></textarea></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Alergias</strong></td>
+                                            <td><strong><fmt:message key="history.allergies" /></strong></td>
                                             <td><textarea required rows="4" cols="50" name="allergies"><%=medicalhistory.getAllergies()%></textarea></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Historial familiar</strong></td>
+                                            <td><strong><fmt:message key="history.familyHistory" /></strong></td>
                                             <td><textarea required rows="4" cols="50" name="familyHistory"><%=medicalhistory.getFamilyHistory()%></textarea></td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Otros</strong></td>
+                                            <td><strong><fmt:message key="history.others" /></strong></td>
                                             <td><textarea required rows="4" cols="50" name="others"><%=medicalhistory.getOthers()%></textarea></td>
                                         </tr>
                                     </tbody>
@@ -89,8 +89,8 @@
                                 <div class="row" style="margin:10px;">
                                     <div class="col-md-6" id="print3">
 
-                                        <button class="btn btn-primary btn-block" onclick="window.print()">Exportar historial <i class="fa  fa-print"></i>
-                                        </button><br>
+                                        <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i>
+                                        </button>
                                     </div>
                                     <div class="col-md-6" id="print4">
                                         <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save" /> <i class="fa  fa-save"></i>

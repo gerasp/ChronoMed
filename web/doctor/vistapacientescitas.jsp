@@ -54,17 +54,17 @@
                             %>
 
                             <div class="form-inline text-center" >
-                                <h3 id="print2">Filtrar por rango de fechas</h3>
+                                <h3 id="print2"><fmt:message key="action.filter.title" /></h3>
                                 <div class="form-group" id="print5">
                                     <div class="input-group">
-                                        <div class="input-group-addon">Desde</div>
+                                        <div class="input-group-addon"><fmt:message key="consultation.from" /></div>
                                         <input id="from_date" type="date" name="from" class="form-control" required value="">
 
-                                        <div class="input-group-addon">hasta</div>
+                                        <div class="input-group-addon"><fmt:message key="consultation.to" /></div>
                                         <input id="to_date" type="date" name="to" class="form-control" required value="">
                                     </div>
                                 </div>
-                                <button onclick="filter()" class="btn btn-primary" id="print6">Filtrar</button>
+                                <button onclick="filter()" class="btn btn-primary" id="print6"><fmt:message key="action.filter" /></button>
                             </div>
                             <% if (medicalconsultationList != null && !medicalconsultationList.isEmpty()) {%>
 
@@ -84,10 +84,10 @@
                                         </div>
                                         <div class="timeline-body">
                                             <p>
-                                                <b>S�ntomas</b>: <%=medicalconsultation.getSymptoms()%><br>
-                                                <b>Recomendaciones</b>: <%=medicalconsultation.getRecomendations()%><br>
-                                                <b>Tratamiento</b>: <%=medicalconsultation.getTreatment()%><br>
-                                                <b>Pruebas</b>: <%=medicalconsultation.getExaminations()%><br>
+                                                <b><fmt:message key="consultation.symptoms" /></b>: <%=medicalconsultation.getSymptoms()%><br>
+                                                <b><fmt:message key="consultation.recomendations" /></b>: <%=medicalconsultation.getRecomendations()%><br>
+                                                <b><fmt:message key="consultation.treatment" /></b>: <%=medicalconsultation.getTreatment()%><br>
+                                                <b><fmt:message key="consultation.examinations" /></b>: <%=medicalconsultation.getExaminations()%><br>
                                             </p>
                                         </div>
                                     </div>
@@ -101,7 +101,7 @@
                             <div class="row" style="margin:10px;">
                                 <div class="col-md-6" id="print3">
                                     <button class="btn btn-primary btn-block" onclick="window.print()">Exportar citas <i class="fa  fa-print"></i>
-                                    </button><br>
+                                    </button>
                                 </div>
                                 <div class="col-md-6" id="print4">
                                     <button id="openModal2Button" class="btn btn-primary btn-block">A�adir cita <i class="fa  fa-plus-circle"></i>
@@ -126,19 +126,19 @@
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
-                                    <td><strong>S�ntomas</strong></td>
+                                    <td><strong><fmt:message key="consultation.symptoms" /></strong></td>
                                     <td><textarea rows="4" cols="40" required class="input-in-table" name="symptoms"></textarea></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Pruebas</strong></td>
+                                    <td><strong><fmt:message key="consultation.examinations" /></strong></td>
                                     <td><textarea rows="4" cols="40" required class="input-in-table" name="examinations"></textarea></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Tratamiento</strong></td>
+                                    <td><strong><fmt:message key="consultation.treatment" /></strong></td>
                                     <td><textarea rows="4" cols="40" required class="input-in-table" name="treatment"></textarea></td>
                                 </tr>
                                 <tr>
-                                    <td><strong>Recomendaciones</strong></td>
+                                    <td><strong><fmt:message key="consultation.recomendations" /></strong></td>
                                     <td><textarea rows="4" cols="40" required class="input-in-table" name="recomendations"></textarea></td>
                                 </tr>
                             </tbody>

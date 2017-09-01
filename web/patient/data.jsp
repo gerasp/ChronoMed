@@ -68,8 +68,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="panel-footer">Para modificar estos datos, contacte con el administrativo de su centro
-                                    asignado.</div>
+                                <div class="panel-footer"><fmt:message key="form.requiredFields.contactManager" /></div>
                             </div>
                         </div>
                         <div class="panel panel-primary">
@@ -102,8 +101,7 @@
                                         </div>
                                     </div>
                                 </form>
-                                <div class="panel-footer">Para modificar estos datos, contacte con el administrativo de su centro
-                                    asignado.</div>
+                                <div class="panel-footer"><fmt:message key="form.requiredFields.contactManager" /></div>
                             </div>
                         </div>
                         <div class="panel panel-primary">
@@ -134,7 +132,7 @@
                                                     <input type="text" class="form-control" id="inputZipcode" name="zipCode" value="<%= patient.getZipCode()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputProvince" class="control-label">Provincia*</label>
+                                                    <label for="inputProvince" class="control-label"><fmt:message key="form.province" />*</label>
                                                     <input type="text" class="form-control" id="inputProvince" name="province" value="<%= patient.getProvince()%>" required>
                                                 </div>
                                             </div>
@@ -148,7 +146,7 @@
                                                     <input type="tel" class="form-control" id="inputPhoneNumber" name="phoneNumber" value="<%= patient.getPhoneNumber()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAlternativePhoneNumber" class="control-label">Tel�fono alternativo</label>
+                                                    <label for="inputAlternativePhoneNumber" class="control-label"><fmt:message key="form.phoneNumber.alternative" /></label>
                                                     <input type="tel" class="form-control" id="inputAlternativePhoneNumber" name="alternativePhoneNumber" value="<%= patient.getAlternativePhoneNumber()%>">
                                                 </div>
                                             </div>
