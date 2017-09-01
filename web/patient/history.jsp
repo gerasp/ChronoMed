@@ -12,7 +12,7 @@
                     Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
                 %>
 
-                <div class="col-md-9">
+                <div class="col-md-9 print">
                     <div class="white-container">
                         <h1 class="text-primary text-center"><small><fmt:message key="history.title" /></small><br>
                             <%=patient.getName() + " " + patient.getSurname()%></h1>
@@ -40,7 +40,7 @@
                             <footer><fmt:message key="history.others" /></footer>
                             <p><%=medicalhistory.getOthers()%></p>
                         </blockquote>
-                        <div class="row">
+                        <div class="row not-print">
                             <div class="col-md-12">
                                 <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i>
                                 </button>

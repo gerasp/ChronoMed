@@ -12,7 +12,7 @@
                     MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
                     List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
                 %>
-                <div class="col-md-9">
+                <div class="col-md-9 print">
                     <div class="white-container">
                         <div class="form-inline text-center" >
                             <h3><fmt:message key="action.filter.title" /></h3>
@@ -24,7 +24,7 @@
                                     <input id="to_date" type="date" name="to" class="form-control" required value="">
                                 </div>
                             </div>
-                            <button onclick="filter()" class="btn btn-primary"><fmt:message key="action.filter" /></button>
+                            <button onclick="filter()" class="btn btn-primary not-print"><fmt:message key="action.filter" /></button>
                         </div>
                         <% if (medicalconsultationList != null && !medicalconsultationList.isEmpty()) {%>
                         <ul class="timeline">
@@ -55,7 +55,7 @@
                             </li>
                             <%}%>
                         </ul>
-                        <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i></button>
+                        <button class="btn btn-primary btn-block not-print" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i></button>
                         <% } else { %>
                         <br>
                         <div class="well well-lg text-center">
