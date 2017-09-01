@@ -10,7 +10,6 @@
             </div>
             <div class="col-md-7 signin-form">
                 <ul class="nav nav-justified nav-tabs">
-
                     <li class="active">
                         <a href="#"><i class="fa  fa-lg fa-user"></i>Inicio de sesi�n<br></a>
                     </li>
@@ -66,46 +65,8 @@
         </div>
     </div>
 </div>
-<div class="navbar navbar-inverse" id="nav" style="margin-top:-50px;">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand">@ ChronoMed 2017</a>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false"> <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li value="en"><a href="?language=en">English</a></li>
-                        <li value="es"><a href="?language=es">Español</a></li>
-                        <li value="de"><a href="?language=de">Deutsch</a></li>
-                    </ul>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#intro-section">Inicio</a>
-                </li>
-                <li class="">
-                    <a href="#services-section">Servicios<br></a>
-                </li>
-                <li class="">
-                    <a href="#team-section">Equipo<br></a>
-                </li>
-                <li>
-                    <a href="#contact-section">Contacto<br></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+<%@include file="/footer.jsp" %>
+
 <div class="section" id="services-section">
     <div class="container">
         <div class="row">
@@ -247,6 +208,7 @@
 </div>
 
 <script>
+
     $('#nav').affix({
         offset: {
             top: $('#intro-section').height() - 50
@@ -255,7 +217,7 @@
 
     $('body').scrollspy({target: ".navbar", offset: 50});
 
-    $("#nav a").on('click', function (event) {
+    $("#nav").find("a").on('click', function (event) {
         if (this.hash !== "") {
 
             event.preventDefault();
@@ -273,5 +235,4 @@
 </script>
 </body>
 
-<%@include file="/footer.jsp" %>
 </html>
