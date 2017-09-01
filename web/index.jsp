@@ -1,12 +1,6 @@
 <%@include file="/header.jsp" %>
 <body>
-<form>
-    <select id="language" name="language" onchange="submit()">
-        <option value="en" ${language == 'en' ? 'selected' : ''}>English</option>
-        <option value="es" ${language == 'es' ? 'selected' : ''}>Español</option>
-        <option value="de" ${language == 'de' ? 'selected' : ''}>Deutsch</option>
-    </select>
-</form>
+
 <div class="cover" id="intro-section">
     <div class="background-image-fixed cover-image" style="background-image : url('images/medicamentos.jpeg')"></div>
     <div class="container">
@@ -45,7 +39,7 @@
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                                         <input type="email" class="form-control" name="email" id="inputEmail"
-                                               placeholder="<fmt:message key="login.email" />">
+                                               placeholder="<fmt:message key="index.email" />">
                                     </div>
                                 </div>
                                 <div class="form-group has-feedback">
@@ -53,7 +47,7 @@
                                         <span class="input-group-addon"><i
                                                 class="fa fa-key"></i></span>
                                         <input type="password" class="form-control" name="password" id="inputPassword"
-                                               placeholder="<fmt:message key="login.password" />">
+                                               placeholder="<fmt:message key="index.password" />">
                                     </div>
                                 </div>
                             </div>
@@ -61,7 +55,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-lg btn-primary">
-                                        <i class="fa fa-2x fa-sign-in"></i><br><fmt:message key="login.submit" />
+                                        <i class="fa fa-2x fa-sign-in"></i><br><fmt:message key="index.submit"/>
                                     </button>
                                 </div>
                             </div>
@@ -81,9 +75,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">� ChronoMed 2017</a>
+            <a class="navbar-brand">@ ChronoMed 2017</a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false"> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li value="en"><a href="?language=en">English</a></li>
+                        <li value="es"><a href="?language=es">Español</a></li>
+                        <li value="de"><a href="?language=de">Deutsch</a></li>
+                    </ul>
+                </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
                     <a href="#intro-section">Inicio</a>
