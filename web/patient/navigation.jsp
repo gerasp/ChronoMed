@@ -21,7 +21,7 @@
         </div>
     </div>
 </div>
-<div class="col-md-3" id="print1">
+<div class="col-md-3">
     <div class="list-group">
         <a href="/patient/history.jsp" class="list-group-item
            <% if (request.getRequestURI().contains("history")) { %> active<% }%>">

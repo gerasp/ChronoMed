@@ -41,7 +41,7 @@
                             <p><%=medicalhistory.getOthers()%></p>
                         </blockquote>
                         <div class="row">
-                            <div class="col-md-12" id="print3">
+                            <div class="col-md-12">
                                 <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i>
                                 </button>
                             </div>
@@ -51,6 +51,5 @@
             </div>
         </div>
         <%@include file="/footer.jsp" %>
-
     </body>
 </html>

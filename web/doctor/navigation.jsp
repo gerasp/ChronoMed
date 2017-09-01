@@ -6,7 +6,7 @@
             <div class="col-md-3">
                 <img src="/images/ChronoMed.png" class="img-responsive">
             </div>
-            <div class="col-md-9 text-right" id="print2">
+            <div class="col-md-9 text-right">
                 <h2><fmt:message key="navigation.greetings"/>,
                     <% if (doctor.getGender().equals("Femenino")) { %>
                     <fmt:message key="navigation.doctor.female"/>
@@ -20,7 +20,7 @@
     </div>
 </div>
 
-<div class="col-md-3" id="print1">
+<div class="col-md-3">
     <div class="list-group">
         <a class="list-group-item
            <% if (request.getRequestURI().contains("patients")) { %> active<% }%>"

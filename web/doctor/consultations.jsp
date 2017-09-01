@@ -6,8 +6,8 @@
         List<Medicalconsultation> medicalconsultationList = medicalconsultationFacade.findByPatient(patient);
     %>
     <div class="form-inline text-center">
-        <h3 id="print2"><fmt:message key="action.filter.title"/></h3>
-        <div class="form-group" id="print5">
+        <h3><fmt:message key="action.filter.title"/></h3>
+        <div class="form-group">
             <div class="input-group">
                 <div class="input-group-addon"><fmt:message key="consultation.from"/></div>
                 <input id="from_date" type="date" name="from" class="form-control" required value="">
@@ -16,7 +16,7 @@
                 <input id="to_date" type="date" name="to" class="form-control" required value="">
             </div>
         </div>
-        <button onclick="filter()" class="btn btn-primary" id="print6"><fmt:message key="action.filter"/></button>
+        <button onclick="filter()" class="btn btn-primary"><fmt:message key="action.filter"/></button>
     </div>
     <% if (medicalconsultationList != null && !medicalconsultationList.isEmpty()) {%>
 
@@ -58,12 +58,12 @@
             }%>
     </ul>
     <div class="row" style="margin:10px;">
-        <div class="col-md-6" id="print3">
+        <div class="col-md-6">
             <button class="btn btn-primary btn-block" onclick="window.print()">Exportar citas <i
                     class="fa  fa-print"></i>
             </button>
         </div>
-        <div class="col-md-6" id="print4">
+        <div class="col-md-6">
             <button id="openModal2Button" class="btn btn-primary btn-block">A�adir cita <i
                     class="fa  fa-plus-circle"></i>
             </button>

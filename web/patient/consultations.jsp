@@ -15,16 +15,16 @@
                 <div class="col-md-9">
                     <div class="white-container">
                         <div class="form-inline text-center" >
-                            <h3 id="print1"><fmt:message key="action.filter.title" /></h3>
+                            <h3><fmt:message key="action.filter.title" /></h3>
                             <div class="form-group">
-                                <div class="input-group" id="print2">
+                                <div class="input-group">
                                     <div class="input-group-addon"><fmt:message key="consultation.from" /></div>
                                     <input id="from_date" type="date" name="from" class="form-control" required value="">
                                     <div class="input-group-addon"><fmt:message key="consultation.to" /></div>
                                     <input id="to_date" type="date" name="to" class="form-control" required value="">
                                 </div>
                             </div>
-                            <button onclick="filter()" class="btn btn-primary" id="print4"><fmt:message key="action.filter" /></button>
+                            <button onclick="filter()" class="btn btn-primary"><fmt:message key="action.filter" /></button>
                         </div>
                         <% if (medicalconsultationList != null && !medicalconsultationList.isEmpty()) {%>
                         <ul class="timeline">
@@ -53,9 +53,15 @@
                                     </div>
                                 </div>
                             </li>
-                            <%}}%>
+                            <%}%>
                         </ul>
-                        <button class="btn btn-primary btn-block" onclick="window.print()" id="print3"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i></button>
+                        <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message key="action.export" />&nbsp;<i class="fa  fa-print"></i></button>
+                        <% } else { %>
+                        <br>
+                        <div class="well well-lg text-center">
+                            <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.consultation.notFound"/>
+                        </div>
+                        <% } %>
                     </div>
                 </div>
             </div>

@@ -8,7 +8,7 @@
             MedicalhistoryFacade medicalhistoryFacade = FacadeFactory.getFacade("MedicalhistoryFacade");
             Medicalhistory medicalhistory = medicalhistoryFacade.findByPatient(patient).get(0);
         %>
-        <h5 style="margin-left:10px; margin-bottom: 10px;" class="text-muted text-center" id="print6"><i
+        <h5 style="margin-left:10px; margin-bottom: 10px;" class="text-muted text-center"><i
                 class="fa fa-question-circle"></i> Puede editar los campos clicando sobre ellos y luego haciendo
             click en "<fmt:message key="form.data.save"/>&nbsp;"</h5>
         <table class="table table-striped">
@@ -46,13 +46,12 @@
             </tbody>
         </table>
         <div class="row" style="margin:10px;">
-            <div class="col-md-6" id="print3">
-
+            <div class="col-md-6">
                 <button class="btn btn-primary btn-block" onclick="window.print()"><fmt:message
                         key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
                 </button>
             </div>
-            <div class="col-md-6" id="print4">
+            <div class="col-md-6">
                 <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save"/>&nbsp;
                     <i class="fa  fa-save"></i>
                 </button>

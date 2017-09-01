@@ -19,7 +19,7 @@
                                 for (Doctor doctor : doctorList) {
                             %>
                             <a class="list-group-item">
-                                <span class="badge"><i class="fa fa-phone"></i>&nbsp;<%= doctor.getPhoneNumber()%></span>
+                                <span class="pull-right label label-primary"><i class="fa fa-phone"></i>&nbsp;<%= doctor.getPhoneNumber()%></span>
                                 <h4 class="list-group-item-heading"><%= doctor.getName()%> <%= doctor.getSurname()%></h4>
                                 <p class="list-group-item-text">
                                     <%= doctor.getSpeciality() %>&nbsp;|&nbsp;
