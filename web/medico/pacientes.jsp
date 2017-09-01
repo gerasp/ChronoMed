@@ -17,10 +17,10 @@
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
                             <input type="hidden" value="SearchMyPatientsByHealthcardCommand" name="command">
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="Buscar por tarjeta..."
+                                <input type="text" class="form-control" placeholder="<fmt:message key="form.healthcard" />"
                                        name="searchHealthCardNumber">
                                 <span class="input-group-addon" id="basic-addon2">
-                                            <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
+                                            <button class="btn-link" type="submit"><i class="fa  fa-search"></i></button>
                                         </span>
                             </div>
                         </form>
@@ -33,7 +33,7 @@
                                 <input type="text" class="form-control" placeholder="Buscar por <fmt:message key="form.idcard" />..."
                                        name="searchNif">
                                 <span class="input-group-addon" id="basic-addon3">
-                                            <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
+                                            <button class="btn-link" type="submit"><i class="fa  fa-search"></i></button>
                                         </span>
                             </div>
                         </form>

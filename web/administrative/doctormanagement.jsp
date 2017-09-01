@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <a class="btn btn-primary btn-lg register-button" href="/administrative/doctorregistration.jsp"><i
-                                class="fa  fa-plus-circle"></i>Registrar m�dico</a>
+                                class="fa  fa-plus-circle"></i>&nbsp;<fmt:message key="navigation.doctor.registration" /></a>
                     </div>
                     <div class="col-md-5">
                         <form class="form-horizontal" method="GET" role="form" action="/FrontController">
@@ -21,10 +21,10 @@
                             <input type="hidden" value="SearchDoctorByBoardNumberCommand" name="command">
 
                             <div class="input-group input-group-lg">
-                                <input type="text" class="form-control" placeholder="<fmt:message key="search.boardNumber" />..."
+                                <input type="text" class="form-control" placeholder="<fmt:message key="form.boardNumber" />"
                                        name="search">
                                 <span class="input-group-addon" id="basic-addon2">
-                                            <button class="btn-link" type="submit"><i class="fa  -circle fa-search"></i></button>
+                                            <button class="btn-link" type="submit"><i class="fa  fa-search"></i></button>
                                         </span>
                             </div>
                         </form>

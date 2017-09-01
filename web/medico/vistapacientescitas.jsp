@@ -25,7 +25,7 @@
                     <div class="signin-form-container">
                         <div class="row">
                             <div class="col-md-2" id="print1">
-                                <a href="/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                                <a href="/medico/pacientes.jsp" class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                             </div>
                             <div class="col-md-8">
                                 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {

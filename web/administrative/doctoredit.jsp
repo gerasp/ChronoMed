@@ -17,7 +17,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <a href="/administrative/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i
-                                class="fa  -circle fa-arrow-circle-left"></i> Atr�s</a>
+                                class="fa  fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                     </div>
                     <div class="col-md-8">
                         <h1 class="form-title text-center">Dr<% if (doctor.getGender().equals("Femenino")) {

@@ -10,66 +10,72 @@
                     <div class="row">
                         <div class="col-md-2">
                             <a href="/administrative/patientmanagement.jsp"
-                               class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                               class="btn btn-block btn-lg btn-link "><i class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                         </div>
                         <div class="col-md-8">
-                            <h1 class="form-title text-center">Formulario de registro de pacientes</h1>
+                            <h1 class="form-title text-center">&nbsp<fmt:message key="form.patient.registration" /></h1>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-block btn-lg btn-link pull-right">Registrar<i
-                                    class="fa  -circle fa-check-circle"></i></button>
+                            <button class="btn btn-block btn-lg btn-link pull-right"><fmt:message key="form.submit" />&nbsp<i
+                                    class="fa  fa-check-circle"></i></button>
                         </div>
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left"><fmt:message key="form.personalData" /></h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.personalData"/></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputName" class="control-label"><fmt:message key="form.name" /></label>
+                                        <label for="inputName" class="control-label"><fmt:message
+                                                key="form.name"/></label>
                                         <input type="text" class="form-control" name="name" id="inputName"
-                                               placeholder="Fulano" required>
+                                               placeholder="" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputSurname" class="control-label"><fmt:message key="form.surname" /></label>
+                                        <label for="inputSurname" class="control-label"><fmt:message
+                                                key="form.surname"/></label>
                                         <input type="text" class="form-control" name="surname" id="inputSurname"
-                                               required placeholder="De Tal De Cual">
+                                               required placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputIdcard" class="control-label"><fmt:message key="form.idcard" /></label>
+                                        <label for="inputIdcard" class="control-label"><fmt:message
+                                                key="form.idcard"/></label>
                                         <input type="text" class="form-control" name="nif" id="inputIdcard" required
-                                               placeholder="65764330F">
+                                               placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputBirthDate" class="control-label">Fecha de nacimiento</label>
+                                        <label for="inputBirthDate" class="control-label"><fmt:message
+                                                key="form.birthday"/></label>
                                         <input type="date" class="form-control" name="birthdate" required
                                                id="inputBirthDate" placeholder="1 de enero de 1970">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputGender" class="control-label"><fmt:message key="form.gender" /></label>
+                                        <label for="inputGender" class="control-label"><fmt:message
+                                                key="form.gender"/></label>
                                         <select class="form-control" name="gender" id="inputGender">
-                                            <option><fmt:message key="form.gender.male" /></option>
-                                            <option><fmt:message key="form.gender.female" /></option>
+                                            <option><fmt:message key="form.gender.male"/></option>
+                                            <option><fmt:message key="form.gender.female"/></option>
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputNationality" class="control-label">Nacionalidad</label>
+                                        <label for="inputNationality" class="control-label"><fmt:message
+                                                key="form.nationality"/></label>
                                         <input type="text" class="form-control" name="nationality" required
-                                               id="inputNationality" placeholder="Espa�a">
+                                               id="inputNationality" placeholder="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer"><fmt:message key="form.mandatoryFields.all" /></div>
+                        <div class="panel-footer"><fmt:message key="form.mandatoryFields.all"/></div>
                     </div>
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left">Tarjetas sanitarias</h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.healthcards"/></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -90,7 +96,8 @@
                                     <div class="col-md-3">
                                         <button type="button" onclick="addHealthCard()"
                                                 class="btn btn-primary btn-block"><i
-                                                class="-circle fa  fa-plus-circle"></i>A�adir tarjeta sanitaria&nbsp;
+                                                class="-circle fa  fa-plus-circle"></i><fmt:message
+                                                key="form.healthcards.add"/>&nbsp;
                                         </button>
                                     </div>
                                 </div>
@@ -99,72 +106,81 @@
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left">Datos de contacto</h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.data.contact"/></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputAddress" class="control-label">Direcci�n*</label>
+                                        <label for="inputAddress" class="control-label"><fmt:message
+                                                key="form.address"/>*</label>
                                         <input type="text" class="form-control" id="inputAddress" required
-                                               name="address" placeholder="Calle de la Salud 55">
+                                               name="address" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputLocality" class="control-label">Localidad*</label>
-                                        <input type="" class="form-control" id="inputLocality" required name="locality"
-                                               placeholder="G�ldar">
+                                        <label for="inputLocality" class="control-label"><fmt:message
+                                                key="form.locality"/>*</label>
+                                        <input type="text" class="form-control" id="inputLocality" required
+                                               name="locality"
+                                               placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputZipcode" class="control-label">C�digo postal*</label>
+                                        <label for="inputZipcode" class="control-label"><fmt:message
+                                                key="form.postalCode"/>*</label>
                                         <input type="text" class="form-control" id="inputZipcode" required
-                                               name="zipCode" placeholder="12345">
+                                               name="zipCode" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputProvince" class="control-label">Provincia*</label>
+                                        <label for="inputProvince" class="control-label"><fmt:message
+                                                key="form.province"/>*</label>
                                         <input type="text" class="form-control" id="inputProvince" required
-                                               name="province" placeholder="Las Palmas">
+                                               name="province" placeholder="">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="inputCountry" class="control-label">Pa�s*</label>
-                                        <input type="" class="form-control" id="inputCountry" required name="country"
-                                               placeholder="Espa�a">
+                                        <label for="inputCountry" class="control-label"><fmt:message
+                                                key="form.country"/>*</label>
+                                        <input type="text" class="form-control" id="inputCountry" required
+                                               name="country"
+                                               placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputPhoneNumber" class="control-label">Tel�fono principal*</label>
+                                        <label for="inputPhoneNumber" class="control-label"><fmt:message
+                                                key="form.phoneNumber.main"/>*</label>
                                         <input type="tel" class="form-control" id="inputPhoneNumber" required
-                                               name="phoneNumber" placeholder="928555666">
+                                               name="phoneNumber" placeholder="">
                                     </div>
                                     <div class="form-group">
-                                        <label for="inputAlternativePhoneNumber" class="control-label">Tel�fono
-                                            alternativo</label>
+                                        <label for="inputAlternativePhoneNumber" class="control-label"><fmt:message
+                                                key="form.phoneNumber.alternative"/></label>
                                         <input type="tel" class="form-control" id="inputAlternativePhoneNumber"
-                                               name="alternativePhoneNumber" placeholder="666777888">
+                                               name="alternativePhoneNumber" placeholder="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields" /></div>
+                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields"/></div>
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left"><fmt:message key="form.accessData" /></h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.accessData"/></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="inputEmail" class="control-label"><fmt:message key="form.email" />*</label>
+                                        <label for="inputEmail" class="control-label"><fmt:message
+                                                key="form.email"/>*</label>
                                         <input type="email" name="email" class="form-control" id="inputEmail"
                                                placeholder="ejemplo@ejemplo.com">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields" /></div>
+                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields"/></div>
                     </div>
                 </form>
             </div>

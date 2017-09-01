@@ -10,14 +10,14 @@
                     <div class="row">
                         <div class="col-md-2">
                             <a href="/administrative/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i
-                                    class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                                    class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                         </div>
                         <div class="col-md-8">
-                            <h1 class="form-title text-center">Formulario de registro de m�dicos</h1>
+                            <h1 class="form-title text-center">&nbsp<fmt:message key="form.doctor.registration" /></h1>
                         </div>
                         <div class="col-md-2">
-                            <button class="btn btn-block btn-lg btn-link pull-right ">Registrar<i
-                                    class="fa  -circle fa-check-circle"></i></button>
+                            <button class="btn btn-block btn-lg btn-link pull-right "><fmt:message key="form.submit" />&nbsp<i
+                                    class="fa  fa-check-circle"></i></button>
                         </div>
                     </div>
                     <div class="panel panel-primary">

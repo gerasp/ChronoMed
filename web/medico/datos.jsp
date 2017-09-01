@@ -70,7 +70,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse5">Datos de contacto</a>
+                               href="#collapse5"><fmt:message key="form.data.contact" /></a>
                         </h4>
                     </div>
                     <div id="collapse5" class="panel-collapse collapse">

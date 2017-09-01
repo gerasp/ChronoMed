@@ -25,7 +25,7 @@
                 <div class="row">
                     <div class="col-md-2">
                         <a href="/administrative/patientmanagement.jsp" class="btn btn-block btn-lg btn-link "><i
-                                class="fa fa-arrow-circle-left"></i> Atr�s</a>
+                                class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                     </div>
                     <div class="col-md-8">
                         <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
@@ -166,7 +166,7 @@
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputNationality" class="control-label">Nacionalidad</label>
+                                            <label for="inputNationality" class="control-label"><fmt:message key="form.nationality" /></label>
                                             <input type="text" class="form-control" id="inputNationality"
                                                    name="nationality" value="<%= patient.getNationality()%>" required>
                                         </div>
@@ -194,7 +194,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse3">Tarjetas sanitarias</a>
+                               href="#collapse3"><fmt:message key="form.healthcards" /></a>
                         </h4>
                     </div>
                     <div id="collapse3" class="panel-collapse collapse">
@@ -260,7 +260,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse4">Datos de contacto</a>
+                               href="#collapse4"><fmt:message key="form.data.contact" /></a>
                         </h4>
                     </div>
                     <div id="collapse4" class="panel-collapse collapse">
@@ -272,19 +272,19 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label for="inputAddress" class="control-label">Direcci�n*</label>
+                                            <label for="inputAddress" class="control-label"><fmt:message key="form.address" />*</label>
                                             <input type="text" class="form-control" id="inputAddress" name="address"
                                                    value="<%= patient.getAddress()%>" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="inputLocality" class="control-label" contenteditable="true">Localidad*</label>
+                                            <label for="inputLocality" class="control-label" contenteditable="true"><fmt:message key="form.locality" />*</label>
                                             <input type="text" class="form-control" id="inputLocality" name="locality"
                                                    value="<%= patient.getLocality()%>" required>
                                         </div>
                                         <div class="form-group">
-                                            <label for="inputZipcode" class="control-label">C�digo postal*</label>
+                                            <label for="inputZipcode" class="control-label"><fmt:message key="form.postalCode" />*</label>
                                             <input type="text" class="form-control" id="inputZipcode" name="zipCode"
                                                    value="<%= patient.getZipCode()%>" required>
                                         </div>
@@ -297,7 +297,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="inputCountry" class="control-label"
-                                                   contenteditable="true">Pa�s*</label>
+                                                   contenteditable="true"><fmt:message key="form.country" />*</label>
                                             <input type="text" class="form-control" id="inputCountry" name="country"
                                                    value="<%= patient.getCountry()%>" required>
                                         </div>
