@@ -19,11 +19,11 @@
         <div class="col-md-12">
             <ul class="nav nav-justified nav-tabs">
                 <li<%if (request.getRequestURI().contains("patient")) {%> class="active"<% }%>>
-                    <a href="/manager/patientmanagement.jsp"><i class="fa  fa-lg fa-user"></i>&nbsp;
+                    <a href="/manager/patient/management.jsp"><i class="fa  fa-lg fa-user"></i>&nbsp;
                         <fmt:message key="navigation.patient.management" /></a>
                 </li>
                 <li<%if (request.getRequestURI().contains("doctor")) {%> class="active"<% }%>>
-                    <a href="/manager/doctormanagement.jsp"><i class="fa  fa-lg fa-user-md"></i>&nbsp;
+                    <a href="/manager/doctor/management.jsp"><i class="fa  fa-lg fa-user-md"></i>&nbsp;
                         <fmt:message key="navigation.doctor.management" /></a>
                 </li>
             </ul>

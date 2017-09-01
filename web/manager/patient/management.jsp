@@ -3,7 +3,7 @@
 <%@include file="/header.jsp" %>
 <body class="body-background">
 
-<%@include file="navigation.jsp" %>
+<%@include file="../navigation.jsp" %>
 <%
     List<Patient> nifPatientList = (List<Patient>) request.getAttribute("patients");
     List<Patient> healthCardPatientList = (List<Patient>) request.getAttribute("healthcardPatients");
@@ -15,7 +15,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a class="btn btn-lg btn-primary register-button"
-                           href="/manager/patientregistration.jsp"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
+                           href="/manager/patient/registration.jsp"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
                                 key="navigation.patient.registration"/></a>
                     </div>
                     <div class="col-md-4">
@@ -53,16 +53,16 @@
                         <i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.patient.info"/>
                     </div>
                     <% } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
-                        for (Patient patient : nifPatientList) { %>
-                    <%@include file="/manager/patientedit.jsp" %>
+                        Patient patient = healthCardPatientList.get(0);
+                    %>
+                    <%@include file="/manager/patient/edit.jsp" %>
 
                     <%
-                        }
                     } else if (healthCardPatientList != null && !healthCardPatientList.isEmpty()) {
-                        for (Patient patient : healthCardPatientList) {
+                        Patient patient = healthCardPatientList.get(0);
                     %>
-                    <%@include file="/manager/patientedit.jsp" %>
-                    <% }
+                    <%@include file="/manager/patient/edit.jsp" %>
+                    <%
                     } else { %>
                     <div class="well well-lg text-center">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound"/>
@@ -72,7 +72,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <%@include file="/footer.jsp" %>
 </body>

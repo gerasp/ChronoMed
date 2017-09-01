@@ -9,7 +9,7 @@
                 <%@include file="navigation.jsp" %>
                 <div class="col-md-9">
                     <div class="white-container">
-                        <h2 class="text-center"><fmt:message key="navigation.doctors" /></h2>
+                        <h3 class="text-center"><fmt:message key="navigation.doctors" /></h3>
                         <div class="list-group">
                             <% 
                                 DoctorFacade doctorFacade = FacadeFactory.getFacade("DoctorFacade");
@@ -28,7 +28,9 @@
                                 </p>
                             </a>
                             <% }} else { %>
-                            <h2 class="text-center"><span class="label label-default"><i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound" /></span></h2>
+                            <div class="well well-lg text-center">
+                                <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound"/>
+                            </div>
                             <% } %>
                         </div>
                     </div>

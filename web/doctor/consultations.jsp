@@ -1,3 +1,5 @@
+<%@ page import="data.entities.Medicalconsultation" %>
+<%@ page import="data.facades.MedicalconsultationFacade" %>
 <div class="bordered-folder" id="consultations" style="display: none">
     <%
         MedicalconsultationFacade medicalconsultationFacade = FacadeFactory.getFacade("MedicalconsultationFacade");
@@ -43,11 +45,10 @@
                     <p>
                         <b><fmt:message key="consultation.symptoms"/></b>: <%=medicalconsultation.getSymptoms()%><br>
                         <b><fmt:message
-                                key="consultation.recomendations"/></b>: <%=medicalconsultation.getRecomendations()%>
-                        <br>
+                                key="consultation.examinations"/></b>: <%=medicalconsultation.getExaminations()%><br>
                         <b><fmt:message key="consultation.treatment"/></b>: <%=medicalconsultation.getTreatment()%><br>
                         <b><fmt:message
-                                key="consultation.examinations"/></b>: <%=medicalconsultation.getExaminations()%><br>
+                                key="consultation.recomendations"/></b>: <%=medicalconsultation.getRecomendations()%>
                     </p>
                 </div>
             </div>

@@ -1,13 +1,8 @@
 <%@page import="business.utils.Email" %>
 <%@page import="data.entities.Doctor" %>
-<%@page import="data.entities.Medicalconsultation" %>
-<%@page import="data.entities.Medicalhistory" %>
 <%@page import="data.facades.FacadeFactory" %>
-<%@page import="data.facades.MedicalconsultationFacade" %>
-<%@page import="data.facades.MedicalhistoryFacade" %>
-<%@ page import="data.facades.PatientFacade" %>
-<%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.List" %>
+<%@page import="data.facades.PatientFacade" %>
+<%@page import="java.text.SimpleDateFormat" %>
 
 <%
     PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
@@ -15,7 +10,6 @@
     Email.sendNotification(doctor1.getSurname() + ", " + doctor1.getName() + " (" + doctor1.getBoardNumber() + ")", "una visita a su historial", patient.getUserAccountID().getEmail());
 %>
 
-<br><br>
 <h1 class="form-title text-center">Sr<% if (patient.getGender().equals("a")) {
 
     out.println("a");

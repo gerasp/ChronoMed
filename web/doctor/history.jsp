@@ -1,3 +1,5 @@
+<%@ page import="data.entities.Medicalhistory" %>
+<%@ page import="data.facades.MedicalhistoryFacade" %>
 <div class="bordered-folder" id="history">
     <form class="form-vertical" method="POST" role="form" action="/FrontController">
         <input type="hidden" value="EditMedicalHistoryCommand" name="command">

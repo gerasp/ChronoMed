@@ -1,6 +1,6 @@
 <%@include file="/header.jsp" %>
 <body class="body-background">
-<%@include file="navigation.jsp" %>
+<%@include file="../navigation.jsp" %>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -9,7 +9,7 @@
                 <div class="white-container">
                     <div class="row">
                         <div class="col-md-2">
-                            <a href="/manager/doctormanagement.jsp" class="btn btn-block btn-lg btn-link "><i
+                            <a href="/manager/doctor/management.jsp" class="btn btn-block btn-lg btn-link "><i
                                     class="fa fa-arrow-circle-left"></i>&nbsp<fmt:message key="form.back" /></a>
                         </div>
                         <div class="col-md-8">

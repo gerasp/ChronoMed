@@ -2,7 +2,7 @@
 <%@page import="data.entities.Doctor" %>
 <%@include file="/header.jsp" %>
 <body class="body-background">
-<%@include file="navigation.jsp" %>
+<%@include file="../navigation.jsp" %>
 <% List<Doctor> doctorList = (List<Doctor>) request.getAttribute("doctorList"); %>
 <div class="container">
     <div class="row">

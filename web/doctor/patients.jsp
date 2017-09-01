@@ -38,6 +38,7 @@
                         </form>
                     </div>
                 </div>
+                <br><br>
                 <div class="list-group">
                     <% if (nifPatientList == null && healthCardPatientList == null) {%>
                     <div class="well well-lg text-center">

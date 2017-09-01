@@ -39,7 +39,7 @@ public class LoginCommand extends FrontCommand{
         else if(user.getClass().equals(Doctor.class))
             forward("/doctor/patients.jsp");
         else if(user.getClass().equals(Administrative.class))
-            forward("/manager/patientmanagement.jsp");
+            forward("/manager/patient/management.jsp");
         else
             forward("/");
     }
