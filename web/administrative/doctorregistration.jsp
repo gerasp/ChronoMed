@@ -22,7 +22,7 @@
                     </div>
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left"><fmt:message key="form.personalData" /></h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.data.personal" /></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -30,17 +30,17 @@
                                     <div class="form-group">
                                         <label for="inputName" class="control-label"><fmt:message key="form.name" />*</label>
                                         <input type="text" class="form-control" required name="name" id="inputName"
-                                               placeholder="Fulano">
+                                               placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputSurname" class="control-label"><fmt:message key="form.surname" />*</label>
                                         <input type="text" class="form-control" required name="surname"
-                                               id="inputSurname" placeholder="De Tal De Cual">
+                                               id="inputSurname" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputIdcard" class="control-label"><fmt:message key="form.idcard" />*</label>
                                         <input type="text" class="form-control" required name="nif" id="inputIdcard"
-                                               placeholder="123452343Q">
+                                               placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputGender" class="control-label"><fmt:message key="form.gender" />*</label>
@@ -54,32 +54,32 @@
                                     <div class="form-group">
                                         <label for="inputSpeciality" class="control-label"><fmt:message key="form.speciality" />*</label>
                                         <input type="text" class="form-control" required name="speciality"
-                                               id="inputSpeciality" placeholder="Ginecolog�a">
+                                               id="inputSpeciality" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputBoardNumber" class="control-label"><fmt:message key="form.boardNumber" />*</label>
                                         <input type="number" class="form-control" required name="boardNumber"
-                                               id="inputBoardNumber" placeholder="4329509837">
+                                               id="inputBoardNumber" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputPhoneNumber" class="control-label"><fmt:message key="form.phoneNumber.main" />*</label>
                                         <input type="tel" class="form-control" required name="phoneNumber"
-                                               id="inputPhoneNumber" placeholder="2352363123">
+                                               id="inputPhoneNumber" placeholder="">
                                     </div>
                                     <div class="form-group">
                                         <label for="inputALternativePhoneNumber" class="control-label"><fmt:message key="form.phoneNumber.alternative" />*</label>
                                         <input type="tel" class="form-control" required name="alternativePhoneNumber"
-                                               id="inputAlternativePhoneNumber" placeholder="7245623451">
+                                               id="inputAlternativePhoneNumber" placeholder="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer">*<fmt:message key="form.mandatoryFields" /></div>
+                        <div class="panel-footer">*<fmt:message key="form.requiredFields.some" /></div>
                     </div>
 
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title text-left"><fmt:message key="form.accessData" /></h3>
+                            <h3 class="panel-title text-left"><fmt:message key="form.data.access" /></h3>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -87,12 +87,12 @@
                                     <div class="form-group">
                                         <label for="inputEmail" class="control-label"><fmt:message key="form.email" /></label>
                                         <input type="email" name="email" class="form-control" id="inputEmail"
-                                               placeholder="ejemplo@ejemplo.com">
+                                               placeholder="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-footer"><fmt:message key="form.mandatoryFields.all" /></div>
+                        <div class="panel-footer"><fmt:message key="form.requiredFields.all" /></div>
                     </div>
                 </div>
             </form>

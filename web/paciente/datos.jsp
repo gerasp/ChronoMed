@@ -23,7 +23,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><fmt:message key="form.personalData" /></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse1"><fmt:message key="form.data.personal" /></a>
                                 </h4>
                             </div>
                             <div id="collapse1" class="panel-collapse collapse">
@@ -154,7 +154,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                     <div class="panel-footer">*<fmt:message key="form.mandatoryFields" />
+                                     <div class="panel-footer">*<fmt:message key="form.requiredFields.some" />
                                         <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
                                             <i class="fa  fa-save"></i>
                                         </button>
@@ -165,7 +165,7 @@
                         <div class="panel panel-primary">
                             <div class="panel-heading">
                                 <h4 class="panel-title">
-                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4"><fmt:message key="form.accessData" /></a>
+                                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse4"><fmt:message key="form.data.access" /></a>
                                 </h4>
                             </div>
                             <div id="collapse4" class="panel-collapse collapse">
@@ -194,7 +194,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel-footer">*<fmt:message key="form.mandatoryFields" />
+                                    <div class="panel-footer">*<fmt:message key="form.requiredFields.some" />
                                         <button type="submit" class="btn btn-primary btn-xs pull-right"><fmt:message key="form.data.save" />
                                             <i class="fa  fa-save"></i>
                                         </button>

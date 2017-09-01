@@ -117,7 +117,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse2"><fmt:message key="form.personalData" /></a>
+                               href="#collapse2"><fmt:message key="form.data.personal" /></a>
                         </h4>
                     </div>
                     <div id="collapse2" class="panel-collapse collapse">
@@ -177,7 +177,7 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <h5>
-                                            <fmt:message key="form.mandatoryFields.all" />
+                                            <fmt:message key="form.requiredFields.all" />
                                         </h5>
                                     </div>
                                     <div class="col-md-3">
@@ -321,7 +321,7 @@
                                 <div class="row">
                                     <div class="col-md-9">
                                         <h5>
-                                            *<fmt:message key="form.mandatoryFields" />
+                                            *<fmt:message key="form.requiredFields.some" />
                                         </h5>
                                     </div>
                                     <div class="col-md-3">
@@ -338,7 +338,7 @@
                     <div class="panel-heading">
                         <h4 class="panel-title">
                             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-                               href="#collapse5"><fmt:message key="form.accessData" /></a>
+                               href="#collapse5"><fmt:message key="form.data.access" /></a>
                         </h4>
                     </div>
                     <div id="collapse5" class="panel-collapse collapse">
