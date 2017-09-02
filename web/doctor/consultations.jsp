@@ -64,7 +64,7 @@
             </button>
         </div>
         <div class="col-md-6">
-            <button id="openModal2Button" class="btn btn-primary btn-block">A�adir cita <i
+            <button id="new-consultation-button" class="btn btn-primary btn-block">A�adir cita <i
                     class="fa  fa-plus-circle"></i>
             </button>
         </div>

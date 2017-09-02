@@ -1,5 +1,5 @@
 <%@page import="data.entities.Patient" %>
-<% Patient patient = (Patient) request.getSession().getAttribute("user");%>
+<% Patient patient = (Patient) request.getSession().getAttribute("user"); %>
 <div class="section">
     <div class="container logo-header">
         <div class="row">

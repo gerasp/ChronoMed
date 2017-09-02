@@ -1,78 +1,134 @@
-<%@include file="header.jsp" %>
-<body class="body-background">
+<div class="modal fade" id="tac-modal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title"><i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="modal.title.tac"/></h4>
+            </div>
+            <div class="modal-body">
 
-<div class="container">
-    <h1>Terminos y condiciones de uso de ChronoMed</h1>
-    <p>
-        <strong>1. Introducción</strong><br>
-        Las presentes condiciones generales de uso de la página web,
-        regulan los términos y condiciones de acceso y uso de www.chronomed.com,
-        propiedad de un grupo de estudiantes de la ULPGC, con domicilio en EII,
-        Campus de Tafira, ULPGC; en adelante, «la Empresa», que el usuario del
-        Portal deberá de leer y aceptar para usar todos los servicios e información
-        que se facilitan desde el portal. El mero acceso y/o utilización del portal,
-        de todos o parte de sus contenidos y/o servicios significa la plena aceptación
-        de las presentes condiciones generales de uso.
-        <br><br><strong>2. Condiciones de uso</strong><br>
-        Las presentes condiciones generales de uso del portal regulan el acceso y
-        la utilización del portal, incluyendo los contenidos y los servicios puestos
-        a disposición de los usuarios en y/o a través del portal, bien por el portal,
-        bien por sus usuarios, bien por terceros. No obstante, el acceso y la utilización
-        de ciertos contenidos y/o servicios puede encontrarse sometido a determinadas
-        condiciones específicas.
-        <br><br><strong>3. Modificaciones</strong><br>
-        La empresa se reserva la facultad de modificar en cualquier momento
-        las condiciones generales de uso del portal. En todo caso, se recomienda
-        que consulte periódicamente los presentes términos de uso del portal, ya
-        que pueden ser modificados.
-        <br><br><strong>4. Obligaciones del Usuario</strong><br>
-        El usuario deberá respetar en todo momento los términos y condiciones
-        establecidos en las presentes condiciones generales de uso del portal.
-        De forma expresa el usuario manifiesta que utilizará el portal de forma
-        diligente y asumiendo cualquier responsabilidad que pudiera derivarse del
-        incumplimiento de las normas.
-        Así mismo, el usuario no podrá utilizar el portal para transmitir,
-        almacenar, divulgar promover o distribuir datos o contenidos que
-        sean portadores de virus o cualquier otro código informático, archivos
-        o programas diseñados para interrumpir, destruir o perjudicar el
-        funcionamiento de cualquier programa o equipo informático o de telecomunicaciones.
-        <br><br><strong>5. Responsabilidad del portal</strong><br>
-        El usuario conoce y acepta que el portal no otorga ninguna garantía
-        de cualquier naturaleza, ya sea expresa o implícita, sobre los datos,
-        contenidos, información y servicios que se incorporan y ofrecen desde el Portal.
-        Exceptuando los casos que la Ley imponga expresamente lo contrario,
-        y exclusivamente con la medida y extensión en que lo imponga, el
-        Portal no garantiza ni asume responsabilidad alguna respecto a los
-        posibles daños y perjuicios causados por el uso y utilización de la
-        información, datos y servicios del Portal.
-        En todo caso, el Portal excluye cualquier responsabilidad por los
-        daños y perjuicios que puedan deberse a la información y/o servicios
-        prestados o suministrados por terceros diferentes de la Empresa. Toda
-        responsabilidad será del tercero ya sea proveedor o colaborador.
-        <br><br><strong>6. Propiedad intelectual e industrial</strong><br>
-        Todos los contenidos, marcas, logos, dibujos, documentación, programas
-        informáticos o cualquier otro elemento susceptible de protección por la
-        legislación de propiedad intelectual o industrial, que sean accesibles
-        en el portal corresponden exclusivamente a la empresa o a sus legítimos titulares y quedan expresamente
-        reservados todos los derechos sobre los mismos. Queda expresamente prohibida la creación de enlaces de
-        hipertexto (links) a cualquier elemento integrante de las páginas web del Portal sin la autorización de la
-        empresa, siempre que no sean a una página web del Portal que no requiera identificación o autenticación para su
-        acceso, o el mismo esté restringido.
-        En cualquier caso, el portal se reserva todos los derechos sobre los
-        contenidos, información datos y servicios que ostente sobre los mismos.
-        El portal no concede ninguna licencia o autorización de uso al usuario
-        sobre sus contenidos, datos o servicios, distinta de la que expresamente
-        se detalle en las presentes condiciones generales de uso del portal.
-        <br><br><strong>7. Legislación aplicable, jurisdicción competente y notificaciones</strong><br>
-        Las presentes condiciones se rigen y se interpretan de acuerdo con las
-        Leyes de España. Para cualquier reclamación serán competentes los juzgados
-        y tribunales de (indicar la ciudad). Todas las notificaciones, requerimientos,
-        peticiones y otras comunicaciones que el Usuario desee efectuar a la Empresa
-        titular del Portal deberán realizarse por escrito y se entenderá que han sido
-        correctamente realizadas cuando hayan sido recibidas en la siguiente dirección
-        (indicar dirección de correo en la que se desean recibir las notificaciones).
-    </p>
+                <p>Last updated: September 02, 2017</p>
+
+
+                <p>Please read these Terms and Conditions ("Terms", "Terms and Conditions") carefully before using the
+                    http://www.chrono.med/ website (the "Service") operated by ChronoMed ("us", "we", or "our").</p>
+
+                <p>Your access to and use of the Service is conditioned on your acceptance of and compliance with these
+                    Terms.
+                    These Terms apply to all visitors, users and others who access or use the Service.</p>
+
+                <p>By accessing or using the Service you agree to be bound by these Terms. If you disagree with any part
+                    of the
+                    terms then you may not access the Service. This Terms &amp; Conditions agreement is licensed by <a
+                            href="https://termsfeed.com" rel="nofollow">TermsFeed</a> to ChronoMed.</p>
+
+
+                <h2>Accounts</h2>
+
+                <p>When you create an account with us, you must provide us information that is accurate, complete, and
+                    current
+                    at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate
+                    termination
+                    of your account on our Service.</p>
+
+                <p>You are responsible for safeguarding the password that you use to access the Service and for any
+                    activities
+                    or actions under your password, whether your password is with our Service or a third-party
+                    service.</p>
+
+                <p>You agree not to disclose your password to any third party. You must notify us immediately upon
+                    becoming
+                    aware of any breach of security or unauthorized use of your account.</p>
+
+
+                <h2>Links To Other Web Sites</h2>
+
+                <p>Our Service may contain links to third-party web sites or services that are not owned or controlled
+                    by
+                    ChronoMed.</p>
+
+                <p>ChronoMed has no control over, and assumes no responsibility for, the content, privacy policies, or
+                    practices
+                    of any third party web sites or services. You further acknowledge and agree that ChronoMed shall not
+                    be
+                    responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused
+                    by or
+                    in connection with use of or reliance on any such content, goods or services available on or through
+                    any
+                    such web sites or services.</p>
+
+                <p>We strongly advise you to read the terms and conditions and privacy policies of any third-party web
+                    sites or
+                    services that you visit.</p>
+
+
+                <h2>Termination</h2>
+
+                <p>We may terminate or suspend access to our Service immediately, without prior notice or liability, for
+                    any
+                    reason whatsoever, including without limitation if you breach the Terms.</p>
+
+                <p>All provisions of the Terms which by their nature should survive termination shall survive
+                    termination,
+                    including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations
+                    of
+                    liability.</p>
+
+                <p>We may terminate or suspend your account immediately, without prior notice or liability, for any
+                    reason
+                    whatsoever, including without limitation if you breach the Terms.</p>
+
+                <p>Upon termination, your right to use the Service will immediately cease. If you wish to terminate your
+                    account, you may simply discontinue using the Service.</p>
+
+                <p>All provisions of the Terms which by their nature should survive termination shall survive
+                    termination,
+                    including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations
+                    of
+                    liability.</p>
+
+
+                <h2>Governing Law</h2>
+
+                <p>These Terms shall be governed and construed in accordance with the laws of Brandenburg, Germany,
+                    without
+                    regard to its conflict of law provisions.</p>
+
+                <p>Our failure to enforce any right or provision of these Terms will not be considered a waiver of those
+                    rights.
+                    If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining
+                    provisions
+                    of these Terms will remain in effect. These Terms constitute the entire agreement between us
+                    regarding our
+                    Service, and supersede and replace any prior agreements we might have between us regarding the
+                    Service.</p>
+
+
+                <h2>Changes</h2>
+
+                <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a
+                    revision is
+                    material we will try to provide at least 30 days notice prior to any new terms taking effect. What
+                    constitutes a material change will be determined at our sole discretion.</p>
+
+                <p>By continuing to access or use our Service after those revisions become effective, you agree to be
+                    bound by
+                    the revised terms. If you do not agree to the new terms, please stop using the Service.</p>
+
+
+                <h2>Contact Us</h2>
+
+                <p>If you have any questions about these Terms, please contact us.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><fmt:message key="action.close"/></button>
+            </div>
+        </div>
+    </div>
 </div>
 
-</body>
-</html>
+<script>
+    $("#tac-button").click(function () {
+        $("#tac-modal").modal("show");
+    });
+</script>

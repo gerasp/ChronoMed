@@ -8,7 +8,7 @@
 <jsp:forward page = "/patient/history.jsp" />
 <% } else if (request.getSession().getAttribute("user") instanceof Administrative) { %>
 <jsp:forward page = "/manager/patient/management.jsp" />
-<% } else { %>
+<% } else {%>
 
 <%@include file="/header.jsp" %>
 <body>

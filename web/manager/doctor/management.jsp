@@ -10,7 +10,7 @@
             <div class="white-container">
                 <div class="row">
                     <div class="col-md-7">
-                        <a class="btn btn-primary btn-lg register-button" href="/manager/doctorregistration.jsp"><i
+                        <a class="btn btn-primary btn-lg register-button" href="/manager/doctor/registration.jsp"><i
                                 class="fa  fa-plus-circle"></i>&nbsp;<fmt:message key="navigation.doctor.registration"/></a>
                     </div>
                     <div class="col-md-5">
@@ -38,7 +38,7 @@
                         for (Doctor doctor : doctorList) {
 
                     %>
-                    <%@include file="/manager/doctoredit.jsp" %>
+                    <%@include file="/manager/doctor/edit.jsp" %>
                     <%
                         }
                     } else {

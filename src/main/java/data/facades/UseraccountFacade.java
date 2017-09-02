@@ -6,10 +6,8 @@
 package data.facades;
 
 import data.entities.Useraccount;
+
 import javax.ejb.Stateless;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.PersistenceContext;
 
 /**
  *

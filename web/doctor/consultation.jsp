@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal2" role="dialog">
+<div class="modal fade" id="new-consultation-modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -46,7 +46,7 @@
 </div>
 
 <script>
-    $("#openModal2Button").click(function () {
-        $("#myModal2").modal("show")
+    $("#new-consultation-button").click(function () {
+        $("#new-consultation-modal").modal("show")
     });
 </script>

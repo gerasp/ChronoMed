@@ -29,13 +29,17 @@
                     </a></li>
                 </ul>
                 <ul class='nav navbar-nav' id="language-menu" style="display: none;">
-                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=en'><img src='/images/flags/en.png'>&nbsp;English</a></li>
-                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=de'><img src='/images/flags/de.png'>&nbsp;Deutsch</a></li>
-                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=es'><img src='/images/flags/es.png'>&nbsp;Español</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=en'><img
+                            src='/images/flags/en.png'>&nbsp;English</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=de'><img
+                            src='/images/flags/de.png'>&nbsp;Deutsch</a></li>
+                    <li><a href='/FrontController?command=ChangeLanguageCommand&language=es'><img
+                            src='/images/flags/es.png'>&nbsp;Español</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <% if (request.getSession().getAttribute("user") != null) { %>
-                    <li><a href="/tac.jsp"><fmt:message key="footer.termsAndConditions"/></a></li>
+                    <li id="tac-button"><a href="javascript:void(0)"><fmt:message key="footer.termsAndConditions"/></a>
+                    </li>
                     <li><a href="mailto:ayuda@chronomed.com"><fmt:message key="footer.help"/></a></li>
                     <%} else {%>
                     <li><a href="#intro"><fmt:message key="footer.home"/></a></li>
@@ -56,3 +60,4 @@
         });
     </script>
     <%@include file="message.jsp" %>
+    <%@include file="tac.jsp" %>
