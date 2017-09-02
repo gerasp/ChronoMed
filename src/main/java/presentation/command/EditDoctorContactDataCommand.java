@@ -20,6 +20,6 @@ public class EditDoctorContactDataCommand extends FrontCommand {
         doctor.setAlternativePhoneNumber(request.getParameter("alternativePhoneNumber"));
         doctorFacade.edit(doctor);
         request.setAttribute("result", 1);
-        forward("/manager/doctor/edit.jsp");
+        forward("/manager/doctor/management.jsp");
     }
 }

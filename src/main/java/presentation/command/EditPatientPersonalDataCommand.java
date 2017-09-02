@@ -25,7 +25,7 @@ public class EditPatientPersonalDataCommand extends FrontCommand {
         Administrative session = (Administrative) request.getSession().getAttribute("user");
         Email.sendNotification(session.getSurname() +", " + session.getName() + " (" + session.getNif()+ ")" , "una modificación de los datos personales en su perfil", patient.getUserAccountID().getEmail());
         request.setAttribute("result", 1);
-        forward("/manager/patient/edit.jsp");
+        forward("/manager/patient/management.jsp");
     }
 
     private Date getDate() throws NumberFormatException {
