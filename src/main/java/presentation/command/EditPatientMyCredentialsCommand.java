@@ -1,7 +1,6 @@
 package presentation.command;
 
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 import data.facades.UseraccountFacade;
@@ -15,7 +14,7 @@ public class EditPatientMyCredentialsCommand extends FrontCommand {
         Patient patient = patientFacade.find(Integer.parseInt(request.getParameter("id")));
 
         if (!request.getParameter("oldPassword").equals(patient.getUserAccountID().getPassword())) {
-            request.setAttribute("message", "Contraseña inválida. No se ha hecho ningún cambio.");
+            request.setAttribute("result",2);
             forward("/patient/data.jsp");
             return;
         }
@@ -28,8 +27,8 @@ public class EditPatientMyCredentialsCommand extends FrontCommand {
 
         useraccountFacade.edit(patient.getUserAccountID());
         request.getSession().setAttribute("user", patient);
-            
-        request.setAttribute("message", "Datos cambiados correctamente.");
+
+        request.setAttribute("result",1);
         forward("/patient/history.jsp");
     }
 

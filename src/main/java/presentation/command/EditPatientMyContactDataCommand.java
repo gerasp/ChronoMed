@@ -19,8 +19,8 @@ public class EditPatientMyContactDataCommand extends FrontCommand {
         patient.setAlternativePhoneNumber(request.getParameter("alternativePhoneNumber"));
         patientFacade.edit(patient);
         request.getSession().setAttribute("user", patient);
-        
-        request.setAttribute("message", "Datos cambiados correctamente.");
+
+        request.setAttribute("result",1);
 
         forward("/patient/data.jsp");
     }

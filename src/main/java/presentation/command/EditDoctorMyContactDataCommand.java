@@ -16,7 +16,7 @@ public class EditDoctorMyContactDataCommand extends FrontCommand {
 
         doctorFacade.edit(doctor);
         request.getSession().setAttribute("user", doctor);
-        request.setAttribute("message", "Datos cambiados correctamente.");
+        request.setAttribute("result", 1);
 
         forward("/doctor/data.jsp");
     }

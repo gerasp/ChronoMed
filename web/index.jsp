@@ -197,9 +197,7 @@
         offset: {
             top: $('#intro').height() - 50
         }
-    });
-    $('body').scrollspy({target: ".navbar", offset: 50});
-    $("#nav").find("a").on('click', function (event) {
+    }).find("a").on('click', function (event) {
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
@@ -211,6 +209,7 @@
             });
         }
     });
+    $('body').scrollspy({target: ".navbar", offset: 50});
 </script>
 </body>
 
