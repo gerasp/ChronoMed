@@ -31,7 +31,7 @@
                                 <%
                                     for (DoctorPatient dp : doctorPatientList) {
                                 %>
-                                <li class='health-card-item'>
+                                <li class='card-item'>
                                     <input value="<%= dp.getDoctorID().getName() + " (" + dp.getDoctorID().getBoardNumber() + ")"%>"
                                            name='healthCardsList' style='border:0; background:none;'
                                            readonly>
@@ -186,7 +186,7 @@
                                 <%
                                     for (Healthcard hc : healthcardList) {
                                 %>
-                                <li class='health-card-item'>
+                                <li class='card-item'>
                                     <input value="<%=hc.getNumber()%>" name='healthCardsList'
                                            style='border:0; background:none;' readonly>
                                     <button type='button' onclick='deleteHealthCard(this)'
@@ -207,10 +207,10 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-3">
+                        <div class="col-md-6">
                             <button type="button" onclick="addHealthCard()"
-                                    class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>A�adir
-                                tarjeta sanitaria&nbsp;
+                                    class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
+                                    key="form.healthcards.add"/>
                             </button>
                         </div>
                     </div>

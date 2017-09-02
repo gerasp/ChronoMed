@@ -1,5 +1,5 @@
-
-function filter() {
+<script>
+    function filter() {
     var date = $("#from_date").val();
     var from = new Date((date === "") ? "01/01/1970" : date);
     date = $("#to_date").val();
@@ -16,7 +16,7 @@ function addHealthCard() {
     var healthcard = $("#inputHealthCard").val();
     if (healthcard === "")
         return;
-    var html = "<li class='health-card-item'> <input value='" + healthcard + "' name='addedHealthCards' style='border:0; background:none;' readonly> <button type='button' onclick='deleteHealthCard(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i> Eliminar</button></li>";
+    var html = "<li class='card-item'> <input value='" + healthcard + "'name='addedHealthCards' style='border:0; background:none;' readonly> <button type='button' onclick='deleteHealthCard(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i>&nbsp;<fmt:message key='action.remove'/></button></li>";
     $("#healthCards").append(html);
 }
 
@@ -30,10 +30,10 @@ function deleteHealthCard(button) {
 }
 
 function addDoctor() {
-    var healthcard = $("#inputDoctor").val();
-    if (healthcard === "")
+    var boardNumber = $("#inputDoctor").val();
+    if (boardNumber === "")
         return;
-    var html = "<li class='health-card-item'> <input value='" + healthcard + "' name='addedBoardNumbers' style='border:0; background:none;' readonly> <button type='button' onclick='deleteDoctor(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i> Eliminar</button></li>";
+    var html = "<li class='card-item'> <input value='" + boardNumber + "'name='addedBoardNumbers' style='border:0; background:none;' readonly> <button type='button' onclick='deleteDoctor(this)' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i>&nbsp;<fmt:message key='action.remove'/></button></li>";
     $("#doctorList").append(html);
 }
 
@@ -45,3 +45,16 @@ function deleteDoctor(button) {
     button.previousElementSibling.attributes["2"].nodeValue += "text-decoration: line-through;";
     button.remove();
 }
+
+function addHealthCardRegistration() {
+    var healthcard = $("#inputHealthCard").val();
+    if (healthcard === "")
+        return;
+    var html = "<li class='card-item'> <input value='" + healthcard + "' ame='healthCardsList' style='border:0; background:none;'><button onclick='this.parentNode.remove()' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i>&nbsp;<fmt:message key="action.remove"/></button></li>";
+    $("#healthCards").append(html);
+}
+
+function deleteHealthCardRegistration(button) {
+    button.parentNode.remove();
+}
+</script>

@@ -1,7 +1,6 @@
 package presentation.command;
 
 import data.entities.Doctor;
-import data.facades.AbstractFacade;
 import data.facades.DoctorFacade;
 import data.facades.FacadeFactory;
 import data.facades.UseraccountFacade;
@@ -21,7 +20,8 @@ public class EditDoctorUserAccountCommand extends FrontCommand {
             doctor.getUserAccountID().setActive(true);
         }
         useraccountFacade.edit(doctor.getUserAccountID());
-        forward("/manager/doctoredit.jsp");
+        request.setAttribute("result", 1);
+        forward("/manager/doctor/edit.jsp");
     }
 
 }

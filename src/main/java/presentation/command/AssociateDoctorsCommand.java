@@ -18,8 +18,8 @@ public class AssociateDoctorsCommand extends FrontCommand {
 
         updateAssociations(addedDoctors, patient, true);
         updateAssociations(deletedDoctors, patient, false);
-
-        forward("/manager/patientedit.jsp");
+        request.setAttribute("result", 1);
+        forward("/manager/patient/edit.jsp");
     }
 
     private Patient getPatient() {

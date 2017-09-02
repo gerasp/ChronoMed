@@ -19,7 +19,13 @@
                         case 2: %>
                     <fmt:message key="modal.content.wrongPassword"/>
                     <% break;
-                    } %>
+                        case 3: %>
+                    <fmt:message key="modal.content.addConsultation"/>
+                    <% break;
+                        case 4: %>
+                    <fmt:message key="modal.content.error"/>
+                    <% break; }%>
+
                 </p>
             </div>
             <div class="modal-footer">

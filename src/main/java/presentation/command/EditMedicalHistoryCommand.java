@@ -34,10 +34,10 @@ public class EditMedicalHistoryCommand extends FrontCommand {
         medicalhistory.setOthers(request.getParameter("others"));
 
         medicalhistoryFacade.edit(medicalhistory);
-        request.setAttribute("message", "Historial cambiado correctamente.");
         Doctor doctor1 = (Doctor) request.getSession().getAttribute("user");
         Email.sendNotification(doctor1.getSurname() +", " + doctor1.getName() + " (" + doctor1.getBoardNumber() + ")" , "una modificación en su historial médico", patient.getUserAccountID().getEmail());
-        forward("/doctor/vistapacienteshistory.jsp?id=" + request.getParameter("id"));
+        request.setAttribute("result", 1);
+        forward("/doctor/patients");
     }
 
 }

@@ -37,7 +37,7 @@ public class CreateMedicalConsultationCommand extends FrontCommand{
         medicalconsultation.setPatientID(patient);
         
         medicalconsultationFacade.create(medicalconsultation);
-        request.setAttribute("message", "Consulta añadida cambiado correctamente.");
+        request.setAttribute("result", 3);
 
         forward("/doctor/vistapacientesconsultations.jsp?id=" + request.getParameter("id"));
     }

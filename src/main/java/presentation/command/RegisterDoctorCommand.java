@@ -13,18 +13,22 @@ public class RegisterDoctorCommand extends FrontCommand {
     @Override
     public void process() {
         UseraccountFacade uaFacade = FacadeFactory.getFacade("UseraccountFacade");
-        Useraccount userAccount = getUserAccount();
         if (uaFacade != null) {
+            Useraccount userAccount = getUserAccount();
             uaFacade.create(userAccount);
-        }
-        DoctorFacade dFacade = FacadeFactory.getFacade("DoctorFacade");
-        Doctor doctor = getDoctor(userAccount);
-        if (dFacade != null) {
-            dFacade.create(doctor);
-        }
-        Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), doctor.getName(), doctor.getSurname());
-        forward("/manager/doctormanagement.jsp");
+            DoctorFacade dFacade = FacadeFactory.getFacade("DoctorFacade");
+            if (dFacade != null) {
+                Doctor doctor = getDoctor(userAccount);
+                dFacade.create(doctor);
 
+                Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), doctor.getName(), doctor.getSurname());
+                request.setAttribute("result", 1);
+                forward("/manager/doctor/management.jsp");
+                return;
+            }
+        }
+        request.setAttribute("result", 4);
+        forward("/manager/doctor/management.jsp");
     }
 
     private Doctor getDoctor(Useraccount useraccount) throws NumberFormatException {

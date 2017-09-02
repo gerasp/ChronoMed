@@ -6,9 +6,9 @@
 package presentation.command;
 
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
+
 import java.util.List;
 
 /**
@@ -23,7 +23,7 @@ public class SearchPatientByNifCommand extends FrontCommand{
         PatientFacade patientFacade = FacadeFactory.getFacade("PatientFacade");
         List<Patient> patients = patientFacade.findByNif(request.getParameter("searchNif"));
         request.setAttribute("patients", patients);
-        forward("/manager/patientmanagement.jsp");
+        forward("/manager/patient/management.jsp");
     }   
     
 }

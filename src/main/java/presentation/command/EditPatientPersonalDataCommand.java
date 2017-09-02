@@ -3,9 +3,9 @@ package presentation.command;
 import business.utils.Email;
 import data.entities.Administrative;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
+
 import java.util.Date;
 
 public class EditPatientPersonalDataCommand extends FrontCommand {
@@ -24,7 +24,8 @@ public class EditPatientPersonalDataCommand extends FrontCommand {
         patientFacade.edit(patient);
         Administrative session = (Administrative) request.getSession().getAttribute("user");
         Email.sendNotification(session.getSurname() +", " + session.getName() + " (" + session.getNif()+ ")" , "una modificación de los datos personales en su perfil", patient.getUserAccountID().getEmail());
-        forward("/manager/patientedit.jsp");
+        request.setAttribute("result", 1);
+        forward("/manager/patient/edit.jsp");
     }
 
     private Date getDate() throws NumberFormatException {

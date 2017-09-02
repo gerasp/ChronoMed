@@ -28,7 +28,6 @@ public class EditDoctorMyCredentialsCommand extends FrontCommand {
         useraccountFacade.edit(doctor.getUserAccountID());
         request.getSession().setAttribute("user", doctor);
         request.setAttribute("result",1);
-
         forward("/doctor/data.jsp");
     }
 

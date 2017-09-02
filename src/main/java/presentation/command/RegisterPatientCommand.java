@@ -1,6 +1,7 @@
 package presentation.command;
 
 import business.utils.Email;
+import business.utils.Security;
 import data.entities.Healthcard;
 import data.entities.Medicalhistory;
 import data.entities.Patient;
@@ -8,29 +9,31 @@ import data.entities.Useraccount;
 import data.facades.*;
 
 import java.util.Date;
-import business.utils.Security;
 
 public class RegisterPatientCommand extends FrontCommand {
 
     @Override
     public void process() {
         UseraccountFacade uaFacade = FacadeFactory.getFacade("UseraccountFacade");
-        Useraccount userAccount = getUserAccount();
         if (uaFacade != null) {
+            Useraccount userAccount = getUserAccount();
             uaFacade.create(userAccount);
+            PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
+            if (pFacade != null) {
+                Patient patient = getPatient(userAccount);
+                pFacade.create(patient);
+
+                addHealthCards(patient);
+                createMedicalHistory(patient);
+
+                Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), patient.getName(), patient.getSurname());
+                request.setAttribute("result", 1);
+                forward("/manager/patient/management.jsp");
+                return;
+            }
         }
-        PatientFacade pFacade = FacadeFactory.getFacade("PatientFacade");
-        Patient patient = getPatient(userAccount);
-        if (pFacade != null) {
-            pFacade.create(patient);
-        }
-        addHealthCards(patient);
-        
-        createMedicalHistory(patient);
-        
-        Email.sendUserAccount(userAccount.getEmail(), userAccount.getPassword(), patient.getName(), patient.getSurname());
-        
-        forward("/manager/patientmanagement.jsp");
+        request.setAttribute("result", 4);
+        forward("/manager/patient/management.jsp");
     }
 
     private Patient getPatient(Useraccount useraccount) throws NumberFormatException {
@@ -83,7 +86,7 @@ public class RegisterPatientCommand extends FrontCommand {
     private void addHealthCards(Patient patient) {
         HealthcardFacade healthcardFacade = FacadeFactory.getFacade("HealthcardFacade");
         final String[] parameterValues = request.getParameterValues("healthCardsList");
-        if(parameterValues == null) return;
+        if (parameterValues == null) return;
         for (String healthCard : parameterValues) {
             healthcardFacade.create(getHealthCard(patient, healthCard));
         }

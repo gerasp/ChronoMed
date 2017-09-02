@@ -6,7 +6,7 @@
             <div class="col-md-3">
                 <img src="/images/ChronoMed.png" class="img-responsive">
             </div>
-            <div class="col-md-9 text-right">
+            <div class="col-md-9 text-right welcome-message">
                 <h2><fmt:message key="navigation.greetings"/>,
                     <% if (doctor.getGender().equals("Femenino")) { %>
                     <fmt:message key="navigation.doctor.female"/>

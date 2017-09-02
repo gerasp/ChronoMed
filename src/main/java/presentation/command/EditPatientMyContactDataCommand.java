@@ -21,7 +21,6 @@ public class EditPatientMyContactDataCommand extends FrontCommand {
         request.getSession().setAttribute("user", patient);
 
         request.setAttribute("result",1);
-
         forward("/patient/data.jsp");
     }
 }

@@ -2,10 +2,10 @@ package presentation.command;
 
 import data.entities.Healthcard;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.HealthcardFacade;
 import data.facades.PatientFacade;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,8 +19,8 @@ public class AssociateHealthcardsCommand extends FrontCommand {
 
         updateAssociations(addedHealthcards, true);
         updateAssociations(deletedHealthcards, false);
-
-        forward("/manager/patientedit.jsp");
+        request.setAttribute("result", 1);
+        forward("/manager/patient/edit.jsp");
     }
 
     private Patient getPatient() throws NumberFormatException {

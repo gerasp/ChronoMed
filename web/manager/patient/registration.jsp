@@ -89,15 +89,15 @@
                                 <div class="form-group">
                                     <div class="col-md-6">
                                         <input type="number" class="form-control" id="inputHealthCard"
-                                               placeholder="23461256012578">
+                                               placeholder="">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <div class="col-md-3">
-                                        <button type="button" onclick="addHealthCard()"
+                                    <div class="col-md-6">
+                                        <button type="button" onclick="addHealthCardRegistration()"
                                                 class="btn btn-primary btn-block"><i
-                                                class="-circle fa  fa-plus-circle"></i><fmt:message
-                                                key="form.healthcards.add"/>&nbsp;
+                                                class="-circle fa  fa-plus-circle"></i>&nbsp;<fmt:message
+                                                key="form.healthcards.add"/>
                                         </button>
                                     </div>
                                 </div>
@@ -188,17 +188,7 @@
     </div>
 </div>
 <script>
-    function addHealthCard() {
-        var healthcard = $("#inputHealthCard").val();
-        if (healthcard === "")
-            return;
-        var html = "<li class='health-card-item'> <input value='" + healthcard + "' name='healthCardsList' style='border:0; background:none;'> <button onclick='this.parentNode.remove()' class='btn btn-danger btn-xs pull-right'><i class='fa  fa-remove'></i> Eliminar</button></li>";
-        $("#healthCards").append(html);
-    }
 
-    function deleteHealthCard(button) {
-        button.parentNode.remove();
-    }
 </script>
 <%@include file="/footer.jsp" %>
 </body>

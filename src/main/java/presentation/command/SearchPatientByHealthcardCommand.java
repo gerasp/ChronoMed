@@ -7,9 +7,9 @@ package presentation.command;
 
 import data.entities.Healthcard;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.HealthcardFacade;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class SearchPatientByHealthcardCommand extends FrontCommand {
             patients.add(healthcard.getPatientID());
         }
         request.setAttribute("healthcardPatients", patients);
-        forward("/manager/patientmanagement.jsp");
+        forward("/manager/patient/management.jsp");
     }
 
 }

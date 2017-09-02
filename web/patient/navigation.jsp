@@ -6,17 +6,15 @@
             <div class="col-md-3">
                 <img src="/images/ChronoMed.png" class="img-responsive">
             </div>
-            <div class="col-md-9">
-                <div class="text-right">
-                    <h2><fmt:message key="navigation.greetings"/>,
-                        <% if (patient.getGender().equals("Femenino")) { %>
-                        <fmt:message key="navigation.patient.female"/>
-                        <% } else { %>
-                        <fmt:message key="navigation.patient.male" />
-                        <% } %>
-                        <span class="label label-primary">&nbsp;<%= patient.getSurname()%></span>
-                    </h2>
-                </div>
+            <div class="col-md-9 text-right welcome-message">
+                <h2><fmt:message key="navigation.greetings"/>,
+                    <% if (patient.getGender().equals("Femenino")) { %>
+                    <fmt:message key="navigation.patient.female"/>
+                    <% } else { %>
+                    <fmt:message key="navigation.patient.male"/>
+                    <% } %>
+                    <span class="label label-primary">&nbsp;<%= patient.getSurname()%></span>
+                </h2>
             </div>
         </div>
     </div>

@@ -24,10 +24,10 @@ public class SearchDoctorByBoardNumberCommand extends FrontCommand {
         try{
             List<Doctor> doctorList = doctorFacade.findByBoardNumber(request.getParameter("search"));        
             request.setAttribute("doctorList", doctorList);
-            forward("/manager/doctormanagement.jsp");
+            forward("/manager/doctorm/anagement.jsp");
             
         }catch(NumberFormatException e){
-            forward("/manager/doctormanagement.jsp");
+            forward("/manager/doctor/management.jsp");
         }
         
     }

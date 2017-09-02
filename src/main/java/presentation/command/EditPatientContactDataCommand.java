@@ -3,7 +3,6 @@ package presentation.command;
 import business.utils.Email;
 import data.entities.Administrative;
 import data.entities.Patient;
-import data.facades.AbstractFacade;
 import data.facades.FacadeFactory;
 import data.facades.PatientFacade;
 
@@ -24,6 +23,7 @@ public class EditPatientContactDataCommand extends FrontCommand {
         
         Administrative session = (Administrative) request.getSession().getAttribute("user");
         Email.sendNotification(session.getSurname() +", " + session.getName() + " (" + session.getNif()+ ")" , "una modificación de los datos de contacto en su perfil", patient.getUserAccountID().getEmail());
-        forward("/manager/patientedit.jsp");
+        request.setAttribute("result", 1);
+        forward("/manager/patient/edit.jsp");
     }
 }

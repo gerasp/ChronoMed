@@ -513,7 +513,6 @@ mark,
 
 .text-right {
     text-align: right;
-    margin-top: 50px;
 }
 
 .text-center {
@@ -7123,7 +7122,7 @@ body {
 
 }
 
-.health-card-item {
+.card-item {
     margin-top: 10px;
 }
 
@@ -7394,4 +7393,15 @@ textarea {
 .modal-body {
     overflow: scroll;
     max-height: 50%;
+}
+
+.welcome-message {
+    padding-top: 10px;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+    margin-top: 0 !important;
 }

@@ -89,7 +89,7 @@
                                                         <%
                                                             for (Healthcard hc : healthcardList) {
                                                         %>
-                                                        <li class='health-card-item'> 
+                                                        <li class='card-item'>
                                                             <input value="<%=hc.getNumber()%>" name='healthCardsList' style='border:0; background:none;' readonly> 
                                                         </li>
                                                         <%

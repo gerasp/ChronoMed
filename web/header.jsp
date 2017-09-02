@@ -29,15 +29,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script src="/js/utils.js"></script>
+    <%@include file="/js/utils.jsp" %>
 
-    <style>
-        .affix {
-            top:0;
-            width: 100%;
-            z-index: 9999 !important;
-            margin-top: 0 !important;
-        }
-    </style>
 </head>
 
