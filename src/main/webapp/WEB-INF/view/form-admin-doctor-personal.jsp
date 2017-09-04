@@ -1,8 +1,5 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title text-left"><fmt:message key="form.data.personal"/></h3>
-    </div>
-    <div class="panel-body">
+    <div class="panel-footer">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group required">
@@ -61,5 +58,4 @@
             </div>
         </div>
     </div>
-    <div class="panel-footer"><fmt:message key="form.requiredFields.some"/></div>
 </div>

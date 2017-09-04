@@ -2,12 +2,12 @@
     <div class="container logo-header">
         <div class="row">
             <div class="col-md-3">
-                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="img-responsive">
+                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="img-responsive img-logo">
             </div>
             <div class="col-md-9 text-right welcome-message">
-                <h2><fmt:message key="navigation.greetings"/>,
+                <h3><fmt:message key="navigation.greetings"/>,
                     <span class="label label-primary"><fmt:message key="navigation.admin"/></span>
-                </h2>
+                </h3>
             </div>
         </div>
     </div>

@@ -7147,9 +7147,6 @@ input[type=number]::-webkit-outer-spin-button {
     color: white; /* adjust as needed */
 }
 
-.register-button {
-    margin-bottom: 20px;
-}
 
 .list-group-item {
     border-color: #cccccc;
@@ -7407,4 +7404,19 @@ textarea {
 .form-group.required .control-label:after {
     content:"*";
     color:red;
+}
+
+.img-background {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    max-height: 320px;
+}
+
+.register-button {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.img-logo {
+    max-height: 100px;
 }

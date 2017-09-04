@@ -28,15 +28,22 @@ public class AdminController {
 
 
     @GetMapping("/doctors")
-    public ModelAndView doctorManagement() {
-        return new ModelAndView("admin-doctors-management","searchByBoardNumber",new Search());
+    public ModelAndView doctors() {
+        return new ModelAndView("admin-doctors","searchByBoardNumber",new Search());
     }
 
-    @PostMapping("/doctor/search")
-    public ModelAndView doctorFind(@ModelAttribute("searchByBoardNumber") Search search) {
+    @GetMapping("/doctor/search")
+    public ModelAndView doctorSearch(@ModelAttribute("searchByBoardNumber") Search search) {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
-        ModelAndView modelAndView = new ModelAndView("admin-doctors-management", "doctor", new Doctor());
+        ModelAndView modelAndView = new ModelAndView("admin-doctors", "doctor", new Doctor());
         modelAndView.addObject("doctor", savedDoctor);
+        return modelAndView;
+    }
+
+    @GetMapping("/doctor/registration")
+    public ModelAndView doctorRegistration() {
+        ModelAndView modelAndView = new ModelAndView("admin-doctors", "doctor", new Doctor());
+        modelAndView.addObject("registry", new Object());
         return modelAndView;
     }
 
@@ -46,18 +53,21 @@ public class AdminController {
         doctor.setUserAccountId(savedDoctor.getUserAccountId());
         doctorRepository.update(doctor);
         doctorRepository.update(doctor.getUserByUserAccountId());
-        return doctorManagement();
+        return doctors();
     }
 
-    @GetMapping("/doctor/registration")
-    public ModelAndView doctorRegistration() {
-        return new ModelAndView("admin-doctors-registration","doctor",new Doctor());
+    @PostMapping("/doctor/new")
+    public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
+        doctor.setId(savedDoctor.getId());
+        doctor.setUserAccountId(savedDoctor.getUserAccountId());
+        doctorRepository.create(doctor);
+        doctorRepository.create(doctor.getUserByUserAccountId());
+        return doctors();
     }
-
 
 
     @GetMapping("/patients")
-    public String patientsManagement() {
+    public String patients() {
 
         return "admin-patients-management";
     }
