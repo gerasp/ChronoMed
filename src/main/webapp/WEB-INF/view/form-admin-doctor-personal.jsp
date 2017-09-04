@@ -52,7 +52,7 @@
                     </form:label>
                     <form:input path="phoneNumber" cssClass="form-control"/>
                 </div>
-                <div class="form-group required">
+                <div class="form-group">
                     <form:label path="alternativePhoneNumber" cssClass="control-label">
                         <fmt:message key="form.phoneNumber.alternative"/>
                     </form:label>
@@ -61,5 +61,5 @@
             </div>
         </div>
     </div>
-    <div class="panel-footer">*<fmt:message key="form.requiredFields.some"/></div>
+    <div class="panel-footer"><fmt:message key="form.requiredFields.some"/></div>
 </div>

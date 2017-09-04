@@ -19,16 +19,5 @@
             </div>
         </div>
     </div>
-    <div class="panel-footer">
-        <div class="row">
-            <div class="col-md-9">
-                <h5><fmt:message key="form.requiredFields.some"/></h5>
-            </div>
-            <div class="col-md-3">
-                <button type="submit" class="btn btn-primary btn-block"><fmt:message key="form.data.save"/>&nbsp;
-                    <i class="fa  fa-save"></i>
-                </button>
-            </div>
-        </div>
-    </div>
+    <div class="panel-footer"><fmt:message key="form.requiredFields.all"/></div>
 </div>
