@@ -38,10 +38,6 @@
                             <%@include file="admin-doctors-edit.jsp" %>
                         </c:otherwise>
                     </c:choose>
-                    <div class="well well-lg  text-center">
-                        <i class="fa fa-exclamation-circle"></i>&nbsp;
-                        <fmt:message key="search.doctor.notFound"/>
-                    </div>
                 </div>
             </div>
         </div>

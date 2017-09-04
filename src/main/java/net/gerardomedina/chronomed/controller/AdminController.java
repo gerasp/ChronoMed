@@ -1,5 +1,6 @@
 package net.gerardomedina.chronomed.controller;
 
+import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Search;
 import net.gerardomedina.chronomed.repository.DoctorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,9 @@ public class AdminController {
     public ModelAndView doctorEdit(@ModelAttribute("searchByBoardNumber") Search search) {
         if (search==null) return new ModelAndView("redirect:/admin/doctors");
 
-        ModelAndView modelAndView = new ModelAndView(
-                "admin-doctors-management",
-                "doctor",
-                search);
-
-        modelAndView.addObject("doctor", doctorRepository.getDoctorByBoardNumber(search));
+        Doctor doctor = doctorRepository.getDoctorByBoardNumber(search);
+        ModelAndView modelAndView = new ModelAndView("admin-doctors-management", "doctor", new Doctor());
+        modelAndView.addObject("doctor", doctor);
         return modelAndView;
     }
 

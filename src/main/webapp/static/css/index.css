@@ -7403,3 +7403,8 @@ textarea {
     z-index: 9999 !important;
     margin-top: 0 !important;
 }
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
