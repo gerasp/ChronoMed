@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!--HIBERNATE AND JPA-->
+    <mvc:annotation-driven/>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a"/>
+        <property name="username" value="b507ab1bf2d6f2"/>
+        <property name="password" value="baf1af7a"/>
+    </bean>
+    <bean id="hibernate4AnnotatedSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="annotatedClasses">
+            <list>
+                <value>net.gerardomedina.chronomed.entity.User</value>
+                <value>net.gerardomedina.chronomed.entity.Doctor</value>
+                <value>net.gerardomedina.chronomed.entity.DoctorPatient</value>
+                <value>net.gerardomedina.chronomed.entity.Healthcard</value>
+                <value>net.gerardomedina.chronomed.entity.Admin</value>
+                <value>net.gerardomedina.chronomed.entity.Medicalconsultation</value>
+                <value>net.gerardomedina.chronomed.entity.Medicalhistory</value>
+                <value>net.gerardomedina.chronomed.entity.Patient</value>
+                <value>net.gerardomedina.chronomed.entity.Admin</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.connection.url">jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <!--REPOSITORY BEANS-->
+    <bean id="userRepository" class="net.gerardomedina.chronomed.repository.UserRepositoryImpl">
+        <constructor-arg value="net.gerardomedina.chronomed.entity.User"/>
+        <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+    <bean id="doctorRepository" class="net.gerardomedina.chronomed.repository.DoctorRepositoryImpl">
+        <constructor-arg value="net.gerardomedina.chronomed.entity.Doctor"/>
+        <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
+
+    <!--CONTROLLER BEANS-->
+    <context:component-scan base-package="net.gerardomedina.chronomed.controller"/>
+
+    <!--VIEW BEANS-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/view/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <mvc:resources mapping="/static/**" location="/static/"/>
+</beans>
