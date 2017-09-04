@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Scope("session")
 public class AdminController {
 
+    private Doctor savedDoctor;
     private DoctorRepository doctorRepository;
     @Autowired
     @Qualifier(value="doctorRepository")
@@ -31,21 +32,26 @@ public class AdminController {
         return new ModelAndView("admin-doctors-management","searchByBoardNumber",new Search());
     }
 
-    @PostMapping("/doctor/edit")
-    public ModelAndView doctorEdit(@ModelAttribute("searchByBoardNumber") Search search) {
-        if (search==null) return new ModelAndView("redirect:/admin/doctors");
-
-        Doctor doctor = doctorRepository.getDoctorByBoardNumber(search);
+    @PostMapping("/doctor/search")
+    public ModelAndView doctorFind(@ModelAttribute("searchByBoardNumber") Search search) {
+        savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
         ModelAndView modelAndView = new ModelAndView("admin-doctors-management", "doctor", new Doctor());
-        modelAndView.addObject("doctor", doctor);
+        modelAndView.addObject("doctor", savedDoctor);
         return modelAndView;
     }
 
+    @PostMapping("/doctor/edit")
+    public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
+        doctor.setId(savedDoctor.getId());
+        doctor.setUserAccountId(savedDoctor.getUserAccountId());
+        doctorRepository.update(doctor);
+        doctorRepository.update(doctor.getUserByUserAccountId());
+        return doctorManagement();
+    }
 
-    @GetMapping("/doctor/new")
-    public String doctorRegistration() {
-
-        return "admin-doctors-registration";
+    @GetMapping("/doctor/registration")
+    public ModelAndView doctorRegistration() {
+        return new ModelAndView("admin-doctors-registration","doctor",new Doctor());
     }
 
 
