@@ -27,6 +27,8 @@
                         </form:label>
                         <form:input path="idCard" cssClass="form-control"/>
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="form-group required">
                         <form:label path="gender" cssClass="control-label">
                             <fmt:message key="form.gender"/>
@@ -36,8 +38,6 @@
                             <form:option value="female"><fmt:message key="form.gender.female"/></form:option>
                         </form:select>
                     </div>
-                </div>
-                <div class="col-md-6">
                     <div class="form-group required">
                         <form:label path="speciality" cssClass="control-label">
                             <fmt:message key="form.speciality"/>
@@ -49,18 +49,6 @@
                             <fmt:message key="form.boardNumber"/>
                         </form:label>
                         <form:input path="boardNumber" cssClass="form-control"/>
-                    </div>
-                    <div class="form-group required">
-                        <form:label path="phoneNumber" cssClass="control-label">
-                            <fmt:message key="form.phoneNumber"/>
-                        </form:label>
-                        <form:input path="phoneNumber" cssClass="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <form:label path="alternativePhoneNumber" cssClass="control-label">
-                            <fmt:message key="form.alternativePhoneNumber"/>
-                        </form:label>
-                        <form:input path="alternativePhoneNumber" cssClass="form-control"/>
                     </div>
                 </div>
             </div>

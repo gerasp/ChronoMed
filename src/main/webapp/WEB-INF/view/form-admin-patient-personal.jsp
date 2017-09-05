@@ -7,7 +7,7 @@
         </h4>
     </div>
     <div id="collapse-admin-patient-personal" class="panel-collapse collapse">
-        <div class="panel-body">
+        <div class="panel-footer">
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group required">
@@ -31,12 +31,6 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="birthDate" cssClass="control-label">
-                            <fmt:message key="form.birthDate"/>
-                        </form:label>
-                        <form:input path="birthDate" cssClass="form-control"/>
-                    </div>
-                    <div class="form-group required">
                         <form:label path="gender" cssClass="control-label">
                             <fmt:message key="form.gender"/>
                         </form:label>
@@ -46,6 +40,13 @@
                         </form:select>
                     </div>
                     <div class="form-group required">
+                        <fmt:formatDate value="${birthDate}" var="dateString" pattern="dd/MM/yyyy" />
+                        <form:label path="birthDate" cssClass="control-label">
+                            <fmt:message key="form.birthDate"/>
+                        </form:label>
+                        <form:input type="date" path="birthDate" cssClass="form-control" value="${dateString}" />
+                    </div>
+                    <div class="form-group required">
                         <form:label path="nationality" cssClass="control-label">
                             <fmt:message key="form.nationality"/>
                         </form:label>
@@ -53,7 +54,7 @@
                             <% String[] locales = Locale.getISOCountries();
                                 for (String countryCode : locales) {
                                     Locale obj = new Locale(request.getLocale().getLanguage(), countryCode); %>
-                            <form:option value="<%=countryCode%>"><%=%>obj.getDisplayName()%></form:option>>
+                            <form:option value="<%=countryCode%>"><%=obj.getDisplayCountry()%></form:option>
                             <% } %>
                         </form:select>
                     </div>

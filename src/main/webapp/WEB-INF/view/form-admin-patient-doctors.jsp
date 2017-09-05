@@ -6,7 +6,7 @@
         </h4>
     </div>
     <%--<div id="collapse-admin-patient-doctors" class="panel-collapse collapse">--%>
-        <%--<div class="panel-body">--%>
+        <%--<div class="panel-footer">--%>
             <%--<div class="row">--%>
                 <%--<div class="form-group">--%>
                     <%--<div class="col-md-12">--%>

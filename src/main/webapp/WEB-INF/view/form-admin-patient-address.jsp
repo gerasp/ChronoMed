@@ -2,11 +2,11 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-               href="#collapse-admin-patient-contact"><fmt:message key="form.data.contact"/></a>
+               href="#collapse-admin-patient-contact"><fmt:message key="form.data.address"/></a>
         </h4>
     </div>
     <div id="collapse-admin-patient-contact" class="panel-collapse collapse">
-        <div class="panel-body">
+        <div class="panel-footer">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group required">
@@ -29,31 +29,25 @@
                         </form:label>
                         <form:input path="zipCode" cssClass="form-control"/>
                     </div>
+                </div>
+                <div class="col-md-6">
                     <div class="form-group required">
                         <form:label path="province" cssClass="control-label">
                             <fmt:message key="form.province"/>
                         </form:label>
                         <form:input path="province" cssClass="form-control"/>
                     </div>
-                </div>
-                <div class="col-md-6">
                     <div class="form-group required">
                         <form:label path="country" cssClass="control-label">
                             <fmt:message key="form.country"/>
                         </form:label>
-                        <form:input path="country" cssClass="form-control"/>
-                    </div>
-                    <div class="form-group required">
-                        <form:label path="phoneNumber" cssClass="control-label">
-                            <fmt:message key="form.phoneNumber"/>
-                        </form:label>
-                        <form:input path="phoneNumber" cssClass="form-control"/>
-                    </div>
-                    <div class="form-group">
-                        <form:label path="alternativePhoneNumber" cssClass="control-label">
-                            <fmt:message key="form.alternativePhoneNumber"/>
-                        </form:label>
-                        <form:input path="alternativePhoneNumber" cssClass="form-control"/>
+                        <form:select path="country" cssClass="form-control">
+                            <% String[] locales = Locale.getISOCountries();
+                                for (String countryCode : locales) {
+                                    Locale obj = new Locale(request.getLocale().getLanguage(), countryCode); %>
+                            <form:option value="<%=countryCode%>"><%=obj.getDisplayCountry()%></form:option>
+                            <% } %>
+                        </form:select>
                     </div>
                 </div>
             </div>

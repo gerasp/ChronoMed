@@ -15,10 +15,11 @@
         </div>
     </div>
     <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
-    <%@include file="form-admin-patient-doctors.jsp" %>
     <%@include file="form-admin-patient-personal.jsp" %>
+    <%@include file="form-admin-patient-doctors.jsp" %>
     <%@include file="form-admin-patient-healthcards.jsp" %>
-    <%@include file="form-admin-patient-contact.jsp" %>
+    <%@include file="form-admin-patient-address.jsp" %>
+    <%@include file="form-admin-contact.jsp" %>
     <%@include file="form-admin-access.jsp" %>
     <p><fmt:message key="form.requiredFields.some"/></p>
 </form:form>
