@@ -86,7 +86,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="inputPhoneNumber" class="control-label"><fmt:message
-                                                    key="form.phoneNumber.main"/></label>
+                                                    key="form.phoneNumber"/></label>
                                             <input type="tel" class="form-control" id="inputPhoneNumber"
                                                    name="phoneNumber" value="<%= doctor.getPhoneNumber()%>">
                                         </div>
@@ -94,7 +94,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="inputALternativePhoneNumber" class="control-label"><fmt:message
-                                                    key="form.phoneNumber.alternative"/></label>
+                                                    key="form.alternativePhoneNumber"/></label>
                                             <input type="tel" class="form-control" id="inputAlternativePhoneNumber"
                                                    name="alternativePhoneNumber"
                                                    value="<%= doctor.getAlternativePhoneNumber()%>">
@@ -136,7 +136,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="inputOldPassword" class="control-label"><fmt:message
-                                                    key="form.password.old"/>*</label>
+                                                    key="form.oldPassword"/>*</label>
                                             <input type="password" class="form-control" id="inputOldPassword"
                                                    name="oldPassword" placeholder="******">
                                         </div>
@@ -144,7 +144,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="inputNewPassword" class="control-label"><fmt:message
-                                                    key="form.password.new"/></label>
+                                                    key="form.newPassword"/></label>
                                             <input type="password" class="form-control" id="inputNewPassword"
                                                    name="newPassword" placeholder="******">
                                         </div>

@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputBirthDate" class="control-label"><fmt:message key="form.birthday" /></label>
+                                                <label for="inputBirthDate" class="control-label"><fmt:message key="form.birthdate" /></label>
                                                 <input type="date" class="form-control" disabled id="inputBirthDate" name="birthdate" 
                                                        value="<%= new SimpleDateFormat("yyyy-MM-dd").format(patient.getBirthDate())%>"
                                                        required>
@@ -142,11 +142,11 @@
                                                     <input type="text" class="form-control" id="inputCountry" name="country" value="<%= patient.getCountry()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputPhoneNumber" class="control-label"><fmt:message key="form.phoneNumber.main" />*</label>
+                                                    <label for="inputPhoneNumber" class="control-label"><fmt:message key="form.phoneNumber" />*</label>
                                                     <input type="tel" class="form-control" id="inputPhoneNumber" name="phoneNumber" value="<%= patient.getPhoneNumber()%>" required>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="inputAlternativePhoneNumber" class="control-label"><fmt:message key="form.phoneNumber.alternative" /></label>
+                                                    <label for="inputAlternativePhoneNumber" class="control-label"><fmt:message key="form.alternativePhoneNumber" /></label>
                                                     <input type="tel" class="form-control" id="inputAlternativePhoneNumber" name="alternativePhoneNumber" value="<%= patient.getAlternativePhoneNumber()%>">
                                                 </div>
                                             </div>
@@ -180,13 +180,13 @@
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputOldPassword" class="control-label"><fmt:message key="form.password.old" />*</label>
+                                                    <label for="inputOldPassword" class="control-label"><fmt:message key="form.oldPassword" />*</label>
                                                     <input type="password" class="form-control" id="inputOldPassword" name="oldPassword" placeholder="******">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="inputNewPassword" class="control-label"><fmt:message key="form.password.new" /></label>
+                                                    <label for="inputNewPassword" class="control-label"><fmt:message key="form.newPassword" /></label>
                                                     <input type="password" class="form-control" id="inputNewPassword" name="newPassword" placeholder="******">
                                                 </div>
                                             </div>

@@ -34,9 +34,14 @@
     <div class="row">
         <div class="col-md-12">
             <div class="white-container">
-
-
-
+                <c:choose>
+                <c:when test="${action<3}">
+                    <%@include file="admin-patients.jsp" %>
+                </c:when>
+                <c:otherwise>
+                    <%@include file="admin-doctors.jsp" %>
+                </c:otherwise>
+                </c:choose>
             </div>
         </div>
     </div>

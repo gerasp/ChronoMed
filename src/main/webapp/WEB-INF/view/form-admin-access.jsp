@@ -1,4 +1,10 @@
 <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+               href="#collapse2"><fmt:message key="form.data.access"/></a>
+        </h4>
+    </div>
     <div class="panel-footer">
         <div class="row">
             <div class="col-md-10">
