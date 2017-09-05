@@ -3,23 +3,21 @@
         <div class="row">
             <div class="col-sm-4">
                 <a class="btn btn-primary btn-lg  register-button"
-                   href="<c:url value="/admin/doctor/registration"/>">
+                   href="<c:url value="/admin/patient/registration"/>">
                     <i class="fa  fa-plus-circle"></i>&nbsp;
-                    <fmt:message key="navigation.doctor.registration"/>
+                    <fmt:message key="navigation.patient.registration"/>
                 </a>
             </div>
             <div class="col-sm-8">
-                <form:form action="/admin/doctor/search" modelAttribute="searchByBoardNumber"
+                <form:form action="/admin/patient/search" modelAttribute="searchByIdCard"
                            cssClass="form-horizontal" method="get">
                     <div class="input-group input-group-lg">
-                        <fmt:message key="form.boardNumber" var="boardNumberMessage"/>
+                        <fmt:message key="form.idcard" var="idCardMessage"/>
                         <form:input path="parameter" cssClass="form-control"
-                                    placeholder="${boardNumberMessage}"/>
+                                    placeholder="${idCardMessage}"/>
                         <span class="input-group-addon">
-                                                    <form:button class="btn-link">
-                                                        <i class="fa  fa-search"></i>
-                                                    </form:button>
-                                                </span>
+                            <form:button class="btn-link"><i class="fa  fa-search"></i></form:button>
+                        </span>
                     </div>
                 </form:form>
             </div>
@@ -28,14 +26,14 @@
              class="img-background center-block img-responsive">
         <div class="well text-center">
             <i class="fa fa-info-circle"></i>&nbsp;
-            <fmt:message key="search.doctor.info"/>
+            <fmt:message key="search.patient.info"/>
         </div>
     </c:when>
     <c:when test="${action == 1}">
-        <%@include file="admin-doctor-edit.jsp" %>
+        <%@include file="admin-patient-edit.jsp" %>
     </c:when>
     <c:when test="${action == 2}">
-        <%@include file="admin-doctor-new.jsp" %>
+        <%@include file="admin-patient-new.jsp" %>
     </c:when>
     <c:otherwise>undefined</c:otherwise>
 </c:choose>
