@@ -1,3 +1,5 @@
+<%@include file="header.jsp" %>
+<body class="body-background">
 <div class="section">
     <div class="container logo-header">
         <div class="row">
@@ -28,3 +30,17 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="white-container">
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<%@include file="footer.jsp" %>
+</body>
+</html>
