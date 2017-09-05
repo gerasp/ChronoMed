@@ -3,9 +3,7 @@ package net.gerardomedina.chronomed.entity;
 import javax.persistence.*;
 import java.util.Collection;
 
-/**
- * Created by gerardo on 04.09.17.
- */
+
 @Entity
 public class User {
     private int id;

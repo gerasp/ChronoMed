@@ -4,9 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
-/**
- * Created by gerardo on 04.09.17.
- */
+
 @Entity
 public class Patient {
     private int id;
@@ -27,7 +25,7 @@ public class Patient {
     private Collection<DoctorPatient> doctorPatientsById;
     private Collection<Healthcard> healthcardsById;
     private Collection<Medicalconsultation> medicalconsultationsById;
-    private Collection<Medicalhistory> medicalhistoriesById;
+    private Medicalhistory medicalhistoryById;
     private User userByUserAccountId;
 
     @Id
@@ -254,13 +252,13 @@ public class Patient {
         this.medicalconsultationsById = medicalconsultationsById;
     }
 
-    @OneToMany(mappedBy = "patientByPatientId")
-    public Collection<Medicalhistory> getMedicalhistoriesById() {
-        return medicalhistoriesById;
+    @OneToOne(mappedBy = "patientByPatientId")
+    public Medicalhistory getMedicalhistoryById() {
+        return medicalhistoryById;
     }
 
-    public void setMedicalhistoriesById(Collection<Medicalhistory> medicalhistoriesById) {
-        this.medicalhistoriesById = medicalhistoriesById;
+    public void setMedicalhistoryById(Medicalhistory medicalhistoryById) {
+        this.medicalhistoryById = medicalhistoryById;
     }
 
     @ManyToOne

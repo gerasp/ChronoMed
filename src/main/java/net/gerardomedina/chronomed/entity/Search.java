@@ -1,8 +1,6 @@
 package net.gerardomedina.chronomed.entity;
 
-/**
- * Created by gerardo on 04.09.17.
- */
+
 public class Search {
     private String type;
     private String parameter;

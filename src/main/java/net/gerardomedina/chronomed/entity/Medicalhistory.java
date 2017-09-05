@@ -2,9 +2,7 @@ package net.gerardomedina.chronomed.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by gerardo on 04.09.17.
- */
+
 @Entity
 public class Medicalhistory {
     private int id;
@@ -130,7 +128,7 @@ public class Medicalhistory {
         return result;
     }
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
     public Patient getPatientByPatientId() {
         return patientByPatientId;

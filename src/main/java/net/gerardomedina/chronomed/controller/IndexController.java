@@ -47,7 +47,7 @@ public class IndexController {
         User user = (User) session.getAttribute("user");
         if (user.getType().equals("ADMIN")) return new ModelAndView("redirect:/admin/patients");
         else if (user.getType().equals("DOCTOR")) return new ModelAndView("redirect:/doctor/");
-        else if (user.getType().equals("PATIENT")) return new ModelAndView("redirect:/patient/");
+        else if (user.getType().equals("PATIENT")) return new ModelAndView("redirect:/patient/history");
         else return index(session);
     }
 
@@ -64,24 +64,4 @@ public class IndexController {
         return "redirect:/";
     }
 
-
-//    @ModelAttribute("countryList")
-//    public Map<String,String> listadoPaises() {
-//        Map<String,String> countries = new LinkedHashMap<>();
-//        return countries;
-//    }
-//
-
-//    @GetMapping("/hola")
-//    public String hola(Model m) {
-//        m.addAttribute("someAttribute", "hola");
-//        return "index";
-//    }
-//    @RequestMapping("/home/home")
-//    public @ResponseBody ModelAndView holaadios(@RequestParam(value = "id") String id) {
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("index");
-//        modelAndView.addObject("someAttribute",id);
-//        return modelAndView;
-//    }
 }

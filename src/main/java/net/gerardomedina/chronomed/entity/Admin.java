@@ -2,9 +2,7 @@ package net.gerardomedina.chronomed.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by gerardo on 04.09.17.
- */
+
 @Entity
 public class Admin {
     private int id;
