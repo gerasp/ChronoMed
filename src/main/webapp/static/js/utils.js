@@ -95,13 +95,15 @@ $('body').scrollspy({target: ".navbar", offset: 50});
 // SIDEBAR SCROLL
 var lastScrollTop = 0;
 $(window).scroll(function (event) {
-    var st = $(this).scrollTop();
-    if (st > lastScrollTop) {
-        var difference = st - lastScrollTop;
-        $('.sidebar').animate({top: '+='+difference}, difference);
-    } else {
-        var difference = lastScrollTop - st;
-        $('.sidebar').animate({top: '-='+difference}, difference);
-    }
-    lastScrollTop = st;
+    // if ($(window).width() > 992) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop) {
+            var difference = st - lastScrollTop;
+            $('.sidebar').animate({top: '+=' + difference}, difference);
+        } else {
+            var difference = lastScrollTop - st;
+            $('.sidebar').animate({top: '-=' + difference}, difference);
+        }
+        lastScrollTop = st;
+    // }
 });

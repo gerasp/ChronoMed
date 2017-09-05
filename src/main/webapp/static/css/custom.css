@@ -123,9 +123,6 @@ textarea {
     max-height: 50%;
 }
 
-.welcome-message {
-    padding-top: 10px;
-}
 
 .affix {
     top:0;
@@ -171,4 +168,19 @@ textarea {
 
 #sidebar {
     position: relative;
+}
+
+.welcome-message {
+    padding-top: 20px;
+}
+
+#sidebar-mobile {
+    margin-top:20px;
+}
+@media (max-width: 992px) {
+
+    .welcome-message {
+        text-align: center;
+    }
+
 }
