@@ -16,10 +16,8 @@
                         <form:input path="parameter" cssClass="form-control"
                                     placeholder="${boardNumberMessage}"/>
                         <span class="input-group-addon">
-                                                    <form:button class="btn-link">
-                                                        <i class="fa  fa-search"></i>
-                                                    </form:button>
-                                                </span>
+                            <form:button class="btn-link"><i class="fa  fa-search"></i></form:button>
+                        </span>
                     </div>
                 </form:form>
             </div>

@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                href="#collapse-admin-patient-personal"><fmt:message key="form.data.personal"/></a>
         </h4>
     </div>
@@ -30,10 +30,10 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="birthdate" cssClass="control-label">
-                            <fmt:message key="form.birthdate"/>
+                        <form:label path="birthDate" cssClass="control-label">
+                            <fmt:message key="form.birthDate"/>
                         </form:label>
-                        <form:input path="birthdate" cssClass="form-control"/>
+                        <form:input path="birthDate" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
                         <form:label path="gender" cssClass="control-label">

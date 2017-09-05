@@ -45,7 +45,7 @@
                                         </div>
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label for="inputBirthDate" class="control-label"><fmt:message key="form.birthdate" /></label>
+                                                <label for="inputBirthDate" class="control-label"><fmt:message key="form.birthDate" /></label>
                                                 <input type="date" class="form-control" disabled id="inputBirthDate" name="birthdate" 
                                                        value="<%= new SimpleDateFormat("yyyy-MM-dd").format(patient.getBirthDate())%>"
                                                        required>
