@@ -6,7 +6,7 @@
             </a>
         </div>
         <div class="col-md-8">
-            <h1 class="form-title text-center">&nbsp<fmt:message key="form.doctor.registration"/></h1>
+            <h3 class="form-title text-center">&nbsp<fmt:message key="form.doctor.registration"/></h3>
         </div>
         <div class="col-md-2">
             <form:button class="btn btn-lg btn-block btn-link pull-right">

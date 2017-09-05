@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                href="#collapse-admin-access"><fmt:message key="form.data.access"/></a>
         </h4>
     </div>
@@ -17,7 +17,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <div class="form-group">
+                    <div class="form-group text-right">
                         <form:label path="userByUserAccountId.active" cssClass="control-label">
                             <fmt:message key="form.active"/>
                         </form:label>

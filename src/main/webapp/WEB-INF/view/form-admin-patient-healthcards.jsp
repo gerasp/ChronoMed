@@ -1,7 +1,7 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
+            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
                href="#collapse-admin-patient-healthcards"><fmt:message key="form.healthcards"/></a>
         </h4>
     </div>

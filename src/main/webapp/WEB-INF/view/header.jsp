@@ -31,5 +31,4 @@
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/vendor.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/custom.css"/>">
-
 </head>

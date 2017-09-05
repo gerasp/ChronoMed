@@ -141,9 +141,7 @@ textarea {
 }
 
 .img-background {
-    margin-bottom: 30px;
-    margin-top: 30px;
-    max-height: 320px;
+    max-height: 300px;
 }
 
 .register-button {
@@ -152,5 +150,6 @@ textarea {
 }
 
 .img-logo {
+    margin-top: 15px;
     max-height: 100px;
 }

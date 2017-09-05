@@ -32,7 +32,7 @@ public class AdminController {
 
     @GetMapping("/patients")
     public ModelAndView patients() {
-        ModelAndView modelAndView = new ModelAndView("admin", "searchByIdCard", new Search());
+        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
         modelAndView.addObject("action",0);
         return modelAndView;
     }
@@ -45,7 +45,7 @@ public class AdminController {
     }
 
     @GetMapping("/patient/search")
-    public ModelAndView patientSearch(@ModelAttribute("searchByIdCard") Search search) {
+    public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
         savedPatient = patientRepository.getPatientByIdCard(search);
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
         modelAndView.addObject("patient", savedPatient);
@@ -84,7 +84,7 @@ public class AdminController {
 
     @GetMapping("/doctors")
     public ModelAndView doctors() {
-        ModelAndView modelAndView = new ModelAndView("admin", "searchByBoardNumber", new Search());
+        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
         modelAndView.addObject("action",3);
         return modelAndView;
     }
@@ -97,7 +97,7 @@ public class AdminController {
     }
 
     @GetMapping("/doctor/search")
-    public ModelAndView doctorSearch(@ModelAttribute("searchByBoardNumber") Search search) {
+    public ModelAndView doctorSearch(@ModelAttribute("search") Search search) {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
         modelAndView.addObject("doctor", savedDoctor);

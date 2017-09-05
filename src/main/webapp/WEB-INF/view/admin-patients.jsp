@@ -1,20 +1,36 @@
 <c:choose>
     <c:when test="${action == 0}">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <a class="btn btn-primary btn-lg  register-button"
                    href="<c:url value="/admin/patient/registration"/>">
                     <i class="fa  fa-plus-circle"></i>&nbsp;
                     <fmt:message key="navigation.patient.registration"/>
                 </a>
             </div>
-            <div class="col-sm-8">
-                <form:form action="/admin/patient/search" modelAttribute="searchByIdCard"
+            <div class="col-md-8">
+                <form:form action="/admin/patient/search" modelAttribute="search"
                            cssClass="form-horizontal" method="get">
                     <div class="input-group input-group-lg">
-                        <fmt:message key="form.idcard" var="idCardMessage"/>
-                        <form:input path="parameter" cssClass="form-control"
-                                    placeholder="${idCardMessage}"/>
+                        <div class="input-group-btn">
+                            <form:select path="type" cssClass="btn btn-default dropdown-toggle">
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">
+                                            <form:option value="idCard"><fmt:message key="form.idcard"/>
+                                            </form:option>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <form:option value="healthCard"><fmt:message key="form.healthcard"/>
+                                            </form:option>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </form:select>
+                        </div>
+                        <form:input path="parameter" cssClass="form-control"/>
                         <span class="input-group-addon">
                             <form:button class="btn-link"><i class="fa  fa-search"></i></form:button>
                         </span>
@@ -22,7 +38,7 @@
                 </form:form>
             </div>
         </div>
-        <img src="<c:url value="/static/images/stethoscope.png"/>"
+        <img src="<c:url value="/static/images/patients.png"/>"
              class="img-background center-block img-responsive">
         <div class="well text-center">
             <i class="fa fa-info-circle"></i>&nbsp;

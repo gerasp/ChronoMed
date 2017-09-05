@@ -1,20 +1,30 @@
 <c:choose>
     <c:when test="${action == 3}">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-md-4">
                 <a class="btn btn-primary btn-lg  register-button"
                    href="<c:url value="/admin/doctor/registration"/>">
                     <i class="fa  fa-plus-circle"></i>&nbsp;
                     <fmt:message key="navigation.doctor.registration"/>
                 </a>
             </div>
-            <div class="col-sm-8">
-                <form:form action="/admin/doctor/search" modelAttribute="searchByBoardNumber"
+            <div class="col-md-8">
+                <form:form action="/admin/doctor/search" modelAttribute="search"
                            cssClass="form-horizontal" method="get">
                     <div class="input-group input-group-lg">
-                        <fmt:message key="form.boardNumber" var="boardNumberMessage"/>
-                        <form:input path="parameter" cssClass="form-control"
-                                    placeholder="${boardNumberMessage}"/>
+                        <div class="input-group-btn">
+                            <form:select path="type" cssClass="btn btn-default dropdown-toggle">
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a href="#">
+                                            <form:option value="boardNumber"><fmt:message key="form.boardNumber"/>
+                                            </form:option>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </form:select>
+                        </div>
+                        <form:input path="parameter" cssClass="form-control"/>
                         <span class="input-group-addon">
                             <form:button class="btn-link"><i class="fa  fa-search"></i></form:button>
                         </span>
@@ -22,7 +32,7 @@
                 </form:form>
             </div>
         </div>
-        <img src="<c:url value="/static/images/stethoscope.png"/>"
+        <img src="<c:url value="/static/images/doctors.png"/>"
              class="img-background center-block img-responsive">
         <div class="well text-center">
             <i class="fa fa-info-circle"></i>&nbsp;

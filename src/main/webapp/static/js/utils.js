@@ -63,3 +63,8 @@ $("#language-selector").click(function () {
         });
     });
 });
+
+$(document).ready(function () {
+    $('.panel-collapse').collapse("show");
+});
+
