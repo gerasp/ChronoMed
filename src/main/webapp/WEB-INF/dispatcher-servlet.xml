@@ -19,15 +19,12 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>net.gerardomedina.chronomed.entity.User</value>
                 <value>net.gerardomedina.chronomed.entity.Doctor</value>
                 <value>net.gerardomedina.chronomed.entity.DoctorPatient</value>
                 <value>net.gerardomedina.chronomed.entity.Healthcard</value>
                 <value>net.gerardomedina.chronomed.entity.Admin</value>
-                <value>net.gerardomedina.chronomed.entity.Medicalconsultation</value>
-                <value>net.gerardomedina.chronomed.entity.Medicalhistory</value>
                 <value>net.gerardomedina.chronomed.entity.Patient</value>
-                <value>net.gerardomedina.chronomed.entity.Admin</value>
+                <value>net.gerardomedina.chronomed.entity.Consultation</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -43,8 +40,8 @@
     </bean>
 
     <!--REPOSITORY BEANS-->
-    <bean id="userRepository" class="net.gerardomedina.chronomed.repository.UserRepositoryImpl">
-        <constructor-arg value="net.gerardomedina.chronomed.entity.User"/>
+    <bean id="userRepository" class="net.gerardomedina.chronomed.repository.AdminRepositoryImpl">
+        <constructor-arg value="net.gerardomedina.chronomed.entity.Admin"/>
         <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
     <bean id="doctorRepository" class="net.gerardomedina.chronomed.repository.DoctorRepositoryImpl">

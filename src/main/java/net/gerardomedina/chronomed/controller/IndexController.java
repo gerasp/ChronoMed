@@ -1,7 +1,7 @@
 package net.gerardomedina.chronomed.controller;
 
 import net.gerardomedina.chronomed.entity.User;
-import net.gerardomedina.chronomed.repository.UserRepository;
+import net.gerardomedina.chronomed.repository.AdminRepository;
 import net.gerardomedina.chronomed.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,11 +19,11 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
     private UserValidator userValidator = new UserValidator();
 
-    private UserRepository userRepository;
+    private AdminRepository adminRepository;
     @Autowired
     @Qualifier(value="userRepository")
-    public void setUserRepository(UserRepository ps){
-        this.userRepository = ps;
+    public void setAdminRepository(AdminRepository ps){
+        this.adminRepository = ps;
     }
 
     @GetMapping("/")
@@ -35,7 +35,7 @@ public class IndexController {
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") User user, BindingResult result, HttpSession session) {
         userValidator.validate(user,result);
-        User checkedUser = userRepository.getUserByEmail(user);
+        User checkedUser = adminRepository.getUserByEmail(user);
         if(checkedUser != null && !result.hasErrors()) {
             session.setAttribute("user", checkedUser);
             return userRedirect(session);

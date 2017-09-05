@@ -3,7 +3,9 @@ package net.gerardomedina.chronomed.entity;
 import javax.persistence.*;
 import java.util.Collection;
 
-
+/**
+ * Created by gerardo on 05.09.17.
+ */
 @Entity
 public class Doctor {
     private int id;
@@ -15,10 +17,11 @@ public class Doctor {
     private String boardNumber;
     private String phoneNumber;
     private String alternativePhoneNumber;
-    private int userAccountId;
-    private User userByUserAccountId;
+    private String email;
+    private String password;
+    private byte active;
+    private Collection<Consultation> consultationsById;
     private Collection<DoctorPatient> doctorPatientsById;
-    private Collection<Medicalconsultation> medicalconsultationsById;
 
     @Id
     @Column(name = "ID")
@@ -111,13 +114,33 @@ public class Doctor {
     }
 
     @Basic
-    @Column(name = "userAccountID")
-    public int getUserAccountId() {
-        return userAccountId;
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
     }
 
-    public void setUserAccountId(int userAccountId) {
-        this.userAccountId = userAccountId;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Basic
+    @Column(name = "active")
+    public byte getActive() {
+        return active;
+    }
+
+    public void setActive(byte active) {
+        this.active = active;
     }
 
     @Override
@@ -128,7 +151,7 @@ public class Doctor {
         Doctor doctor = (Doctor) o;
 
         if (id != doctor.id) return false;
-        if (userAccountId != doctor.userAccountId) return false;
+        if (active != doctor.active) return false;
         if (name != null ? !name.equals(doctor.name) : doctor.name != null) return false;
         if (surname != null ? !surname.equals(doctor.surname) : doctor.surname != null) return false;
         if (idCard != null ? !idCard.equals(doctor.idCard) : doctor.idCard != null) return false;
@@ -138,6 +161,8 @@ public class Doctor {
         if (phoneNumber != null ? !phoneNumber.equals(doctor.phoneNumber) : doctor.phoneNumber != null) return false;
         if (alternativePhoneNumber != null ? !alternativePhoneNumber.equals(doctor.alternativePhoneNumber) : doctor.alternativePhoneNumber != null)
             return false;
+        if (email != null ? !email.equals(doctor.email) : doctor.email != null) return false;
+        if (password != null ? !password.equals(doctor.password) : doctor.password != null) return false;
 
         return true;
     }
@@ -153,18 +178,19 @@ public class Doctor {
         result = 31 * result + (boardNumber != null ? boardNumber.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (alternativePhoneNumber != null ? alternativePhoneNumber.hashCode() : 0);
-        result = 31 * result + userAccountId;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (int) active;
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "userAccountID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
-    public User getUserByUserAccountId() {
-        return userByUserAccountId;
+    @OneToMany(mappedBy = "doctorByDoctorId")
+    public Collection<Consultation> getConsultationsById() {
+        return consultationsById;
     }
 
-    public void setUserByUserAccountId(User userByUserAccountId) {
-        this.userByUserAccountId = userByUserAccountId;
+    public void setConsultationsById(Collection<Consultation> consultationsById) {
+        this.consultationsById = consultationsById;
     }
 
     @OneToMany(mappedBy = "doctorByDoctorId")
@@ -174,14 +200,5 @@ public class Doctor {
 
     public void setDoctorPatientsById(Collection<DoctorPatient> doctorPatientsById) {
         this.doctorPatientsById = doctorPatientsById;
-    }
-
-    @OneToMany(mappedBy = "doctorByDoctorId")
-    public Collection<Medicalconsultation> getMedicalconsultationsById() {
-        return medicalconsultationsById;
-    }
-
-    public void setMedicalconsultationsById(Collection<Medicalconsultation> medicalconsultationsById) {
-        this.medicalconsultationsById = medicalconsultationsById;
     }
 }

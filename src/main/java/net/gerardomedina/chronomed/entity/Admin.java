@@ -1,16 +1,19 @@
 package net.gerardomedina.chronomed.entity;
 
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
-
+/**
+ * Created by gerardo on 05.09.17.
+ */
 @Entity
 public class Admin {
     private int id;
-    private String name;
-    private String surname;
-    private String idCard;
-    private int userAccountId;
-    private User userByUserAccountId;
+    private String email;
+    private String password;
+    private byte active;
 
     @Id
     @Column(name = "ID")
@@ -23,43 +26,33 @@ public class Admin {
     }
 
     @Basic
-    @Column(name = "name")
-    public String getName() {
-        return name;
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
-    @Column(name = "surname")
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Basic
-    @Column(name = "idCard")
-    public String getIdCard() {
-        return idCard;
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
     }
 
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Basic
-    @Column(name = "userAccountID")
-    public int getUserAccountId() {
-        return userAccountId;
+    @Column(name = "active")
+    public byte getActive() {
+        return active;
     }
 
-    public void setUserAccountId(int userAccountId) {
-        this.userAccountId = userAccountId;
+    public void setActive(byte active) {
+        this.active = active;
     }
 
     @Override
@@ -70,10 +63,9 @@ public class Admin {
         Admin admin = (Admin) o;
 
         if (id != admin.id) return false;
-        if (userAccountId != admin.userAccountId) return false;
-        if (name != null ? !name.equals(admin.name) : admin.name != null) return false;
-        if (surname != null ? !surname.equals(admin.surname) : admin.surname != null) return false;
-        if (idCard != null ? !idCard.equals(admin.idCard) : admin.idCard != null) return false;
+        if (active != admin.active) return false;
+        if (email != null ? !email.equals(admin.email) : admin.email != null) return false;
+        if (password != null ? !password.equals(admin.password) : admin.password != null) return false;
 
         return true;
     }
@@ -81,20 +73,9 @@ public class Admin {
     @Override
     public int hashCode() {
         int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (idCard != null ? idCard.hashCode() : 0);
-        result = 31 * result + userAccountId;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (int) active;
         return result;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "userAccountID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
-    public User getUserByUserAccountId() {
-        return userByUserAccountId;
-    }
-
-    public void setUserByUserAccountId(User userByUserAccountId) {
-        this.userByUserAccountId = userByUserAccountId;
     }
 }

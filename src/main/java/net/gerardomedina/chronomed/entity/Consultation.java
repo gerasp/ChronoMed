@@ -3,9 +3,11 @@ package net.gerardomedina.chronomed.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-
+/**
+ * Created by gerardo on 05.09.17.
+ */
 @Entity
-public class Medicalconsultation {
+public class Consultation {
     private int id;
     private Date date;
     private String symptoms;
@@ -102,7 +104,7 @@ public class Medicalconsultation {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Medicalconsultation that = (Medicalconsultation) o;
+        Consultation that = (Consultation) o;
 
         if (id != that.id) return false;
         if (doctorId != that.doctorId) return false;
@@ -131,7 +133,7 @@ public class Medicalconsultation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false)
     public Doctor getDoctorByDoctorId() {
         return doctorByDoctorId;
     }
@@ -141,7 +143,7 @@ public class Medicalconsultation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false)
     public Patient getPatientByPatientId() {
         return patientByPatientId;
     }

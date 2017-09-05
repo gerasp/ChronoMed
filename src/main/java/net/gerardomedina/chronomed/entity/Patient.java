@@ -4,7 +4,9 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
-
+/**
+ * Created by gerardo on 05.09.17.
+ */
 @Entity
 public class Patient {
     private int id;
@@ -21,12 +23,18 @@ public class Patient {
     private String country;
     private String phoneNumber;
     private String alternativePhoneNumber;
-    private int userAccountId;
+    private String bloodType;
+    private String familyHistory;
+    private String allergies;
+    private String pathologies;
+    private String surgeries;
+    private String others;
+    private String password;
+    private byte active;
+    private String email;
+    private Collection<Consultation> consultationsById;
     private Collection<DoctorPatient> doctorPatientsById;
     private Collection<Healthcard> healthcardsById;
-    private Collection<Medicalconsultation> medicalconsultationsById;
-    private Medicalhistory medicalhistoryById;
-    private User userByUserAccountId;
 
     @Id
     @Column(name = "ID")
@@ -169,13 +177,93 @@ public class Patient {
     }
 
     @Basic
-    @Column(name = "userAccountID")
-    public int getUserAccountId() {
-        return userAccountId;
+    @Column(name = "bloodType")
+    public String getBloodType() {
+        return bloodType;
     }
 
-    public void setUserAccountId(int userAccountId) {
-        this.userAccountId = userAccountId;
+    public void setBloodType(String bloodType) {
+        this.bloodType = bloodType;
+    }
+
+    @Basic
+    @Column(name = "familyHistory")
+    public String getFamilyHistory() {
+        return familyHistory;
+    }
+
+    public void setFamilyHistory(String familyHistory) {
+        this.familyHistory = familyHistory;
+    }
+
+    @Basic
+    @Column(name = "allergies")
+    public String getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
+    }
+
+    @Basic
+    @Column(name = "pathologies")
+    public String getPathologies() {
+        return pathologies;
+    }
+
+    public void setPathologies(String pathologies) {
+        this.pathologies = pathologies;
+    }
+
+    @Basic
+    @Column(name = "surgeries")
+    public String getSurgeries() {
+        return surgeries;
+    }
+
+    public void setSurgeries(String surgeries) {
+        this.surgeries = surgeries;
+    }
+
+    @Basic
+    @Column(name = "others")
+    public String getOthers() {
+        return others;
+    }
+
+    public void setOthers(String others) {
+        this.others = others;
+    }
+
+    @Basic
+    @Column(name = "password")
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Basic
+    @Column(name = "active")
+    public byte getActive() {
+        return active;
+    }
+
+    public void setActive(byte active) {
+        this.active = active;
+    }
+
+    @Basic
+    @Column(name = "email")
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -186,7 +274,7 @@ public class Patient {
         Patient patient = (Patient) o;
 
         if (id != patient.id) return false;
-        if (userAccountId != patient.userAccountId) return false;
+        if (active != patient.active) return false;
         if (name != null ? !name.equals(patient.name) : patient.name != null) return false;
         if (surname != null ? !surname.equals(patient.surname) : patient.surname != null) return false;
         if (idCard != null ? !idCard.equals(patient.idCard) : patient.idCard != null) return false;
@@ -201,6 +289,15 @@ public class Patient {
         if (phoneNumber != null ? !phoneNumber.equals(patient.phoneNumber) : patient.phoneNumber != null) return false;
         if (alternativePhoneNumber != null ? !alternativePhoneNumber.equals(patient.alternativePhoneNumber) : patient.alternativePhoneNumber != null)
             return false;
+        if (bloodType != null ? !bloodType.equals(patient.bloodType) : patient.bloodType != null) return false;
+        if (familyHistory != null ? !familyHistory.equals(patient.familyHistory) : patient.familyHistory != null)
+            return false;
+        if (allergies != null ? !allergies.equals(patient.allergies) : patient.allergies != null) return false;
+        if (pathologies != null ? !pathologies.equals(patient.pathologies) : patient.pathologies != null) return false;
+        if (surgeries != null ? !surgeries.equals(patient.surgeries) : patient.surgeries != null) return false;
+        if (others != null ? !others.equals(patient.others) : patient.others != null) return false;
+        if (password != null ? !password.equals(patient.password) : patient.password != null) return false;
+        if (email != null ? !email.equals(patient.email) : patient.email != null) return false;
 
         return true;
     }
@@ -221,8 +318,25 @@ public class Patient {
         result = 31 * result + (country != null ? country.hashCode() : 0);
         result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         result = 31 * result + (alternativePhoneNumber != null ? alternativePhoneNumber.hashCode() : 0);
-        result = 31 * result + userAccountId;
+        result = 31 * result + (bloodType != null ? bloodType.hashCode() : 0);
+        result = 31 * result + (familyHistory != null ? familyHistory.hashCode() : 0);
+        result = 31 * result + (allergies != null ? allergies.hashCode() : 0);
+        result = 31 * result + (pathologies != null ? pathologies.hashCode() : 0);
+        result = 31 * result + (surgeries != null ? surgeries.hashCode() : 0);
+        result = 31 * result + (others != null ? others.hashCode() : 0);
+        result = 31 * result + (password != null ? password.hashCode() : 0);
+        result = 31 * result + (int) active;
+        result = 31 * result + (email != null ? email.hashCode() : 0);
         return result;
+    }
+
+    @OneToMany(mappedBy = "patientByPatientId")
+    public Collection<Consultation> getConsultationsById() {
+        return consultationsById;
+    }
+
+    public void setConsultationsById(Collection<Consultation> consultationsById) {
+        this.consultationsById = consultationsById;
     }
 
     @OneToMany(mappedBy = "patientByPatientId")
@@ -241,33 +355,5 @@ public class Patient {
 
     public void setHealthcardsById(Collection<Healthcard> healthcardsById) {
         this.healthcardsById = healthcardsById;
-    }
-
-    @OneToMany(mappedBy = "patientByPatientId")
-    public Collection<Medicalconsultation> getMedicalconsultationsById() {
-        return medicalconsultationsById;
-    }
-
-    public void setMedicalconsultationsById(Collection<Medicalconsultation> medicalconsultationsById) {
-        this.medicalconsultationsById = medicalconsultationsById;
-    }
-
-    @OneToOne(mappedBy = "patientByPatientId")
-    public Medicalhistory getMedicalhistoryById() {
-        return medicalhistoryById;
-    }
-
-    public void setMedicalhistoryById(Medicalhistory medicalhistoryById) {
-        this.medicalhistoryById = medicalhistoryById;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "userAccountID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
-    public User getUserByUserAccountId() {
-        return userByUserAccountId;
-    }
-
-    public void setUserByUserAccountId(User userByUserAccountId) {
-        this.userByUserAccountId = userByUserAccountId;
     }
 }

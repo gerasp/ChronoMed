@@ -2,7 +2,9 @@ package net.gerardomedina.chronomed.entity;
 
 import javax.persistence.*;
 
-
+/**
+ * Created by gerardo on 05.09.17.
+ */
 @Entity
 @Table(name = "doctor_patient", schema = "heroku_5d5cf2395135b4a", catalog = "")
 public class DoctorPatient {
@@ -65,7 +67,7 @@ public class DoctorPatient {
     }
 
     @ManyToOne
-    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false)
     public Doctor getDoctorByDoctorId() {
         return doctorByDoctorId;
     }
@@ -75,7 +77,7 @@ public class DoctorPatient {
     }
 
     @ManyToOne
-    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
+    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false)
     public Patient getPatientByPatientId() {
         return patientByPatientId;
     }
