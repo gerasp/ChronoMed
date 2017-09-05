@@ -2,32 +2,25 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-               href="#collapse3"><fmt:message key="form.healthcards"/></a>
+               href="#collapse-admin-patient-healthcards"><fmt:message key="form.healthcards"/></a>
         </h4>
     </div>
-    <div id="collapse3" class="panel-collapse collapse">
+    <div id="collapse-admin-patient-healtchards" class="panel-collapse collapse">
         <div class="panel-body">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <ul class="list-unstyled" id="healthCards">
-                            <c:forEach items="${patient.}" var="item">
-                                ${item}<br>
+                            <c:forEach items="${healthcardsById}" var="item">
+                                <li class='card-item'>
+                                    <input value="${item.number}>" name='healthCardsList'
+                                           style='border:0; background:none;' readonly>
+                                    <button type='button' onclick='deleteHealthCard(this)'
+                                            class='btn btn-danger btn-xs pull-right'><i
+                                            class='fa  fa-remove'></i> Eliminar
+                                    </button>
+                                </li>
                             </c:forEach>
-                            <%
-                                for (Healthcard hc : healthcardList) {
-                            %>
-                            <li class='card-item'>
-                                <input value="<%=hc.getNumber()%>" name='healthCardsList'
-                                       style='border:0; background:none;' readonly>
-                                <button type='button' onclick='deleteHealthCard(this)'
-                                        class='btn btn-danger btn-xs pull-right'><i
-                                        class='fa  fa-remove'></i> Eliminar
-                                </button>
-                            </li>
-                            <%
-                                }
-                            %>
                         </ul>
                     </div>
                 </div>

@@ -2,10 +2,10 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-               href="#collapse1">M�dicos vinculados</a>
+               href="#collapse-admin-patient-doctors">M�dicos vinculados</a>
         </h4>
     </div>
-    <%--<div id="collapse1" class="panel-collapse collapse">--%>
+    <%--<div id="collapse-admin-patient-doctors" class="panel-collapse collapse">--%>
         <%--<div class="panel-body">--%>
             <%--<div class="row">--%>
                 <%--<div class="form-group">--%>

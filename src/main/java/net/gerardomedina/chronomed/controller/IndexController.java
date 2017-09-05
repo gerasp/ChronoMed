@@ -45,7 +45,7 @@ public class IndexController {
 
     private ModelAndView userRedirect(HttpSession session) {
         User user = (User) session.getAttribute("user");
-        if (user.getType().equals("ADMIN")) return new ModelAndView("redirect:/admin/doctors");
+        if (user.getType().equals("ADMIN")) return new ModelAndView("redirect:/admin/patients");
         else if (user.getType().equals("DOCTOR")) return new ModelAndView("redirect:/doctor/");
         else if (user.getType().equals("PATIENT")) return new ModelAndView("redirect:/patient/");
         else return index(session);
