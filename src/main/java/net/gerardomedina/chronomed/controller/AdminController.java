@@ -62,18 +62,14 @@ public class AdminController {
     @PostMapping("/patient/new")
     public ModelAndView patientNew(@ModelAttribute("patient") Patient patient) {
         patient.setId(savedPatient.getId());
-        patient.setUserAccountId(savedPatient.getUserAccountId());
         patientRepository.create(patient);
-        patientRepository.create(patient.getUserByUserAccountId());
         return patients();
     }
 
     @PostMapping("/patient/edit")
     public ModelAndView patientEdit(@ModelAttribute("patient") Patient patient) {
         patient.setId(savedPatient.getId());
-        patient.setUserAccountId(savedPatient.getUserAccountId());
         patientRepository.update(patient);
-        patientRepository.update(patient.getUserByUserAccountId());
         return patients();
     }
 
@@ -114,18 +110,14 @@ public class AdminController {
     @PostMapping("/doctor/new")
     public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
-        doctor.setUserAccountId(savedDoctor.getUserAccountId());
         doctorRepository.create(doctor);
-        doctorRepository.create(doctor.getUserByUserAccountId());
         return doctors();
     }
 
     @PostMapping("/doctor/edit")
     public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
-        doctor.setUserAccountId(savedDoctor.getUserAccountId());
         doctorRepository.update(doctor);
-        doctorRepository.update(doctor.getUserByUserAccountId());
         return doctors();
     }
 

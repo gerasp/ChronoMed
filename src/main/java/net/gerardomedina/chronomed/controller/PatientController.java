@@ -30,41 +30,4 @@ public class PatientController {
         return modelAndView;
     }
 
-//    @GetMapping("/patient/registration")
-//    public ModelAndView patientRegistration(HttpSession session) {
-//        ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
-//        modelAndView.addObject("action", 1);
-//        return modelAndView;
-//    }
-//
-//    @GetMapping("/patient/search")
-//    public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
-//        savedPatient = patientRepository.getPatientByIdCard(search);
-//        ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
-//
-//        modelAndView.addObject("countryList",  Arrays.asList(Locale.getISOCountries()));
-//        modelAndView.addObject("patient", savedPatient);
-//        modelAndView.addObject("action", 2);
-//        return modelAndView;
-//    }
-//
-//    @PostMapping("/patient/new")
-//    public ModelAndView patientNew(@ModelAttribute("patient") Patient patient) {
-//        patient.setId(savedPatient.getId());
-//        patient.setUserAccountId(savedPatient.getUserAccountId());
-//        patientRepository.create(patient);
-//        patientRepository.create(patient.getUserByUserAccountId());
-//        return patients();
-//    }
-//
-//    @PostMapping("/patient/edit")
-//    public ModelAndView patientEdit(@ModelAttribute("patient") Patient patient) {
-//        patient.setId(savedPatient.getId());
-//        patient.setUserAccountId(savedPatient.getUserAccountId());
-//        patientRepository.update(patient);
-//        patientRepository.update(patient.getUserByUserAccountId());
-//        return patients();
-//    }
-
-
 }

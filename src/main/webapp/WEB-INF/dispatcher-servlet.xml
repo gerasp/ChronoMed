@@ -40,7 +40,7 @@
     </bean>
 
     <!--REPOSITORY BEANS-->
-    <bean id="userRepository" class="net.gerardomedina.chronomed.repository.AdminRepositoryImpl">
+    <bean id="adminRepository" class="net.gerardomedina.chronomed.repository.AdminRepositoryImpl">
         <constructor-arg value="net.gerardomedina.chronomed.entity.Admin"/>
         <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
