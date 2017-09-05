@@ -32,8 +32,12 @@
                 </form:form>
             </div>
         </div>
-        <img src="<c:url value="/static/images/doctors.png"/>"
-             class="img-background center-block img-responsive">
+        <div class="row">
+            <img src="<c:url value="/static/images/svg/male-doctor.svg"/>"
+                 class="img-responsive col-sm-6 col-xs-12">
+            <img src="<c:url value="/static/images/svg/female-doctor.svg"/>"
+                 class="img-responsive col-sm-6 hidden-xs">
+        </div>
         <div class="well text-center">
             <i class="fa fa-info-circle"></i>&nbsp;
             <fmt:message key="search.doctor.info"/>

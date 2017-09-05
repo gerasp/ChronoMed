@@ -30,8 +30,8 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <prop key="hibernate.connection.url">jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a</prop>
-                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <!--<prop key="hibernate.connection.url">jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a</prop>-->
+                <!--<prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>-->
             </props>
         </property>
     </bean>

@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-<body class="body-background">
+<body class="body-grey">
 <div class="container">
     <div class="row">
         <%@include file="navigation.jsp" %>

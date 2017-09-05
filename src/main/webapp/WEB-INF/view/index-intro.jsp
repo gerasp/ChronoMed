@@ -7,19 +7,13 @@
                 <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive logo">
             </div>
             <div class="col-md-7 signin-form">
-                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right signin-container">
+                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right">
                     <ul class="nav nav-justified nav-tabs">
                         <li class="active">
-                            <a href="#"><i class="fa fa-lg fa-user"></i><fmt:message key="index.login.patient"/><br></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-lg fa-md"></i><fmt:message key="index.login.doctor"/><br></a>
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-lg fa-briefcase"></i><fmt:message key="index.login.admin"/><br></a>
-                        </li>
+                            <a href="#"><i class="fa fa-rocket"></i><fmt:message key="index.login"/></a>
+                        </li><li></li>
                     </ul>
-                    <div class="container">
+                    <div class="container signin-container">
                         <div class="row">
                             <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
                             <div class="col-md-8">
@@ -40,7 +34,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <form:button class="btn btn-lg btn-primary">

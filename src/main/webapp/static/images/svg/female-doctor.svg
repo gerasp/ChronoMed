@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="35.900894mm"
+   height="60.825943mm"
+   viewBox="0 0 127.20789 215.52499"
+   id="svg6217"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="female-doctor.svg">
+  <defs
+     id="defs6219" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.979899"
+     inkscape:cx="-113.14396"
+     inkscape:cy="127.73914"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata6222">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(755.03255,49.68601)">
+    <g
+       id="g169"
+       transform="translate(-1007.8286,-397.06101)">
+      <rect
+         x="304.5"
+         y="468.70001"
+         width="23.799999"
+         height="38.5"
+         id="rect171"
+         style="fill:#fcc7a3" />
+      <g
+         id="g173">
+        <g
+           id="g175">
+          <circle
+             cx="359.60001"
+             cy="429.5"
+             r="13.1"
+             id="circle177"
+             style="fill:#fcc7a3" />
+          <circle
+             cx="359.60001"
+             cy="429.5"
+             r="7.8000002"
+             id="circle179"
+             style="fill:#edaa84" />
+        </g>
+        <g
+           id="g181">
+          <circle
+             cx="273.10001"
+             cy="429.5"
+             r="13.1"
+             id="circle183"
+             style="fill:#fcc7a3" />
+          <circle
+             cx="273.10001"
+             cy="429.5"
+             r="7.8000002"
+             id="circle185"
+             style="fill:#edaa84" />
+        </g>
+      </g>
+      <path
+         d="m 304.5,490 c 3.8,1 7.8,1.5 11.9,1.5 l 0,0 c 4.1,0 8.1,-0.5 11.9,-1.5 l 0,-21.3 -23.8,0 0,21.3 z"
+         id="path187"
+         inkscape:connector-curvature="0"
+         style="fill:#edaa84" />
+      <path
+         d="m 277.9,411.3 2.6,36.7 c 1.3,18.9 17,33.5 36,33.5 l 0,0 c 18.9,0 34.6,-14.6 36,-33.5 l 2.6,-36.7 C 356.7,389 339,370 316.6,370 l 0,0 c -22.5,0 -40.2,19 -38.7,41.3 z"
+         id="path189"
+         inkscape:connector-curvature="0"
+         style="fill:#fcc7a3" />
+      <g
+         id="g191">
+        <circle
+           cx="296"
+           cy="420"
+           r="3.5999999"
+           id="circle193"
+           style="fill:#34383e" />
+        <circle
+           cx="337"
+           cy="420"
+           r="3.5999999"
+           id="circle195"
+           style="fill:#34383e" />
+      </g>
+      <path
+         d="m 307,447.9 c 0,5.2 4.2,9.4 9.4,9.4 5.2,0 9.4,-4.2 9.4,-9.4 l -18.8,0 z"
+         id="path197"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+      <path
+         d="m 308.1,438.9 0,0 c 0,2.2 1.8,4.1 4.1,4.1 l 8.6,0 c 2.2,0 4.1,-1.8 4.1,-4.1 l 0,0 c 0,-2.2 -1.8,-4.1 -4.1,-4.1 l -8.6,0 c -2.3,0 -4.1,1.8 -4.1,4.1 z"
+         id="path199"
+         inkscape:connector-curvature="0"
+         style="fill:#edaa84" />
+      <path
+         d="m 376,397.8 c -11.6,-29.8 -38.1,-36.3 -59.6,-36.3 -21.5,0 -48,6.5 -59.6,36.3 -10.6,27.1 3.2,60.7 3.2,60.7 l 22.9,0 0,-60.7 33.5,0 33.5,0 0,60.7 22.9,0 c 0,0 13.8,-33.6 3.2,-60.7 z"
+         id="path201"
+         inkscape:connector-curvature="0"
+         style="fill:#603913" />
+    </g>
+    <path
+       d="m -674.1286,115.73899 0,-14.1 -34.6,0 0,14.1 c -24.9,3.1 -44.2,24.3 -44.2,50.1 l 0,0 123,0 0,0 c 0,-25.7 -19.3,-47 -44.2,-50.1 z"
+       id="path203"
+       inkscape:connector-curvature="0"
+       style="fill:#34383e;fill-opacity:1" />
+    <polygon
+       points="316.9,562.9 333.7,512.8 333.7,498.7 299.1,498.7 299.1,512.8 "
+       id="polygon205"
+       style="fill:#eff9fe;fill-opacity:0.98431373"
+       transform="matrix(1.0258051,0,0,1,-1016.4045,-397.06101)" />
+    <g
+       id="g207"
+       transform="translate(-1007.8286,-397.06101)">
+      <path
+         d="m 298.7,512.8 c -4.5,0.6 -8.9,1.7 -13,3.4 l -3.2,12.1 34,34.6 0,0 -17.8,-50.1 z"
+         id="path209"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+      <path
+         d="m 333.7,512.8 c 4.5,0.6 9.3,1.7 13.4,3.4 l 3.2,12.1 -34,34.6 0,0 17.4,-50.1 z"
+         id="path211"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff" />
+    </g>
+    <path
+       d="m -728.8286,-39.76101 c 0.9,5.9 1.9,11.8 2.8,17.8 0.6,3.6 3.9,6.2 7.6,5.7 17.9,-2.3 36.1,-2.3 54,0 3.7,0.5 7,-2.1 7.6,-5.7 0.9,-5.9 1.9,-11.8 2.8,-17.8 0.6,-3.8 -2.1,-7.4 -5.9,-7.9 -20.9,-2.7 -42.1,-2.7 -63.1,0 -3.8,0.5 -6.4,4.1 -5.8,7.9 z"
+       id="path213"
+       inkscape:connector-curvature="0"
+       style="fill:#eff9fe" />
+    <polygon
+       points="324.2,361.9 319,361.9 319,356.8 313.8,356.8 313.8,361.9 308.6,361.9 308.6,367.1 313.8,367.1 313.8,372.3 319,372.3 319,367.1 324.2,367.1 "
+       id="polygon215"
+       style="fill:#ef4130"
+       transform="translate(-1007.8286,-397.06101)" />
+  </g>
+</svg>

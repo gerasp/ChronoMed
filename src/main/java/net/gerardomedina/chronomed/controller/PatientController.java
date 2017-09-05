@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @RequestMapping("/patient")
 @Controller
 @Scope("session")
@@ -24,8 +26,8 @@ public class PatientController {
     }
 
     @GetMapping("/history")
-    public ModelAndView patients() {
-        ModelAndView modelAndView = new ModelAndView("patient","patient",new Patient());
+    public ModelAndView patients(HttpSession session) {
+        ModelAndView modelAndView = new ModelAndView("patient","patient",(Patient)session.getAttribute("patient"));
         modelAndView.addObject("action",0);
         return modelAndView;
     }

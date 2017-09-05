@@ -1,7 +1,7 @@
 <%@page import="java.util.List" %>
 <%@page import="data.entities.Patient" %>
 <%@include file="header.jsp" %>
-<body class="body-background">
+<body class="body-grey">
 
 <div class="container">
     <div class="row">

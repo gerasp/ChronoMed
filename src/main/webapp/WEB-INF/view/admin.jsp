@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-<body class="body-background">
+<body class="body-grey">
 <div class="section">
     <div class="container logo-header">
         <div class="row">

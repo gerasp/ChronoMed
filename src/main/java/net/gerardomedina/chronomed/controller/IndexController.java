@@ -45,19 +45,45 @@ public class IndexController {
 
     @GetMapping("/")
     public ModelAndView index(HttpSession session) {
-        if (session.getAttribute("user")!=null) return login((User)session.getAttribute("user"),session);
+        if (session.getAttribute("user")!=null) return redirect((User)session.getAttribute("user"));
         return new ModelAndView("index","user",new User());
     }
 
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") User user, HttpSession session) {
         //        userValidator.validate(user,result);
-        switch (user.getType()) {
-            case ADMIN: return loginAdmin(session, user);
-            case DOCTOR: return loginDoctor(session, user);
-            case PATIENT: return loginPatient(session, user);
+        Patient patient = patientRepository.getPatientByEmail(user);
+        if (patient!=null) {
+            user.setType(User.Type.PATIENT);
+            session.setAttribute("user", user);
+            session.setAttribute("patient", patient);
+        } else {
+            Doctor doctor = doctorRepository.getDoctorByEmail(user);
+            if (doctor!=null) {
+                user.setType(User.Type.DOCTOR);
+                session.setAttribute("user", user);
+                session.setAttribute("doctor", doctor);
+            } else {
+                Admin admin = adminRepository.getAdminByEmail(user);
+                if (admin!=null) {
+                    user.setType(User.Type.ADMIN);
+                    session.setAttribute("user", user);
+                    session.setAttribute("admin", admin);
+                } else {
+                    return index(session);
+                }
+            }
         }
-        return index(session);
+        return redirect(user);
+    }
+
+    private ModelAndView redirect(User user) {
+        switch (user.getType()) {
+            case ADMIN: return new ModelAndView("redirect:/admin/patients");
+            case DOCTOR: return new ModelAndView("redirect:/doctor/patients");
+            case PATIENT: return new ModelAndView("redirect:/patient/history");
+        }
+        return new ModelAndView("redirect:/");
     }
 
     @GetMapping("/logout")
@@ -71,33 +97,4 @@ public class IndexController {
         session.setAttribute("language",language);
         return "redirect:/";
     }
-
-
-    private ModelAndView loginAdmin(HttpSession session, User user) {
-        Admin admin = adminRepository.getAdminByEmail(user);
-        if(admin != null) {
-            session.setAttribute("user", user);
-            session.setAttribute("admin", admin);
-            return new ModelAndView("redirect:/admin/patients");
-        } else return new ModelAndView("index","user",user);
-    }
-
-    private ModelAndView loginDoctor(HttpSession session, User user) {
-        Doctor doctor = doctorRepository.getDoctorByEmail(user);
-        if(doctor != null) {
-            session.setAttribute("user", user);
-            session.setAttribute("doctor",doctor);
-            return new ModelAndView("redirect:/doctor/patients");
-        } else return new ModelAndView("index","user",user);
-    }
-
-    private ModelAndView loginPatient(HttpSession session, User user) {
-        Patient patient = patientRepository.getPatientByEmail(user);
-        if(patient != null) {
-            session.setAttribute("user", user);
-            session.setAttribute("patient", patient);
-            return new ModelAndView("redirect:/patient/history");
-        } else return new ModelAndView("index","user",user);
-    }
-
 }

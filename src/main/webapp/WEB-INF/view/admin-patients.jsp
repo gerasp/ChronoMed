@@ -38,8 +38,12 @@
                 </form:form>
             </div>
         </div>
-        <img src="<c:url value="/static/images/patients.png"/>"
-             class="img-background center-block img-responsive">
+        <div class="row">
+            <img src="<c:url value="/static/images/svg/male-patient.svg"/>"
+                 class="img-responsive col-sm-6 hidden-xs">
+            <img src="<c:url value="/static/images/svg/female-patient.svg"/>"
+                 class="img-responsive col-sm-6 col-xs-12">
+        </div>
         <div class="well text-center">
             <i class="fa fa-info-circle"></i>&nbsp;
             <fmt:message key="search.patient.info"/>

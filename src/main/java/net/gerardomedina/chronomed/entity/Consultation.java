@@ -131,7 +131,7 @@ public class Consultation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "doctorID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
     public Doctor getDoctorByDoctorId() {
         return doctorByDoctorId;
     }
@@ -141,7 +141,7 @@ public class Consultation {
     }
 
     @ManyToOne
-    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
     public Patient getPatientByPatientId() {
         return patientByPatientId;
     }

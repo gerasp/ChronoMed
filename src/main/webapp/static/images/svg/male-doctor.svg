@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="34.713333mm"
+   height="57.91568mm"
+   viewBox="0 0 123 205.21304"
+   id="svg5534"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="male-doctor.svg">
+  <defs
+     id="defs5536" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="151.79034"
+     inkscape:cy="77.628667"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1680"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5539">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(870.0714,-175.46997)">
+    <g
+       id="g7"
+       transform="translate(-1124.9714,129.58301)">
+      <g
+         id="g9">
+        <rect
+           x="304.60001"
+           y="156.89999"
+           width="23.799999"
+           height="38.5"
+           id="rect11"
+           style="fill:#fcc7a3" />
+        <g
+           id="g13">
+          <g
+             id="g15">
+            <circle
+               cx="363.20001"
+               cy="114"
+               r="13.1"
+               id="circle17"
+               style="fill:#fcc7a3" />
+            <circle
+               cx="363.20001"
+               cy="114"
+               r="7.8000002"
+               id="circle19"
+               style="fill:#edaa84" />
+          </g>
+          <g
+             id="g21">
+            <circle
+               cx="269.79999"
+               cy="114"
+               r="13.1"
+               id="circle23"
+               style="fill:#fcc7a3" />
+            <circle
+               cx="269.79999"
+               cy="114"
+               r="7.8000002"
+               id="circle25"
+               style="fill:#edaa84" />
+          </g>
+        </g>
+        <path
+           d="m 304.6,178.2 c 3.8,1 7.8,1.5 11.9,1.5 l 0,0 c 4.1,0 8.1,-0.5 11.9,-1.5 l 0,-21.3 -23.8,0 0,21.3 z"
+           id="path27"
+           inkscape:connector-curvature="0"
+           style="fill:#edaa84" />
+        <path
+           d="m 275.1,99.6 0,28.7 c 0,22.9 18.5,41.4 41.4,41.4 l 0,0 c 22.9,0 41.4,-18.5 41.4,-41.4 l 0,-28.7 c 0,-22.9 -18.5,-41.4 -41.4,-41.4 l 0,0 c -22.8,0 -41.4,18.5 -41.4,41.4 z"
+           id="path29"
+           inkscape:connector-curvature="0"
+           style="fill:#fcc7a3" />
+        <g
+           id="g31">
+          <path
+             d="m 275.1,108.2 c 0,0 19.1,-13.6 19.1,-43.5 0,0 -15.3,1.8 -20.8,18.8 -4.9,15.3 1.7,24.7 1.7,24.7 z"
+             id="path33"
+             inkscape:connector-curvature="0"
+             style="fill:#34383e" />
+          <path
+             d="m 357.9,108.2 c 0,0 -19.1,-13.6 -19.1,-43.5 0,0 15.3,1.8 20.8,18.8 5,15.3 -1.7,24.7 -1.7,24.7 z"
+             id="path35"
+             inkscape:connector-curvature="0"
+             style="fill:#34383e" />
+        </g>
+        <g
+           id="g37">
+          <circle
+             cx="296"
+             cy="108.2"
+             r="3.5999999"
+             id="circle39"
+             style="fill:#34383e" />
+          <circle
+             cx="337"
+             cy="108.2"
+             r="3.5999999"
+             id="circle41"
+             style="fill:#34383e" />
+        </g>
+        <path
+           d="m 307.1,136.1 c 0,5.2 4.2,9.4 9.4,9.4 5.2,0 9.4,-4.2 9.4,-9.4 l -18.8,0 z"
+           id="path43"
+           inkscape:connector-curvature="0"
+           style="fill:#ffffff" />
+        <path
+           d="m 308.2,127.1 0,0 c 0,2.2 1.8,4.1 4.1,4.1 l 8.6,0 c 2.2,0 4.1,-1.8 4.1,-4.1 l 0,0 c 0,-2.2 -1.8,-4.1 -4.1,-4.1 l -8.6,0 c -2.3,0 -4.1,1.8 -4.1,4.1 z"
+           id="path45"
+           inkscape:connector-curvature="0"
+           style="fill:#edaa84" />
+      </g>
+      <path
+         d="m 285.7,76.1 c 0,0 43.8,43.5 80,5.5 0,0 -13.5,-26.6 -37.3,-33.9 -23.8,-7.4 -45.8,9 -42.7,28.4 z"
+         id="path47"
+         inkscape:connector-curvature="0"
+         style="fill:#34383e" />
+      <rect
+         x="270.79999"
+         y="86.099998"
+         width="91.199997"
+         height="9.3000002"
+         id="rect49"
+         style="fill:#5d7683" />
+      <g
+         id="g51">
+        <circle
+           cx="331.60001"
+           cy="90.800003"
+           r="14.7"
+           id="circle53"
+           style="fill:#92b6c7" />
+        <circle
+           cx="331.60001"
+           cy="90.800003"
+           r="9.1999998"
+           id="circle55"
+           style="fill:#c0d9e6" />
+      </g>
+    </g>
+    <rect
+       x="-825.8714"
+       y="316.483"
+       width="34.599998"
+       height="15.5"
+       id="rect57"
+       style="fill:#4fbfa5" />
+    <path
+       d="m -870.0714,380.68301 0,0 123,0 0,0 c 0,-27.9 -22.6,-50.5 -50.5,-50.5 l -22,0 c -27.9,0 -50.5,22.6 -50.5,50.5 z"
+       id="path59"
+       inkscape:connector-curvature="0"
+       style="fill:#34383e;fill-opacity:1" />
+    <polygon
+       points="333.7,200.6 333.7,186.9 299.1,186.9 299.1,201 316.9,251.1 "
+       id="polygon61"
+       style="fill:#dae5e7"
+       transform="translate(-1124.9714,129.58301)" />
+    <path
+       d="m -800.0714,328.78301 c -0.6,-3.2 -3.1,-5.9 -6.4,-6.5 -5.2,-1 -9.7,2.9 -9.7,7.9 0,2.4 1.1,4.6 2.8,6.1 l -2.7,21.7 8.1,22.7 7.9,-23.9 -2.6,-20.5 c 2,-1.7 3.1,-4.5 2.6,-7.5 z"
+       id="path63"
+       inkscape:connector-curvature="0"
+       style="fill:#bf2026" />
+  </g>
+</svg>

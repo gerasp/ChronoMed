@@ -63,7 +63,7 @@ public class Healthcard {
     }
 
     @ManyToOne
-    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false)
+    @JoinColumn(name = "patientID", referencedColumnName = "ID", nullable = false, insertable = false, updatable = false)
     public Patient getPatientByPatientId() {
         return patientByPatientId;
     }

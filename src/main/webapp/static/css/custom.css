@@ -16,7 +16,7 @@
     border-left: 1px solid gainsboro;
     border-right: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
-    padding: 30px;
+    padding: 40px 50px 25px;
 }
 
 .white-container {
@@ -34,16 +34,15 @@
 
 .logo {
     background: white;
-    vertical-align: middle;
-    padding-top: 30px;
+    max-height: 200px;
 }
 
 .team-row {
     margin-bottom: 25px;
 }
 
-.body-background {
-    background: #D8D8D8;
+.body-grey {
+    background: #ececec;
 
 }
 
@@ -140,18 +139,10 @@ textarea {
     color:red;
 }
 
-.img-background {
-    max-height: 300px;
-}
 
 .register-button {
     margin-bottom: 15px;
     width: 100%;
-}
-
-.img-logo {
-    margin-top: 15px;
-    max-height: 100px;
 }
 
 .fa :after {
@@ -160,4 +151,21 @@ textarea {
 
 .fa :before {
     content:"&nbsp;";
+}
+
+.img-responsive {
+    margin:0 auto;
+    margin-top: 30px;
+    max-height: 300px;
+}
+
+.img-logo {
+    margin-top: 15px;
+    max-height: 150px;
+}
+
+.well {
+    border:0;
+    background: #34383e;
+    color: white;
 }
