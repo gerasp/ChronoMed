@@ -1,0 +1,156 @@
+/* PINGENDO COMMENT DO NOT REMOVE */
+.form {
+    background: white;
+    -webkit-box-shadow: 0px 0px 33px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 33px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 33px 2px rgba(0, 0, 0, 0.75);
+}
+
+.signin-form {
+    padding: 20px;
+    background: #D8D8D8;
+}
+
+.signin-container {
+    background: white;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 30px;
+}
+
+.white-container {
+    background: white;
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+    padding: 30px;
+    min-height: 50%;
+}
+
+.services {
+    background: #40834F;
+}
+
+.logo {
+    background: white;
+    vertical-align: middle;
+    padding-top: 30px;
+}
+
+.team-row {
+    margin-bottom: 25px;
+}
+
+.body-background {
+    background: #D8D8D8;
+
+}
+
+.card-item {
+    margin-top: 10px;
+}
+
+.form-title {
+    margin: 0px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+
+.list-group-item {
+    border-color: #cccccc;
+}
+
+
+.fa-hospital-o {
+    margin-top: 14px;
+}
+
+.bordered-folder {
+    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+    padding-top: 10px !important;
+
+}
+
+.input-in-table {
+    width: 100%;
+}
+
+.well {
+    margin-bottom: 0;
+}
+
+form {
+    margin: 0px;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .fa {
+        color: white;
+    }
+    .print, .print * {
+        visibility: visible;
+    }
+
+    .print {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .not-print {
+        display: none;
+    }
+}
+
+.modal-body {
+    overflow: scroll;
+    max-height: 50%;
+}
+
+.welcome-message {
+    padding-top: 10px;
+}
+
+.affix {
+    top:0;
+    width: 100%;
+    z-index: 9999 !important;
+    margin-top: 0 !important;
+}
+
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+}
+
+.img-background {
+    margin-bottom: 30px;
+    margin-top: 30px;
+    max-height: 320px;
+}
+
+.register-button {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.img-logo {
+    max-height: 100px;
+}

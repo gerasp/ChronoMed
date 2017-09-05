@@ -29,7 +29,16 @@ public class AdminController {
 
     @GetMapping("/doctors")
     public ModelAndView doctors() {
-        return new ModelAndView("admin-doctors","searchByBoardNumber",new Search());
+        ModelAndView modelAndView = new ModelAndView("admin-doctors", "searchByBoardNumber", new Search());
+        modelAndView.addObject("action",0);
+        return modelAndView;
+    }
+
+    @GetMapping("/doctor/registration")
+    public ModelAndView doctorRegistration() {
+        ModelAndView modelAndView = new ModelAndView("admin-doctors", "doctor", new Doctor());
+        modelAndView.addObject("action", 1);
+        return modelAndView;
     }
 
     @GetMapping("/doctor/search")
@@ -37,23 +46,8 @@ public class AdminController {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
         ModelAndView modelAndView = new ModelAndView("admin-doctors", "doctor", new Doctor());
         modelAndView.addObject("doctor", savedDoctor);
+        modelAndView.addObject("action", 2);
         return modelAndView;
-    }
-
-    @GetMapping("/doctor/registration")
-    public ModelAndView doctorRegistration() {
-        ModelAndView modelAndView = new ModelAndView("admin-doctors", "doctor", new Doctor());
-        modelAndView.addObject("registry", new Object());
-        return modelAndView;
-    }
-
-    @PostMapping("/doctor/edit")
-    public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
-        doctor.setId(savedDoctor.getId());
-        doctor.setUserAccountId(savedDoctor.getUserAccountId());
-        doctorRepository.update(doctor);
-        doctorRepository.update(doctor.getUserByUserAccountId());
-        return doctors();
     }
 
     @PostMapping("/doctor/new")
@@ -62,6 +56,15 @@ public class AdminController {
         doctor.setUserAccountId(savedDoctor.getUserAccountId());
         doctorRepository.create(doctor);
         doctorRepository.create(doctor.getUserByUserAccountId());
+        return doctors();
+    }
+
+    @PostMapping("/doctor/edit")
+    public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
+        doctor.setId(savedDoctor.getId());
+        doctor.setUserAccountId(savedDoctor.getUserAccountId());
+        doctorRepository.update(doctor);
+        doctorRepository.update(doctor.getUserByUserAccountId());
         return doctors();
     }
 
