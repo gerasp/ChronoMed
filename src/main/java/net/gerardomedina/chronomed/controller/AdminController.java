@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+import java.util.Arrays;
+import java.util.Locale;
+
 @RequestMapping("/admin")
 @Controller
 @Scope("session")
@@ -38,7 +42,7 @@ public class AdminController {
     }
 
     @GetMapping("/patient/registration")
-    public ModelAndView patientRegistration() {
+    public ModelAndView patientRegistration(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
         modelAndView.addObject("action", 1);
         return modelAndView;
@@ -48,6 +52,8 @@ public class AdminController {
     public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
         savedPatient = patientRepository.getPatientByIdCard(search);
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
+
+        modelAndView.addObject("countryList",  Arrays.asList(Locale.getISOCountries()));
         modelAndView.addObject("patient", savedPatient);
         modelAndView.addObject("action", 2);
         return modelAndView;

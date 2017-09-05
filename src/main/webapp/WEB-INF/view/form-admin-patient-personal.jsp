@@ -1,3 +1,4 @@
+<%@ page import="java.util.Locale" %>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -48,7 +49,13 @@
                         <form:label path="nationality" cssClass="control-label">
                             <fmt:message key="form.nationality"/>
                         </form:label>
-                        <form:input path="nationality" cssClass="form-control"/>
+                        <form:select path="nationality" cssClass="form-control">
+                            <% String[] locales = Locale.getISOCountries();
+                                for (String countryCode : locales) {
+                                    Locale obj = new Locale(request.getLocale().getLanguage(), countryCode); %>
+                            <form:option value="<%=countryCode%>"><%=%>obj.getDisplayName()%></form:option>>
+                            <% } %>
+                        </form:select>
                     </div>
                 </div>
             </div>

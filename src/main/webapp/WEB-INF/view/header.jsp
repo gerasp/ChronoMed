@@ -5,14 +5,11 @@
 
 <c:set var="user" value='<%=request.getSession().getAttribute("user")%>'/>
 <c:set var="language" value='<%=request.getSession().getAttribute("language")%>'/>
-<c:choose>
-    <c:when test="${language!=null}">
-        <c:set var="language" value='<%=request.getSession().getAttribute("language")%>' scope="session"/>
-    </c:when>
-    <c:otherwise>
-        <c:set var="language" value="${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}" scope="session"/>
-    </c:otherwise>
-</c:choose>
+<c:if test="${language!=null}">
+    <c:set var="language" value="${not empty param.language ?
+    param.language : not empty language ?
+    language : pageContext.request.locale}" scope="session"/>
+</c:if>
 
 <fmt:setLocale value="${language}" />
 <fmt:setBundle basename="text" />
