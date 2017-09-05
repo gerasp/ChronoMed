@@ -49,4 +49,13 @@ public class PatientRepositoryImpl extends AbstractRepositoryImpl implements Pat
                 .setParameter("patientId",patient.getId())
                 .list();
     }
+
+    @Transactional
+    public List getDoctors(Patient patient) {
+        return this.sessionFactory.getCurrentSession()
+                .createQuery("from Doctor d where d.id in " +
+                        "(select dp.doctorId from DoctorPatient dp where patientId = :patientId)")
+                .setParameter("patientId",patient.getId())
+                .list();
+    }
 }

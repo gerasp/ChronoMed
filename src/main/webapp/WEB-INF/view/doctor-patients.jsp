@@ -41,7 +41,7 @@
                 <br><br>
                 <div class="list-group">
                     <% if (nifPatientList == null && healthCardPatientList == null) {%>
-                    <div class="well well-lg text-center">
+                    <div class="well text-center">
                         <i class="fa fa-info-circle"></i>&nbsp;<fmt:message key="search.patient.info2"/>
                     </div>
                     <% } else if (nifPatientList != null && !nifPatientList.isEmpty()) {
@@ -51,7 +51,7 @@
                         Patient patient = healthCardPatientList.get(0);%>
                         <%@include file="/doctor/patient.jsp" %>
                     <%} else {%>
-                    <div class="well well-lg text-center">
+                    <div class="well text-center">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound"/>
                     </div>
                     <%}%>

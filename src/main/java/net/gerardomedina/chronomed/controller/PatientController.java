@@ -41,4 +41,13 @@ public class PatientController {
         return modelAndView;
     }
 
+    @GetMapping("/doctors")
+    public ModelAndView doctors(HttpSession session) {
+        Patient patient = (Patient) session.getAttribute("patient");
+        ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
+        modelAndView.addObject("action",2);
+        modelAndView.addObject("doctors",patientRepository.getDoctors(patient));
+        return modelAndView;
+    }
+
 }

@@ -18,4 +18,6 @@ public interface PatientRepository extends AbstractRepository  {
     Patient getPatientByHealthCard(Search search);
     @Transactional
     List getConsultations(Patient patient);
+    @Transactional
+    List getDoctors(Patient patient);
 }

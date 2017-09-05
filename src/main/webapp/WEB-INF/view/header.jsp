@@ -5,7 +5,7 @@
 
 <c:set var="user" value='<%=request.getSession().getAttribute("user")%>'/>
 <c:set var="language" value='<%=request.getSession().getAttribute("language")%>'/>
-<c:if test="${language!=null}">
+<c:if test="${language==null}">
     <c:set var="language" value="${not empty param.language ?
     param.language : not empty language ?
     language : pageContext.request.locale}" scope="session"/>
@@ -23,6 +23,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap.css"/>">

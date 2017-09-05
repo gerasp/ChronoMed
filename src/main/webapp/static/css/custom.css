@@ -168,3 +168,7 @@ textarea {
     background: #34383e;
     color: white;
 }
+
+#sidebar {
+    position: relative;
+}

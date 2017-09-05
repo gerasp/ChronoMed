@@ -5754,7 +5754,7 @@ a.list-group-item-danger.active:focus {
     border-color: rgba(0, 0, 0, 0.15);
 }
 
-.well-lg {
+.{
     padding: 24px;
     border-radius: 5px;
 }

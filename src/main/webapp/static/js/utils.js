@@ -57,6 +57,7 @@ function deleteHealthCardRegistration(button) {
     button.parentNode.remove();
 }
 
+// LANGUAGE SELECTOR
 $("#language-selector").click(function () {
     $("#language-selector-container").fadeOut("fast", function () {
         $("#language-menu").slideDown("slow", function () {
@@ -64,7 +65,43 @@ $("#language-selector").click(function () {
     });
 });
 
+// OPEN ALL PANELS
 $(document).ready(function () {
     $('.panel-collapse').collapse("show");
 });
 
+// AFFIX EFFECT
+$('#nav').affix({
+    offset: {
+        top: $('#intro').height() - 50
+    }
+}).find("a").on('click', function (event) {
+    if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({
+            scrollTop: $(hash).offset().top
+        }, 800, function () {
+
+            window.location.hash = hash;
+        });
+    }
+});
+
+// SCROLL SPY
+$('body').scrollspy({target: ".navbar", offset: 50});
+
+
+// SIDEBAR SCROLL
+var lastScrollTop = 0;
+$(window).scroll(function (event) {
+    var st = $(this).scrollTop();
+    if (st > lastScrollTop) {
+        var difference = st - lastScrollTop;
+        $('.sidebar').animate({top: '+='+difference}, difference);
+    } else {
+        var difference = lastScrollTop - st;
+        $('.sidebar').animate({top: '-='+difference}, difference);
+    }
+    lastScrollTop = st;
+});
