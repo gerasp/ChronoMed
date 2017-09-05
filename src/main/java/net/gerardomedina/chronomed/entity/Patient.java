@@ -4,9 +4,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
-/**
- * Created by gerardo on 05.09.17.
- */
+
 @Entity
 public class Patient {
     private int id;

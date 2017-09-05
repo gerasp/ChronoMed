@@ -153,3 +153,11 @@ textarea {
     margin-top: 15px;
     max-height: 100px;
 }
+
+.fa :after {
+    content:"&nbsp;";
+}
+
+.fa :before {
+    content:"&nbsp;";
+}

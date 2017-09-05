@@ -3,9 +3,7 @@ package net.gerardomedina.chronomed.entity;
 import javax.persistence.*;
 import java.sql.Date;
 
-/**
- * Created by gerardo on 05.09.17.
- */
+
 @Entity
 public class Consultation {
     private int id;

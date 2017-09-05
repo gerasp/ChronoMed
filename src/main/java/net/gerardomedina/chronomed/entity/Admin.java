@@ -5,9 +5,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-/**
- * Created by gerardo on 05.09.17.
- */
+
 @Entity
 public class Admin {
     private int id;

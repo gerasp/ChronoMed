@@ -2,9 +2,7 @@ package net.gerardomedina.chronomed.entity;
 
 import javax.persistence.*;
 
-/**
- * Created by gerardo on 05.09.17.
- */
+
 @Entity
 @Table(name = "doctor_patient", schema = "heroku_5d5cf2395135b4a", catalog = "")
 public class DoctorPatient {
