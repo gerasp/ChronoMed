@@ -18,15 +18,15 @@
     </blockquote>
 </div>
 <div class="col-md-6">
-    <blockquote class="blockquote-reverse">
+    <blockquote>
         <footer><fmt:message key="history.bloodType"/></footer>
         <p>${patient.bloodType}</p>
     </blockquote>
-    <blockquote class="blockquote-reverse">
+    <blockquote>
         <footer><fmt:message key="history.pathologies"/></footer>
         <p>${patient.pathologies}</p>
     </blockquote>
-    <blockquote class="blockquote-reverse">
+    <blockquote>
         <footer><fmt:message key="history.surgeries"/></footer>
         <p>${patient.surgeries}</p>
     </blockquote>

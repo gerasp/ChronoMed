@@ -35,7 +35,7 @@ public class PatientController {
     @GetMapping("/consultations")
     public ModelAndView consultations(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");
-        ModelAndView modelAndView = new ModelAndView("patient-consultations","patient", patient);
+        ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
         modelAndView.addObject("action",1);
         modelAndView.addObject("consultations",patientRepository.getConsultations(patient));
         return modelAndView;

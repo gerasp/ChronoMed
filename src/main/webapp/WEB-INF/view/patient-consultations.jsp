@@ -3,9 +3,9 @@
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-addon"><fmt:message key="consultation.from"/></div>
-            <input id="from_date" type="date" name="from" class="form-control" required value="">
+            <input id="from_date" type="date" pattern="dd/MM/yyyy" name="from" class="form-control" required value="">
             <div class="input-group-addon"><fmt:message key="consultation.to"/></div>
-            <input id="to_date" type="date" name="to" class="form-control" required value="">
+            <input id="to_date" type="date" pattern="dd/MM/yyyy" name="to" class="form-control" required value="">
         </div>
     </div>
     <button onclick="filter()" class="btn btn-primary not-print"><fmt:message key="action.filter"/></button>
@@ -18,10 +18,12 @@
                 <div class="timeline-heading">
                     <h4 class="timeline-title">
                         <c:choose>
-                            <c:when test='${item.doctorByDoctorId.gender.equals("male")}'><fmt:message
-                                    key="navigation.patient.male"/></c:when>
-                            <c:when test='${item.doctorByDoctorId.gender.equals("female")}'><fmt:message
-                                    key="navigation.doctor.female"/></c:when>
+                            <c:when test='${item.doctorByDoctorId.gender.equals("male")}'>
+                                <fmt:message key="navigation.patient.male"/>
+                            </c:when>
+                            <c:when test='${item.doctorByDoctorId.gender.equals("female")}'>
+                                <fmt:message key="navigation.doctor.female"/>
+                            </c:when>
                             <c:otherwise>undefined</c:otherwise>
                         </c:choose>
                         &nbsp;${item.doctorByDoctorId.name}
@@ -29,7 +31,7 @@
                     <p>
                         <fmt:formatDate value="${item.date}" var="date" pattern="dd/MM/yyyy"/>
                         <small class="text-muted a_date"><i class="fa fa-clock-o"></i>&nbsp;
-                            <time datetime="${date}"></time>
+                            <time>${date}</time>
                         </small>
                     </p>
                 </div>
