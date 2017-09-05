@@ -41,4 +41,12 @@ public class PatientRepositoryImpl extends AbstractRepositoryImpl implements Pat
     public Patient getPatientByHealthCard(Search search) {
         return getPatientByIdCard(search);
     }
+
+    @Transactional
+    public List getConsultations(Patient patient) {
+        return this.sessionFactory.getCurrentSession()
+                .createQuery("from Consultation where patientId = :patientId")
+                .setParameter("patientId",patient.getId())
+                .list();
+    }
 }
