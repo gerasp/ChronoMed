@@ -1,6 +1,6 @@
 <html>
 <%@include file="header.jsp" %>
-<body class="body-grey">
+<body class="background-grey">
 
 <div class="container">
     <h1 class="text-center"><fmt:message key="command.notFound"/></h1>

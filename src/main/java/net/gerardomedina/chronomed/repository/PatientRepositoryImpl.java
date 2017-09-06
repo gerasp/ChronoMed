@@ -44,18 +44,22 @@ public class PatientRepositoryImpl extends AbstractRepositoryImpl implements Pat
 
     @Transactional
     public List getConsultations(Patient patient) {
-        return this.sessionFactory.getCurrentSession()
+        List result = this.sessionFactory.getCurrentSession()
                 .createQuery("from Consultation where patientId = :patientId")
-                .setParameter("patientId",patient.getId())
+                .setParameter("patientId", patient.getId())
                 .list();
+        return result.size() > 0 ? result : null;
+
     }
 
     @Transactional
     public List getDoctors(Patient patient) {
-        return this.sessionFactory.getCurrentSession()
+        List result = this.sessionFactory.getCurrentSession()
                 .createQuery("from Doctor d where d.id in " +
                         "(select dp.doctorId from DoctorPatient dp where patientId = :patientId)")
-                .setParameter("patientId",patient.getId())
+                .setParameter("patientId", patient.getId())
                 .list();
+        return result.size() > 0 ? result : null;
+
     }
 }

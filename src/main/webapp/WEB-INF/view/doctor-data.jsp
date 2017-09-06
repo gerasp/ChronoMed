@@ -1,4 +1,4 @@
-<form:form action="/doctor/edit" modelAttribute="doctor" cssClass="form-vertical" cssStyle="padding-top: 30px;">
+<form:form action="/doctor/edit" modelAttribute="doctor" cssClass="form-vertical">
     <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
     <%@include file="form-doctor-personal.jsp" %>
     <%@include file="form-contact.jsp" %>

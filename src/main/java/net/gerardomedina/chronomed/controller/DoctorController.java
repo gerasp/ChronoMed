@@ -29,6 +29,7 @@ public class DoctorController {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         ModelAndView modelAndView = new ModelAndView("doctor","doctor", doctor);
         modelAndView.addObject("action",0);
+        modelAndView.addObject("patients",doctorRepository.getPatients(doctor));
         return modelAndView;
     }
 

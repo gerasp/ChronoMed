@@ -6,23 +6,19 @@
     border-right: 1px solid gainsboro;
     border-bottom: 1px solid gainsboro;
     padding: 30px;
-    padding-top:5px;
     min-height: 50%;
 }
 
-.services {
+.backround-dark {
     background: #40834F;
 }
 
-
+.background-grey {
+    background: #ececec;
+}
 
 .team-row {
     margin-bottom: 25px;
-}
-
-.body-grey {
-    background: #ececec;
-
 }
 
 .card-item {

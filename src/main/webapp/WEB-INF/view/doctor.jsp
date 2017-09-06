@@ -1,5 +1,5 @@
 <%@include file="header.jsp" %>
-<body class="body-grey">
+<body class="background-grey">
 <div class="section">
     <div class="container logo-header">
         <div class="row">
@@ -26,7 +26,7 @@
             <%@include file="doctor-sidebar.jsp" %>
         </div>
         <div class="col-md-9 print">
-            <div class="white-container">
+            <div class="white-container" >
                 <c:choose>
                     <c:when test="${action == 0}">
                         <%@include file="doctor-patients.jsp" %>

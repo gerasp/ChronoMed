@@ -6,6 +6,7 @@ import net.gerardomedina.chronomed.entity.User;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface DoctorRepository extends AbstractRepository  {
@@ -13,4 +14,6 @@ public interface DoctorRepository extends AbstractRepository  {
     Doctor getDoctorByEmail(User user);
     @Transactional
     Doctor getDoctorByBoardNumber(Search search);
+    @Transactional
+    List getPatients(Doctor doctor);
 }

@@ -35,4 +35,14 @@ public class DoctorRepositoryImpl extends AbstractRepositoryImpl implements Doct
                 .list();
         return result.size() > 0 ? (Doctor) result.get(0) : null;
     }
+
+    @Transactional
+    public List getPatients(Doctor doctor) {
+        List result = this.sessionFactory.getCurrentSession()
+                .createQuery("from Patient p where p.id in " +
+                        "(select dp.patientId from DoctorPatient dp where doctorId = :doctorId)")
+                .setParameter("doctorId", doctor.getId())
+                .list();
+        return result.size() > 0 ? result : null;
+    }
 }
