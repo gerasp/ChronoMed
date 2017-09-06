@@ -55,18 +55,21 @@ public class IndexController {
         if (patient != null) {
             if (!patient.getActive()) return notActive();
             loginPatient(user, session, patient);
+            return redirect(user);
         }
 
         Doctor doctor = doctorRepository.getDoctorByEmail(user);
         if (doctor != null){
             if (!doctor.getActive()) return notActive();
             loginDoctor(user, session, doctor);
+            return redirect(user);
         }
 
         Admin admin = adminRepository.getAdminByEmail(user);
         if (admin != null) {
             if (!admin.getActive()) return notActive();
             loginAdmin(user, session, admin);
+            return redirect(user);
         }
 
 
