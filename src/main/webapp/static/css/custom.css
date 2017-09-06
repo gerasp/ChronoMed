@@ -20,6 +20,10 @@
     margin-bottom: 25px;
 }
 
+.no-margin-top {
+    margin-top:0;
+}
+
 .card-item {
     margin-top: 10px;
 }

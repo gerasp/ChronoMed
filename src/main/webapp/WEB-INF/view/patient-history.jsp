@@ -1,4 +1,4 @@
-<h3 class="text-primary text-center">
+<h3 class="text-primary text-center no-margin-top">
     <small><fmt:message key="history.title"/></small>
     <br>
     ${patient.name}&nbsp;${patient.surname}

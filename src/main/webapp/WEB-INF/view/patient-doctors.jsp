@@ -1,4 +1,3 @@
-<h3 class="text-center"><fmt:message key="navigation.myDoctors"/></h3>
 <div class="list-group">
     <c:forEach items="${doctors}" var="item">
         <a class="list-group-item">

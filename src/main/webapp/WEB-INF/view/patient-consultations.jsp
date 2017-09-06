@@ -1,4 +1,4 @@
-<div class="form-inline text-center">
+<div class="form-inline text-center no-margin-top">
     <h3><fmt:message key="action.filter.title"/></h3>
     <div class="form-group">
         <div class="input-group">
