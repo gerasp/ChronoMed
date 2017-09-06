@@ -5,12 +5,12 @@
                href="#patient-doctors">M�dicos vinculados</a>
         </h4>
     </div>
-    <%--<div id="patient-doctors" class="panel-collapse collapse">--%>
-        <%--<div class="panel-footer">--%>
-            <%--<div class="row">--%>
-                <%--<div class="form-group">--%>
-                    <%--<div class="col-md-12">--%>
-                        <%--<ul class="list-unstyled" id="patientList">--%>
+    <div id="patient-doctors" class="panel-collapse collapse">
+        <div class="panel-footer">
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <ul class="list-unstyled" id="patientList">
                             <%--<%--%>
                                 <%--for (DoctorPatient dp : patientPatientList) {--%>
                             <%--%>--%>
@@ -26,14 +26,14 @@
                             <%--<%--%>
                                 <%--}--%>
                             <%--%>--%>
-                        <%--</ul>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="form-group">--%>
-                    <%--<div class="col-md-6">--%>
-                        <%--<input list="patients" class="form-control" id="inputDoctor"--%>
-                               <%--placeholder="Elige tu patient...">--%>
-                        <%--<datalist id="patients">--%>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <input list="patients" class="form-control" id="inputDoctor"
+                               placeholder="Elige tu patient...">
+                        <datalist id="patients">
                             <%--<%--%>
                                 <%--DoctorFacade patientFacade = FacadeFactory.getFacade("DoctorFacade");--%>
                                 <%--for (Doctor patient : patientFacade.findAll()) {--%>
@@ -42,18 +42,18 @@
                                     <%--<%--%>
                                                                 <%--}--%>
                                                             <%--%>--%>
-                        <%--</datalist>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<div class="form-group">--%>
-                    <%--<div class="col-md-3">--%>
-                        <%--<button type="button" onclick="addDoctor()"--%>
-                                <%--class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>Asociar--%>
-                            <%--Doctor&nbsp;--%>
-                        <%--</button>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <button type="button" onclick="addDoctor()"
+                                class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>Asociar
+                            Doctor&nbsp;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

@@ -2,11 +2,11 @@
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion"
                href="#doctor-personal"><fmt:message key="form.data.personal"/></a>
         </h4>
     </div>
-    <div id="doctor-personal" class="panel-collapse collapse">
+    <div id="doctor-personal" class="panel-collapse panel-open-first collapse">
         <div class="panel-footer">
             <div class="row">
                 <div class="col-md-6">

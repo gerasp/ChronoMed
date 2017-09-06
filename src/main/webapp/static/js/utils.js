@@ -65,9 +65,9 @@ $("#language-selector").click(function () {
     });
 });
 
-// OPEN ALL PANELS
+// OPEN FIRST PANEL
 $(document).ready(function () {
-    $('.panel-collapse').collapse("show");
+    $('.panel-open-first').collapse("show");
 });
 
 // AFFIX EFFECT

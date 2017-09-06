@@ -6,7 +6,7 @@
                href="#patient-personal"><fmt:message key="form.data.personal"/></a>
         </h4>
     </div>
-    <div id="patient-personal" class="panel-collapse collapse">
+    <div id="patient-personal" class="panel-collapse panel-open-first collapse">
         <div class="panel-footer">
             <div class="row">
                 <div class="col-md-6">
