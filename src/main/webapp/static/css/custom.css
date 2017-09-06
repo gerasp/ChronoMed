@@ -107,7 +107,7 @@ textarea {
     margin-top: 0 !important;
 }
 
-.form-group.required .control-label:after {
+.form-group.required label:after {
     content:"*";
     color:red;
 }
@@ -126,15 +126,7 @@ textarea {
     content:"&nbsp;";
 }
 
-.img-responsive {
-    margin:0 auto;
-    max-height: 300px;
-}
 
-.img-logo {
-    margin-top: 15px;
-    max-height: 150px;
-}
 
 .well {
     border:0;
@@ -165,6 +157,16 @@ textarea {
     padding:.4em .6em .3em
 }
 
+.img-responsive {
+    margin:0 auto;
+    max-height: 300px;
+}
+
+.img-logo {
+    margin-top: 15px;
+    max-height: 90px;
+}
+
 .shadow-box {
     background: white;
     -webkit-box-shadow: 0 0 33px 2px rgba(0, 0, 0, 0.75);
@@ -181,4 +183,5 @@ textarea {
 .signin-logo {
     max-height: 90px;
     margin: 35px 20px;
+    padding-right: 40px;
 }

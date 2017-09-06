@@ -40,9 +40,9 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="form-group">
+                    <div class="form-group required">
                         <label for="inputOldPassword" class="control-label"><fmt:message
-                                key="form.oldPassword"/>*</label>
+                                key="form.oldPassword"/></label>
                         <input type="password" class="form-control" id="inputOldPassword" name="oldPassword"
                                placeholder="******">
                     </div>
