@@ -1,5 +1,5 @@
-<div class="form-inline text-center no-margin-top">
-    <h3><fmt:message key="action.filter.title"/></h3>
+<div class="form-inline text-center">
+    <h3 class="no-margin-top"><fmt:message key="action.filter.title"/></h3>
     <div class="form-group">
         <div class="input-group">
             <div class="input-group-addon"><fmt:message key="consultation.from"/></div>

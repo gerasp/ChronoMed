@@ -9,7 +9,7 @@
 </c:choose>
 <div class="list-group">
     <a href="<c:url value="/doctor/patients"/>" class="list-group-item
-        <c:if test='${requestScope["javax.servlet.forward.request_uri"].contains("patients")}'> active</c:if>">
+        <c:if test='${requestScope["javax.servlet.forward.request_uri"].contains("patient")}'> active</c:if>">
         <fmt:message key="navigation.myPatients"/></a>
     <a href="<c:url value="/doctor/data"/>" class="list-group-item
         <c:if test='${requestScope["javax.servlet.forward.request_uri"].contains("data")}'> active</c:if>">

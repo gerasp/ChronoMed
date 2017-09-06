@@ -1,4 +1,3 @@
-
 <c:choose>
     <c:when test="${patients!=null}">
         <div class="row">
@@ -15,12 +14,12 @@
         </div>
         <ul class="list-group">
             <c:forEach items="${patients}" var="item">
-                <ul href="" class="list-group-item">
+                <a href='<c:url value="/doctor/patient" />?idCard=${item.idCard}' class="list-group-item">
                     <h4 class="list-group-item-heading">${item.name}&nbsp;${item.surname}
                         <i class="fa fa-2x  pull-right text-primary fa-angle-right"></i>
                     </h4>
                     <p class="list-group-item-text">${item.idCard}</p>
-                </ul>
+                </a>
             </c:forEach>
         </ul>
     </c:when>
