@@ -15,12 +15,10 @@
                         <div class="input-group-btn">
                             <form:select path="type" cssClass="btn btn-default dropdown-toggle">
                                 <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="#">
-                                            <form:option value="boardNumber"><fmt:message key="form.boardNumber"/>
-                                            </form:option>
-                                        </a>
-                                    </li>
+                                    <li><a href="#">
+                                        <form:option value="boardNumber"><fmt:message key="form.boardNumber"/>
+                                        </form:option>
+                                    </a></li>
                                 </ul>
                             </form:select>
                         </div>

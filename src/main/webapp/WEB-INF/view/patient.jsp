@@ -29,10 +29,10 @@
             <div class="white-container">
                 <c:choose>
                     <c:when test="${action == 0}">
-                        <%@include file="patient-history.jsp" %>
+                        <%@include file="history.jsp" %>
                     </c:when>
                     <c:when test="${action == 1}">
-                        <%@include file="patient-consultations.jsp" %>
+                        <%@include file="consultations.jsp" %>
                     </c:when>
                     <c:when test="${action == 2}">
                         <%@include file="patient-doctors.jsp" %>

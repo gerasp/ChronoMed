@@ -8,29 +8,38 @@
         <h3 class="form-title text-center">${patient.name}&nbsp;${patient.surname}</h3>
     </div>
     <div class="col-md-2">
-        <form:button class="btn btn-lg btn-block btn-link pull-right">
-            <fmt:message key="form.data.save"/>&nbsp;<i class="fa  fa-check-circle"></i>
-        </form:button>
+        <%--<form:button class="btn btn-lg btn-block btn-link pull-right">--%>
+        <%--<fmt:message key="form.data.save"/>&nbsp;<i class="fa  fa-check-circle"></i>--%>
+        <%--</form:button>--%>
     </div>
 </div>
+
 <blockquote>
     <footer>Ficha</footer>
     <p>Paciente de g�nero ${patient.gender} y nacionalidad ${patient.nationality},
         <br>nacido el ${patient.birthDate}
     </p>
 </blockquote>
+
 <ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
     <li class="active" id="history-tab"><a href="#"><i class="fa fa-lg fa-heartbeat"></i> Historial</a></li>
     <li id="consultations-tab"><a href="#"><i class="fa fa-lg fa-calendar"></i> Citas</a></li>
 </ul>
-<%@include file="doctor-history.jsp" %>
-<%@include file="doctor-consultations.jsp" %>
+
+<div class="bordered-folder" id="history">
+    <%@include file="history.jsp" %>
+</div>
+<div class="bordered-folder" id="consultations" style="display: none;">
+    <%@include file="consultations.jsp" %>
+</div>
+
 <script>
     $("#history-tab").click(function () {
         $("#consultations-tab").removeClass("active");
         $("#history-tab").addClass("active");
         $("#history").show();
         $("#consultations").hide();
+
     });
     $("#consultations-tab").click(function () {
         $("#consultations-tab").addClass("active");

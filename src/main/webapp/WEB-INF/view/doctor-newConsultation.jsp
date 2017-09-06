@@ -6,8 +6,7 @@
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Añadir cita</h4>
             </div>
             <form class="form-vertical" method="POST" role="form" action="/FrontController">
-                <input type="hidden" value="CreateMedicalConsultationCommand" name="command">
-                <input type="hidden" value="<%= patient.getId()%>" name="id">
+
                 <table class="table table-striped">
                     <tbody>
                     <tr>

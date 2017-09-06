@@ -14,7 +14,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <span class="input-group-addon background-white"><i class="fa fa-envelope"></i></span>
                                         <fmt:message key="form.email" var="emailPlaceholder"/>
                                         <form:input path="email" cssClass="form-control"
                                                     placeholder="${emailPlaceholder}"/>
@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="form-group">
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                        <span class="input-group-addon background-white"><i class="fa fa-key"></i></span>
                                         <fmt:message key="form.password" var="passwordPlaceholder"/>
                                         <form:password path="password" cssClass="form-control"
                                                        placeholder="${passwordPlaceholder}"/>

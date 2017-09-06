@@ -16,6 +16,10 @@
     background: #ececec;
 }
 
+.background-white {
+    background: white;
+}
+
 .team-row {
     margin-bottom: 25px;
 }
@@ -167,7 +171,7 @@ textarea {
 }
 
 .shadow-box {
-    background: white;
+    background: #ececec;
     -webkit-box-shadow: 0 0 33px 2px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0 0 33px 2px rgba(0, 0, 0, 0.75);
     box-shadow: 0 0 33px 2px rgba(0, 0, 0, 0.75);
@@ -175,7 +179,7 @@ textarea {
 }
 
 .signin-form {
-    background: white;
+    background: #ececec;
     margin: 35px 20px;
 }
 
