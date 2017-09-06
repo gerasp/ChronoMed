@@ -17,7 +17,7 @@ public class Doctor {
     private String alternativePhoneNumber;
     private String email;
     private String password;
-    private byte active;
+    private boolean active;
     private Collection<Consultation> consultationsById;
     private Collection<DoctorPatient> doctorPatientsById;
 
@@ -133,11 +133,11 @@ public class Doctor {
 
     @Basic
     @Column(name = "active")
-    public byte getActive() {
+    public boolean getActive() {
         return active;
     }
 
-    public void setActive(byte active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 
@@ -178,7 +178,7 @@ public class Doctor {
         result = 31 * result + (alternativePhoneNumber != null ? alternativePhoneNumber.hashCode() : 0);
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (int) active;
+        result = 31 * result + (active?1:0);
         return result;
     }
 

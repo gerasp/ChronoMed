@@ -50,4 +50,13 @@ public class PatientController {
         return modelAndView;
     }
 
+    @GetMapping("/data")
+    public ModelAndView data(HttpSession session) {
+        Patient patient = (Patient) session.getAttribute("patient");
+        ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
+        modelAndView.addObject("action",3);
+        modelAndView.addObject("patient",patient);
+        return modelAndView;
+    }
+
 }

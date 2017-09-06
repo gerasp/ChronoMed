@@ -37,7 +37,9 @@
                     <c:when test="${action == 2}">
                         <%@include file="patient-doctors.jsp" %>
                     </c:when>
-                    <c:when test="${action == 3}">AAA</c:when>
+                    <c:when test="${action == 3}">
+                        <%@include file="patient-data.jsp" %>
+                    </c:when>
                     <c:otherwise>undefined</c:otherwise>
                 </c:choose>
             </div>

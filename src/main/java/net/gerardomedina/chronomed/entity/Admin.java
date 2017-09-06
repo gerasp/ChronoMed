@@ -11,7 +11,7 @@ public class Admin {
     private int id;
     private String email;
     private String password;
-    private byte active;
+    private boolean active;
 
     @Id
     @Column(name = "ID")
@@ -45,11 +45,11 @@ public class Admin {
 
     @Basic
     @Column(name = "active")
-    public byte getActive() {
+    public boolean getActive() {
         return active;
     }
 
-    public void setActive(byte active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 
@@ -73,7 +73,7 @@ public class Admin {
         int result = id;
         result = 31 * result + (email != null ? email.hashCode() : 0);
         result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (int) active;
+        result = 31 * result + (active?1:0);
         return result;
     }
 }

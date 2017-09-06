@@ -17,7 +17,7 @@
     <a href="<c:url value="/patient/doctors"/>" class="list-group-item
         <c:if test='${requestScope["javax.servlet.forward.request_uri"].contains("doctors")}'> active</c:if>">
         <fmt:message key="navigation.myDoctors"/></a>
-    <a href="<c:url value="/patient/data.jsp"/>" class="list-group-item
+    <a href="<c:url value="/patient/data"/>" class="list-group-item
         <c:if test='${requestScope["javax.servlet.forward.request_uri"].contains("data")}'> active</c:if>">
         <fmt:message key="navigation.myData"/></a>
 </div>

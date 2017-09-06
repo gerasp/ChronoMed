@@ -2,10 +2,10 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-               href="#patient-contact"><fmt:message key="form.data.address"/></a>
+               href="#patient-address"><fmt:message key="form.data.address"/></a>
         </h4>
     </div>
-    <div id="patient-contact" class="panel-collapse collapse">
+    <div id="patient-address" class="panel-collapse collapse">
         <div class="panel-footer">
             <div class="row">
                 <div class="col-md-12">
