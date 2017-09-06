@@ -1,4 +1,4 @@
-<h3 class="text-center"><fmt:message key="navigation.doctors"/></h3>
+<h3 class="text-center"><fmt:message key="navigation.myDoctors"/></h3>
 <div class="list-group">
     <c:forEach items="${doctors}" var="item">
         <a class="list-group-item">
@@ -10,9 +10,9 @@
             </p>
         </a>
     </c:forEach>
-    <c:if test="${doctors==null}">
-        <div class="well text-center">
-            <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound"/>
-        </div>
-    </c:if>
 </div>
+<c:if test="${doctors==null}">
+    <div class="well text-center">
+        <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.doctor.notFound"/>
+    </div>
+</c:if>
