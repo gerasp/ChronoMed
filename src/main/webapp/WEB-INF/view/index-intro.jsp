@@ -2,18 +2,13 @@
     <div class="background-image-fixed cover-image"
          style="background-image : url('<c:url value="/static/images/cover.jpeg"/>')"></div>
     <div class="container">
-        <div class="row form">
-            <div class="col-md-5 logo">
-                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive logo">
+        <div class="row shadow-box">
+            <div class="col-md-5">
+                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive signin-logo">
             </div>
-            <div class="col-md-7 signin-form">
-                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right">
-                    <ul class="nav nav-justified nav-tabs">
-                        <li class="active">
-                            <a href="#"><i class="fa fa-rocket"></i><fmt:message key="index.login"/></a>
-                        </li><li></li>
-                    </ul>
-                    <div class="container signin-container">
+            <div class="col-md-7">
+                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right signin-form">
+                    <div class="container">
                         <div class="row">
                             <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
                             <div class="col-md-8">
