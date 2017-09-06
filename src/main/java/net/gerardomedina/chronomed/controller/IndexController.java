@@ -7,7 +7,6 @@ import net.gerardomedina.chronomed.entity.User;
 import net.gerardomedina.chronomed.repository.AdminRepository;
 import net.gerardomedina.chronomed.repository.DoctorRepository;
 import net.gerardomedina.chronomed.repository.PatientRepository;
-import net.gerardomedina.chronomed.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -21,7 +20,6 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class IndexController {
-    private UserValidator userValidator = new UserValidator();
 
     private AdminRepository adminRepository;
     private DoctorRepository doctorRepository;
@@ -46,12 +44,11 @@ public class IndexController {
     @GetMapping("/")
     public ModelAndView index(HttpSession session) {
         if (session.getAttribute("user")!=null) return redirect((User)session.getAttribute("user"));
-        return new ModelAndView("index","user",new User());
+        return new ModelAndView("index", "user", new User());
     }
 
     @PostMapping("/login")
     public ModelAndView login(@ModelAttribute("user") User user, HttpSession session) {
-        //        userValidator.validate(user,result);
         Patient patient = patientRepository.getPatientByEmail(user);
         if (patient!=null) {
             user.setType(User.Type.PATIENT);
@@ -70,7 +67,9 @@ public class IndexController {
                     session.setAttribute("user", user);
                     session.setAttribute("admin", admin);
                 } else {
-                    return index(session);
+                    ModelAndView modelAndView = new ModelAndView("index", "user", new User());
+                    modelAndView.addObject("result",5);
+                    return modelAndView;
                 }
             }
         }

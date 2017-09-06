@@ -102,8 +102,13 @@ public class AdminController {
     public ModelAndView doctorSearch(@ModelAttribute("search") Search search) {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
-        modelAndView.addObject("doctor", savedDoctor);
+        if (savedDoctor == null) {
+            modelAndView.addObject("action", 3);
+            modelAndView.addObject("result",7);
+            return modelAndView;
+        }
         modelAndView.addObject("action", 5);
+        modelAndView.addObject("doctor", savedDoctor);
         return modelAndView;
     }
 
@@ -111,14 +116,21 @@ public class AdminController {
     public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
         doctorRepository.create(doctor);
-        return doctors();
+        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
+        modelAndView.addObject("action",3);
+        modelAndView.addObject("result",0);
+        return modelAndView;
     }
 
     @PostMapping("/doctor/edit")
     public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
+        doctor.setPassword(savedDoctor.getPassword());
         doctorRepository.update(doctor);
-        return doctors();
+        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
+        modelAndView.addObject("action",3);
+        modelAndView.addObject("result",1);
+        return modelAndView;
     }
 
 

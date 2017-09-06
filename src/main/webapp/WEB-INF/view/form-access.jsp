@@ -19,12 +19,12 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <div class="form-group text-right required">
+                    <div class="form-group text-right">
                         <form:label path="active">
                             <fmt:message key="form.active"/>
                         </form:label>
                         <br>
-                        <form:checkbox required="required" path="active" required="required" cssClass="form-control"
+                        <form:checkbox required="required" path="active" cssClass="form-control"
                                        data-toggle="toggle" id="inputActivation"/>
                     </div>
                 </div>
