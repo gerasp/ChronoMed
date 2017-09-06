@@ -33,7 +33,7 @@
 }
 
 .form-title {
-    margin: 0px;
+    margin: 9px 0 0;
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -120,16 +120,6 @@ textarea {
     margin-bottom: 15px;
     width: 100%;
 }
-
-.fa :after {
-    content:"&nbsp;";
-}
-
-.fa :before {
-    content:"&nbsp;";
-}
-
-
 
 .well {
     border:0;

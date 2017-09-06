@@ -15,16 +15,16 @@
                         <form:label path="email">
                             <fmt:message key="form.email"/>
                         </form:label>
-                        <form:input path="email" cssClass="form-control"/>
+                        <form:input path="email" required="required" cssClass="form-control"/>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <div class="form-group text-right">
+                    <div class="form-group text-right required">
                         <form:label path="active">
                             <fmt:message key="form.active"/>
                         </form:label>
                         <br>
-                        <form:checkbox path="active" cssClass="form-control"
+                        <form:checkbox required="required" path="active" required="required" cssClass="form-control"
                                        data-toggle="toggle" id="inputActivation"/>
                     </div>
                 </div>
@@ -36,14 +36,15 @@
                         <form:label path="email">
                             <fmt:message key="form.email"/>
                         </form:label>
-                        <form:input path="email" cssClass="form-control"/>
+                        <form:input path="email" required="required" cssClass="form-control"/>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
                         <label for="inputOldPassword" class="control-label"><fmt:message
                                 key="form.oldPassword"/></label>
-                        <input type="password" class="form-control" id="inputOldPassword" name="oldPassword"
+                        <input type="password" class="form-control" required="required"
+                               id="inputOldPassword" name="oldPassword"
                                placeholder="******">
                     </div>
                 </div>

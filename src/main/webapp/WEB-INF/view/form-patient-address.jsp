@@ -42,6 +42,7 @@
                             <fmt:message key="form.country"/>
                         </form:label>
                         <form:select path="country" cssClass="form-control">
+                            <form:option value=""/>
                             <% String[] locales = Locale.getISOCountries();
                                 for (String countryCode : locales) {
                                     Locale obj = new Locale(request.getLocale().getLanguage(), countryCode); %>

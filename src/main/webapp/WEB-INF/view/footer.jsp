@@ -39,7 +39,7 @@
             <li><a href="<c:url value="/changeLanguage/de"/>">
                 <img src="<c:url value="/static/images/flags/de.png"/>">&nbsp;Deutsch</a></li>
             <li><a href="<c:url value="/changeLanguage/es"/>">
-                <img src="<c:url value="/static/images/flags/es.png"/>">&nbsp;Español</a></li>
+                <img src="<c:url value="/static/images/flags/es.png"/>">&nbsp;Espa&ntilde;ol</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <c:choose>

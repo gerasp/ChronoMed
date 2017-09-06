@@ -14,19 +14,19 @@
                         <form:label path="name">
                             <fmt:message key="form.name"/>
                         </form:label>
-                        <form:input path="name" cssClass="form-control"/>
+                        <form:input path="name" required="required" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
                         <form:label path="surname">
                             <fmt:message key="form.surname"/>
                         </form:label>
-                        <form:input path="surname" cssClass="form-control"/>
+                        <form:input path="surname" required="required" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
                         <form:label path="idCard">
                             <fmt:message key="form.idcard"/>
                         </form:label>
-                        <form:input path="idCard" cssClass="form-control"/>
+                        <form:input path="idCard" required="required" cssClass="form-control"/>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -34,7 +34,7 @@
                         <form:label path="gender">
                             <fmt:message key="form.gender"/>
                         </form:label>
-                        <form:select path="gender" cssClass="form-control">
+                        <form:select path="gender" required="required" cssClass="form-control">
                             <form:option value="male"><fmt:message key="form.gender.male"/></form:option>
                             <form:option value="female"><fmt:message key="form.gender.female"/></form:option>
                         </form:select>
@@ -43,13 +43,13 @@
                         <form:label path="speciality">
                             <fmt:message key="form.speciality"/>
                         </form:label>
-                        <form:input path="speciality" cssClass="form-control"/>
+                        <form:input path="speciality" required="required" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
                         <form:label path="boardNumber">
                             <fmt:message key="form.boardNumber"/>
                         </form:label>
-                        <form:input path="boardNumber" cssClass="form-control"/>
+                        <form:input path="boardNumber" required="required" cssClass="form-control"/>
                     </div>
                 </div>
             </div>

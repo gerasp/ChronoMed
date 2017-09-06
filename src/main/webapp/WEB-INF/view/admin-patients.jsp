@@ -50,10 +50,10 @@
         </div>
     </c:when>
     <c:when test="${action == 1}">
-        <%@include file="admin-patient-edit.jsp" %>
+        <%@include file="admin-patient-new.jsp" %>
     </c:when>
     <c:when test="${action == 2}">
-        <%@include file="admin-patient-new.jsp" %>
+        <%@include file="admin-patient-edit.jsp" %>
     </c:when>
     <c:otherwise>undefined</c:otherwise>
 </c:choose>
