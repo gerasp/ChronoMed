@@ -122,7 +122,7 @@ public class AdminController {
         doctorRepository.create(doctor);
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
         modelAndView.addObject("action", "doctors");
-        modelAndView.addObject("result", "info");
+        modelAndView.addObject("result", "infoUpdated");
         return modelAndView;
     }
 
@@ -133,7 +133,7 @@ public class AdminController {
         doctorRepository.update(doctor);
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
         modelAndView.addObject("action", "doctors");
-        modelAndView.addObject("result", "info");
+        modelAndView.addObject("result", "infoCreated");
         return modelAndView;
     }
 

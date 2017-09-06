@@ -25,7 +25,7 @@
     </c:when>
     <c:otherwise>
         <div class="well text-center">
-            <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="search.patient.notFound"/>
+            <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="modal.content.patientNotFound"/>
         </div>
     </c:otherwise>
 </c:choose>
