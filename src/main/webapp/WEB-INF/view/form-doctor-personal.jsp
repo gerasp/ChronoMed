@@ -1,3 +1,4 @@
+<%@ page import="net.gerardomedina.chronomed.entity.User" %>
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h4 class="panel-title">
@@ -55,3 +56,9 @@
         </div>
     </div>
 </div>
+
+<% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.DOCTOR) { %>
+<script>
+    $("#doctor-personal").find(".panel-footer .row .col-md-6 .form-group select,input").attr("disabled","true");
+</script>
+<% } %>

@@ -27,7 +27,8 @@ public class PatientController {
 
     @GetMapping("/history")
     public ModelAndView history(HttpSession session) {
-        ModelAndView modelAndView = new ModelAndView("patient","patient",(Patient)session.getAttribute("patient"));
+        Patient patient = (Patient) session.getAttribute("patient");
+        ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
         modelAndView.addObject("action",0);
         return modelAndView;
     }
@@ -55,7 +56,6 @@ public class PatientController {
         Patient patient = (Patient) session.getAttribute("patient");
         ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
         modelAndView.addObject("action",3);
-        modelAndView.addObject("patient",patient);
         return modelAndView;
     }
 
