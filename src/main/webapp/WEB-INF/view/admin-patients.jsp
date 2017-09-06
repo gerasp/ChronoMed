@@ -1,15 +1,15 @@
 <c:choose>
-    <c:when test="${action == 0}">
+    <c:when test="${action.equals('patients')}">
         <div class="row">
             <div class="col-md-4">
                 <a class="btn btn-primary btn-lg  register-button"
-                   href="<c:url value="/admin/patient/registration"/>">
+                   href="<c:url value="/admin/patient/new"/>">
                     <i class="fa  fa-plus-circle"></i>&nbsp;
                     <fmt:message key="navigation.patient.registration"/>
                 </a>
             </div>
             <div class="col-md-8">
-                <form:form action="/admin/patient/search" modelAttribute="search"
+                <form:form action="/admin/patient/edit" modelAttribute="search"
                            cssClass="form-horizontal" method="get">
                     <div class="input-group input-group-lg">
                         <div class="input-group-btn">
@@ -49,11 +49,11 @@
             <fmt:message key="search.patient.info"/>
         </div>
     </c:when>
-    <c:when test="${action == 1}">
+    <c:when test="${action.equals('patient-new')}">
         <%@include file="admin-patient-new.jsp" %>
     </c:when>
-    <c:when test="${action == 2}">
+    <c:when test="${action.equals('patient-edit')}">
         <%@include file="admin-patient-edit.jsp" %>
     </c:when>
-    <c:otherwise>undefined</c:otherwise>
+
 </c:choose>

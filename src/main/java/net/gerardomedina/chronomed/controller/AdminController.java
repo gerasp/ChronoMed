@@ -18,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
 
 @RequestMapping("/admin")
 @Controller
@@ -27,9 +28,10 @@ public class AdminController {
     // PATIENT MANAGEMENT
     private Patient savedPatient;
     private PatientRepository patientRepository;
+
     @Autowired
-    @Qualifier(value="patientRepository")
-    public void setPatientRepository(PatientRepository ps){
+    @Qualifier(value = "patientRepository")
+    public void setPatientRepository(PatientRepository ps) {
         this.patientRepository = ps;
     }
 
@@ -37,25 +39,25 @@ public class AdminController {
     @GetMapping("/patients")
     public ModelAndView patients() {
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action",0);
+        modelAndView.addObject("action", "patients");
         return modelAndView;
     }
 
-    @GetMapping("/patient/registration")
+    @GetMapping("/patient/new")
     public ModelAndView patientRegistration(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
-        modelAndView.addObject("action", 1);
+        modelAndView.addObject("action", "patient-new");
         return modelAndView;
     }
 
-    @GetMapping("/patient/search")
+    @GetMapping("/patient/edit")
     public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
         savedPatient = patientRepository.getPatientByIdCard(search);
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
 
-        modelAndView.addObject("countryList",  Arrays.asList(Locale.getISOCountries()));
+        modelAndView.addObject("countryList", Arrays.asList(Locale.getISOCountries()));
         modelAndView.addObject("patient", savedPatient);
-        modelAndView.addObject("action", 2);
+        modelAndView.addObject("action", "patient-edit");
         return modelAndView;
     }
 
@@ -77,9 +79,10 @@ public class AdminController {
     // DOCTOR MANAGEMENT
     private Doctor savedDoctor;
     private DoctorRepository doctorRepository;
+
     @Autowired
-    @Qualifier(value="doctorRepository")
-    public void setDoctorRepository(DoctorRepository ps){
+    @Qualifier(value = "doctorRepository")
+    public void setDoctorRepository(DoctorRepository ps) {
         this.doctorRepository = ps;
     }
 
@@ -87,27 +90,27 @@ public class AdminController {
     @GetMapping("/doctors")
     public ModelAndView doctors() {
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action",3);
+        modelAndView.addObject("action", "doctors");
         return modelAndView;
     }
 
-    @GetMapping("/doctor/registration")
+    @GetMapping("/doctor/new")
     public ModelAndView doctorRegistration() {
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
-        modelAndView.addObject("action", 4);
+        modelAndView.addObject("action", "doctor-new");
         return modelAndView;
     }
 
-    @GetMapping("/doctor/search")
+    @GetMapping("/doctor/edit")
     public ModelAndView doctorSearch(@ModelAttribute("search") Search search) {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
         if (savedDoctor == null) {
-            modelAndView.addObject("action", 3);
-            modelAndView.addObject("result",7);
+            modelAndView.addObject("action", "doctors");
+            modelAndView.addObject("result", "doctorNotFound");
             return modelAndView;
         }
-        modelAndView.addObject("action", 5);
+        modelAndView.addObject("action", "doctor-edit");
         modelAndView.addObject("doctor", savedDoctor);
         return modelAndView;
     }
@@ -115,10 +118,11 @@ public class AdminController {
     @PostMapping("/doctor/new")
     public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
+        doctor.setPassword(randomPassword());
         doctorRepository.create(doctor);
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action",3);
-        modelAndView.addObject("result",0);
+        modelAndView.addObject("action", "doctors");
+        modelAndView.addObject("result", "info");
         return modelAndView;
     }
 
@@ -128,13 +132,19 @@ public class AdminController {
         doctor.setPassword(savedDoctor.getPassword());
         doctorRepository.update(doctor);
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action",3);
-        modelAndView.addObject("result",1);
+        modelAndView.addObject("action", "doctors");
+        modelAndView.addObject("result", "info");
         return modelAndView;
     }
 
-
-
-
-
+    private String randomPassword() {
+        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 6) {
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        return salt.toString();
+    }
 }

@@ -5,7 +5,7 @@
     <c:when test='${doctor.gender.equals("female")}'>
         <img src="<c:url value="/static/images/svg/female-doctor.svg"/>" class="img-responsive">
     </c:when>
-    <c:otherwise>undefined</c:otherwise>
+
 </c:choose>
 <div class="list-group">
     <a href="<c:url value="/doctor/patients"/>" class="list-group-item

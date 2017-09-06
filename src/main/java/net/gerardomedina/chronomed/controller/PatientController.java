@@ -29,7 +29,7 @@ public class PatientController {
     public ModelAndView history(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");
         ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
-        modelAndView.addObject("action",0);
+        modelAndView.addObject("action","history");
         return modelAndView;
     }
 
@@ -37,7 +37,7 @@ public class PatientController {
     public ModelAndView consultations(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");
         ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
-        modelAndView.addObject("action",1);
+        modelAndView.addObject("action","consultations");
         modelAndView.addObject("consultations",patientRepository.getConsultations(patient));
         return modelAndView;
     }
@@ -46,7 +46,7 @@ public class PatientController {
     public ModelAndView doctors(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");
         ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
-        modelAndView.addObject("action",2);
+        modelAndView.addObject("action","doctors");
         modelAndView.addObject("doctors",patientRepository.getDoctors(patient));
         return modelAndView;
     }
@@ -55,7 +55,7 @@ public class PatientController {
     public ModelAndView data(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");
         ModelAndView modelAndView = new ModelAndView("patient","patient", patient);
-        modelAndView.addObject("action",3);
+        modelAndView.addObject("action","data");
         return modelAndView;
     }
 

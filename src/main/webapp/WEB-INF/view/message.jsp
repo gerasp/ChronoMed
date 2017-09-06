@@ -8,21 +8,17 @@
                     </h4>
                 </div>
                 <div class="modal-body">
-                    <p>
                         <display:column>
                             <c:choose>
-                                <c:when test="${result == 0}"><fmt:message key="modal.content.infoCreated"/></c:when>
-                                <c:when test="${result == 1}"><fmt:message key="modal.content.infoUptdated"/></c:when>
-                                <c:when test="${result == 2}"><fmt:message key="modal.content.wrongPassword"/></c:when>
-                                <c:when test="${result == 3}"><fmt:message key="modal.content.addConsultation"/></c:when>
-                                <c:when test="${result == 4}"><fmt:message key="modal.content.error"/></c:when>
-                                <c:when test="${result == 5}"><fmt:message key="modal.content.wrongEmailOrPassword"/></c:when>
-                                <c:when test="${result == 6}"><fmt:message key="search.patient.notFound"/></c:when>
-                                <c:when test="${result == 7}"><fmt:message key="search.doctor.notFound"/></c:when>
-                                <c:otherwise>undefined</c:otherwise>
+                                <c:when test="${result.equals('info')}"><fmt:message key="modal.content.info"/></c:when>
+                                <c:when test="${result.equals('wrongPassword')}"><fmt:message key="modal.content.wrongPassword"/></c:when>
+                                <c:when test="${result.equals('error')}"><fmt:message key="modal.content.error"/></c:when>
+                                <c:when test="${result.equals('wrongEmailOrPassword')}"><fmt:message key="modal.content.wrongEmailOrPassword"/></c:when>
+                                <c:when test="${result.equals('patientNotFound')}"><fmt:message key="search.patient.notFound"/></c:when>
+                                <c:when test="${result.equals('doctorNotFound')}"><fmt:message key="search.doctor.notFound"/></c:when>
+                                <c:when test="${result.equals('notActive')}"><fmt:message key="modal.content.notActive"/></c:when>
                             </c:choose>
                         </display:column>
-                    </p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">&nbsp;<fmt:message

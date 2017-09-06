@@ -24,7 +24,7 @@
                             <c:when test='${item.doctorByDoctorId.gender.equals("female")}'>
                                 <fmt:message key="navigation.doctor.female"/>
                             </c:when>
-                            <c:otherwise>undefined</c:otherwise>
+
                         </c:choose>
                         &nbsp;${item.doctorByDoctorId.name}
                     </h4>

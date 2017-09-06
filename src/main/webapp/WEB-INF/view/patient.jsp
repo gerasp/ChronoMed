@@ -12,7 +12,6 @@
                         <c:when test='${patient.gender.equals("male")}'><fmt:message
                                 key="navigation.patient.male"/></c:when>
                         <c:when test='${patient.gender.equals("female")}'><fmt:message key="navigation.patient.female"/></c:when>
-                        <c:otherwise>undefined</c:otherwise>
                     </c:choose>
                     <span class="label label-primary">${patient.surname}</span>
                 </h3>
@@ -28,19 +27,19 @@
         <div class="col-md-9 print">
             <div class="white-container">
                 <c:choose>
-                    <c:when test="${action == 0}">
+                    <c:when test="${action.equals('history')}">
                         <%@include file="history.jsp" %>
                     </c:when>
-                    <c:when test="${action == 1}">
+                    <c:when test="${action.equals('consultations')}">
                         <%@include file="consultations.jsp" %>
                     </c:when>
-                    <c:when test="${action == 2}">
+                    <c:when test="${action.equals('doctors')}">
                         <%@include file="patient-doctors.jsp" %>
                     </c:when>
-                    <c:when test="${action == 3}">
+                    <c:when test="${action.equals('data')}">
                         <%@include file="patient-data.jsp" %>
                     </c:when>
-                    <c:otherwise>undefined</c:otherwise>
+
                 </c:choose>
             </div>
         </div>

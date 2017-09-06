@@ -67,7 +67,7 @@ $("#language-selector").click(function () {
 
 // OPEN FIRST PANEL
 $(document).ready(function () {
-    $('.panel-open-first').collapse("show");
+    $('.panel-open-first').trigger("click");
 });
 
 // SIDEBAR SCROLL

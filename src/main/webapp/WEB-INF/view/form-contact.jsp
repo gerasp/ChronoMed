@@ -13,7 +13,7 @@
                         <form:label path="phoneNumber">
                             <fmt:message key="form.phoneNumber"/>
                         </form:label>
-                        <form:input path="phoneNumber" cssClass="form-control"/>
+                        <form:input path="phoneNumber" required="required" cssClass="form-control"/>
                     </div>
                 </div>
                 <div class="col-md-6">
