@@ -11,19 +11,19 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="name" cssClass="control-label">
+                        <form:label path="name">
                             <fmt:message key="form.name"/>
                         </form:label>
                         <form:input path="name" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
-                        <form:label path="surname" cssClass="control-label">
+                        <form:label path="surname">
                             <fmt:message key="form.surname"/>
                         </form:label>
                         <form:input path="surname" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
-                        <form:label path="idCard" cssClass="control-label">
+                        <form:label path="idCard">
                             <fmt:message key="form.idcard"/>
                         </form:label>
                         <form:input path="idCard" cssClass="form-control"/>
@@ -31,7 +31,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="gender" cssClass="control-label">
+                        <form:label path="gender">
                             <fmt:message key="form.gender"/>
                         </form:label>
                         <form:select path="gender" cssClass="form-control">
@@ -41,13 +41,13 @@
                     </div>
                     <div class="form-group required">
                         <fmt:formatDate value="${birthDate}" var="dateString" pattern="dd/MM/yyyy" />
-                        <form:label path="birthDate" cssClass="control-label">
+                        <form:label path="birthDate">
                             <fmt:message key="form.birthDate"/>
                         </form:label>
                         <form:input type="date" path="birthDate" cssClass="form-control" value="${dateString}" />
                     </div>
                     <div class="form-group required">
-                        <form:label path="nationality" cssClass="control-label">
+                        <form:label path="nationality">
                             <fmt:message key="form.nationality"/>
                         </form:label>
                         <form:select path="nationality" cssClass="form-control">
@@ -63,3 +63,9 @@
         </div>
     </div>
 </div>
+
+<% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.PATIENT) { %>
+<script>
+    $("#patient-personal").find(".panel-footer .row .col-md-6 .form-group select,input").attr("disabled","true");
+</script>
+<% } %>

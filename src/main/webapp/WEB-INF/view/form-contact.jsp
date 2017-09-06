@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="phoneNumber" cssClass="control-label">
+                        <form:label path="phoneNumber">
                             <fmt:message key="form.phoneNumber"/>
                         </form:label>
                         <form:input path="phoneNumber" cssClass="form-control"/>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <form:label path="alternativePhoneNumber" cssClass="control-label">
+                        <form:label path="alternativePhoneNumber">
                             <fmt:message key="form.alternativePhoneNumber"/>
                         </form:label>
                         <form:input path="alternativePhoneNumber" cssClass="form-control"/>

@@ -10,7 +10,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group required">
-                        <form:label path="address" cssClass="control-label">
+                        <form:label path="address">
                             <fmt:message key="form.address"/>
                         </form:label>
                         <form:input path="address" cssClass="form-control"/>
@@ -18,13 +18,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="locality" cssClass="control-label">
+                        <form:label path="locality">
                             <fmt:message key="form.locality"/>
                         </form:label>
                         <form:input path="locality" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
-                        <form:label path="zipCode" cssClass="control-label">
+                        <form:label path="zipCode">
                             <fmt:message key="form.zipCode"/>
                         </form:label>
                         <form:input path="zipCode" cssClass="form-control"/>
@@ -32,13 +32,13 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group required">
-                        <form:label path="province" cssClass="control-label">
+                        <form:label path="province">
                             <fmt:message key="form.province"/>
                         </form:label>
                         <form:input path="province" cssClass="form-control"/>
                     </div>
                     <div class="form-group required">
-                        <form:label path="country" cssClass="control-label">
+                        <form:label path="country">
                             <fmt:message key="form.country"/>
                         </form:label>
                         <form:select path="country" cssClass="form-control">

@@ -12,7 +12,7 @@
                     case ADMIN: %>
                 <div class="col-md-10">
                     <div class="form-group required">
-                        <form:label path="email" cssClass="control-label">
+                        <form:label path="email">
                             <fmt:message key="form.email"/>
                         </form:label>
                         <form:input path="email" cssClass="form-control"/>
@@ -20,7 +20,7 @@
                 </div>
                 <div class="col-md-2">
                     <div class="form-group text-right">
-                        <form:label path="active" cssClass="control-label">
+                        <form:label path="active">
                             <fmt:message key="form.active"/>
                         </form:label>
                         <br>
@@ -33,7 +33,7 @@
                     case PATIENT: %>
                 <div class="col-md-12">
                     <div class="form-group required">
-                        <form:label path="email" cssClass="control-label">
+                        <form:label path="email">
                             <fmt:message key="form.email"/>
                         </form:label>
                         <form:input path="email" cssClass="form-control"/>
