@@ -5,10 +5,7 @@ import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.entity.User;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
@@ -94,10 +91,10 @@ public class IndexController extends AbstractController{
         return new ModelAndView("index", "user", new User());
     }
 
-    @GetMapping(value = "/changeLanguage/{language}")
-    public String changeLanguage(@PathVariable(value = "language") String language, HttpSession session) {
+    @GetMapping(value = "/changeLanguage", params = {"language","returnTo"})
+    public String changeLanguage(@RequestParam(value = "language") String language, @RequestParam(value = "returnTo") String returnTo, HttpSession session) {
         session.setAttribute("language", language);
-        return "redirect:/";
+        return "redirect:"+returnTo;
     }
 
     @GetMapping(value = "/tac")

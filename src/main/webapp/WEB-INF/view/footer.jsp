@@ -34,11 +34,11 @@
             </a></li>
         </ul>
         <ul class="nav navbar-nav" id="language-menu" style="display: none;">
-            <li><a href="<c:url value="/changeLanguage/en"/>">
+            <li><a href="<c:url value="/changeLanguage?language=en&returnTo=${requestScope['javax.servlet.forward.request_uri']}"/>">
                 <img src="<c:url value="/static/images/flags/en.png"/>">&nbsp;English</a></li>
-            <li><a href="<c:url value="/changeLanguage/de"/>">
+            <li><a href="<c:url value="/changeLanguage?language=de&returnTo=${requestScope['javax.servlet.forward.request_uri']}"/>">
                 <img src="<c:url value="/static/images/flags/de.png"/>">&nbsp;Deutsch</a></li>
-            <li><a href="<c:url value="/changeLanguage/es"/>">
+            <li><a href="<c:url value="/changeLanguage?language=es&returnTo=${requestScope['javax.servlet.forward.request_uri']}"/>">
                 <img src="<c:url value="/static/images/flags/es.png"/>">&nbsp;Espa&ntilde;ol</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
