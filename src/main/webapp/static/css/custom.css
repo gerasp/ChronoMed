@@ -1,5 +1,3 @@
-/* PINGENDO COMMENT DO NOT REMOVE */
-
 .white-container {
     background: white;
     border-left: 1px solid gainsboro;
@@ -8,7 +6,7 @@
     padding: 30px;
 }
 
-.backround-dark {
+.background-dark {
     background: #40834F;
 }
 
@@ -127,10 +125,6 @@ textarea {
     color: white;
 }
 
-#sidebar {
-    position: relative;
-}
-
 .welcome-message {
     padding-top: 20px;
 }
@@ -146,7 +140,7 @@ textarea {
 
 }
 
-.label-telefon {
+.label-phone {
     padding:.4em .6em .3em
 }
 
@@ -168,12 +162,12 @@ textarea {
     padding-top:15px;
 }
 
-.signin-form {
+.sign-in-form {
     background: #ececec;
     margin: 35px 20px;
 }
 
-.signin-logo {
+.sign-in-logo {
     max-height: 90px;
     margin: 35px 20px;
     padding-right: 40px;

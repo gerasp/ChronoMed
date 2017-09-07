@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.Random;
 
 @RequestMapping("/admin")
@@ -50,22 +48,25 @@ public class AdminController {
         return modelAndView;
     }
 
-    @GetMapping("/patient/edit")
-    public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
-        savedPatient = patientRepository.getPatientByIdCard(search);
-        ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
-
-        modelAndView.addObject("countryList", Arrays.asList(Locale.getISOCountries()));
-        modelAndView.addObject("patient", savedPatient);
-        modelAndView.addObject("action", "patient-edit");
-        return modelAndView;
-    }
-
     @PostMapping("/patient/new")
     public ModelAndView patientNew(@ModelAttribute("patient") Patient patient) {
         patient.setId(savedPatient.getId());
         patientRepository.create(patient);
         return patients();
+    }
+
+    @GetMapping("/patient/edit")
+    public ModelAndView patientSearch(@ModelAttribute("search") Search search) {
+        savedPatient = patientRepository.getPatientByIdCardOrHealthCard(search);
+        ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
+        if (savedPatient == null) {
+            modelAndView.addObject("action", "patients");
+            modelAndView.addObject("result", "patientNotFound");
+            return modelAndView;
+        }
+        modelAndView.addObject("patient", savedPatient);
+        modelAndView.addObject("action", "patient-edit");
+        return modelAndView;
     }
 
     @PostMapping("/patient/edit")
@@ -101,6 +102,17 @@ public class AdminController {
         return modelAndView;
     }
 
+    @PostMapping("/doctor/new")
+    public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
+        doctor.setId(savedDoctor.getId());
+        doctor.setPassword(randomPassword());
+        doctorRepository.create(doctor);
+        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
+        modelAndView.addObject("action", "doctors");
+        modelAndView.addObject("result", "infoUpdated");
+        return modelAndView;
+    }
+
     @GetMapping("/doctor/edit")
     public ModelAndView doctorSearch(@ModelAttribute("search") Search search) {
         savedDoctor = doctorRepository.getDoctorByBoardNumber(search);
@@ -112,17 +124,6 @@ public class AdminController {
         }
         modelAndView.addObject("action", "doctor-edit");
         modelAndView.addObject("doctor", savedDoctor);
-        return modelAndView;
-    }
-
-    @PostMapping("/doctor/new")
-    public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
-        doctor.setId(savedDoctor.getId());
-        doctor.setPassword(randomPassword());
-        doctorRepository.create(doctor);
-        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action", "doctors");
-        modelAndView.addObject("result", "infoUpdated");
         return modelAndView;
     }
 

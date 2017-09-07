@@ -122,8 +122,12 @@ public class IndexController {
     }
 
     @GetMapping(value = "/changeLanguage/{language}")
-    public String login(@PathVariable(value = "language") String language, HttpSession session) {
+    public String changeLanguage(@PathVariable(value = "language") String language, HttpSession session) {
         session.setAttribute("language", language);
         return "redirect:/";
+    }
+    @GetMapping(value = "/tac")
+    public String tac() {
+        return "tac";
     }
 }

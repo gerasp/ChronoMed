@@ -23,7 +23,7 @@
                                     </li>
                                     <li>
                                         <a href="#">
-                                            <form:option value="healthCard"><fmt:message key="form.healthcard"/>
+                                            <form:option value="healthcard"><fmt:message key="form.healthcard"/>
                                             </form:option>
                                         </a>
                                     </li>

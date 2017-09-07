@@ -28,18 +28,26 @@ public class PatientRepositoryImpl extends AbstractRepositoryImpl implements Pat
     }
 
     @Transactional
-    public Patient getPatientByIdCard(Search search) {
-        List result = this.sessionFactory.getCurrentSession()
-                .createQuery("from Patient where idCard = :idCard")
-                .setParameter("idCard",search.getParameter())
-                .list();
-        return result.size() > 0 ? (Patient) result.get(0) : null;
-    }
+    public Patient getPatientByIdCardOrHealthCard(Search search) {
+        List result = null;
+        switch (search.getType()) {
+            case "idCard":
+                result = this.sessionFactory.getCurrentSession()
+                        .createQuery("from Patient where idCard = :idCard")
+                        .setParameter("idCard",search.getParameter())
+                        .list();
+                break;
+            case "healthcard":
+                result = this.sessionFactory.getCurrentSession()
+                        .createQuery("from Patient p where p.id in " +
+                                "(select hc.patientId from Healthcard hc where hc.number = :healthcard)")
+                        .setParameter("healthcard", search.getParameter())
+                        .list();
 
-    //TODO QUE BUSQUE BIEN
-    @Transactional
-    public Patient getPatientByHealthCard(Search search) {
-        return getPatientByIdCard(search);
+        }
+
+
+        return result.size() > 0 ? (Patient) result.get(0) : null;
     }
 
     @Transactional

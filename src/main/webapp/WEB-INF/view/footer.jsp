@@ -44,8 +44,7 @@
         <ul class="nav navbar-nav navbar-right">
             <c:choose>
                 <c:when test="${user!=null}">
-                    <li id="tac-button"><a href="javascript:void(0)"><fmt:message key="footer.termsAndConditions"/></a>
-                    </li>
+                    <li><a href="<c:url value="/tac"/>"><fmt:message key="footer.termsAndConditions"/></a></li>
                     <li><a href="mailto:ayuda@chronomed.com"><fmt:message key="footer.help"/></a></li>
                 </c:when>
                 <c:otherwise>
@@ -60,6 +59,5 @@
 </div>
 </div>
 <%@include file="message.jsp" %>
-<%@include file="tac.jsp" %>
 
 <script src="<c:url value="/static/js/utils.js"/>"></script>

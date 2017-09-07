@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row shadow-box">
             <div class="col-md-5">
-                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive signin-logo">
+                <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive sign-in-logo">
             </div>
             <div class="col-md-7">
-                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right signin-form">
+                <form:form action="login" modelAttribute="user" cssClass="form-horizontal text-right sign-in-form">
                     <div class="container">
                         <div class="row">
                             <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
