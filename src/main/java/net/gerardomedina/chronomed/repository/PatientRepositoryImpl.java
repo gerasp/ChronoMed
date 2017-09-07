@@ -70,4 +70,13 @@ public class PatientRepositoryImpl extends AbstractRepositoryImpl implements Pat
         return result.size() > 0 ? result : null;
 
     }
+
+    @Transactional
+    public List getHealthcards(Patient patient) {
+        List result = this.sessionFactory.getCurrentSession()
+                .createQuery("from Healthcard h where h.patientId = :patientId")
+                .setParameter("patientId", patient.getId())
+                .list();
+        return result.size() > 0 ? result : null;
+    }
 }

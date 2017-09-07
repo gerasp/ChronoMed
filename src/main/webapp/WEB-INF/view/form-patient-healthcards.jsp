@@ -11,9 +11,10 @@
                 <div class="col-md-12">
                     <div class="form-group">
                         <ul class="list-unstyled" id="healthCards">
-                            <c:forEach items="${patient.healthcardsById}" var="item">
+                            <c:forEach items="${actualHealthcards}" var="item">
                                 <li class='card-item'>
-                                    <input value="${item.number}>" name='healthCardsList' readonly>
+                                    <input value="${item.number}" name='healthCardsList'
+                                           style='border:0; background:none;' readonly>
                                     <button type='button' onclick='deleteHealthCard(this)'
                                             class='btn btn-danger btn-xs pull-right'><i
                                             class='fa  fa-remove'></i> <fmt:message key="action.remove"/>

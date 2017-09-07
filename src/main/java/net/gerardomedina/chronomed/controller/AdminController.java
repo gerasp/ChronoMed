@@ -51,8 +51,11 @@ public class AdminController extends AbstractController {
             modelAndView.addObject("result", "patientNotFound");
             return modelAndView;
         }
+
         modelAndView.addObject("patient", savedPatient);
         modelAndView.addObject("doctors",doctorRepository.list());
+        modelAndView.addObject("actualDoctors",patientRepository.getDoctors(savedPatient));
+        modelAndView.addObject("actualHealthcards",patientRepository.getHealthcards(savedPatient));
         modelAndView.addObject("action", "patient-edit");
         checkResult(modelAndView);
         return modelAndView;

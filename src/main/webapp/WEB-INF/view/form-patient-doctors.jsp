@@ -12,10 +12,10 @@
 
                     <div class="form-group">
                         <ul class="list-unstyled" id="doctorList">
-                            <c:forEach items="${patient.doctorPatientsById}" var="doctor">
+                            <c:forEach items="${actualDoctors}" var="doctor">
                                 <li class='card-item'>
-                                    <input value="${doctor.doctorByDoctorId.boardNumber}>" name='boardNumberList'
-                                           readonly>
+                                    <input value="${doctor.boardNumber}" name='boardNumberList'
+                                           style='border:0; background:none;' readonly>
                                     <button type='button' onclick='deleteDoctor(this)'
                                             class='btn btn-danger btn-xs pull-right'><i
                                             class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
