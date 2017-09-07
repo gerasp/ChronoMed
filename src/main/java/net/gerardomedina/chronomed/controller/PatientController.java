@@ -1,9 +1,6 @@
 package net.gerardomedina.chronomed.controller;
 
 import net.gerardomedina.chronomed.entity.Patient;
-import net.gerardomedina.chronomed.repository.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,15 +12,9 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/patient")
 @Controller
 @Scope("session")
-public class PatientController {
+public class PatientController extends AbstractController {
 
     private Patient savedPatient;
-    private PatientRepository patientRepository;
-    @Autowired
-    @Qualifier(value="patientRepository")
-    public void setPatientRepository(PatientRepository ps){
-        this.patientRepository = ps;
-    }
 
     @GetMapping("/history")
     public ModelAndView history(HttpSession session) {

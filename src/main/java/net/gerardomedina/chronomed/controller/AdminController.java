@@ -21,17 +21,12 @@ import java.util.Random;
 @RequestMapping("/admin")
 @Controller
 @Scope("session")
-public class AdminController {
+public class AdminController extends AbstractController {
 
     // PATIENT MANAGEMENT
     private Patient savedPatient;
-    private PatientRepository patientRepository;
+    private String result;
 
-    @Autowired
-    @Qualifier(value = "patientRepository")
-    public void setPatientRepository(PatientRepository ps) {
-        this.patientRepository = ps;
-    }
 
 
     @GetMapping("/patients")
@@ -124,18 +119,24 @@ public class AdminController {
         }
         modelAndView.addObject("action", "doctor-edit");
         modelAndView.addObject("doctor", savedDoctor);
+        checkResult(modelAndView);
         return modelAndView;
     }
 
+    private void checkResult(ModelAndView modelAndView) {
+        if (result!= null) {
+            modelAndView.addObject("result",result);
+            result = null;
+        }
+    }
+
     @PostMapping("/doctor/edit")
-    public ModelAndView doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
+    public String doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
         doctor.setPassword(savedDoctor.getPassword());
         doctorRepository.update(doctor);
-        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action", "doctors");
-        modelAndView.addObject("result", "infoCreated");
-        return modelAndView;
+        result = "infoCreated";
+        return "redirect:/admin/doctors";
     }
 
     private String randomPassword() {

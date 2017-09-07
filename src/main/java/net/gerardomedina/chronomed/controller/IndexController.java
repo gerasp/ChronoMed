@@ -4,11 +4,6 @@ import net.gerardomedina.chronomed.entity.Admin;
 import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.entity.User;
-import net.gerardomedina.chronomed.repository.AdminRepository;
-import net.gerardomedina.chronomed.repository.DoctorRepository;
-import net.gerardomedina.chronomed.repository.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,29 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpSession;
 
 @Controller
-public class IndexController {
-
-    private AdminRepository adminRepository;
-    private DoctorRepository doctorRepository;
-    private PatientRepository patientRepository;
-
-    @Autowired
-    @Qualifier(value = "adminRepository")
-    public void setAdminRepository(AdminRepository ps) {
-        this.adminRepository = ps;
-    }
-
-    @Autowired
-    @Qualifier(value = "doctorRepository")
-    public void setDoctorRepository(DoctorRepository ps) {
-        this.doctorRepository = ps;
-    }
-
-    @Autowired
-    @Qualifier(value = "patientRepository")
-    public void setPatientRepository(PatientRepository ps) {
-        this.patientRepository = ps;
-    }
+public class IndexController extends AbstractController{
 
     @GetMapping("/")
     public ModelAndView index(HttpSession session) {
@@ -126,6 +99,7 @@ public class IndexController {
         session.setAttribute("language", language);
         return "redirect:/";
     }
+
     @GetMapping(value = "/tac")
     public String tac() {
         return "tac";

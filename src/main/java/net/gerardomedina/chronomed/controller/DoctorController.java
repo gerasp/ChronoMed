@@ -17,17 +17,12 @@ import java.util.List;
 @RequestMapping("/doctor")
 @Controller
 @Scope("session")
-public class DoctorController {
+public class DoctorController extends AbstractController {
     private Doctor savedDoctor;
-    private DoctorRepository doctorRepository;
     private List<Patient> savedPatients;
     private Patient savedPatient;
 
-    @Autowired
-    @Qualifier(value = "doctorRepository")
-    public void setDoctorRepository(DoctorRepository ps) {
-        this.doctorRepository = ps;
-    }
+
 
     @GetMapping("/patients")
     public ModelAndView patients(HttpSession session) {
@@ -65,6 +60,7 @@ public class DoctorController {
         ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
         modelAndView.addObject("action", "patient");
         modelAndView.addObject("patient", savedPatient);
+
         return modelAndView;
     }
 
