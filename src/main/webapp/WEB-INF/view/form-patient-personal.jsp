@@ -65,8 +65,3 @@
     </div>
 </div>
 
-<% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.PATIENT) { %>
-<script>
-    $("#patient-personal").find(".panel-footer .row .col-md-6 .form-group select,input").attr("disabled","true");
-</script>
-<% } %>

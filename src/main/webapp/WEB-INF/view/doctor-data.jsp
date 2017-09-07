@@ -8,3 +8,6 @@
     <p><fmt:message key="form.requiredFields.some"/></p>
 </form:form>
 
+<script>
+    $("#doctor-personal").find(".panel-footer .row .col-md-6 .form-group select,input").attr("disabled","true");
+</script>
