@@ -25,3 +25,5 @@
     </div>
     <p><fmt:message key="form.requiredFields.some"/></p>
 </form:form>
+
+<%@include file="admin-patient-js.jsp"%>

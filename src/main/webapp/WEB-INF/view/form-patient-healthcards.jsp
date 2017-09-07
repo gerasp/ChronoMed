@@ -5,19 +5,18 @@
                href="#patient-healthcards"><fmt:message key="form.healthcards"/></a>
         </h4>
     </div>
-    <div id="patient-healtchards" class="panel-collapse collapse">
+    <div id="patient-healthcards" class="panel-collapse collapse">
         <div class="panel-footer">
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
                         <ul class="list-unstyled" id="healthCards">
-                            <c:forEach items="${healthcardsById}" var="item">
+                            <c:forEach items="${patient.healthcardsById}" var="item">
                                 <li class='card-item'>
-                                    <input value="${item.number}>" name='healthCardsList'
-                                           style='border:0; background:none;' readonly>
+                                    <input value="${item.number}>" name='healthCardsList' readonly>
                                     <button type='button' onclick='deleteHealthCard(this)'
                                             class='btn btn-danger btn-xs pull-right'><i
-                                            class='fa  fa-remove'></i> Eliminar
+                                            class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
                                     </button>
                                 </li>
                             </c:forEach>
@@ -27,7 +26,7 @@
                 <div class="col-md-6">
                     <div class="form-group">
                         <input type="number" class="form-control" id="inputHealthCard"
-                               placeholder="23461256012578">
+                               placeholder="<fmt:message key="form.healthcard"/>">
                     </div>
                 </div>
                 <div class="col-md-6">

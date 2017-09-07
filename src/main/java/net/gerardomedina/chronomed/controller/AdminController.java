@@ -27,6 +27,7 @@ public class AdminController extends AbstractController {
     @GetMapping("/patient/new")
     public ModelAndView patientRegistration(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
+        modelAndView.addObject("doctors",doctorRepository.list());
         modelAndView.addObject("action", "patient-new");
         checkResult(modelAndView);
         return modelAndView;
@@ -51,6 +52,7 @@ public class AdminController extends AbstractController {
             return modelAndView;
         }
         modelAndView.addObject("patient", savedPatient);
+        modelAndView.addObject("doctors",doctorRepository.list());
         modelAndView.addObject("action", "patient-edit");
         checkResult(modelAndView);
         return modelAndView;

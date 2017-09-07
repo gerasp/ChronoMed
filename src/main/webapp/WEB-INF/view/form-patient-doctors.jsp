@@ -2,54 +2,47 @@
     <div class="panel-heading">
         <h4 class="panel-title">
             <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion"
-               href="#patient-doctors">M�dicos vinculados</a>
+               href="#patient-doctors"><fmt:message key="form.assignedDoctors"/></a>
         </h4>
     </div>
     <div id="patient-doctors" class="panel-collapse collapse">
         <div class="panel-footer">
             <div class="row">
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <ul class="list-unstyled" id="patientList">
-                            <%--<%--%>
-                                <%--for (DoctorPatient dp : patientPatientList) {--%>
-                            <%--%>--%>
-                            <%--<li class='card-item'>--%>
-                                <%--<input value="<%= dp.getDoctorID().getName() + " (" + dp.getDoctorID().getBoardNumber() + ")"%>"--%>
-                                       <%--name='healthCardsList' style='border:0; background:none;'--%>
-                                       <%--readonly>--%>
-                                <%--<button type='button' onclick='deleteDoctor(this)'--%>
-                                        <%--class='btn btn-danger btn-xs pull-right'><i--%>
-                                        <%--class='fa  fa-remove'></i> Eliminar--%>
-                                <%--</button>--%>
-                            <%--</li>--%>
-                            <%--<%--%>
-                                <%--}--%>
-                            <%--%>--%>
+                <div class="col-md-12">
+
+                    <div class="form-group">
+                        <ul class="list-unstyled" id="doctorList">
+                            <c:forEach items="${patient.doctorPatientsById}" var="doctor">
+                                <li class='card-item'>
+                                    <input value="${doctor.doctorByDoctorId.boardNumber}>" name='boardNumberList'
+                                           readonly>
+                                    <button type='button' onclick='deleteDoctor(this)'
+                                            class='btn btn-danger btn-xs pull-right'><i
+                                            class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
+                                    </button>
+                                </li>
+                            </c:forEach>
                         </ul>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-6">
-                        <input list="patients" class="form-control" id="inputDoctor"
-                               placeholder="Elige tu patient...">
-                        <datalist id="patients">
-                            <%--<%--%>
-                                <%--DoctorFacade patientFacade = FacadeFactory.getFacade("DoctorFacade");--%>
-                                <%--for (Doctor patient : patientFacade.findAll()) {--%>
-                            <%--%>--%>
-                            <%--<option value="<%= patient.getName() + " (" + patient.getBoardNumber() + ")"%>">--%>
-                                    <%--<%--%>
-                                                                <%--}--%>
-                                                            <%--%>--%>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <input list="doctors" class="form-control" id="inputDoctor"
+                               placeholder="<fmt:message key="role.doctor"/>">
+                        <datalist id="doctors">
+                            <c:forEach var="doctor" items="${doctors}">
+                                <option value="${doctor.surname}&nbsp;(${doctor.boardNumber})"></option>
+                            </c:forEach>
                         </datalist>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-md-3">
+                <div class="col-md-6">
+
+                    <div class="form-group">
                         <button type="button" onclick="addDoctor()"
-                                class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>Asociar
-                            Doctor&nbsp;
+                                class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
+                                key="form.doctor.add"/>
                         </button>
                     </div>
                 </div>
