@@ -1,5 +1,7 @@
 package net.gerardomedina.chronomed.controller;
 
+import net.gerardomedina.chronomed.entity.Doctor;
+import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.repository.AdminRepository;
 import net.gerardomedina.chronomed.repository.DoctorRepository;
 import net.gerardomedina.chronomed.repository.PatientRepository;
@@ -14,7 +16,12 @@ public abstract class AbstractController {
     AdminRepository adminRepository;
     DoctorRepository doctorRepository;
     PatientRepository patientRepository;
-    private String result;
+
+    Doctor savedDoctor;
+    Patient savedPatient;
+
+
+    String result;
 
 
     @Autowired
@@ -36,14 +43,14 @@ public abstract class AbstractController {
     }
 
 
-    private void checkResult(ModelAndView modelAndView) {
+    void checkResult(ModelAndView modelAndView) {
         if (result!= null) {
             modelAndView.addObject("result",result);
             result = null;
         }
     }
 
-    private String randomPassword() {
+    String randomPassword() {
         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
         StringBuilder salt = new StringBuilder();
         Random rnd = new Random();

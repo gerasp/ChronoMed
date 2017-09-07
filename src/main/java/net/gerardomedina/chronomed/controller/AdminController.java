@@ -3,10 +3,6 @@ package net.gerardomedina.chronomed.controller;
 import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.entity.Search;
-import net.gerardomedina.chronomed.repository.DoctorRepository;
-import net.gerardomedina.chronomed.repository.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,19 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
-import java.util.Random;
 
 @RequestMapping("/admin")
 @Controller
 @Scope("session")
 public class AdminController extends AbstractController {
-
-    // PATIENT MANAGEMENT
-    private Patient savedPatient;
-    private String result;
-
-
-
     @GetMapping("/patients")
     public ModelAndView patients() {
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
@@ -40,14 +28,17 @@ public class AdminController extends AbstractController {
     public ModelAndView patientRegistration(HttpSession session) {
         ModelAndView modelAndView = new ModelAndView("admin", "patient", new Patient());
         modelAndView.addObject("action", "patient-new");
+        checkResult(modelAndView);
         return modelAndView;
     }
 
     @PostMapping("/patient/new")
-    public ModelAndView patientNew(@ModelAttribute("patient") Patient patient) {
+    public String patientNew(@ModelAttribute("patient") Patient patient) {
         patient.setId(savedPatient.getId());
+        patient.setPassword(randomPassword());
         patientRepository.create(patient);
-        return patients();
+        result = "infoCreated";
+        return "redirect:/admin/patients";
     }
 
     @GetMapping("/patient/edit")
@@ -61,27 +52,20 @@ public class AdminController extends AbstractController {
         }
         modelAndView.addObject("patient", savedPatient);
         modelAndView.addObject("action", "patient-edit");
+        checkResult(modelAndView);
         return modelAndView;
     }
 
     @PostMapping("/patient/edit")
-    public ModelAndView patientEdit(@ModelAttribute("patient") Patient patient) {
+    public String patientEdit(@ModelAttribute("patient") Patient patient) {
         patient.setId(savedPatient.getId());
+        patient.setPassword(savedPatient.getPassword());
         patientRepository.update(patient);
-        return patients();
+        result = "infoUpdated";
+        return "redirect:/admin/patients";
     }
 
-
-    // DOCTOR MANAGEMENT
-    private Doctor savedDoctor;
-    private DoctorRepository doctorRepository;
-
-    @Autowired
-    @Qualifier(value = "doctorRepository")
-    public void setDoctorRepository(DoctorRepository ps) {
-        this.doctorRepository = ps;
-    }
-
+    // =========================================================
 
     @GetMapping("/doctors")
     public ModelAndView doctors() {
@@ -94,18 +78,17 @@ public class AdminController extends AbstractController {
     public ModelAndView doctorRegistration() {
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
         modelAndView.addObject("action", "doctor-new");
+        checkResult(modelAndView);
         return modelAndView;
     }
 
     @PostMapping("/doctor/new")
-    public ModelAndView doctorNew(@ModelAttribute("doctor") Doctor doctor) {
+    public String doctorNew(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
         doctor.setPassword(randomPassword());
         doctorRepository.create(doctor);
-        ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
-        modelAndView.addObject("action", "doctors");
-        modelAndView.addObject("result", "infoUpdated");
-        return modelAndView;
+        result = "infoCreated";
+        return "redirect:/admin/doctors";
     }
 
     @GetMapping("/doctor/edit")
@@ -123,30 +106,13 @@ public class AdminController extends AbstractController {
         return modelAndView;
     }
 
-    private void checkResult(ModelAndView modelAndView) {
-        if (result!= null) {
-            modelAndView.addObject("result",result);
-            result = null;
-        }
-    }
-
     @PostMapping("/doctor/edit")
     public String doctorEdit(@ModelAttribute("doctor") Doctor doctor) {
         doctor.setId(savedDoctor.getId());
         doctor.setPassword(savedDoctor.getPassword());
         doctorRepository.update(doctor);
-        result = "infoCreated";
+        result = "infoUpdated";
         return "redirect:/admin/doctors";
     }
 
-    private String randomPassword() {
-        String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        StringBuilder salt = new StringBuilder();
-        Random rnd = new Random();
-        while (salt.length() < 6) {
-            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
-            salt.append(SALTCHARS.charAt(index));
-        }
-        return salt.toString();
-    }
 }

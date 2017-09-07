@@ -14,8 +14,6 @@ import javax.servlet.http.HttpSession;
 @Scope("session")
 public class PatientController extends AbstractController {
 
-    private Patient savedPatient;
-
     @GetMapping("/history")
     public ModelAndView history(HttpSession session) {
         Patient patient = (Patient) session.getAttribute("patient");

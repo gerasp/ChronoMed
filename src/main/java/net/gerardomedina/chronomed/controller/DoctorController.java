@@ -2,10 +2,6 @@ package net.gerardomedina.chronomed.controller;
 
 import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Patient;
-import net.gerardomedina.chronomed.repository.DoctorRepository;
-import net.gerardomedina.chronomed.repository.PatientRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -18,11 +14,7 @@ import java.util.List;
 @Controller
 @Scope("session")
 public class DoctorController extends AbstractController {
-    private Doctor savedDoctor;
     private List<Patient> savedPatients;
-    private Patient savedPatient;
-
-
 
     @GetMapping("/patients")
     public ModelAndView patients(HttpSession session) {
@@ -34,23 +26,6 @@ public class DoctorController extends AbstractController {
         return modelAndView;
     }
 
-    @GetMapping("/data")
-    public ModelAndView data(HttpSession session) {
-        Doctor doctor = (Doctor) session.getAttribute("doctor");
-        ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
-        modelAndView.addObject("action", "data");
-        return modelAndView;
-    }
-
-
-    private PatientRepository patientRepository;
-
-    @Autowired
-    @Qualifier(value = "patientRepository")
-    public void setPatientRepository(PatientRepository ps) {
-        this.patientRepository = ps;
-    }
-
     @GetMapping(path = "/patient", params = {"idCard"})
     public @ResponseBody ModelAndView patient(HttpSession session, @RequestParam(value = "idCard") String idCard) {
         savedPatient = null;
@@ -60,7 +35,7 @@ public class DoctorController extends AbstractController {
         ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
         modelAndView.addObject("action", "patient");
         modelAndView.addObject("patient", savedPatient);
-
+        checkResult(modelAndView);
         return modelAndView;
     }
 
@@ -74,11 +49,15 @@ public class DoctorController extends AbstractController {
         savedPatient.setOthers(patient.getOthers());
         patientRepository.update(savedPatient);
 
+        result="infoUpdated";
+        return patient(session,savedPatient.getIdCard());
+    }
+
+    @GetMapping("/data")
+    public ModelAndView data(HttpSession session) {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
-        modelAndView.addObject("action", "patient");
-        modelAndView.addObject("patient", savedPatient);
-        modelAndView.addObject("result", "infoUpdated");
+        modelAndView.addObject("action", "data");
         return modelAndView;
     }
 
