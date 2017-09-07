@@ -154,6 +154,7 @@ textarea {
     max-height: 90px;
 }
 
+/*LOGIN*/
 .shadow-box {
     background: #ececec;
     -webkit-box-shadow: 0 0 33px 2px rgba(0, 0, 0, 0.75);
@@ -171,4 +172,17 @@ textarea {
     max-height: 90px;
     margin: 35px 20px;
     padding-right: 40px;
+}
+
+
+/*CENTER TABS*/
+.nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+    zoom:1; /* hasLayout ie7 trigger */
+}
+
+.nav-tabs, .nav-pills {
+    text-align:center;
 }

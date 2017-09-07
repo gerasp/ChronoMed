@@ -1,5 +1,5 @@
 <% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.DOCTOR) { %>
-<form class="form-vertical" method="POST" role="form" action="/FrontController">
+<form:form action="/doctor/patient/edit" modelAttribute="patient">
     <h5 style="margin-left:10px; margin-bottom: 10px;" class="text-muted text-center"><i
             class="fa fa-question-circle"></i> Puede editar los campos clicando sobre ellos y luego haciendo
         click en "<fmt:message key="form.data.save"/>&nbsp;"</h5>
@@ -7,7 +7,7 @@
         <tbody>
         <tr>
             <td><strong><fmt:message key="history.bloodType"/></strong></td>
-            <td><input required class="input-in-table" type="text" name="bloodType" value="${patient.bloodType}%>"></td>
+            <td><input required class="input-in-table" type="text" name="bloodType" value="${patient.bloodType}"></td>
         </tr>
         <tr>
             <td><strong><fmt:message key="history.pathologies"/></strong></td>
@@ -43,7 +43,7 @@
             </button>
         </div>
     </div>
-</form>
+</form:form>
 <%@include file="doctor-newConsultation.jsp" %>
 <% } else { %>
 <h3 class="text-primary text-center no-margin-top">

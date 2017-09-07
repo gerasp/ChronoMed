@@ -21,30 +21,16 @@
     </p>
 </blockquote>
 
-<ul class="nav nav-justified nav-tabs" style="margin-top: 20px;">
-    <li class="active" id="history-tab"><a href="#"><i class="fa fa-lg fa-heartbeat"></i> Historial</a></li>
-    <li id="consultations-tab"><a href="#"><i class="fa fa-lg fa-calendar"></i> Citas</a></li>
+<ul class="nav nav-tabs text-center" style="margin-bottom: 20px;">
+    <li class="active"><a data-toggle="tab" href="#history"><i class="fa fa-lg fa-heartbeat"></i> Historial</a></li>
+    <li><a data-toggle="tab" href="#consultations"><i class="fa fa-lg fa-calendar"></i> Citas</a></li>
 </ul>
 
-<div class="bordered-folder" id="history">
-    <%@include file="history.jsp" %>
+<div class="tab-content">
+    <div class="tab-pane fade in active" id="history">
+        <%@include file="history.jsp" %>
+    </div>
+    <div class="tab-pane fade" id="consultations">
+        <%@include file="consultations.jsp" %>
+    </div>
 </div>
-<div class="bordered-folder" id="consultations" style="display: none;">
-    <%@include file="consultations.jsp" %>
-</div>
-
-<script>
-    $("#history-tab").click(function () {
-        $("#consultations-tab").removeClass("active");
-        $("#history-tab").addClass("active");
-        $("#history").show();
-        $("#consultations").hide();
-
-    });
-    $("#consultations-tab").click(function () {
-        $("#consultations-tab").addClass("active");
-        $("#history-tab").removeClass("active");
-        $("#history").hide();
-        $("#consultations").show();
-    });
-</script>

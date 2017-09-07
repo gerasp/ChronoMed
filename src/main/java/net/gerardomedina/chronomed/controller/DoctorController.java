@@ -21,6 +21,7 @@ public class DoctorController {
     private Doctor savedDoctor;
     private DoctorRepository doctorRepository;
     private List<Patient> savedPatients;
+    private Patient savedPatient;
 
     @Autowired
     @Qualifier(value = "doctorRepository")
@@ -57,13 +58,31 @@ public class DoctorController {
 
     @GetMapping(path = "/patient", params = {"idCard"})
     public @ResponseBody ModelAndView patient(HttpSession session, @RequestParam(value = "idCard") String idCard) {
-        Patient patient = null;
-        for (Patient savedPatient : savedPatients) if (savedPatient.getIdCard().equals(idCard)) patient = savedPatient;
-        if (patient == null) return patients(session);
+        savedPatient = null;
+        for (Patient savedPatient : savedPatients) if (savedPatient.getIdCard().equals(idCard)) this.savedPatient = savedPatient;
+        if (savedPatient == null) return patients(session);
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
         modelAndView.addObject("action", "patient");
-        modelAndView.addObject("patient", patient);
+        modelAndView.addObject("patient", savedPatient);
+        return modelAndView;
+    }
+
+    @PostMapping(path = "/patient/edit")
+    public @ResponseBody ModelAndView patientEdit(HttpSession session, @ModelAttribute("patient") Patient patient) {
+        savedPatient.setBloodType(patient.getBloodType());
+        savedPatient.setFamilyHistory(patient.getFamilyHistory());
+        savedPatient.setAllergies(patient.getAllergies());
+        savedPatient.setPathologies(patient.getPathologies());
+        savedPatient.setSurgeries(patient.getSurgeries());
+        savedPatient.setOthers(patient.getOthers());
+        patientRepository.update(savedPatient);
+
+        Doctor doctor = (Doctor) session.getAttribute("doctor");
+        ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
+        modelAndView.addObject("action", "patient");
+        modelAndView.addObject("patient", savedPatient);
+        modelAndView.addObject("result", "infoUpdated");
         return modelAndView;
     }
 

@@ -1,4 +1,4 @@
-<form:form action="/admin/doctor/edit" modelAttribute="doctor" cssClass="form-vertical">
+<form:form action="/admin/doctor/edit" modelAttribute="doctor" >
     <div class="row">
         <div class="col-md-2">
             <a href="<c:url value="/admin/doctors"/>" class="btn btn-block btn-lg btn-link ">
