@@ -5,9 +5,11 @@
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon"><fmt:message key="consultation.from"/></div>
-                    <input id="from_date" type="date" pattern="dd/MM/yyyy" name="from" class="form-control" required value="">
+                    <input id="from_date" type="date" pattern="dd/MM/yyyy" name="from" class="form-control" required
+                           value="">
                     <div class="input-group-addon"><fmt:message key="consultation.to"/></div>
-                    <input id="to_date" type="date" pattern="dd/MM/yyyy" name="to" class="form-control" required value="">
+                    <input id="to_date" type="date" pattern="dd/MM/yyyy" name="to" class="form-control" required
+                           value="">
                 </div>
             </div>
             <button onclick="filter()" class="btn btn-primary not-print"><fmt:message key="action.filter"/></button>
@@ -26,7 +28,6 @@
                                     <c:when test='${item.doctorByDoctorId.gender.equals("female")}'>
                                         <fmt:message key="navigation.doctor.female"/>
                                     </c:when>
-
                                 </c:choose>
                                 &nbsp;${item.doctorByDoctorId.name}
                             </h4>
@@ -48,11 +49,7 @@
                     </div>
                 </li>
             </c:forEach>
-
         </ul>
-        <button class="btn btn-primary btn-block not-print" onclick="window.print()">
-            <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
-        </button>
     </c:when>
     <c:otherwise>
         <div class="well text-center">
@@ -60,5 +57,30 @@
         </div>
     </c:otherwise>
 </c:choose>
+<div class="row" style="margin:10px;">
 
+    <c:choose>
+        <c:when test="${action.equals('consultations')}">
+            <div class="col-md-12">
+                <button class="btn btn-primary btn-block not-print" onclick="window.print()">
+                    <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
+                </button>
+            </div>
+        </c:when>
+        <c:otherwise>
+            <div class="col-md-6">
+                <button class="btn btn-primary btn-block not-print" onclick="window.print()">
+                    <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
+                </button>
+            </div>
+            <div class="col-md-6">
+                <button id="new-consultation-button" class="btn btn-primary btn-block">
+                    <fmt:message key="action.newConsultation"/>
+                    <i class="fa  fa-plus-circle"></i>
+                </button>
+            </div>
+            <%@include file="consultation-new.jsp" %>
+        </c:otherwise>
+    </c:choose>
 
+</div>

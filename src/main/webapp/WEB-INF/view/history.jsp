@@ -44,7 +44,6 @@
         </div>
     </div>
 </form:form>
-<%@include file="doctor-newConsultation.jsp" %>
 <% } else { %>
 <h3 class="text-primary text-center no-margin-top">
     <small><fmt:message key="history.title"/></small>

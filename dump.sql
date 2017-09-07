@@ -38,7 +38,7 @@ CREATE TABLE `admin` (
 
 LOCK TABLES `admin` WRITE;
 /*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (3,'','',1);
+INSERT INTO `admin` VALUES (3,'admin@admin.es','admin',1);
 /*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -72,7 +72,6 @@ CREATE TABLE `consultation` (
 
 LOCK TABLES `consultation` WRITE;
 /*!40000 ALTER TABLE `consultation` DISABLE KEYS */;
-INSERT INTO `consultation` VALUES (1,'2017-01-12','dolor mucho dolor','pastillas','andar','sangre',2,2),(2,'2017-03-25','dolor mucho dolor','pastillas','andar','sangre',2,2),(3,'2017-03-13','dolor mucho dolor','pastillas','andar','sangre',2,2),(4,'2017-04-25','sida','cura de sida','no tener sida','prueba de sida',2,2),(5,'2017-04-25','no distingue entre la realidad y la ficción','palotes','no ir a los carnavales','martillazos en la cabeza',2,2),(6,'2017-04-25','Fiebre alta y tos','Ibuprofeno todos los dias','Reposo','Medicion de temperatura',2,2),(7,'2017-04-25','Fiebre alta y tos','Ibuprofeno todos los dias','Reposo','Medicion de temperatura',2,2);
 /*!40000 ALTER TABLE `consultation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +90,7 @@ CREATE TABLE `doctor` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `surname` varchar(255) NOT NULL DEFAULT '',
   `idCard` varchar(255) NOT NULL DEFAULT '',
-  `gender` enum('male','female') NOT NULL DEFAULT 'male',
+  `gender` varchar(255) NOT NULL DEFAULT '',
   `speciality` varchar(255) NOT NULL DEFAULT '',
   `boardNumber` varchar(255) NOT NULL DEFAULT '',
   `phoneNumber` varchar(255) NOT NULL DEFAULT '',
@@ -108,7 +107,7 @@ CREATE TABLE `doctor` (
 
 LOCK TABLES `doctor` WRITE;
 /*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
-INSERT INTO `doctor` VALUES (2,'medico@medico.es','medico',1,'Doctor','Doctorado','48745098Q','female','Doctorólogo','24738826','6666666662','6000000002'),(3,'medico2@medico.es','medico',1,'Jonathan','Tullido Chupi','69696969T','female','Informatico de Barrio','45787324','541476234','28465454');
+INSERT INTO `doctor` VALUES (2,'asdf@asdf.com','9DFMWX',1,'HOla','Caracola','0','female','Urólogo','555','6666666662','655544'),(100,'medico@medico.es','medico',1,'Doctor','Doctorados','48745098Q','male','Doctorólog','24738826','44444','6000000002'),(110,'medico2@medico.es','medico',1,'Jonathan','Tullido Chupi','69696969T','female','Informatico de Barrio','45787324','541476234','28465454');
 /*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -128,7 +127,7 @@ CREATE TABLE `doctor_patient` (
   KEY `patientID` (`patientID`),
   CONSTRAINT `DOCTOR_PATIENT_ibfk_1` FOREIGN KEY (`doctorID`) REFERENCES `doctor` (`ID`) ON DELETE CASCADE,
   CONSTRAINT `DOCTOR_PATIENT_ibfk_2` FOREIGN KEY (`patientID`) REFERENCES `patient` (`ID`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -137,7 +136,7 @@ CREATE TABLE `doctor_patient` (
 
 LOCK TABLES `doctor_patient` WRITE;
 /*!40000 ALTER TABLE `doctor_patient` DISABLE KEYS */;
-INSERT INTO `doctor_patient` VALUES (1,2,2),(2,3,2);
+INSERT INTO `doctor_patient` VALUES (24,100,3),(34,110,2),(44,100,2);
 /*!40000 ALTER TABLE `doctor_patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -184,7 +183,7 @@ CREATE TABLE `patient` (
   `surname` varchar(255) NOT NULL DEFAULT '',
   `idCard` varchar(255) NOT NULL DEFAULT '',
   `birthDate` date NOT NULL,
-  `gender` enum('male','female') NOT NULL DEFAULT 'male',
+  `gender` varchar(255) NOT NULL DEFAULT '',
   `nationality` varchar(255) NOT NULL DEFAULT '',
   `address` varchar(255) NOT NULL DEFAULT '',
   `locality` varchar(255) NOT NULL DEFAULT '',
@@ -211,7 +210,7 @@ CREATE TABLE `patient` (
 
 LOCK TABLES `patient` WRITE;
 /*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` VALUES (2,'paciente@paciente.es','paciente',1,'Paciente','Impaciente','46985741V','1995-04-07','female','Pacientés','C/ Paciencia Nº1','Pasiensia','350012','West Pasient','Pasienlandia','698745213','649784120vgg',NULL,NULL,NULL,NULL,NULL,NULL),(3,'paciente2@paciente.es','paciente',1,'Fulano','De tal Pascual','44444444X','2015-12-16','male','España','Su casa','Gáldar','46531','Las Parma','Canarias','928645120','649875150',NULL,NULL,NULL,NULL,NULL,NULL);
+INSERT INTO `patient` VALUES (2,'paciente@paciente.es','paciente',1,'Paciente','Impaciente','46985741V','1995-04-07','male','DE','C/ Paciencia Nº1','Pasiensia','350012','West Pasient','FR','698745213','649784120vgg','A+x','Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. ','Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. ','Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. ','Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis. '),(3,'paciente2@paciente.es','paciente',1,'Fulano','De tal Pascual','44444444X','2015-12-16','male','ES','Su casa','Gáldar','46531','Las Parma','US','928645120','649875150',NULL,NULL,NULL,NULL,NULL,NULL);
 /*!40000 ALTER TABLE `patient` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -246,4 +245,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-05 19:09:08
+-- Dump completed on 2017-09-07 17:12:51

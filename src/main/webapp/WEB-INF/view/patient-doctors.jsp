@@ -1,5 +1,8 @@
 <c:choose>
     <c:when test="${doctors!=null}">
+        <h3 class="text-center no-margin-top">
+            <fmt:message key="navigation.doctors"/>
+        </h3>
         <div class="list-group">
             <c:forEach items="${doctors}" var="item">
                 <a class="list-group-item">
