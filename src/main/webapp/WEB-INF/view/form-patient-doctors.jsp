@@ -26,7 +26,6 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-
                     <div class="form-group">
                         <input list="doctors" class="form-control" id="inputDoctor"
                                placeholder="<fmt:message key="role.doctor"/>">
@@ -38,7 +37,6 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-
                     <div class="form-group">
                         <button type="button" onclick="addDoctor()"
                                 class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message

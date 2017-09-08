@@ -58,7 +58,22 @@ public class DoctorController extends AbstractController {
         Doctor doctor = (Doctor) session.getAttribute("doctor");
         ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
         modelAndView.addObject("action", "data");
+        checkResult(modelAndView);
         return modelAndView;
+    }
+
+    @PostMapping("/data")
+    public String doctorEdit(@ModelAttribute("doctor") Doctor doctor,
+                             @RequestParam(value = "oldPassword") String oldPassword,
+                             @RequestParam(value = "newPassword") String newPassword) {
+        if (oldPassword.equals(savedDoctor.getPassword())) {
+            doctor.setId(savedDoctor.getId());
+            if (!newPassword.equals("")) doctor.setPassword(newPassword);
+            else doctor.setPassword(savedDoctor.getPassword());
+            doctorRepository.update(doctor);
+            result = "infoUpdated";
+        } else result = "wrongPassword";
+        return "redirect:/admin/data";
     }
 
 }

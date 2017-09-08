@@ -113,6 +113,10 @@ textarea {
     color:red;
 }
 
+.red-asterisk:after {
+    content:"*";
+    color:red;
+}
 
 .register-button {
     margin-bottom: 15px;
