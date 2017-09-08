@@ -30,8 +30,13 @@
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
-                <!--<prop key="hibernate.connection.url">jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a</prop>-->
-                <!--<prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>-->
+                <prop key="hibernate.show_sql">true</prop>
+
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+
+                <prop key="maxwait">10000</prop>
+                <prop key="maxidle">25</prop>
+                <prop key="minidle">5</prop>
             </props>
         </property>
     </bean>

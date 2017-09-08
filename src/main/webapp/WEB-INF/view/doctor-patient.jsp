@@ -19,13 +19,13 @@
         </div>
     </div>
 
-    <ul class="nav nav-pills nav-justified" style="margin-top: 30px;margin-bottom: 30px;">
-        <li class="active">
+    <ul class="nav nav-pills nav-justified" style="padding: 20px;">
+        <li class="active background-grey">
             <a id="history-tab" data-toggle="tab" href="#history">
                 <i class="fa fa-lg fa-heartbeat"></i>&nbsp;<fmt:message key="doctor.patient.history"/>
             </a>
         </li>
-        <li>
+        <li class="background-grey">
             <a id="consultations-tab" data-toggle="tab" href="#consultations">
                 <i class="fa fa-lg fa-calendar"></i>&nbsp;<fmt:message key="doctor.patient.consultations"/>
             </a>
