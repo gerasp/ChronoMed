@@ -55,8 +55,8 @@ public class DoctorController extends AbstractController {
 
     @GetMapping("/data")
     public ModelAndView data(HttpSession session) {
-        Doctor doctor = (Doctor) session.getAttribute("doctor");
-        ModelAndView modelAndView = new ModelAndView("doctor", "doctor", doctor);
+        savedDoctor = (Doctor) session.getAttribute("doctor");
+        ModelAndView modelAndView = new ModelAndView("doctor", "doctor", savedDoctor);
         modelAndView.addObject("action", "data");
         checkResult(modelAndView);
         return modelAndView;

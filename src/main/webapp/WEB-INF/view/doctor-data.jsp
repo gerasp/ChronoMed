@@ -1,4 +1,4 @@
-<form:form action="/doctor/edit" modelAttribute="doctor">
+<form:form action="/doctor/data" modelAttribute="doctor">
     <form:errors path="*" element="div" cssClass="col-md-12 alert alert-danger text-center"/>
     <div class="panel-group" id="accordion">
         <%@include file="form-doctor-personal.jsp" %>
