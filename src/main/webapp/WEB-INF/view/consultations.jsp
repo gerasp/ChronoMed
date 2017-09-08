@@ -17,13 +17,12 @@
                             <h4 class="timeline-title">
                                 <c:choose>
                                     <c:when test='${item.doctorByDoctorId.gender.equals("male")}'>
-                                        <fmt:message key="navigation.patient.male"/>
+                                        <fmt:message key="navigation.doctor.male"/>
                                     </c:when>
                                     <c:when test='${item.doctorByDoctorId.gender.equals("female")}'>
                                         <fmt:message key="navigation.doctor.female"/>
                                     </c:when>
-                                </c:choose>
-                                &nbsp;${item.doctorByDoctorId.name}
+                                </c:choose>${item.doctorByDoctorId.name}
                             </h4>
                             <p>
                                 <fmt:formatDate value="${item.date}" var="date" pattern="dd/MM/yyyy"/>
@@ -64,8 +63,8 @@
         var year = $("#year-input").val();
         $(".timeline").children().each(function () {
             var actual = $(this).find(".time").text();
-            if (actual.includes(year)) $(this).show();
-            else $(this).hide();
+            if (actual.includes(year)) $(this).slideDown();
+            else $(this).slideUp();
         });
     });
 </script>

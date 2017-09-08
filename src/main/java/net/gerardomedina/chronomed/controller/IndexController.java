@@ -86,9 +86,9 @@ public class IndexController extends AbstractController{
     }
 
     @GetMapping("/logout")
-    public ModelAndView login(HttpSession session) {
+    public String logout(HttpSession session) {
         session.invalidate();
-        return new ModelAndView("index", "user", new User());
+        return "redirect:/";
     }
 
     @GetMapping(value = "/changeLanguage", params = {"language","returnTo"})

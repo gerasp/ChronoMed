@@ -36,8 +36,8 @@
         var idCard = $("#id-card-input").val();
         $("#patient-list").children().each(function () {
             var actual = $(this).find(".list-group-item-text").text();
-            if (actual.includes(idCard)) $(this).show();
-            else $(this).hide();
+            if (actual.includes(idCard)) $(this).slideDown();
+            else $(this).slideUp();
         });
     });
 
