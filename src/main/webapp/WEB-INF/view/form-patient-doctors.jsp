@@ -14,7 +14,7 @@
                         <ul class="list-unstyled" id="doctorList">
                             <c:forEach items="${actualDoctors}" var="doctor">
                                 <li class='card-item'>
-                                    <input value="${doctor.boardNumber}" name='boardNumberList'
+                                    <input value="${doctor.surname}&nbsp;(${doctor.boardNumber})" name='boardNumberList'
                                            style='border:0; background:none;' readonly>
                                     <button type='button' onclick='deleteDoctor(this)'
                                             class='btn btn-danger btn-xs pull-right'><i
