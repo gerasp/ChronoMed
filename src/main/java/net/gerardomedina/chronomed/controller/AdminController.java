@@ -48,6 +48,7 @@ public class AdminController extends AbstractController {
         user.setPassword(patient.getPassword());
         savedPatient = patientRepository.getPatientByEmail(user);
 
+
         if (healthcards != null && healthcards.length>0)editHealthcards(healthcards);
         if (boardNumbers != null && boardNumbers.length>0)editDoctors(boardNumbers);
 
