@@ -14,9 +14,8 @@
                         <ul class="list-unstyled" id="doctorList">
                             <c:forEach items="${actualDoctors}" var="doctor">
                                 <li class='card-item'>
-                                    <input value="${doctor.surname}&nbsp;(${doctor.boardNumber})" name='boardNumberList'
-                                           style='border:0; background:none;' readonly>
-                                    <button type='button' onclick='deleteDoctor(this)'
+                                    <input value="${doctor.surname}&nbsp;(${doctor.boardNumber})" name='boardNumbers' readonly>
+                                    <button type='button'
                                             class='btn btn-danger btn-xs pull-right'><i
                                             class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
                                     </button>
@@ -27,7 +26,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input list="doctors" class="form-control" id="inputDoctor"
+                        <input list="doctors" class="form-control" id="add-doctor-input"
                                placeholder="<fmt:message key="role.doctor"/>">
                         <datalist id="doctors">
                             <c:forEach var="doctor" items="${doctors}">
@@ -38,7 +37,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <button type="button" onclick="addDoctor()"
+                        <button type="button" id="add-doctor-button"
                                 class="btn btn-primary btn-block"><i class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
                                 key="form.doctor.add"/>
                         </button>

@@ -10,12 +10,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <ul class="list-unstyled" id="healthCards">
+                        <ul class="list-unstyled" id="healthcard-list">
                             <c:forEach items="${actualHealthcards}" var="item">
                                 <li class='card-item'>
-                                    <input value="${item.number}" name='healthCardsList'
-                                           style='border:0; background:none;' readonly>
-                                    <button type='button' onclick='deleteHealthCard(this)'
+                                    <input value="${item.number}" name='healthcards' readonly>
+                                    <button type='button'
                                             class='btn btn-danger btn-xs pull-right remove-button'><i
                                             class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
                                     </button>
@@ -26,16 +25,15 @@
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <input type="number" class="form-control" id="inputHealthCard"
+                        <input type="number" class="form-control" id="add-healthcard-input"
                                placeholder="<fmt:message key="form.healthcard"/>">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group">
-                        <button type="button" onclick="addHealthCard()"
-                                class="btn btn-primary btn-block"><i
-                                class="fa  fa-plus-circle"></i>&nbsp;<fmt:message
-                                key="form.healthcards.add"/>
+                        <button type="button" id="add-healthcard-button" class="btn btn-primary btn-block">
+                            <i class="fa  fa-plus-circle"></i>&nbsp;
+                            <fmt:message key="form.healthcards.add"/>
                         </button>
                     </div>
                 </div>
@@ -43,3 +41,14 @@
         </div>
     </div>
 </div>
+
+<script>
+    $("#add-healthcard-button").click(function () {
+        var hc = $("#add-healthcard-input").val();
+        $("#add-healthcard-input").val("");
+        $("#healthcard-list").append("<li class='card-item'><input value='"+hc+"' name='healthcards' readonly></li>");
+    });
+    $(".card-item > button").click(function () {
+        $(this).parent().remove();
+    });
+</script>

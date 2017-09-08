@@ -24,4 +24,3 @@
         <%@include file="form-access.jsp" %>
     </div>
 </form:form>
-<%@include file="admin-patient-js.jsp"%>
