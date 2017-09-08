@@ -1,5 +1,5 @@
 <% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.DOCTOR) { %>
-    <table class="table table-striped">
+    <table class="table table-striped" style="border: 2px solid gainsboro">
         <tbody>
         <tr>
             <td><strong><fmt:message key="history.bloodType"/></strong></td>

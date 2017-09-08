@@ -1,7 +1,7 @@
 <c:choose>
     <c:when test='${consultations!=null}'>
-        <div class="form-inline text-center">
-            <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
                 <div class="input-group">
                     <div class="input-group-addon"><fmt:message key="consultation.year"/></div>
                     <input type="number" min="1970" max="2040" id="year-input" class="form-control">
@@ -44,7 +44,7 @@
                 </li>
             </c:forEach>
         </ul>
-        <div class="row not-print">
+        <div class="row not-print" style="margin-top: -20px">
             <div class="col-md-12">
                 <button class="btn btn-primary btn-block" onclick="window.print()">
                     <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>

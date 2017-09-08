@@ -1,35 +1,28 @@
 <div class="modal fade" id="new-consultation-modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-            </div>
             <form:form modelAttribute="consultation" action="/doctor/patient/consultation/new">
                 <table class="table table-striped">
                     <tbody>
                     <tr>
                         <td><strong><fmt:message key="consultation.date"/></strong></td>
-                        <td><form:input type="date" required="required" path="date" class="input-in-table" />
-                        </td>
+                        <td><form:input type="date" required="required" path="date" class="input-in-table" /></td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.symptoms"/></strong></td>
-                        <td><form:textarea rows="4" cols="40" required="required" path="symptoms" class="input-in-table" />
-                        </td>
+                        <td><form:textarea rows="3" cols="30" path="symptoms" class="input-in-table" /></td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.examinations"/></strong></td>
-                        <td><form:textarea rows="4" cols="40" required="required" path="examinations" class="input-in-table" />
-                        </td>
+                        <td><form:textarea rows="3" cols="30" path="examinations" class="input-in-table" /></td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.treatment"/></strong></td>
-                        <td><form:textarea rows="4" cols="40" required="required" path="treatment" class="input-in-table" />
-                        </td>
+                        <td><form:textarea rows="3" cols="30" path="treatment" class="input-in-table" /></td>
                     </tr>
-                    <tr>
+                    <tr style="border-bottom: 1px solid gainsboro">
                         <td><strong><fmt:message key="consultation.recomendations"/></strong></td>
-                        <td><form:textarea rows="4" cols="40" required="required" path="recomendations" class="input-in-table"/></td>
+                        <td><form:textarea rows="3" cols="30" path="recomendations" class="input-in-table"/></td>
                     </tr>
                     </tbody>
                 </table>
