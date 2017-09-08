@@ -26,3 +26,18 @@ $(window).scroll(function (event) {
         lastScrollTop = st;
     // }
 });
+
+// HEALTHCARDS AND DOCTORS
+$("#add-healthcard-button").click(function () {
+    var hc = $("#add-healthcard-input").val();
+    $("#add-healthcard-input").val("");
+    $("#healthcard-list").append("<li class='card-item'><input value='"+hc+"' name='healthcards' readonly></li>");
+});
+$("#add-doctor-button").click(function () {
+    var hc = $("#add-doctor-input").val();
+    $("#add-doctor-input").val("");
+    $("#doctor-list").append("<li class='card-item'><input value='"+hc+"' name='boardNumbers' readonly></li>");
+});
+$(".card-item > button").click(function () {
+    $(this).parent().remove();
+});

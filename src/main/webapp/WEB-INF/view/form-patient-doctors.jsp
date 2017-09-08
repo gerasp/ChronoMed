@@ -11,13 +11,13 @@
                 <div class="col-md-12">
 
                     <div class="form-group">
-                        <ul class="list-unstyled" id="doctorList">
+                        <ul class="list-unstyled" id="doctor-list">
                             <c:forEach items="${actualDoctors}" var="doctor">
                                 <li class='card-item'>
-                                    <input value="${doctor.surname}&nbsp;(${doctor.boardNumber})" name='boardNumbers' readonly>
+                                    <input value="${doctor.boardNumber}" name='boardNumbers' readonly>${doctor.surname}
                                     <button type='button'
                                             class='btn btn-danger btn-xs pull-right'><i
-                                            class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
+                                            class='fa  fa-remove'></i>&nbsp;<fmt:message key="action.remove"/>
                                     </button>
                                 </li>
                             </c:forEach>
@@ -30,7 +30,7 @@
                                placeholder="<fmt:message key="role.doctor"/>">
                         <datalist id="doctors">
                             <c:forEach var="doctor" items="${doctors}">
-                                <option value="${doctor.surname}&nbsp;(${doctor.boardNumber})"></option>
+                                <option value="${doctor.boardNumber}">${doctor.surname}</option>
                             </c:forEach>
                         </datalist>
                     </div>

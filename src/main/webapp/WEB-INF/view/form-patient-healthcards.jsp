@@ -41,14 +41,3 @@
         </div>
     </div>
 </div>
-
-<script>
-    $("#add-healthcard-button").click(function () {
-        var hc = $("#add-healthcard-input").val();
-        $("#add-healthcard-input").val("");
-        $("#healthcard-list").append("<li class='card-item'><input value='"+hc+"' name='healthcards' readonly></li>");
-    });
-    $(".card-item > button").click(function () {
-        $(this).parent().remove();
-    });
-</script>

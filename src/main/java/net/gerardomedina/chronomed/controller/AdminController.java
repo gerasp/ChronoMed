@@ -1,9 +1,6 @@
 package net.gerardomedina.chronomed.controller;
 
-import net.gerardomedina.chronomed.entity.Doctor;
-import net.gerardomedina.chronomed.entity.Healthcard;
-import net.gerardomedina.chronomed.entity.Patient;
-import net.gerardomedina.chronomed.entity.Search;
+import net.gerardomedina.chronomed.entity.*;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +18,7 @@ public class AdminController extends AbstractController {
 
     private List<Doctor> savedDoctors;
     private List<Healthcard> savedHealthcards;
+    private List<DoctorPatient> savedRelations;
 
     @GetMapping("/patients")
     public ModelAndView patients() {
@@ -39,10 +37,20 @@ public class AdminController extends AbstractController {
     }
 
     @PostMapping("/patient/new")
-    public String patientNew(@ModelAttribute("patient") Patient patient) {
+    public String patientNew(@ModelAttribute("patient") Patient patient,
+                              @RequestParam(value = "healthcards") String[] healthcards,
+                              @RequestParam(value = "boardNumbers") String[] boardNumbers) {
         patient.setId(savedPatient.getId());
         patient.setPassword(randomPassword());
         patientRepository.create(patient);
+
+        savedRelations = new ArrayList<>();
+        savedDoctors = new ArrayList<>();
+        savedHealthcards = new ArrayList<>();
+        savedPatient = patient;
+        if (healthcards != null && healthcards.length>0)editHealthcards(healthcards);
+        if (boardNumbers != null && boardNumbers.length>0)editDoctors(boardNumbers);
+
         result = "infoCreated";
         return "redirect:/admin/patients";
     }
@@ -58,6 +66,7 @@ public class AdminController extends AbstractController {
         }
 
         savedDoctors = patientRepository.getDoctors(savedPatient);
+        savedRelations = doctorPatientRepository.getDoctorPatients(savedPatient);
         savedHealthcards = patientRepository.getHealthcards(savedPatient);
 
         modelAndView.addObject("patient", savedPatient);
@@ -83,6 +92,14 @@ public class AdminController extends AbstractController {
         patient.setOthers(savedPatient.getOthers());
         patientRepository.update(patient);
 
+        if (healthcards != null && healthcards.length>0)editHealthcards(healthcards);
+        if (boardNumbers != null && boardNumbers.length>0)editDoctors(boardNumbers);
+
+        result = "infoUpdated";
+        return "redirect:/admin/patients";
+    }
+
+    private void editHealthcards(String[] healthcards) {
         List<String> newHealthcards = Arrays.asList(healthcards);
         List<String> oldHealthcards = new ArrayList<>();
         for (Healthcard hc : savedHealthcards) oldHealthcards.add(hc.getNumber());
@@ -90,8 +107,8 @@ public class AdminController extends AbstractController {
             if (!oldHealthcards.contains(newHC)) {
                 Healthcard hc = new Healthcard();
                 hc.setNumber(newHC);
-                hc.setPatientId(patient.getId());
-                healthcardRepository.create(new Healthcard());
+                hc.setPatientId(savedPatient.getId());
+                healthcardRepository.create(hc);
             }
         }
         for (String oldHC : oldHealthcards) {
@@ -101,9 +118,30 @@ public class AdminController extends AbstractController {
                 healthcardRepository.delete(idToDelete);
             }
         }
+    }
 
-        result = "infoUpdated";
-        return "redirect:/admin/patients";
+    private void editDoctors(String[] doctors) {
+        List<String> newDoctors = Arrays.asList(doctors);
+        List<String> oldDoctors = new ArrayList<>();
+        for (Doctor doctor : savedDoctors) oldDoctors.add(doctor.getBoardNumber());
+        for (String newDoctor : newDoctors) {
+            if (!oldDoctors.contains(newDoctor)) {
+                Doctor doctorToAddRelation = doctorRepository.getDoctorByBoardNumber(new Search(newDoctor));
+                DoctorPatient doctorPatient = new DoctorPatient();
+                doctorPatient.setDoctorId(doctorToAddRelation.getId());
+                doctorPatient.setPatientId(savedPatient.getId());
+                doctorPatientRepository.create(doctorPatient);
+            }
+        }
+        for (String oldDoctor : oldDoctors) {
+            if (!newDoctors.contains(oldDoctor)) {
+                int idToDelete = 0;
+                Doctor doctorToRemoveRelation = doctorRepository.getDoctorByBoardNumber(new Search(oldDoctor));
+                for (DoctorPatient relation : savedRelations)
+                    if (relation.getDoctorId() == doctorToRemoveRelation.getId()) idToDelete = relation.getId();
+                doctorPatientRepository.delete(idToDelete);
+            }
+        }
     }
 
     // =========================================================
