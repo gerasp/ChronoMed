@@ -34,14 +34,6 @@
     margin: 9px 0 0;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-
-
 .list-group-item {
     border-color: #cccccc;
 }
@@ -51,13 +43,6 @@ input[type=number]::-webkit-outer-spin-button {
     margin-top: 14px;
 }
 
-.bordered-folder {
-    border-left: 1px solid #dddddd;
-    border-bottom: 1px solid #dddddd;
-    border-right: 1px solid #dddddd;
-    padding-top: 10px !important;
-
-}
 
 .input-in-table {
     width: 100%;
@@ -185,8 +170,4 @@ textarea {
     display:inline-block;
     *display:inline; /* ie7 fix */
     zoom:1; /* hasLayout ie7 trigger */
-}
-
-.nav-tabs, .nav-pills {
-    text-align:center;
 }

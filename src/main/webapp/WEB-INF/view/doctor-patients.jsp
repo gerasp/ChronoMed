@@ -2,18 +2,18 @@
     <c:when test="${patients!=null}">
         <div class="row">
             <div class="col-md-12">
-                <form method="get" action="<c:url value="/doctor/patients/search"/>" class="form-horizontal">
+                <div class="form-horizontal" style="margin-bottom:20px;">
                     <div class="input-group input-group-lg">
-                        <input type="text" name="idCard" class="form-control"
+                        <input id="id-card-input" type="text" name="idCard" class="form-control"
                                placeholder="<fmt:message key="form.idcard" />">
                         <span class="input-group-addon">
-                            <button type="submit" class="btn-link"><i class="fa fa-search"></i></button>
+                            <div id="id-card-search" class="btn-link"><i class="fa fa-search"></i></div>
                         </span>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
-        <ul class="list-group">
+        <ul class="list-group" id="patient-list">
             <c:forEach items="${patients}" var="item">
                 <a href='<c:url value="/doctor/patient" />?idCard=${item.idCard}' class="list-group-item">
                     <h4 class="list-group-item-heading">${item.name}&nbsp;${item.surname}
@@ -31,3 +31,14 @@
     </c:otherwise>
 </c:choose>
 
+<script>
+    $("#id-card-input").on('input',function(e){
+        var idCard = $("#id-card-input").val();
+        $("#patient-list").children().each(function () {
+            var actual = $(this).find(".list-group-item-text").text();
+            if (actual.includes(idCard)) $(this).show();
+            else $(this).hide();
+        });
+    });
+
+</script>

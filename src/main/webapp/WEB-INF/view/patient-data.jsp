@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
             <form:button class="btn btn-primary btn-block">
-                <fmt:message key="form.data.save"/>&nbsp;<i class="fa fa-save"></i>
+                <fmt:message key="form.data.save"/>&nbsp;<i class="fa fa-check-circle"></i>
             </form:button>
         </div>
     </div>

@@ -3,7 +3,6 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Añadir cita</h4>
             </div>
             <form:form modelAttribute="consultation" action="/doctor/patient/consultation/new">
                 <table class="table table-striped">
@@ -36,7 +35,7 @@
                 </table>
                 <div class="row" style="margin:10px;">
                     <div class="col-md-12">
-                        <button type="submit" class="btn btn-primary btn-block">A�adir cita <i
+                        <button type="submit" class="btn btn-primary btn-block"><fmt:message key="consultation.new"/>&nbsp;<i
                                 class="fa  fa-plus-circle"></i>
                         </button>
                     </div>

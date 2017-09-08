@@ -10,7 +10,7 @@
         </div>
         <div class="col-md-2">
             <form:button class="btn btn-lg btn-block btn-link pull-right">
-                <fmt:message key="form.data.save"/>&nbsp;<i class="fa fa-save"></i>
+                <fmt:message key="form.data.save"/>&nbsp;<i class="fa fa-check-circle"></i>
             </form:button>
         </div>
     </div>
