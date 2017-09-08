@@ -5,29 +5,27 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title"><i class="fa fa-plus-circle"></i> Añadir cita</h4>
             </div>
-            <form class="form-vertical" method="POST" role="form" action="/FrontController">
-
+            <form:form modelAttribute="consultation" action="/doctor/patient/consultation/new">
                 <table class="table table-striped">
                     <tbody>
                     <tr>
                         <td><strong><fmt:message key="consultation.symptoms"/></strong></td>
-                        <td><textarea rows="4" cols="40" required class="input-in-table" name="symptoms"></textarea>
+                        <td><form:textarea rows="4" cols="40" required="required" path="symptoms" class="input-in-table" />
                         </td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.examinations"/></strong></td>
-                        <td><textarea rows="4" cols="40" required class="input-in-table" name="examinations"></textarea>
+                        <td><form:textarea rows="4" cols="40" required="required" path="examinations" class="input-in-table" />
                         </td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.treatment"/></strong></td>
-                        <td><textarea rows="4" cols="40" required class="input-in-table" name="treatment"></textarea>
+                        <td><form:textarea rows="4" cols="40" required="required" path="treatment" class="input-in-table" />
                         </td>
                     </tr>
                     <tr>
                         <td><strong><fmt:message key="consultation.recomendations"/></strong></td>
-                        <td><textarea rows="4" cols="40" required class="input-in-table"
-                                      name="recomendations"></textarea></td>
+                        <td><form:textarea rows="4" cols="40" required="required" path="recomendations" class="input-in-table"/></td>
                     </tr>
                     </tbody>
                 </table>
@@ -38,8 +36,7 @@
                         </button>
                     </div>
                 </div>
-
-            </form>
+            </form:form>
         </div>
     </div>
 </div>

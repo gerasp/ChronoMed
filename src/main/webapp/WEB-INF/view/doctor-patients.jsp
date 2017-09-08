@@ -2,12 +2,13 @@
     <c:when test="${patients!=null}">
         <div class="row">
             <div class="col-md-12">
-                <form class="form-horizontal">
+                <form method="get" action="<c:url value="/doctor/patients/search"/>" class="form-horizontal">
                     <div class="input-group input-group-lg">
-                        <input type="text" class="form-control" placeholder="<fmt:message key="form.idcard" />">
+                        <input type="text" name="idCard" class="form-control"
+                               placeholder="<fmt:message key="form.idcard" />">
                         <span class="input-group-addon">
-                <button class="btn-link"><i class="fa fa-search"></i></button>
-            </span>
+                            <button type="submit" class="btn-link"><i class="fa fa-search"></i></button>
+                        </span>
                     </div>
                 </form>
             </div>

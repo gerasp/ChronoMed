@@ -52,6 +52,10 @@
         <constructor-arg value="net.gerardomedina.chronomed.entity.Patient"/>
         <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
+    <bean id="consultationRepository" class="net.gerardomedina.chronomed.repository.ConsultationRepositoryImpl">
+        <constructor-arg value="net.gerardomedina.chronomed.entity.Consultation"/>
+        <constructor-arg ref="hibernate4AnnotatedSessionFactory"/>
+    </bean>
 
     <!--CONTROLLER BEANS-->
     <context:component-scan base-package="net.gerardomedina.chronomed.controller"/>

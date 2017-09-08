@@ -50,7 +50,7 @@ public class PatientController extends AbstractController {
     }
 
     @PostMapping("/data")
-    public String patientEdit(@ModelAttribute("patient") Patient patient,
+    public String data(@ModelAttribute("patient") Patient patient,
                              @RequestParam(value = "oldPassword") String oldPassword,
                              @RequestParam(value = "newPassword") String newPassword) {
         if (oldPassword.equals(savedPatient.getPassword())) {

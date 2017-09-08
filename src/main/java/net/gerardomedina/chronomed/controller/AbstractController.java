@@ -3,6 +3,7 @@ package net.gerardomedina.chronomed.controller;
 import net.gerardomedina.chronomed.entity.Doctor;
 import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.repository.AdminRepository;
+import net.gerardomedina.chronomed.repository.ConsultationRepository;
 import net.gerardomedina.chronomed.repository.DoctorRepository;
 import net.gerardomedina.chronomed.repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,7 @@ public abstract class AbstractController {
     AdminRepository adminRepository;
     DoctorRepository doctorRepository;
     PatientRepository patientRepository;
+    ConsultationRepository consultationRepository;
 
     Doctor savedDoctor;
     Patient savedPatient;
@@ -40,6 +42,12 @@ public abstract class AbstractController {
     @Qualifier(value = "patientRepository")
     public void setPatientRepository(PatientRepository ps) {
         this.patientRepository = ps;
+    }
+
+    @Autowired
+    @Qualifier(value = "consultationRepository")
+    public void setConsultationRepository(ConsultationRepository ps) {
+        this.consultationRepository = ps;
     }
 
 
