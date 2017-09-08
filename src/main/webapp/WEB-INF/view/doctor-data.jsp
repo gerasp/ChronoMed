@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md-9">
             <p class="red-asterisk">
-                <b><fmt:message key="form.requiredFields.some"/></b>
+                <b><fmt:message key="form.requiredFields.contactAdmin"/><br><fmt:message key="form.requiredFields.some"/></b>
             </p>
         </div>
         <div class="col-md-3">

@@ -67,13 +67,14 @@ public class DoctorController extends AbstractController {
                              @RequestParam(value = "oldPassword") String oldPassword,
                              @RequestParam(value = "newPassword") String newPassword) {
         if (oldPassword.equals(savedDoctor.getPassword())) {
-            doctor.setId(savedDoctor.getId());
-            if (!newPassword.equals("")) doctor.setPassword(newPassword);
-            else doctor.setPassword(savedDoctor.getPassword());
-            doctorRepository.update(doctor);
+            savedDoctor.setPhoneNumber(doctor.getPhoneNumber());
+            savedDoctor.setAlternativePhoneNumber(doctor.getAlternativePhoneNumber());
+            savedDoctor.setEmail(doctor.getEmail());
+            if (!newPassword.equals("")) savedDoctor.setPassword(newPassword);
+            doctorRepository.update(savedDoctor);
             result = "infoUpdated";
         } else result = "wrongPassword";
-        return "redirect:/admin/data";
+        return "redirect:/doctor/data";
     }
 
 }

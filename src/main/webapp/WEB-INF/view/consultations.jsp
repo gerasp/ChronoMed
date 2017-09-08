@@ -50,37 +50,46 @@
                 </li>
             </c:forEach>
         </ul>
+        <div class="row" style="margin:10px;">
+            <c:choose>
+                <c:when test="${action.equals('consultations')}">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block not-print" onclick="window.print()">
+                            <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
+                        </button>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div class="col-md-6">
+                        <button class="btn btn-primary btn-block not-print" onclick="window.print()">
+                            <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
+                        </button>
+                    </div>
+                    <div class="col-md-6">
+                        <button id="new-consultation-button" class="btn btn-primary btn-block">
+                            <fmt:message key="action.newConsultation"/>
+                            <i class="fa  fa-plus-circle"></i>
+                        </button>
+                    </div>
+                    <%@include file="consultation-new.jsp" %>
+                </c:otherwise>
+            </c:choose>
+        </div>
     </c:when>
     <c:otherwise>
         <div class="well text-center">
             <i class="fa fa-exclamation-circle"></i>&nbsp;<fmt:message key="modal.content.consultationNotFound"/>
         </div>
-    </c:otherwise>
-</c:choose>
-<div class="row" style="margin:10px;">
-
-    <c:choose>
-        <c:when test="${action.equals('consultations')}">
+        <% if (((User) request.getSession().getAttribute("user")).getType() == User.Type.DOCTOR) { %>
+        <div class="row" style="margin:10px;">
             <div class="col-md-12">
-                <button class="btn btn-primary btn-block not-print" onclick="window.print()">
-                    <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
-                </button>
-            </div>
-        </c:when>
-        <c:otherwise>
-            <div class="col-md-6">
-                <button class="btn btn-primary btn-block not-print" onclick="window.print()">
-                    <fmt:message key="action.export"/>&nbsp;<i class="fa  fa-print"></i>
-                </button>
-            </div>
-            <div class="col-md-6">
                 <button id="new-consultation-button" class="btn btn-primary btn-block">
                     <fmt:message key="action.newConsultation"/>
                     <i class="fa  fa-plus-circle"></i>
                 </button>
             </div>
-            <%@include file="consultation-new.jsp" %>
-        </c:otherwise>
-    </c:choose>
-
-</div>
+        </div>
+        <%@include file="consultation-new.jsp" %>
+        <% } %>
+    </c:otherwise>
+</c:choose>

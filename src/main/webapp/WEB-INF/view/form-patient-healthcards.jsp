@@ -16,7 +16,7 @@
                                     <input value="${item.number}" name='healthCardsList'
                                            style='border:0; background:none;' readonly>
                                     <button type='button' onclick='deleteHealthCard(this)'
-                                            class='btn btn-danger btn-xs pull-right'><i
+                                            class='btn btn-danger btn-xs pull-right remove-button'><i
                                             class='fa  fa-remove'></i> <fmt:message key="action.remove"/>
                                     </button>
                                 </li>
