@@ -9,6 +9,11 @@
                 <table class="table table-striped">
                     <tbody>
                     <tr>
+                        <td><strong><fmt:message key="consultation.date"/></strong></td>
+                        <td><form:input type="date" required="required" path="date" class="input-in-table" />
+                        </td>
+                    </tr>
+                    <tr>
                         <td><strong><fmt:message key="consultation.symptoms"/></strong></td>
                         <td><form:textarea rows="4" cols="40" required="required" path="symptoms" class="input-in-table" />
                         </td>

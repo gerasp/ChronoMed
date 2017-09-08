@@ -41,7 +41,7 @@
                         <div class="timeline-body">
                             <p>
                                 <b><fmt:message key="consultation.symptoms"/></b>: ${item.symptoms}<br>
-                                <b><fmt:message key="consultation.examinations"/></b>: ${item.examinations}%><br>
+                                <b><fmt:message key="consultation.examinations"/></b>: ${item.examinations}<br>
                                 <b><fmt:message key="consultation.treatment"/></b>: ${item.treatment}<br>
                                 <b><fmt:message key="consultation.recomendations"/></b>: ${item.recomendations}<br>
                             </p>
