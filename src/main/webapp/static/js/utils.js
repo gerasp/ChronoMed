@@ -5,10 +5,8 @@ function filter() {
     var to = date === "" ? new Date() : new Date(date);
     $(".timeline").children().each(function () {
         var actual = new Date($(this).find("time").attr("datetime"));
-        if (from <= actual && actual <= to)
-            $(this).show();
-        else
-            $(this).hide();
+        if (from <= actual && actual <= to) $(this).show();
+        else $(this).hide();
     });
 }
 
