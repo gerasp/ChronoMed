@@ -16,10 +16,6 @@ import java.util.List;
 @Scope("session")
 public class AdminController extends AbstractController {
 
-    private List<Doctor> savedDoctors;
-    private List<Healthcard> savedHealthcards;
-    private List<DoctorPatient> savedRelations;
-
     @GetMapping("/patients")
     public ModelAndView patients() {
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
@@ -40,14 +36,18 @@ public class AdminController extends AbstractController {
     public String patientNew(@ModelAttribute("patient") Patient patient,
                               @RequestParam(value = "healthcards") String[] healthcards,
                               @RequestParam(value = "boardNumbers") String[] boardNumbers) {
-        patient.setId(savedPatient.getId());
         patient.setPassword(randomPassword());
         patientRepository.create(patient);
 
         savedRelations = new ArrayList<>();
         savedDoctors = new ArrayList<>();
         savedHealthcards = new ArrayList<>();
-        savedPatient = patient;
+
+        User user = new User();
+        user.setEmail(patient.getEmail());
+        user.setPassword(patient.getPassword());
+        savedPatient = patientRepository.getPatientByEmail(user);
+
         if (healthcards != null && healthcards.length>0)editHealthcards(healthcards);
         if (boardNumbers != null && boardNumbers.length>0)editDoctors(boardNumbers);
 
@@ -150,6 +150,7 @@ public class AdminController extends AbstractController {
     public ModelAndView doctors() {
         ModelAndView modelAndView = new ModelAndView("admin", "search", new Search());
         modelAndView.addObject("action", "doctors");
+        checkResult(modelAndView);
         return modelAndView;
     }
 
@@ -157,13 +158,11 @@ public class AdminController extends AbstractController {
     public ModelAndView doctorRegistration() {
         ModelAndView modelAndView = new ModelAndView("admin", "doctor", new Doctor());
         modelAndView.addObject("action", "doctor-new");
-        checkResult(modelAndView);
         return modelAndView;
     }
 
     @PostMapping("/doctor/new")
     public String doctorNew(@ModelAttribute("doctor") Doctor doctor) {
-        doctor.setId(savedDoctor.getId());
         doctor.setPassword(randomPassword());
         doctorRepository.create(doctor);
         result = "infoCreated";

@@ -1,12 +1,15 @@
 package net.gerardomedina.chronomed.controller;
 
 import net.gerardomedina.chronomed.entity.Doctor;
+import net.gerardomedina.chronomed.entity.DoctorPatient;
+import net.gerardomedina.chronomed.entity.Healthcard;
 import net.gerardomedina.chronomed.entity.Patient;
 import net.gerardomedina.chronomed.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
 import java.util.Random;
 
 public abstract class AbstractController {
@@ -20,6 +23,11 @@ public abstract class AbstractController {
 
     Doctor savedDoctor;
     Patient savedPatient;
+
+    List<Doctor> savedDoctors;
+    List<Healthcard> savedHealthcards;
+    List<DoctorPatient> savedRelations;
+    List<Patient> savedPatients;
 
 
     String result;
@@ -63,8 +71,8 @@ public abstract class AbstractController {
 
 
     void checkResult(ModelAndView modelAndView) {
-        if (result!= null) {
-            modelAndView.addObject("result",result);
+        if (result != null) {
+            modelAndView.addObject("result", result);
             result = null;
         }
     }

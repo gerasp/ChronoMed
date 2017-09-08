@@ -16,7 +16,6 @@ import java.util.List;
 @Controller
 @Scope("session")
 public class DoctorController extends AbstractController {
-    private List<Patient> savedPatients;
 
     @GetMapping(path = "/patients")
     public ModelAndView patients(HttpSession session) {
