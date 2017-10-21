@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/vendor.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/animations.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/custom.css"/>">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

@@ -1,7 +1,7 @@
 <div class="cover" id="intro">
     <div class="background-image-fixed cover-image"
          style="background-image : url('<c:url value="/static/images/cover.jpeg"/>')"></div>
-    <div class="container">
+    <div class="container animate" data-animation="slideDown">
         <div class="row shadow-box">
             <div class="col-md-5">
                 <img src="<c:url value="/static/images/ChronoMed.png"/>" class="center-block img-responsive sign-in-logo">

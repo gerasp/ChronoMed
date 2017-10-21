@@ -7,7 +7,7 @@
         </div>
     </div>
 </div>
-<div class="section section-primary background-dark">
+<div class="section section-primary background-dark animate" data-animation="slideUp">
     <div class="container">
         <div class="row">
             <div class="col-md-4">
