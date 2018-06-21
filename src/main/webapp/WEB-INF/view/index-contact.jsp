@@ -1,4 +1,14 @@
-<div class="section section-primary" id="contact">
+<div class="contact section">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-xs-3 text-center"><a><i class="fa fa-5x fa-instagram"></i></a></div>
+            <div class="col-xs-3"><a><i class="fa fa-5x fa-twitter"></i></a></div>
+            <div class="col-xs-3"><a><i class="fa fa-5x fa-facebook"></i></a></div>
+            <div class="col-xs-3 text-center"><a><i class="fa fa-5x fa-github"></i></a></div>
+        </div>
+    </div>
+</div>
+<div class="section" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-6 text-left">
@@ -10,17 +20,6 @@
                         width="600" height="450" frameborder="0" style="border:0" allowfullscreen=""
                         class="img-responsive"></iframe>
             </div>
-        </div>
-    </div>
-</div>
-<div class="contact section">
-    <div class="container">
-        <div class="row text-center">
-            <div class="col-xs-3 text-center"><a><i class="fa fa-5x fa-instagram"></i></a></div>
-            <div class="col-xs-3"><a><i class="fa fa-5x fa-twitter"></i></a></div>
-            <div class="col-xs-3"><a><i class="fa fa-5x fa-facebook"></i></a></div>
-            <div class="col-xs-3 text-center"><a href="http://github.com/gerasp/ChronoMed"><i
-                    class="fa fa-5x fa-github"></i></a></div>
         </div>
     </div>
 </div>

@@ -14,6 +14,8 @@
         <property name="url" value="jdbc:mysql://eu-cdbr-west-01.cleardb.com:3306/heroku_5d5cf2395135b4a"/>
         <property name="username" value="b507ab1bf2d6f2"/>
         <property name="password" value="baf1af7a"/>
+        <property name="validationQuery" value="SELECT 1"/>
+        <property name="testOnBorrow" value="true"/>
     </bean>
     <bean id="hibernate4AnnotatedSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>

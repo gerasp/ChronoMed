@@ -8,7 +8,7 @@
 <c:if test="${language==null}">
     <c:set var="language" value="${not empty param.language ?
     param.language : not empty language ?
-    language : pageContext.request.locale}" scope="session"/>
+    language : pageContext.request.locale.language.toLowerCase()}" scope="session"/>
 </c:if>
 
 <fmt:setLocale value="${language}" />

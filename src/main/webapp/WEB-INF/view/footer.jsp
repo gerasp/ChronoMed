@@ -21,7 +21,7 @@
                 </a>
             </c:when>
             <c:otherwise>
-                <a class="navbar-brand">@ ChronoMed 2017</a>
+                <a class="navbar-brand">&copy; ChronoMed 2017</a>
             </c:otherwise>
         </c:choose>
     </div>
@@ -50,7 +50,6 @@
                 <c:otherwise>
                     <li><a href="#intro"><fmt:message key="footer.home"/></a></li>
                     <li><a href="#services"><fmt:message key="footer.services"/></a></li>
-                    <li><a href="#team"><fmt:message key="footer.team"/></a></li>
                     <li><a href="#contact"><fmt:message key="footer.contact"/></a></li>
                 </c:otherwise>
             </c:choose>
